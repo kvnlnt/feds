@@ -1,0 +1,4 @@
+{
+  ".button": [".fs1", ".colorBlack"],
+  ".button--alert": [".fs1", ".colorWhite"]
+}

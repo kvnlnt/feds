@@ -1,0 +1,5 @@
+{
+  ".fs1": ["font-size:1${unit}"],
+  ".colorBlack": ["color:${colorBlack}", "color:${colorWhite}"],
+  ".colorWhite": ["color:${colorWhite}"]
+}

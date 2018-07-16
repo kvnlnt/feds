@@ -1,0 +1,6 @@
+{
+  "button": {
+    "name": "Button",
+    "markup": "<a class=\"button\">Button</a>"
+  }
+}

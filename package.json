@@ -1,0 +1,11 @@
+{
+  "name": "styler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
