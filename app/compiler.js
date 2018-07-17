@@ -4,6 +4,7 @@ const mapRule = ([k, v]) => `${k} {\n${v.map(d => `  ${d}`).join(";\n")};\n}\n`;
 const interpolate = (val, params) => {
   const regVar = /\$\{.*?\}/;
   const regVarVal = /\$\{(.*?)\}/;
+  if (!regVar.test(val)) return val;
   return val.replace(regVar, params[regVarVal.exec(val)[1]]);
 };
 
@@ -23,7 +24,7 @@ const precompileMolecules = (molecules, atoms) => {
 
 const precompilePatterns = patterns => {
   return {
-    links: Object.entries(patterns).map(([k, v]) => `<a href="#${v.name}">${v.name}</a>`),
+    links: Object.entries(patterns).map(([k, v]) => `<a href="#${v.name}" class="text-height-3 text-indent-1 block">${v.name}</a>`),
     markup: Object.entries(patterns).map(([k, v]) => `
     <h2>${v.name}</h2>
     <div>${v.desc ? v.desc : ""}</div>

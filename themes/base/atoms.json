@@ -1,5 +1,17 @@
 {
+  ".block": ["display:block"],
+  ".colorBlack": ["color:${colorBlack}"],
+  ".colorWhite": ["color:${colorWhite}"],
+  ".flex": ["display:flex"],
+  ".flex-col": ["flex:1"],
+  ".flex-col-2": ["flex:0 0 50%"],
+  ".flex-col-3": ["flex:0 0 33.33333%"],
+  ".flex-col-4": ["flex:0 0 25%"],
+  ".flex-col-5": ["flex:0 0 20%"],
   ".fs1": ["font-size:1${unit}"],
-  ".colorBlack": ["color:${colorBlack}", "color:${colorWhite}"],
-  ".colorWhite": ["color:${colorWhite}"]
+  ".inline-block": ["display:inline-block"],
+  ".text-height-2": ["line-height:2${unit}"],
+  ".text-height-3": ["line-height:3${unit}"],
+  ".text-indent-1": ["text-indent:1${unit}"],
+  ".text-indent-2": ["text-indent:2${unit}"]
 }

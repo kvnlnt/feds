@@ -1,4 +1,7 @@
 {
+  "a": [".colorBlack"],
   ".button": [".fs1", ".colorBlack"],
-  ".button--alert": [".fs1", ".colorWhite"]
+  ".button--alert": [".fs1", ".colorWhite"],
+  ".columns": [".flex"],
+  ".column": [".flex-col"]
 }

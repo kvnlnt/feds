@@ -45,7 +45,5 @@ fs.writeFileSync(outPath + outFile, styles);
 fs.writeFileSync(outPath + outGuide, compiledPatterns);
 if (theme === "base") fs.writeFileSync(outPath + "index.html", compiledPatterns);
 
-console.log(compiledPatterns);
-
 // Running time
 console.timeEnd("Styler");

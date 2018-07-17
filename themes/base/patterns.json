@@ -2,5 +2,9 @@
   "button": {
     "name": "Button",
     "markup": "<a class=\"button\">Button</a>"
+  },
+  "button-alert": {
+    "name": "Alert Button",
+    "markup": "<a class=\"button button--alert\">Button</a>"
   }
 }
