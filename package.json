@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "node ./app/main.js",
+    "build:custom": "node ./app/main.js custom",
     "clean": "rimraf ./public/*"
   },
   "author": "",
