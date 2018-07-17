@@ -5,7 +5,7 @@ const template = require("../templates/index");
 
 // setup
 console.time("Styler");
-if (!fs.existsSync("./public")) fs.mkdirSync("./public");
+if (!fs.existsSync("./docs")) fs.mkdirSync("./docs");
 
 // theme files
 const importThemeFile = (t, f) => {
@@ -23,7 +23,7 @@ const patterns = importThemeFile(theme, "patterns.json");
 const resets = importThemeFile(theme, "resets.json");
 
 // output
-const outPath = `./public/`;
+const outPath = `./docs/`;
 const outFile = `${config.name}.${config.version}.css`;
 const outGuide = `${config.name}.${config.version}.html`;
 
@@ -43,6 +43,7 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 const styles = `${compiledResets}${compiledMolecules}${compiledAtoms}`;
 fs.writeFileSync(outPath + outFile, styles);
 fs.writeFileSync(outPath + outGuide, compiledPatterns);
+fs.writeFileSync(outPath + "index.html", compiledPatterns);
 
 console.log(compiledPatterns);
 
