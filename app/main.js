@@ -43,7 +43,7 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 const styles = `${compiledResets}${compiledMolecules}${compiledAtoms}`;
 fs.writeFileSync(outPath + outFile, styles);
 fs.writeFileSync(outPath + outGuide, compiledPatterns);
-fs.writeFileSync(outPath + "index.html", compiledPatterns);
+if (theme === "base") fs.writeFileSync(outPath + "index.html", compiledPatterns);
 
 console.log(compiledPatterns);
 
