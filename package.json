@@ -4,8 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "node app.js"
+    "build": "node ./app/main.js",
+    "clean": "rimraf ./public/*"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "rimraf": "^2.6.2"
+  }
 }
