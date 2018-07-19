@@ -216,6 +216,9 @@ a,button {
 .fs1 {
   font-size:1rem;
 }
+.icon-close {
+  background: url('icons/close.svg');
+}
 .inline-block {
   display:inline-block;
 }

@@ -20,7 +20,7 @@ Framework agnostic CSS library starter toolkit utilizing best practices
 
     npm build
 
-Workflow is based around the auto generated style guide. Start the app, edit code and checkout the style guide generated in the [docs folder](./docs)
+Workflow is based around the auto generated style guide. Start the app, edit code and checkout the style guide generated in the [public folder](./public)
 
 # Core Concepts
 

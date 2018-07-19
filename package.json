@@ -4,9 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "node ./app/main.js",
-    "build:custom": "node ./app/main.js custom",
-    "clean": "rimraf ./docs/*"
+    "build": "node ./tasks/build.js",
+    "clean": "rimraf ./index.html"
   },
   "author": "",
   "license": "ISC",
