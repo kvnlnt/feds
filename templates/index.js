@@ -8,7 +8,7 @@ module.exports = (stylesheet, menu, body) => {
     </head>
     <body>
         <div class="columns">
-            <aside class="column flex-col-4">${menu}</aside>
+            <aside class="column flex-col-1-4th">${menu}</aside>
             <div class="column">${body}</div>
         </div>
     </body>

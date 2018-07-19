@@ -31,19 +31,20 @@ const outGuide = `${config.name}.${config.version}.html`;
 const precompiledAtoms = compiler.precompileAtoms(atoms, compiler.interpolate, params);
 const precompiledMolecules = compiler.precompileMolecules(molecules, precompiledAtoms);
 const precompiledResets = compiler.precompileResets(resets);
+const precompiledMenu = compiler.precompileMenu(patterns);
 const precompiledPatterns = compiler.precompilePatterns(patterns);
 
 // compile
 const compiledAtoms = compiler.compileRules(precompiledAtoms).join("");
 const compiledMolecules = compiler.compileRules(precompiledMolecules).join("");
-const compiledPatterns = template(outFile, precompiledPatterns.links.join(""), precompiledPatterns.markup.join(""));
+const compiledGuide = template(outFile, precompiledMenu.join(""), precompiledPatterns.join(""));
 const compiledResets = compiler.compileRules(precompiledResets).join("");
 
 // render
 const styles = `${compiledResets}${compiledMolecules}${compiledAtoms}`;
 fs.writeFileSync(outPath + outFile, styles);
-fs.writeFileSync(outPath + outGuide, compiledPatterns);
-if (theme === "base") fs.writeFileSync(outPath + "index.html", compiledPatterns);
+fs.writeFileSync(outPath + outGuide, compiledGuide);
+if (theme === "base") fs.writeFileSync(outPath + "index.html", compiledGuide);
 
 // Running time
 console.timeEnd("Styler");

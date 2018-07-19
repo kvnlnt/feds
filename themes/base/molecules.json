@@ -1,7 +1,7 @@
 {
-  "a": [".colorBlack"],
-  ".button": [".fs1", ".colorBlack"],
-  ".button--alert": [".fs1", ".colorWhite"],
+  "a,button": [".color-black", ".cursor-pointer"],
+  ".button": [".fs1", ".color-black", ".color-bg-white", ".text-height-3", ".pad-horz-2", ".inline-block"],
+  ".button--alert": [".fs1", ".color-white", ".color-bg-alert"],
   ".columns": [".flex"],
   ".column": [".flex-col"]
 }
