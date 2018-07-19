@@ -1,4 +1,4 @@
-module.exports = (stylesheet, menu, body) => {
+module.exports = (stylesheet, menu, patterns) => {
     return `<!DOCTYPE html>
     <html>
     <head>
@@ -9,7 +9,11 @@ module.exports = (stylesheet, menu, body) => {
     <body>
         <div class="columns">
             <aside class="column flex-col-1-4th">${menu}</aside>
-            <div class="column">${body}</div>
+            <div class="column">
+            <h1>FEDS</h1>
+            <p>Front-end Design System</p>
+            ${patterns}
+            </div>
         </div>
     </body>
     </html>`;

@@ -1,7 +1,24 @@
 {
-  "a,button": [".color-black", ".cursor-pointer"],
-  ".button": [".fs1", ".color-black", ".color-bg-white", ".text-height-3", ".pad-horz-2", ".inline-block"],
-  ".button--alert": [".fs1", ".color-white", ".color-bg-alert"],
+  "a,button": [".text-color-black", ".cursor-pointer"],
+  ".button": [".text-size-1", ".text-color-black", ".bg-white", ".text-height-3", ".pad-horz-2", ".display-inline-block"],
+  ".button--alert": [".text-size-1", ".text-color-white", ".bg-alert"],
   ".columns": [".flex"],
-  ".column": [".flex-col"]
+  ".column": [".flex-col"],
+  "section": [".pad-vert-2"],
+  "blockquote": [],
+  "code": [],
+  "form": [],
+  "h1": [],
+  "h2": [],
+  "h3": [],
+  "h4": [],
+  "h5": [],
+  "hr": [],
+  ".list": [],
+  ".print": [],
+  "table": [],
+  ".box": [],
+  "section": [],
+  "nav": [],
+  "footer": []
 }

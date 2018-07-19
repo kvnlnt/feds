@@ -1,7 +1,5 @@
 const compileRules = rules => Object.entries(rules).map(mapRule);
-const mapRule = ([k, v]) => `${k} {\n${v.map(d => `  ${d}`).join(";\n")};\n}\n`;
-const tmplPattern = require("../templates/pattern");
-const tmplMenu = require("../templates/menu");
+const mapRule = ([k, v]) => `${k} { ${v.map(d => `${d}`).join(";")}; }\n`;
 
 const interpolate = (val, params) => {
   const regVar = /\$\{.*?\}/;
@@ -17,16 +15,12 @@ const precompileAtoms = (atoms = {}, fn, params = {}) => {
   }, {});
 };
 
-const precompileMenu = patterns => Object.entries(patterns).map(([k, v]) => tmplMenu(v));
-
 const precompileMolecules = (molecules, atoms) => {
   return Object.keys(molecules).reduce((acc, curr) => {
     acc[curr] = [].concat(...molecules[curr].map(c => atoms[c]));
     return acc;
   }, {});
 };
-
-const precompilePatterns = patterns => Object.entries(patterns).map(([k, v]) => tmplPattern(v));
 
 const precompileResets = resets => {
   return Object.keys(resets).reduce((acc, curr) => {
@@ -39,8 +33,6 @@ module.exports = {
   compileRules: compileRules,
   interpolate: interpolate,
   precompileAtoms: precompileAtoms,
-  precompileMenu: precompileMenu,
   precompileMolecules: precompileMolecules,
-  precompilePatterns: precompilePatterns,
   precompileResets: precompileResets
 };

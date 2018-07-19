@@ -1,7 +1,7 @@
 const compiler = require("./compiler");
+const guide = require("./guide");
 const fs = require("fs");
 const theme = process.argv[2] || "base";
-const template = require("../templates/index");
 
 // setup
 console.time("Styler");
@@ -37,23 +37,16 @@ const precompiledMolecules = compiler.precompileMolecules(
   precompiledAtoms
 );
 const precompiledResets = compiler.precompileResets(resets);
-const precompiledMenu = compiler.precompileMenu(patterns);
-const precompiledPatterns = compiler.precompilePatterns(patterns);
 
 // compile
 const compiledAtoms = compiler.compileRules(precompiledAtoms).join("");
 const compiledMolecules = compiler.compileRules(precompiledMolecules).join("");
-const compiledPatterns = template(
-  outPath + outFile,
-  precompiledMenu.join(""),
-  precompiledPatterns.join("")
-);
 const compiledResets = compiler.compileRules(precompiledResets).join("");
 
 // render
 const styles = `${compiledResets}${compiledMolecules}${compiledAtoms}`;
 fs.writeFileSync(outPath + outFile, styles);
-if (theme === "base") fs.writeFileSync("index.html", compiledPatterns);
+if (theme === "base") fs.writeFileSync("./index.html", guide.render(outPath + outFile, patterns));
 
 // Running time
 console.timeEnd("Styler");

@@ -1,6 +1,9 @@
 {
     "color-black": "black",
-    "color-white": "white",
+    "color-blue": "blue",
+    "color-green": "green",
     "color-red": "red",
+    "color-white": "white",
+    "color-yellow": "yellow",
     "unit": "rem"
 }
