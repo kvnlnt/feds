@@ -5,7 +5,8 @@ const interpolate = (val, params) => {
   const regVar = /\$\{.*?\}/;
   const regVarVal = /\$\{(.*?)\}/;
   if (!regVar.test(val)) return val;
-  return val.replace(regVar, params[regVarVal.exec(val)[1]]);
+  const param = `params["${regVarVal.exec(val)[1].split('.').join('"]["')}"]`;
+  return val.replace(regVar, eval(param));
 };
 
 const precompileAtoms = (atoms = {}, fn, params = {}) => {

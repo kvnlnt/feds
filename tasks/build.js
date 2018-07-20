@@ -17,15 +17,14 @@ const importStyleConfig = (t, f) => {
 
 const importFonts = fonts =>
   Object.entries(fonts)
-    .map(([k, v]) => fs.readFileSync("./public/fonts/" + v, "utf-8"))
-    .join("");
+  .map(([k, v]) => fs.readFileSync("./public/fonts/" + v, "utf-8"))
+  .join("");
 
 // theme files
 const config = importStyleConfig(theme, "config.json");
 const params = importStyleConfig(theme, "params.json");
 const atoms = importStyleConfig(theme, "atoms.json");
 const molecules = importStyleConfig(theme, "molecules.json");
-const patterns = importStyleConfig(theme, "patterns.json");
 const resets = importStyleConfig(theme, "resets.json");
 const fonts = importStyleConfig(theme, "fonts.json");
 
@@ -55,7 +54,7 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 const styles = `${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
 fs.writeFileSync(outPath + outFile, styles);
 if (theme === "base")
-  fs.writeFileSync("./index.html", guide.render(outPath + outFile, patterns));
+  fs.writeFileSync("./index.html", guide.render(outPath + outFile));
 
 // Running time
 console.timeEnd("Styler");

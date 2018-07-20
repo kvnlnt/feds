@@ -1,21 +1,11 @@
 const tmplIndex = require("../templates/index");
-const tmplPattern = require("../templates/pattern");
-const tmplMenu = require("../templates/menu");
+const fs = require("fs");
+const menu = fs.readFileSync("./templates/menu.html", "utf-8");
+const buttons = fs.readFileSync("./templates/buttons.html", "utf-8");
+const colors = fs.readFileSync("./templates/colors.html", "utf-8");
 
-const renderPattern = ([k, v]) => `<h3>${v.name}</h3><div>${v.markup}</div>`;
-const renderSection = ([k, v]) =>
-  `<section><h2>${k}</h2>${Object.entries(v)
-    .map(renderPattern)
-    .join("")}</section>`;
-
-const render = (stylesheet, patterns) => {
-  const menu = Object.entries(patterns)
-    .map(([k, v]) => tmplMenu(k))
-    .join("");
-  const sections = Object.entries(patterns)
-    .map(renderSection)
-    .join("");
-  const tmpl = tmplIndex(stylesheet, menu, sections);
+const render = (stylesheet) => {
+  const tmpl = tmplIndex(stylesheet, menu, colors + buttons);
   return tmpl;
 };
 
