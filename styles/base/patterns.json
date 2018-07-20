@@ -8,5 +8,11 @@
       "name": "Alert Button",
       "markup": "<a class=\"button button--alert\">Button</a>"
     }
-  }
+  },
+  "Colors": {},
+  "Forms": {},
+  "Grids": {},
+  "Navigations": {},
+  "Tables": {},
+  "Typography": {}
 }

@@ -1,5 +1,5 @@
 module.exports = (stylesheet, menu, patterns) => {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <html>
     <head>
         <meta charset="UTF-8">
@@ -8,9 +8,9 @@ module.exports = (stylesheet, menu, patterns) => {
     </head>
     <body>
         <div class="columns">
-            <aside class="column flex-col-1-4th">${menu}</aside>
-            <div class="column">
-            <h1>FEDS</h1>
+            <aside class="column flex-col-1-4th pad-3">${menu}</aside>
+            <div class="column pad-top-3">
+            <h1 class="mrgn-top-0">FEDS</h1>
             <p>Front-end Design System</p>
             ${patterns}
             </div>

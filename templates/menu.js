@@ -1,3 +1,3 @@
-module.exports = (name) => {
-    return `<a href="#${name}" class="text-height-3 text-indent-1 block">${name}</a>`;
+module.exports = name => {
+  return `<a href="#${name}" class="text-size-2 text-height-4 text-indent-2 block">${name}</a>`;
 };

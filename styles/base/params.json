@@ -1,9 +1,11 @@
 {
-    "color-black": "black",
-    "color-blue": "blue",
-    "color-green": "green",
-    "color-red": "red",
-    "color-white": "white",
-    "color-yellow": "yellow",
-    "unit": "rem"
+  "color-black": "black",
+  "color-blue": "blue",
+  "color-green": "green",
+  "color-red": "red",
+  "color-white": "white",
+  "color-yellow": "yellow",
+  "unit": "rem",
+  "font-open-sans": "OpenSans",
+  "font-open-sans-italic": "OpenSansItalic"
 }
