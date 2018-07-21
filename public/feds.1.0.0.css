@@ -79,7 +79,11 @@ template { display:none; }
 .button.large { line-height:4rem; }
 .button.medium { line-height:3.2rem; }
 .button.small { line-height:2.4rem; }
+.button.danger { color:#FFFFFF;background-color:hsl(358,80%,46%);border-color:hsl(358,80%,46%); }
+.button.danger:hover { background-color:#FFFFFF;color:hsl(358,80%,46%); }
+.button.danger:active { opacity:0.5; }
 .button.secondary { color:hsl(212, 64%, 49%);background-color:#FFFFFF; }
+.button.secondary:hover { background-color:hsl(212, 70%, 40%);transition: all 0.3s;color:#FFFFFF; }
 .button.secondary:active { color:hsl(212, 64%, 49%);background-color:#FFFFFF;box-shadow:0 1px 5px rgba(0, 0, 0, 0.3); }
 .button.secondary.disabled { color:hsl(219, 22%, 25%);border-width:1px;border-style:solid;border-color:#FFFFFF;background-color:#FFFFFF; }
 .button.secondary.disabled:hover { color:hsl(219, 22%, 25%);border-width:1px;border-style:solid;border-color:#FFFFFF;background-color:#FFFFFF; }
@@ -112,6 +116,7 @@ table { undefined; }
 .bdr-bot-2 { border-bottom-width:2px;border-style:solid; }
 .bdr-bot-3 { border-bottom-width:3px;border-style:solid; }
 .bdr-bot-color-primary { border-bottom-color:hsl(212, 64%, 49%); }
+.bdr-color-danger { border-color:hsl(358,80%,46%); }
 .bdr-color-grey-light { border-color:hsl(218,8%,48%); }
 .bdr-color-primary { border-color:hsl(212, 64%, 49%); }
 .bdr-color-white { border-color:#FFFFFF; }
@@ -132,7 +137,7 @@ table { undefined; }
 .bdr-top-2 { border-top-width:2px;border-style:solid; }
 .bdr-top-3 { border-top-width:3px;border-style:solid; }
 .bdr-top-color-primary { border-top-color:hsl(212, 64%, 49%); }
-.bg-error { background-color:hsl(358,80%,46%); }
+.bg-danger { background-color:hsl(358,80%,46%); }
 .bg-black { background-color:hsl(230,45%,10%); }
 .bg-grey { background-color:hsl(219, 22%, 25%); }
 .bg-grey-light { background-color:hsl(218,8%,48%); }
@@ -260,7 +265,7 @@ table { undefined; }
 .tbl--full { width:100%; }
 .tbl--fixed { table-layout:fixed; }
 .text-align-center { text-align:center; }
-.text-color-error { color:hsl(358,80%,46%); }
+.text-color-danger { color:hsl(358,80%,46%); }
 .text-color-black { color:hsl(230,45%,10%); }
 .text-color-grey { color:hsl(219, 22%, 25%); }
 .text-color-grey-light { color:hsl(218,8%,48%); }

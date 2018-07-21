@@ -21,7 +21,15 @@
   ".button.large": [".text-height-xl"],
   ".button.medium": [".text-height-l"],
   ".button.small": [".text-height-m"],
+  ".button.danger": [".text-color-white", ".bg-danger", ".bdr-color-danger"],
+  ".button.danger:hover": [".bg-white", ".text-color-danger"],
+  ".button.danger:active": [".opac-50"],
   ".button.secondary": [".text-color-primary", ".bg-white"],
+  ".button.secondary:hover": [
+    ".bg-secondary",
+    ".trans-all-fast",
+    ".text-color-white"
+  ],
   ".button.secondary:active": [".text-color-primary", ".bg-white", ".shadow-s"],
   ".button.secondary.disabled": [
     ".text-color-grey",
