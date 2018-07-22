@@ -1,5 +1,6 @@
 {
-  ".box": [""],
+  "a": [".text-color-primary", ".cursor-pointer"],
+  ".box": [".pad-2", ".shadow-s"],
   ".button": [
     ".bdr-1",
     ".bdr-color-primary",
@@ -54,9 +55,8 @@
   ".columns": [".flex", ".flex-dir-row"],
   ".list": [""],
   ".print": [""],
-  "a": [".text-color-primary", ".cursor-pointer"],
   "blockquote": [""],
-  "code": [""],
+  "code": [".text-size-s"],
   "footer": [""],
   "form": [""],
   "h1": [".text-size-xxl", ".text-font-primary", ".text-font-primary-bold"],
@@ -66,7 +66,7 @@
   "h5": [".text-size-s", ".text-font-primary", ".text-font-primary-bold"],
   "hr": [""],
   "nav": [""],
-  "p": [".text-size-m", ".text-color-black"],
+  "p": [".text-size-m", ".text-color-grey"],
   "section": [".pad-vert-2"],
   "section": [""],
   "small": ["text-size-s"],
