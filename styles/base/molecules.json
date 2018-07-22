@@ -10,7 +10,8 @@
     ".text-height-4",
     ".text-size-m",
     ".bdr-radius-4",
-    ".text-nowrap"
+    ".text-nowrap",
+    ".text-height-xl"
   ],
   ".button:focus": [".bg-secondary", ".trans-all-fast", ".text-color-white"],
   ".button:hover": [".bg-secondary", ".trans-all-fast", ".text-color-white"],
@@ -50,7 +51,7 @@
     ".bg-white"
   ],
   ".column": [".flex-col"],
-  ".columns": [".flex"],
+  ".columns": [".flex", ".flex-dir-row"],
   ".list": [""],
   ".print": [""],
   "a": [".text-color-primary", ".cursor-pointer"],
@@ -69,5 +70,6 @@
   "section": [".pad-vert-2"],
   "section": [""],
   "small": ["text-size-s"],
-  "table": [""]
+  "table": [""],
+  "ul": [".text-size-m"]
 }
