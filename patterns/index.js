@@ -3,7 +3,7 @@ module.exports = (stylesheet, menu, patterns) => {
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>styleER</title>
+        <title>FEDS</title>
         <link rel="stylesheet" type="text/css" href="${stylesheet}"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/blackboard.min.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
