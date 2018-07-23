@@ -1,18 +1,19 @@
 {
   "a": [".text-color-primary", ".cursor-pointer"],
-  ".box": [".pad-2", ".shadow-s"],
+  ".box": [".pad-s", ".shadow-s"],
   ".button": [
-    ".bdr-1",
+    ".bdr-xs",
     ".bdr-color-primary",
     ".bg-primary",
     ".inline-block",
-    ".pad-horz-2",
+    ".pad-horz-s",
     ".text-color-white",
-    ".text-height-4",
+    ".text-height-l",
     ".text-size-m",
-    ".bdr-radius-4",
+    ".bdr-radius-l",
     ".text-nowrap",
-    ".text-height-xl"
+    ".text-height-xl",
+    ".text-align-center"
   ],
   ".button:focus": [".bg-secondary", ".trans-all-fast", ".text-color-white"],
   ".button:hover": [".bg-secondary", ".trans-all-fast", ".text-color-white"],
@@ -20,7 +21,7 @@
   ".button.disabled": [".bg-grey-light", ".opac-50", ".bdr-color-grey-light"],
   ".button.disabled:hover": [".bg-grey-light", ".opac-50"],
   ".button.disabled:active": [".bg-grey-light", ".opac-50"],
-  ".button.large": [".text-height-xl"],
+  ".button.large": [".text-size-l", ".text-height-xxl"],
   ".button.medium": [".text-height-l"],
   ".button.small": [".text-height-m"],
   ".button.danger": [".text-color-white", ".bg-danger", ".bdr-color-danger"],
@@ -35,19 +36,19 @@
   ".button.secondary:active": [".text-color-primary", ".bg-white", ".shadow-s"],
   ".button.secondary.disabled": [
     ".text-color-grey",
-    ".bdr-1",
+    ".bdr-xs",
     ".bdr-color-white",
     ".bg-white"
   ],
   ".button.secondary.disabled:hover": [
     ".text-color-grey",
-    ".bdr-1",
+    ".bdr-xs",
     ".bdr-color-white",
     ".bg-white"
   ],
   ".button.secondary.disabled:active": [
     ".text-color-grey",
-    ".bdr-1",
+    ".bdr-xs",
     ".bdr-color-white",
     ".bg-white"
   ],
@@ -57,6 +58,7 @@
   ".print": [""],
   "blockquote": [""],
   "code": [".text-size-s"],
+  "em": [".text-font-primary-italic"],
   "footer": [""],
   "form": [""],
   "h1": [".text-size-xxl", ".text-font-primary", ".text-font-primary-bold"],
@@ -66,10 +68,12 @@
   "h5": [".text-size-s", ".text-font-primary", ".text-font-primary-bold"],
   "hr": [""],
   "nav": [""],
-  "p": [".text-size-m", ".text-color-grey"],
-  "section": [".pad-vert-2"],
+  "p": [".text-size-m", ".text-height-m", ".text-color-grey"],
+  "section": [".pad-vert-s"],
   "section": [""],
-  "small": ["text-size-s"],
+  "small": [".text-size-s"],
+  "strong": [".text-font-primary-bold"],
+  "strong > em, em > strong": [".text-font-primary-bold-italic"],
   "table": [""],
   "ul": [".text-size-m"]
 }

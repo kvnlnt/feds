@@ -6,7 +6,7 @@ const colors = fs.readFileSync("./patterns/colors.html", "utf-8");
 const typography = fs.readFileSync("./patterns/typography.html", "utf-8");
 
 const render = stylesheet => {
-  const tmpl = tmplIndex(stylesheet, menu, colors + buttons + typography);
+  const tmpl = tmplIndex(stylesheet, menu, buttons + colors + typography);
   return tmpl;
 };
 

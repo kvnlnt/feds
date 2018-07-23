@@ -20,8 +20,8 @@
     "position:relative",
     "vertical-align:baseline"
   ],
-  "sub": ["bottom:-0.25em"],
-  "sup": ["top:-0.5em"],
+  "sub": ["bottom:-none.25em"],
+  "sup": ["top:-none.5em"],
   "img": ["border-style:none"],
   "button,input,optgroup,select,textarea": [
     "font-family:inherit",
@@ -58,7 +58,7 @@
     "padding:0"
   ],
   "[type=\"number\"]::-webkit-inner-spin-button": ["height:auto"],
-  "[type=\"search\"]": ["-webkit-appearance: textfield", "outline-offset:-2px"],
+  "[type=\"search\"]": ["-webkit-appearance: textfield", "outline-offset:-spx"],
   "[type=\"search\"]::-webkit-search-decoration": ["-webkit-appearance: none"],
   "::-webkit-file-upload-button": [
     "-webkit-appearance: button",

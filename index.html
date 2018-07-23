@@ -10,157 +10,206 @@
     </head>
     <body>
         <div class="columns">
-            <aside class="column pad-3" style="flex: 0 0 200px"><a href="#Buttons" class="text-size-l text-height-xl text-indent-2 block">Buttons</a>
+            <aside class="column pad-m" style="flex: 0 0 200px"><a href="#Buttons" class="text-size-l text-height-xl text-indent-2 block">Buttons</a>
 <a href="#Colors" class="text-size-l text-height-xl text-indent-2 block">Colors</a>
 <a href="#Forms" class="text-size-l text-height-xl text-indent-2 block">Forms</a>
 <a href="#Grids" class="text-size-l text-height-xl text-indent-2 block">Grids</a>
 <a href="#Navigations" class="text-size-l text-height-xl text-indent-2 block">Navigations</a>
 <a href="#Tables" class="text-size-l text-height-xl text-indent-2 block">Tables</a>
 <a href="#Typography" class="text-size-l text-height-xl text-indent-2 block">Typography</a></aside>
-            <div class="column pad-top-3 pad-rgt-5">
-            <h1 class="mrgn-top-0">FEDS</h1>
+            <div class="column pad-top-m pad-rgt-l">
+            <h1 class="mrgn-top-none">FEDS</h1>
             <p class="text-size-l text-color-grey-light">Front-end Design System</p>
-            <div class="mrgn-vert-5">
+            <div class="mrgn-vert-xl">
+  <h2 id="Buttons">Buttons</h2>
+  <h3>Styles</h3>
+  <div class=" box ">
+    <a class="button ">Primary</a>
+    <a class="button secondary ">Secondary</a>
+    <a class="button danger ">Danger</a>
+  </div>
+
+  <pre class=" ">
+  <code data-language="html">
+  <a class="button ">Primary</a>
+  <a class="button secondary ">Secondary</a>
+  <a class="button danger ">Danger</a></code>
+  </pre>
+
+  <h3>Sizes</h3>
+  <div class="box ">
+    <a class="button large ">Large Button</a>
+    <a class="button ">Default Button</a>
+    <a class="button medium ">Medium Button</a>
+    <a class="button small ">Small Button</a>
+  </div>
+
+  <pre class=" ">
+  <code data-language="html">
+  <a class="button large ">Large Button</a>
+  <a class="button ">Default Button</a>
+  <a class="button medium ">Medium Button</a>
+  <a class="button small ">Small Button</a></code>
+  </pre>
+
+  <h3>States</h3>
+  <div class="box ">
+    <a class="button ">Active</a>
+    <a class="button disabled ">Disabled</a>
+    <a class="button secondary ">Active</a>
+    <a class="button secondary disabled ">Disabled</a>
+  </div>
+
+  <pre class=" ">
+  <code data-language="html">
+  <a class="button ">Active</a>
+  <a class="button disabled ">Disabled</a>
+  <a class="button secondary ">Active</a>
+  <a class="button secondary disabled ">Disabled</a></code>
+  </pre>
+</div><div class="mrgn-vert-xl">
     <h2 id="Colors">Colors</h2>
     <h3>Atoms</h3>
     <h4>Backgrounds</h4>
     <p>Background colors will only set the color of the background. Therefore
         <code>.text-color-*</code> classes must be used in conjunction with them.</p>
     <div class="box">
-        <div class="bg-primary text-height-xl text-color-white text-size-m text-indent-2">.bg-primary</div>
-        <div class="bg-primary-light text-height-xl text-color-white text-size-m text-indent-2">.bg-primary-light</div>
-        <div class="bg-secondary text-height-xl text-color-white text-size-m text-indent-2">.bg-secondary</div>
-        <div class="bg-success text-height-xl text-color-white text-size-m text-indent-2">.bg-success</div>
-        <div class="bg-danger text-height-xl text-color-white text-size-m text-indent-2">.bg-danger</div>
-        <div class="bg-black text-height-xl text-color-white text-size-m text-indent-2">.bg-black</div>
-        <div class="bg-grey text-height-xl text-color-white text-size-m text-indent-2">.bg-grey</div>
-        <div class="bg-grey-light text-height-xl text-color-white text-size-m text-indent-2">.bg-grey-light</div>
+        <div class="bg-primary text-height-xl text-color-white text-size-m text-indent-m">.bg-primary</div>
+        <div class="bg-primary-light text-height-xl text-color-white text-size-m text-indent-m">.bg-primary-light</div>
+        <div class="bg-secondary text-height-xl text-color-white text-size-m text-indent-m">.bg-secondary</div>
+        <div class="bg-success text-height-xl text-color-white text-size-m text-indent-m">.bg-success</div>
+        <div class="bg-danger text-height-xl text-color-white text-size-m text-indent-m">.bg-danger</div>
+        <div class="bg-black text-height-xl text-color-white text-size-m text-indent-m">.bg-black</div>
+        <div class="bg-grey text-height-xl text-color-white text-size-m text-indent-m">.bg-grey</div>
+        <div class="bg-grey-light text-height-xl text-color-white text-size-m text-indent-m">.bg-grey-light</div>
     </div>
-
-    <h4 class="mrgn-top-3">Text</h4>
+    <h3 class="mrgn-top-3">Text</h3>
     <div class="box">
-        <div class="text-color-primary text-height-m text-size-m text-indent-2">.text-color-primary</div>
-        <div class="text-color-primary-light text-height-m text-size-m text-indent-2">.text-color-primary-light</div>
-        <div class="text-color-secondary text-height-m text-size-m text-indent-2">.text-color-secondary</div>
-        <div class="text-color-success text-height-m text-size-m text-indent-2">.text-color-success</div>
-        <div class="text-color-danger text-height-m text-size-m text-indent-2">.text-color-danger</div>
-        <div class="text-color-black text-height-m text-size-m text-indent-2">.text-color-black</div>
-        <div class="text-color-grey text-height-m text-size-m text-indent-2">.text-color-grey</div>
-        <div class="text-color-grey-light text-height-m text-size-m text-indent-2">.text-color-grey-light</div>
+        <div class="text-color-primary text-height-m text-size-m text-indent-m">.text-color-primary</div>
+        <div class="text-color-primary-light text-height-m text-size-m text-indent-m">.text-color-primary-light</div>
+        <div class="text-color-secondary text-height-m text-size-m text-indent-m">.text-color-secondary</div>
+        <div class="text-color-success text-height-m text-size-m text-indent-m">.text-color-success</div>
+        <div class="text-color-danger text-height-m text-size-m text-indent-m">.text-color-danger</div>
+        <div class="text-color-black text-height-m text-size-m text-indent-m">.text-color-black</div>
+        <div class="text-color-grey text-height-m text-size-m text-indent-m">.text-color-grey</div>
+        <div class="text-color-grey-light text-height-m text-size-m text-indent-m">.text-color-grey-light</div>
     </div>
 
-</div><div class="mrgn-vert-5">
-  <h2 id="Buttons">Buttons</h2>
-  <h3>Molecules</h3>
-  <h4>Styles</h4>
-  <div class="box">
-    <a class="button">Primary</a>
-    <a class="button secondary">Secondary</a>
-    <a class="button danger">Danger</a>
-  </div>
-
-  <pre class="">
-  <code data-language="html">
-  <a class="button">Primary</a>
-  <a class="button secondary">Secondary</a>
-  <a class="button danger">Danger</a></code>
-  </pre>
-
-  <h4>Sizes</h4>
-  <div class="box">
-    <a class="button">Large Button</a>
-    <a class="button medium">Medium Button</a>
-    <a class="button small">Small Button</a>
-  </div>
-
-  <pre class="">
-  <code data-language="html">
-    <a class="button">Large Button</a>
-    <a class="button medium">Medium Button</a>
-    <a class="button small">Small Button</a></code>
-  </pre>
-
-  <h4>States</h4>
-  <div class="box">
-    <a class="button">Active</a>
-    <a class="button disabled">Disabled</a>
-    <a class="button secondary">Active</a>
-    <a class="button secondary disabled">Disabled</a>
-  </div>
-
-  <pre class="">
-  <code data-language="html">
-    <a class="button">Active</a>
-    <a class="button disabled">Disabled</a>
-    <a class="button secondary">Active</a>
-    <a class="button secondary disabled">Disabled</a></code>
-  </pre>
-</div><div class="mrgn-vert-5">
+</div><div class="mrgn-vert-xl">
   <h2 id="Typography">Typography</h2>
-  <h3>Atoms</h3>
-  <h4>Colors</h4>
+  <h3>Headers</h3>
   <div class="box">
-    <div class="text-color-primary text-height-m text-size-m text-indent-2">.text-color-primary</div>
-    <div class="text-color-primary-light text-height-m text-size-m text-indent-2">.text-color-primary-light</div>
-    <div class="text-color-secondary text-height-m text-size-m text-indent-2">.text-color-secondary</div>
-    <div class="text-color-success text-height-m text-size-m text-indent-2">.text-color-success</div>
-    <div class="text-color-danger text-height-m text-size-m text-indent-2">.text-color-danger</div>
-    <div class="text-color-black text-height-m text-size-m text-indent-2">.text-color-black</div>
-    <div class="text-color-grey text-height-m text-size-m text-indent-2">.text-color-grey</div>
-    <div class="text-color-grey-light text-height-m text-size-m text-indent-2">.text-color-grey-light</div>
+    <h1 class="mrgn-none">H1 Header</h1>
+    <h2>H2 Header</h2>
+    <h3>H3 Header</h3>
+    <h4>H4 Header</h4>
+    <h5>H5 Header</h5>
   </div>
-  <pre class="">
+  <pre>
   <code data-language="html">
-  <div class="text-color-primary">.text-color-primary</div>
-  <div class="text-color-primary-light">.text-color-primary-light</div>
-  <div class="text-color-secondary">.text-color-secondary</div>
-  <div class="text-color-success">.text-color-success</div>
-  <div class="text-color-danger">.text-color-danger</div>
-  <div class="text-color-black">.text-color-black</div>
-  <div class="text-color-grey">.text-color-grey</div>
-  <div class="text-color-grey-light">.text-color-grey-light</div></code>
+  <h1>H1 Header</h1>
+  <h2>H2 Header</h2>
+  <h3>H3 Header</h3>
+  <h4>H4 Header</h4>
+  <h5>H5 Header</h5></code>
   </pre>
-  <h4>Sizes</h4>
+  <h3>Text</h3>
   <div class="box">
-    <div class="text-size-xxl text-height-xxl text-indent-2">Giant Text</div>
-    <div class="text-size-xl text-height-xl text-indent-2">Extra Large Text</div>
-    <div class="text-size-l text-height-l text-indent-2">Large Text</div>
-    <div class="text-size-m text-height-l text-indent-2">Medium Text</div>
-    <div class="text-size-s text-height-l text-indent-2">Small Text</div>
-    <div class="text-size-xs text-height-m text-indent-2">Extra Small Text</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada, risus ipsum sodales
+      est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a felis bibendum aliquet aliquam sit amet
+      nisl. Quisque vel tempus leo.</p>
+    <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat. Integer quis neque mollis
+      diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet pellentesque. Ut sodales, massa in finibus
+      bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc. Maecenas efficitur volutpat ex, ut accumsan velit
+      tincidunt euismod. Nulla vulputate quis est eget consectetur.</p>
   </div>
-  <pre class="">
+  <pre>
   <code data-language="html">
-  <div class="text-size-xxl">Giant Text</div>
-  <div class="text-size-xl">Extra Large Text</div>
-  <div class="text-size-l">Large Text</div>
-  <div class="text-size-m">Medium Text</div>
-  <div class="text-size-s">Small Text</div>
-  <div class="text-size-xs">Extra Small Text</div></code>
+  <p>Lorem ipsum dolor...</p>
+  <p>Etiam at venenatis sapien...</p></code>
   </pre>
-  <h4>Fonts</h4>
+  <!-- <h4>Acronyms</h4>
+  <h4>Lead</h4>
+  <h4>Quote</h4> -->
+  <h3>Utility</h3>
+  <h3>Colors</h3>
   <div class="box">
-    <div class="text-size-xxl text-height-xxl text-indent-2">Open Sans - Regular</div>
-    <div class="text-size-xxl text-height-xxl text-indent-2 text-font-primary-italic">Open Sans - Italic</div>
-    <div class="text-size-xxl text-height-xxl text-indent-2 text-font-primary-bold">Open Sans - Bold</div>
-    <div class="text-size-xxl text-height-xxl text-indent-2 text-font-primary-bold-italic">Open Sans - Bold Italic</div>
+    <div class="text-color-primary text-height-m text-size-m text-indent-2 ">.text-color-primary</div>
+    <div class="text-color-primary-light text-height-m text-size-m text-indent-2 ">.text-color-primary-light</div>
+    <div class="text-color-secondary text-height-m text-size-m text-indent-2 ">.text-color-secondary</div>
+    <div class="text-color-success text-height-m text-size-m text-indent-2 ">.text-color-success</div>
+    <div class="text-color-danger text-height-m text-size-m text-indent-2 ">.text-color-danger</div>
+    <div class="text-color-black text-height-m text-size-m text-indent-2 ">.text-color-black</div>
+    <div class="text-color-grey text-height-m text-size-m text-indent-2 ">.text-color-grey</div>
+    <div class="text-color-grey-light text-height-m text-size-m text-indent-2 ">.text-color-grey-light</div>
   </div>
-  <pre class="">
+  <pre>
   <code data-language="html">
-  <div class="text-font-primary">Open Sans - Regular</div>
-  <div class="text-font-primary-italic">Open Sans - Italic</div>
-  <div class="text-font-primary-bold">Open Sans - Bold</div>
-  <div class="text-font-primary-bold-italic">Open Sans - Bold Italic</div></code>
+  <div class="text-color-primary ">.text-color-primary</div>
+  <div class="text-color-primary-light ">.text-color-primary-light</div>
+  <div class="text-color-secondary ">.text-color-secondary</div>
+  <div class="text-color-success ">.text-color-success</div>
+  <div class="text-color-danger ">.text-color-danger</div>
+  <div class="text-color-black ">.text-color-black</div>
+  <div class="text-color-grey ">.text-color-grey</div>
+  <div class="text-color-grey-light ">.text-color-grey-light</div></code>
   </pre>
-  <h4>Styles</h4>
-  <h4>Leading</h4>
-  <h4>Alignment</h4>
-  <h3>Molecules</h3>
-  <h4>Headers</h4>
-  <h5>Acronyms</h5>
-  <h5>Lead</h5>
-  <h5>Quote</h5>
-  <h4>Utility</h4>
+  <h3>Sizes</h3>
+  <div class="box">
+    <div class="text-size-xxl text-height-xxl text-indent-2 ">Giant Text</div>
+    <div class="text-size-xl text-height-xl text-indent-2 ">Extra Large Text</div>
+    <div class="text-size-l text-height-l text-indent-2 ">Large Text</div>
+    <div class="text-size-m text-height-l text-indent-2 ">Medium Text</div>
+    <div class="text-size-s text-height-l text-indent-2 ">Small Text</div>
+    <div class="text-size-xs text-height-m text-indent-2 ">Extra Small Text</div>
+  </div>
+  <pre>
+  <code data-language="html">
+  <div class="text-size-xxl ">Giant Text</div>
+  <div class="text-size-xl ">Extra Large Text</div>
+  <div class="text-size-l ">Large Text</div>
+  <div class="text-size-m ">Medium Text</div>
+  <div class="text-size-s ">Small Text</div>
+  <div class="text-size-xs ">Extra Small Text</div></code>
+  </pre>
+  <h3>Fonts</h3>
+  <div class="box">
+    <div class="text-size-xl text-height-xl text-indent-2 ">Open Sans - Regular</div>
+    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-italic ">Open Sans - Italic</div>
+    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold ">Open Sans - Bold</div>
+    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold-italic ">Open Sans - Bold Italic</div>
+  </div>
+  <pre>
+  <code data-language="html">
+  <div class="text-font-primary ">Open Sans - Regular</div>
+  <div class="text-font-primary-italic ">Open Sans - Italic</div>
+  <div class="text-font-primary-bold ">Open Sans - Bold</div>
+  <div class="text-font-primary-bold-italic ">Open Sans - Bold Italic</div></code>
+  </pre>
+  <h3>Styles</h3>
+  <div class="box">
+    <p class="text-size-l">Regular Text</p>
+    <p class="text-size-l">
+      <em>Italicized Text</em>
+    </p>
+    <p class="text-size-l">
+      <strong>Strong Text</strong>
+    </p>
+    <p class="text-size-l">
+      <strong>
+        <em>Strong Italicized Text</em>
+      </strong>
+    </p>
+  </div>
+  <pre>
+  <code data-language="html">
+  <p>Regular Text</p>
+  <p><em>Italicized Text</em></p>
+  <p><strong>Strong Text</strong></p>
+  <p><strong><em>Strong Italicized Text</em></strong></p></code>
+  </pre>
+  <h3>Leading</h3>
+  <h3>Alignment</h3>
 </div>
             </div>
         </div>
