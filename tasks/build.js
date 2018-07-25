@@ -54,7 +54,7 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 const styles = `${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
 fs.writeFileSync(outPath + outFile, styles);
 if (theme === "base")
-  fs.writeFileSync("./index.html", guide.render(outPath + outFile));
+  fs.writeFileSync("./index.html", guide(outPath + outFile));
 
 // Running time
 console.timeEnd("Styler");

@@ -1,73 +1,105 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>FEDS</title>
-        <link rel="stylesheet" type="text/css" href="./public/feds.1.0.0.css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/blackboard.min.css"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
-    </head>
-    <body>
-        <div class="columns">
-            <aside class="column pad-m" style="flex: 0 0 200px"><a href="#Buttons" class="text-size-l text-height-xl text-indent-2 block">Buttons</a>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FEDS</title>
+    <link rel="stylesheet" type="text/css" href="./public/feds.1.0.0.css" />
+    <style>
+        pre {
+            margin: 5px 0;
+            padding: 10px;
+            color: hsl(218, 8%, 48%);
+            background-color: #f9f9f9;
+            opacity: 0.5;
+        }
+
+        pre:hover {
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        code {
+            font-family: 'Monaco', courier, monospace;
+        }
+
+        pre .support {
+            color: #666666;
+        }
+
+        pre .string {
+            color: hsl(212, 64%, 49%);
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+</head>
+
+<body>
+    <a id="top" href="#" class="button secondary medium pos-fix" onclick="document.body.scrollTop=0" style="display:none; bottom:20px; left:20px;">TOP</a>
+    <div class="columns">
+        <aside class="column pad-m" style="flex: 0 0 200px">
+            <a href="#Buttons" class="text-size-l text-height-xl text-indent-2 block">Buttons</a>
 <a href="#Colors" class="text-size-l text-height-xl text-indent-2 block">Colors</a>
 <a href="#Forms" class="text-size-l text-height-xl text-indent-2 block">Forms</a>
 <a href="#Grids" class="text-size-l text-height-xl text-indent-2 block">Grids</a>
 <a href="#Navigations" class="text-size-l text-height-xl text-indent-2 block">Navigations</a>
 <a href="#Tables" class="text-size-l text-height-xl text-indent-2 block">Tables</a>
-<a href="#Typography" class="text-size-l text-height-xl text-indent-2 block">Typography</a></aside>
-            <div class="column pad-top-m pad-rgt-l">
+<a href="#Typography" class="text-size-l text-height-xl text-indent-2 block">Typography</a>
+        </aside>
+        <div class="column pad-top-m pad-rgt-l">
             <h1 class="mrgn-top-none">FEDS</h1>
             <p class="text-size-l text-color-grey-light">Front-end Design System</p>
             <div class="mrgn-vert-xl">
   <h2 id="Buttons">Buttons</h2>
-  <h3>Styles</h3>
-  <div class=" box ">
-    <a class="button ">Primary</a>
-    <a class="button secondary ">Secondary</a>
-    <a class="button danger ">Danger</a>
+  <h3>Types</h3>
+  <div class="box">
+    <a class="button">Primary</a>
+    <a class="button secondary">Secondary</a>
+    <a class="button danger">Danger</a>
   </div>
 
-  <pre class=" ">
+  <pre>
   <code data-language="html">
-  <a class="button ">Primary</a>
-  <a class="button secondary ">Secondary</a>
-  <a class="button danger ">Danger</a></code>
+  <a class="button">Primary</a>
+  <a class="button secondary">Secondary</a>
+  <a class="button danger">Danger</a></code>
   </pre>
 
   <h3>Sizes</h3>
-  <div class="box ">
-    <a class="button large ">Large Button</a>
-    <a class="button ">Default Button</a>
-    <a class="button medium ">Medium Button</a>
-    <a class="button small ">Small Button</a>
+  <div class="box">
+    <a class="button large">Large Button</a>
+    <a class="button">Default Button</a>
+    <a class="button medium">Medium Button</a>
+    <a class="button small">Small Button</a>
   </div>
 
-  <pre class=" ">
+  <pre>
   <code data-language="html">
-  <a class="button large ">Large Button</a>
-  <a class="button ">Default Button</a>
-  <a class="button medium ">Medium Button</a>
-  <a class="button small ">Small Button</a></code>
+  <a class="button large">Large Button</a>
+  <a class="button">Default Button</a>
+  <a class="button medium">Medium Button</a>
+  <a class="button small">Small Button</a></code>
   </pre>
 
   <h3>States</h3>
-  <div class="box ">
-    <a class="button ">Active</a>
-    <a class="button disabled ">Disabled</a>
-    <a class="button secondary ">Active</a>
-    <a class="button secondary disabled ">Disabled</a>
+  <div class="box">
+    <a class="button">Primary Active</a>
+    <a class="button disabled">Primary Disabled</a>
+    <a class="button secondary">Secondary Active</a>
+    <a class="button secondary disabled">Secondary Disabled</a>
   </div>
 
-  <pre class=" ">
+  <pre>
   <code data-language="html">
-  <a class="button ">Active</a>
-  <a class="button disabled ">Disabled</a>
-  <a class="button secondary ">Active</a>
-  <a class="button secondary disabled ">Disabled</a></code>
+  <a class="button">Active</a>
+  <a class="button disabled">Disabled</a>
+  <a class="button secondary">Active</a>
+  <a class="button secondary disabled">Disabled</a></code>
   </pre>
-</div><div class="mrgn-vert-xl">
+</div>
+            <div class="mrgn-vert-xl">
     <h2 id="Colors">Colors</h2>
     <h3>Atoms</h3>
     <h4>Backgrounds</h4>
@@ -94,8 +126,8 @@
         <div class="text-color-grey text-height-m text-size-m text-indent-m">.text-color-grey</div>
         <div class="text-color-grey-light text-height-m text-size-m text-indent-m">.text-color-grey-light</div>
     </div>
-
-</div><div class="mrgn-vert-xl">
+</div>
+            <div class="mrgn-vert-xl">
   <h2 id="Typography">Typography</h2>
   <h3>Headers</h3>
   <div class="box">
@@ -211,7 +243,22 @@
   <h3>Leading</h3>
   <h3>Alignment</h3>
 </div>
-            </div>
         </div>
-    </body>
-    </html>
+    </div>
+    <script>
+        var topEl = document.getElementById("top");
+        var isAtTop = true;
+        document.addEventListener("scroll", function () {
+            if (window.scrollY > 200 && isAtTop) {
+                topEl.style.display = 'block';
+                isAtTop = false;
+            }
+            if (window.scrollY < 200 && !isAtTop) {
+                topEl.style.display = 'none';
+                isAtTop = true;
+            }
+        });
+    </script>
+</body>
+
+</html>

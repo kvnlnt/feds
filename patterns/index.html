@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FEDS</title>
+    <link rel="stylesheet" type="text/css" href="<!-- STYLESHEET -->" />
+    <style>
+        pre {
+            margin: 5px 0;
+            padding: 10px;
+            color: hsl(218, 8%, 48%);
+            background-color: #f9f9f9;
+            opacity: 0.5;
+        }
+
+        pre:hover {
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        code {
+            font-family: 'Monaco', courier, monospace;
+        }
+
+        pre .support {
+            color: #666666;
+        }
+
+        pre .string {
+            color: hsl(212, 64%, 49%);
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+</head>
+
+<body>
+    <a id="top" href="#" class="button secondary medium pos-fix" onclick="document.body.scrollTop=0" style="display:none; bottom:20px; left:20px;">TOP</a>
+    <div class="columns">
+        <aside class="column pad-m" style="flex: 0 0 200px">
+            <!-- MENU -->
+        </aside>
+        <div class="column pad-top-m pad-rgt-l">
+            <h1 class="mrgn-top-none">FEDS</h1>
+            <p class="text-size-l text-color-grey-light">Front-end Design System</p>
+            <!-- BUTTONS -->
+            <!-- COLORS -->
+            <!-- TYPOGRAPHY -->
+        </div>
+    </div>
+    <script>
+        var topEl = document.getElementById("top");
+        var isAtTop = true;
+        document.addEventListener("scroll", function () {
+            if (window.scrollY > 200 && isAtTop) {
+                topEl.style.display = 'block';
+                isAtTop = false;
+            }
+            if (window.scrollY < 200 && !isAtTop) {
+                topEl.style.display = 'none';
+                isAtTop = true;
+            }
+        });
+    </script>
+</body>
+
+</html>

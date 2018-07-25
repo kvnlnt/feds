@@ -70,7 +70,7 @@ template { display:none; }
 [hidden] { display:none; }
 a { color:hsl(212, 64%, 49%);cursor:pointer; }
 .box { padding:2rem;box-shadow:0 1px 5px rgba(0, 0, 0, 0.3); }
-.button { border-width:1px;border-style:solid;border-color:hsl(212, 64%, 49%);background-color:hsl(212, 64%, 49%);display:inline-block;padding-left:2rem;padding-right:2rem;color:#FFFFFF;line-height:3.2rem;font-size:1.4rem;border-radius:4px;white-space:nowrap;line-height:4rem;text-align:center; }
+.button { border-width:1px;border-style:solid;border-color:hsl(212, 64%, 49%);background-color:hsl(212, 64%, 49%);display:inline-block;padding-left:2rem;padding-right:2rem;color:#FFFFFF;line-height:3.2rem;font-size:1.4rem;border-radius:4px;white-space:nowrap;line-height:4rem;text-align:center;text-decoration:none; }
 .button:focus { background-color:hsl(212, 70%, 40%);transition: all 0.3s;color:#FFFFFF; }
 .button:hover { background-color:hsl(212, 70%, 40%);transition: all 0.3s;color:#FFFFFF; }
 .button:active { opacity:0.7;transition: all 0.3s;box-shadow:0 1px 5px rgba(0, 0, 0, 0.3); }
@@ -89,12 +89,12 @@ a { color:hsl(212, 64%, 49%);cursor:pointer; }
 .button.secondary.disabled { color:hsl(219, 22%, 25%);border-width:1px;border-style:solid;border-color:#FFFFFF;background-color:#FFFFFF; }
 .button.secondary.disabled:hover { color:hsl(219, 22%, 25%);border-width:1px;border-style:solid;border-color:#FFFFFF;background-color:#FFFFFF; }
 .button.secondary.disabled:active { color:hsl(219, 22%, 25%);border-width:1px;border-style:solid;border-color:#FFFFFF;background-color:#FFFFFF; }
+code { font-size:1.3rem; }
 .column { flex:1; }
 .columns { display:flex;flex-direction:row; }
 .list { undefined; }
 .print { undefined; }
 blockquote { undefined; }
-code { font-size:1.3rem; }
 em { font-family:OpenSansItalic, Arial;font-style:italic; }
 footer { undefined; }
 form { undefined; }
@@ -106,6 +106,7 @@ h5 { font-size:1.3rem;font-family:OpenSans, Arial;font-family:OpenSansBold, Aria
 hr { undefined; }
 nav { undefined; }
 p { font-size:1.4rem;line-height:2.4rem;color:hsl(219, 22%, 25%); }
+pre { white-space: pre; }
 section { undefined; }
 small { font-size:1.3rem; }
 strong { font-family:OpenSansBold, Arial; }
@@ -128,6 +129,7 @@ ul { font-size:1.4rem; }
 .bdr-lft-s { border-left-width:2px;border-style:solid; }
 .bdr-lft-m { border-left-width:3px;border-style:solid; }
 .bdr-lft-color-primary { border-left-color:hsl(212, 64%, 49%); }
+.bdr-radius-none { border-radius:0px; }
 .bdr-radius-xs { border-radius:1px; }
 .bdr-radius-s { border-radius:2px; }
 .bdr-radius-m { border-radius:3px; }
@@ -262,6 +264,9 @@ ul { font-size:1.4rem; }
 .pad-lft-m { padding-left:3rem; }
 .pad-lft-l { padding-left:4rem; }
 .pad-lft-xl { padding-left:5rem; }
+.pos-abs { position:absolute; }
+.pos-fix { position:fixed; }
+.pos-rel { position:relative; }
 .shadow-s { box-shadow:0 1px 5px rgba(0, 0, 0, 0.3); }
 .tbl { display:table; }
 .tbl-row { display:table-row; }
@@ -269,6 +274,9 @@ ul { font-size:1.4rem; }
 .tbl--full { width:100%; }
 .tbl--fixed { table-layout:fixed; }
 .text-align-center { text-align:center; }
+.text-case-lower { text-transform:lowercase; }
+.text-case-title { text-transform:capitalize; }
+.text-case-upper { text-transform:uppercase; }
 .text-color-danger { color:hsl(358,80%,46%); }
 .text-color-black { color:hsl(230,45%,10%); }
 .text-color-grey { color:hsl(219, 22%, 25%); }
@@ -280,6 +288,7 @@ ul { font-size:1.4rem; }
 .text-color-success { color:hsl(158, 100%, 26%); }
 .text-color-warn { color:hsl(63, 74%, 69%); }
 .text-color-white { color:#FFFFFF; }
+.text-underline-none { text-decoration:none; }
 .text-font-primary { font-family:OpenSans, Arial; }
 .text-font-primary-bold { font-family:OpenSansBold, Arial; }
 .text-font-primary-italic { font-family:OpenSansItalic, Arial;font-style:italic; }
@@ -297,6 +306,7 @@ ul { font-size:1.4rem; }
 .text-indent-l { text-indent:2rem; }
 .text-indent-xl { text-indent:2.5rem; }
 .text-nowrap { white-space:nowrap; }
+.text-preformat { white-space: pre; }
 .text-size-xs { font-size:1.1rem; }
 .text-size-s { font-size:1.3rem; }
 .text-size-m { font-size:1.4rem; }

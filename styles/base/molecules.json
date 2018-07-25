@@ -13,7 +13,8 @@
     ".bdr-radius-l",
     ".text-nowrap",
     ".text-height-xl",
-    ".text-align-center"
+    ".text-align-center",
+    ".text-underline-none"
   ],
   ".button:focus": [".bg-secondary", ".trans-all-fast", ".text-color-white"],
   ".button:hover": [".bg-secondary", ".trans-all-fast", ".text-color-white"],
@@ -52,6 +53,7 @@
     ".bdr-color-white",
     ".bg-white"
   ],
+  "code": [".text-font-monospace", ".text-size-s"],
   ".column": [".flex-col"],
   ".columns": [".flex", ".flex-dir-row"],
   ".list": [""],
@@ -69,6 +71,7 @@
   "hr": [""],
   "nav": [""],
   "p": [".text-size-m", ".text-height-m", ".text-color-grey"],
+  "pre": [".text-preformat"],
   "section": [".pad-vert-s"],
   "section": [""],
   "small": [".text-size-s"],
