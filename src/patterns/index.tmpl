@@ -37,7 +37,9 @@
 </head>
 
 <body>
-    <a id="top" href="#" class="button secondary medium pos-fix" onclick="document.body.scrollTop=0" style="display:none; bottom:20px; left:20px;">TOP</a>
+    <a id="top" href="#" class="button secondary medium pos-fix hide" onclick="document.body.scrollTop=0" style="bottom:20px; left:20px;">TOP</a>
+    <div data-responsifier data-el="#top" data-watch="window" data-event="scroll" data-range="200,*" data-class-remove="hide"></div>
+    <div data-responsifier data-el="#top" data-watch="window" data-event="scroll" data-range="0,199" data-class-add="hide"></div>
     <div class="columns">
         <aside class="column pad-m" style="flex: 0 0 200px">
             <!-- MENU -->
@@ -50,20 +52,8 @@
             <!-- TYPOGRAPHY -->
         </div>
     </div>
-    <script>
-        var topEl = document.getElementById("top");
-        var isAtTop = true;
-        document.addEventListener("scroll", function () {
-            if (window.scrollY > 200 && isAtTop) {
-                topEl.style.display = 'block';
-                isAtTop = false;
-            }
-            if (window.scrollY < 200 && !isAtTop) {
-                topEl.style.display = 'none';
-                isAtTop = true;
-            }
-        });
-    </script>
+    <script src="public/scripts/feds.1.0.0.js"></script>
+
 </body>
 
 </html>

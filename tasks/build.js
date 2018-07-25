@@ -4,14 +4,13 @@ const fs = require("fs");
 const theme = process.argv[2] || "base";
 
 // setup
-console.time("Styler");
-if (!fs.existsSync("./public")) fs.mkdirSync("./public");
+console.time("FEDS");
 
 // helpers
 const importStyleConfig = (t, f) => {
-  let o = require(`../styles/base/${f}`);
-  const isCustom = t !== "base" && fs.existsSync(`./styles/${t}/${f}`);
-  if (isCustom) o = Object.assign(o, require(`../styles/${t}/${f}`));
+  let o = require(`../src/styles/base/${f}`);
+  const isCustom = t !== "base" && fs.existsSync(`./src/styles/${t}/${f}`);
+  if (isCustom) o = Object.assign(o, require(`../src/styles/${t}/${f}`));
   return o;
 };
 
@@ -29,8 +28,7 @@ const resets = importStyleConfig(theme, "resets.json");
 const fonts = importStyleConfig(theme, "fonts.json");
 
 // output
-const outPath = `./public/`;
-const outFile = `${config.name}.${config.version}.css`;
+const stylesFile = `public/styles/${config.name}.${config.version}.css`;
 
 // precompile
 const precompiledAtoms = compiler.precompileAtoms(
@@ -52,9 +50,9 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 
 // render
 const styles = `${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
-fs.writeFileSync(outPath + outFile, styles);
+fs.writeFileSync(stylesFile, styles);
 if (theme === "base")
-  fs.writeFileSync("./index.html", guide(outPath + outFile));
+  fs.writeFileSync("./index.html", guide(stylesFile));
 
 // Running time
-console.timeEnd("Styler");
+console.timeEnd("FEDS");
