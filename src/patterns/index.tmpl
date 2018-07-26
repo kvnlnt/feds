@@ -8,7 +8,6 @@
     <style>
         pre {
             margin: 5px 0;
-            padding: 10px;
             color: hsl(218, 8%, 48%);
             background-color: #f9f9f9;
             opacity: 0.5;
@@ -38,8 +37,6 @@
 
 <body>
     <a id="top" href="#" class="button secondary medium pos-fix hide" onclick="document.body.scrollTop=0" style="bottom:20px; left:20px;">TOP</a>
-    <div data-responsifier data-el="#top" data-watch="window" data-event="scroll" data-range="200,*" data-class-remove="hide"></div>
-    <div data-responsifier data-el="#top" data-watch="window" data-event="scroll" data-range="0,199" data-class-add="hide"></div>
     <div class="columns">
         <aside class="column pad-m" style="flex: 0 0 200px">
             <!-- MENU -->
@@ -52,7 +49,10 @@
             <!-- TYPOGRAPHY -->
         </div>
     </div>
-    <script src="public/scripts/feds.1.0.0.js"></script>
+
+    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="200,*" data-class-remove="hide"></div>
+    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="0,199" data-class-add="hide"></div>
+    <script src="scripts/feds.1.0.0.js"></script>
 
 </body>
 

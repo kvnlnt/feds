@@ -28,7 +28,7 @@ const resets = importStyleConfig(theme, "resets.json");
 const fonts = importStyleConfig(theme, "fonts.json");
 
 // output
-const stylesFile = `public/styles/${config.name}.${config.version}.css`;
+const stylesFile = `${config.name}.${config.version}.css`;
 
 // precompile
 const precompiledAtoms = compiler.precompileAtoms(
@@ -50,9 +50,9 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 
 // render
 const styles = `${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
-fs.writeFileSync(stylesFile, styles);
+fs.writeFileSync('./public/styles/' + stylesFile, styles);
 if (theme === "base")
-  fs.writeFileSync("./index.html", guide(stylesFile));
+  fs.writeFileSync("./public/index.html", guide('styles/' + stylesFile));
 
 // Running time
 console.timeEnd("FEDS");
