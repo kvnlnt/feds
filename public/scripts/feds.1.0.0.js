@@ -6,9 +6,9 @@ var feds = (function (m) {
         this.source = opts.source || this.target;
         this.event = opts.event || null;
         this.range = opts.range ? opts.range.split(",") : null;
-        this.classAdd = opts.classAdd ? opts.classAdd.split() : [];
-        this.classRemove = opts.classRemove ? opts.classRemove.split() : [];
-        this.classToggle = opts.classToggle ? opts.classToggle.split() : [];
+        this.classAdd = opts.add ? opts.add.split() : [];
+        this.classRemove = opts.remove ? opts.remove.split() : [];
+        this.classToggle = opts.toggle ? opts.toggle.split() : [];
         if (this.event === "scroll") this.source.addEventListener('scroll', this.handleScroll.bind(this));
         if (this.event === "hover") this.source.addEventListener('mouseover', this.handleHover.bind(this));
         if (this.event === "hover") this.source.addEventListener('mouseout', this.handleHover.bind(this));
@@ -36,12 +36,18 @@ var feds = (function (m) {
             this.toggleClasses();
         },
         handleResize: function (e) {
-            // TODO
+            var r0 = parseInt(this.range[0]);
+            var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
+            if (this.source.innerWidth >= r0 && this.source.innerWidth <= r1) {
+                this.addClasses();
+                this.removeClasses();
+            }
+            return this;
         },
         handleScroll: function (e) {
-            var low = parseInt(this.range[0]);
-            var high = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
-            if (this.source.scrollY >= low && this.source.scrollY <= high) {
+            var r0 = parseInt(this.range[0]);
+            var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
+            if (this.source.scrollY >= r0 && this.source.scrollY <= r1) {
                 this.addClasses();
                 this.removeClasses();
             }
@@ -77,9 +83,9 @@ var feds = (function (m) {
                     window : document.querySelector(i.dataset.source),
                 event: i.dataset.event,
                 range: i.dataset.range,
-                classAdd: i.dataset.classAdd,
-                classRemove: i.dataset.classRemove,
-                classToggle: i.dataset.classToggle
+                add: i.dataset.add,
+                remove: i.dataset.remove,
+                toggle: i.dataset.toggle
             });
         });
 

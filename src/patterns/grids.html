@@ -59,10 +59,42 @@
   </pre>
 
   <h3>Responsive</h3>
-  <div class="columns flex-dir-col text-align-center text-height-xl text-size-m text-color-white">
-    <div class="column bg-primary">Col 1</div>
-    <div class="column bg-primary-light">Col 2</div>
-    <div class="column bg-primary">Col 3</div>
+  <p>Responsive behaviors are provided by the
+    <a href="#Responsifier">Responsifier</a>. The following illustrates how it can be used to to create a responsive grid. Resize your browser to
+    stack/unstack grid items. To stack grid items, add the
+    <em>flex-dir-col</em> class.
+  </p>
+  <div class="box">
+    <div id="responsiveGrid" class="columns text-align-center text-height-xl text-size-m text-color-white">
+      <div class="column bg-primary">Col 1</div>
+      <div class="column bg-primary-light">Col 2</div>
+      <div class="column bg-primary">Col 3</div>
+    </div>
   </div>
+  <div data-responsifier data-target="#responsiveGrid" data-source="window" data-event="resize" data-range="0,1200" data-add="flex-dir-col"></div>
+  <div data-responsifier data-target="#responsiveGrid" data-source="window" data-event="resize" data-range="1201,*" data-remove="flex-dir-col"></div>
+  <pre>
+    <code data-language="html">
+    <div id="responsiveGridExample" class="columns">
+      <div class="column bg-primary">Col 1</div>
+      <div class="column bg-primary-light">Col 2</div>
+      <div class="column bg-primary">Col 3</div>
+    </div>
+    &lt;div 
+      data-responsifier
+      data-target="#responsiveGridExample" 
+      data-source="window" 
+      data-event="resize" 
+      data-range="0,1200" 
+      data-add="flex-dir-col">&lt;/div&gt;
+    &lt;div 
+      data-responsifier 
+      data-target="#responsiveGridExample" 
+      data-source="window" 
+      data-event="resize" 
+      data-range="1201,*" 
+      data-remove="flex-dir-col"&gt;&lt;/div&gt;
+  </code>
+  </pre>
 
 </div>

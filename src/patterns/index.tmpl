@@ -11,6 +11,7 @@
             color: hsl(218, 8%, 48%);
             background-color: #f9f9f9;
             opacity: 0.5;
+            max-width: 100%;
         }
 
         pre:hover {
@@ -52,8 +53,8 @@
         </div>
     </div>
 
-    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="200,*" data-class-remove="hide"></div>
-    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="0,199" data-class-add="hide"></div>
+    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="200,*" data-remove="hide"></div>
+    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="0,199" data-add="hide"></div>
     <script src="scripts/feds.1.0.0.js"></script>
 
 </body>
