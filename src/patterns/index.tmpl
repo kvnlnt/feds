@@ -5,44 +5,18 @@
     <meta charset="UTF-8">
     <title>FEDS</title>
     <link rel="stylesheet" type="text/css" href="<!-- STYLESHEET -->" />
-    <style>
-        pre {
-            margin: 5px 0;
-            color: hsl(218, 8%, 48%);
-            background-color: #f9f9f9;
-            opacity: 0.5;
-            max-width: 100%;
-        }
-
-        pre:hover {
-            opacity: 1;
-            transition: all 0.5s;
-        }
-
-        code {
-            font-family: 'Monaco', courier, monospace;
-        }
-
-        pre .support {
-            color: #666666;
-        }
-
-        pre .string {
-            color: hsl(212, 64%, 49%);
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles/guide.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
 </head>
 
 <body>
     <a id="top" href="#" class="button secondary medium pos-fix hide" onclick="document.body.scrollTop=0" style="bottom:20px; left:20px;">TOP</a>
-    <div class="columns">
+    <div id="layout" class="columns">
         <aside class="column pad-m" style="flex: 0 0 200px">
             <!-- MENU -->
         </aside>
-        <div class="column pad-top-m pad-rgt-l">
+        <div id="layout-content" class="column pad-top-m pad-rgt-l">
             <h1 class="mrgn-top-none">FEDS</h1>
             <p class="text-size-l text-color-grey-light">Front-end Design System</p>
             <!-- BUTTONS -->
@@ -52,11 +26,15 @@
             <!-- TYPOGRAPHY -->
         </div>
     </div>
-
+    <div data-responsifier data-target="#layout" data-source="window" data-event="resize" data-range="0,900" data-add="flex-dir-col"></div>
+    <div data-responsifier data-target="#layout" data-source="window" data-event="resize" data-range="901,*" data-remove="flex-dir-col"></div>
+    <div data-responsifier data-target="#layout-content" data-source="window" data-event="resize" data-range="0,900" data-add="pad-l"
+        data-remove="pad-top-m,pad-rgt-l"></div>
+    <div data-responsifier data-target="#layout-content" data-source="window" data-event="resize" data-range="901,*" data-add="pad-top-m,pad-rgt-l"
+        data-remove="pad-l"></div>
     <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="200,*" data-remove="hide"></div>
     <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="0,199" data-add="hide"></div>
     <script src="scripts/feds.1.0.0.js"></script>
-
 </body>
 
 </html>

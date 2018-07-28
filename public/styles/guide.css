@@ -1,0 +1,26 @@
+pre {
+  margin: 5px 0;
+  color: hsl(218, 8%, 48%);
+  background-color: #f9f9f9;
+  opacity: 0.5;
+  max-width: 100%;
+  white-space: pre-wrap;
+}
+
+pre:hover {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+code {
+  font-family: "Monaco", courier, monospace;
+}
+
+pre .support {
+  color: #666666;
+}
+
+pre .string {
+  color: hsl(212, 64%, 49%);
+  font-weight: bold;
+}
