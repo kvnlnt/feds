@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/guide.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
     <script src="scripts/feds.1.0.0.js"></script>
     <script src="scripts/guide.js"></script>
 </head>
@@ -172,8 +173,7 @@
       <div class="column bg-primary">Col 3</div>
     </div>
   </div>
-  <div data-responsifier data-target="#responsiveGrid" data-source="window" data-event="resize" data-range="0,999" data-add="flex-dir-col"></div>
-  <div data-responsifier data-target="#responsiveGrid" data-source="window" data-event="resize" data-range="1000,*" data-remove="flex-dir-col"></div>
+  <h4>HTML</h4>
   <pre>
     <code data-language="html">
     <div id="responsiveGridExample" class="columns">
@@ -181,20 +181,28 @@
       <div class="column bg-primary-light">Col 2</div>
       <div class="column bg-primary">Col 3</div>
     </div>
-    &lt;div 
-      data-responsifier
-      data-target="#responsiveGridExample" 
-      data-source="window" 
-      data-event="resize" 
-      data-range="0,1200" 
-      data-add="flex-dir-col">&lt;/div&gt;
-    &lt;div 
-      data-responsifier 
-      data-target="#responsiveGridExample" 
-      data-source="window" 
-      data-event="resize" 
-      data-range="1201,*" 
-      data-remove="flex-dir-col"&gt;&lt;/div&gt;
+  </code>
+  </pre>
+  <h4>JS</h4>
+  <pre>
+    <code data-language="js">
+    new feds.ContainerQuery({
+      target: document.querySelector("#responsiveGrid"),
+      queries: [
+        {
+          source: window,
+          event: "resize",
+          range: [0, 799],
+          add: ["flex-dir-col"]
+        },
+        {
+          source: window,
+          event: "resize",
+          range: [800, "*"],
+          remove: ["flex-dir-col"]
+        }
+      ]
+    });
   </code>
   </pre>
 </div>
@@ -319,15 +327,6 @@
 </div>
         </div>
     </div>
-    <!-- <div data-responsifier data-target="#layout" data-source="window" data-event="resize" data-range="0,900" data-add="flex-dir-col"></div>
-    <div data-responsifier data-target="#layout" data-source="window" data-event="resize" data-range="901,*" data-remove="flex-dir-col"></div>
-    <div data-responsifier data-target="#layout-content" data-source="window" data-event="resize" data-range="0,900" data-add="pad-l"
-        data-remove="pad-top-m,pad-rgt-l"></div>
-    <div data-responsifier data-target="#layout-content" data-source="window" data-event="resize" data-range="901,*" data-add="pad-top-m,pad-rgt-l"
-        data-remove="pad-l"></div>
-    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="200,*" data-remove="hide"></div>
-    <div data-responsifier data-target="#top" data-source="window" data-event="scroll" data-range="0,199" data-add="hide"></div>
-     -->
 </body>
 
 </html>

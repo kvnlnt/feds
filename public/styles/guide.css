@@ -4,7 +4,7 @@ pre {
   background-color: #f9f9f9;
   opacity: 0.5;
   max-width: 100%;
-  white-space: pre-wrap;
+  overflow-x: auto;
 }
 
 pre:hover {
@@ -14,6 +14,8 @@ pre:hover {
 
 code {
   font-family: "Monaco", courier, monospace;
+  width: 400px;
+  display: block;
 }
 
 pre .support {

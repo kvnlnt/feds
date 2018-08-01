@@ -69,8 +69,7 @@
       <div class="column bg-primary">Col 3</div>
     </div>
   </div>
-  <div data-responsifier data-target="#responsiveGrid" data-source="window" data-event="resize" data-range="0,999" data-add="flex-dir-col"></div>
-  <div data-responsifier data-target="#responsiveGrid" data-source="window" data-event="resize" data-range="1000,*" data-remove="flex-dir-col"></div>
+  <h4>HTML</h4>
   <pre>
     <code data-language="html">
     <div id="responsiveGridExample" class="columns">
@@ -78,20 +77,28 @@
       <div class="column bg-primary-light">Col 2</div>
       <div class="column bg-primary">Col 3</div>
     </div>
-    &lt;div 
-      data-responsifier
-      data-target="#responsiveGridExample" 
-      data-source="window" 
-      data-event="resize" 
-      data-range="0,1200" 
-      data-add="flex-dir-col">&lt;/div&gt;
-    &lt;div 
-      data-responsifier 
-      data-target="#responsiveGridExample" 
-      data-source="window" 
-      data-event="resize" 
-      data-range="1201,*" 
-      data-remove="flex-dir-col"&gt;&lt;/div&gt;
+  </code>
+  </pre>
+  <h4>JS</h4>
+  <pre>
+    <code data-language="js">
+    new feds.ContainerQuery({
+      target: document.querySelector("#responsiveGrid"),
+      queries: [
+        {
+          source: window,
+          event: "resize",
+          range: [0, 799],
+          add: ["flex-dir-col"]
+        },
+        {
+          source: window,
+          event: "resize",
+          range: [800, "*"],
+          remove: ["flex-dir-col"]
+        }
+      ]
+    });
   </code>
   </pre>
 </div>
