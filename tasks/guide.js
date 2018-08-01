@@ -1,8 +1,9 @@
 const fs = require("fs");
 let index = fs.readFileSync("./src/patterns/index.tmpl", "utf-8");
 
-module.exports = stylesheet => {
+module.exports = (stylesheet, script) => {
   index = index.replace("<!-- STYLESHEET -->", stylesheet);
+  index = index.replace("<!-- SCRIPT -->", script);
   index = index.replace(
     "<!-- BUTTONS -->",
     fs.readFileSync("./src/patterns/buttons.html", "utf-8")

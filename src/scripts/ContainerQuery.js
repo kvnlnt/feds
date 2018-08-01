@@ -1,4 +1,3 @@
-var feds = {};
 var feds = (function(m) {
   function ContainerQuery(opts) {
     var opts = opts || {};

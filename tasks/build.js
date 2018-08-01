@@ -16,10 +16,10 @@ const importStyleConfig = (t, f) => {
 
 const importFonts = fonts =>
   Object.entries(fonts)
-  .map(([k, v]) => fs.readFileSync("./public/fonts/" + v, "utf-8"))
-  .join("");
+    .map(([k, v]) => fs.readFileSync("./public/fonts/" + v, "utf-8"))
+    .join("");
 
-// theme files
+// import style (& theme) files
 const config = importStyleConfig(theme, "config.json");
 const params = importStyleConfig(theme, "params.json");
 const atoms = importStyleConfig(theme, "atoms.json");
@@ -27,10 +27,7 @@ const molecules = importStyleConfig(theme, "molecules.json");
 const resets = importStyleConfig(theme, "resets.json");
 const fonts = importStyleConfig(theme, "fonts.json");
 
-// output
-const stylesFile = `${config.name}.${config.version}.css`;
-
-// precompile
+// precompile assets
 const precompiledAtoms = compiler.precompileAtoms(
   atoms,
   compiler.interpolate,
@@ -50,9 +47,24 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 
 // render
 const styles = `${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
-fs.writeFileSync('./public/styles/' + stylesFile, styles);
+const scripts =
+  fs.readFileSync("./src/scripts/namespacer.js", "utf-8") +
+  fs.readFileSync("./src/scripts/ContainerQuery.js", "utf-8");
+
+// output
+const stylesFile = `${config.name}.${config.version}.css`;
+const stylesFileLatest = `${config.name}.latest.css`;
+const scriptFile = `${config.name}.${config.version}.js`;
+const scriptFileLatest = `${config.name}.latest.js`;
+fs.writeFileSync("./public/styles/" + stylesFile, styles);
+fs.writeFileSync("./public/styles/" + stylesFileLatest, styles);
+fs.writeFileSync("./public/scripts/" + scriptFile, scripts);
+fs.writeFileSync("./public/scripts/" + scriptFileLatest, scripts);
 if (theme === "base")
-  fs.writeFileSync("./public/index.html", guide('styles/' + stylesFile));
+  fs.writeFileSync(
+    "./public/index.html",
+    guide("styles/" + stylesFileLatest, "scripts/" + scriptFileLatest)
+  );
 
 // Running time
 console.timeEnd("FEDS");
