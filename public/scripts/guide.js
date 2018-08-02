@@ -125,5 +125,22 @@ document.addEventListener("DOMContentLoaded", function () {
     ]
   });
 
+  new feds.ContainerQuery({
+    target: document.querySelectorAll("#responsiveUIContent .column:nth-child(-n+2)"),
+    queries: [{
+        source: window,
+        event: "resize",
+        range: [0, 799],
+        add: ["half"]
+      },
+      {
+        source: window,
+        event: "resize",
+        range: [800, "*"],
+        remove: ["half"]
+      }
+    ]
+  });
+
 
 });

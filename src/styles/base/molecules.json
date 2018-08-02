@@ -60,7 +60,7 @@
   ".column.fourth": [".flex-col-fourth"],
   ".column.fifth": [".flex-col-fifth"],
   ".column.sixth": [".flex-col-sixth"],
-  ".columns": [".flex", ".flex-dir-row"],
+  ".columns": [".flex", ".flex-dir-row", ".flex-wrap"],
   ".list": [""],
   ".print": [""],
   "blockquote": [""],

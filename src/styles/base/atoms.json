@@ -60,6 +60,7 @@
   ".flex-align-start": ["align-items:flex-start"],
   ".flex-align-center": ["align-items:center"],
   ".flex-justify-center": ["justify-content:center"],
+  ".flex-wrap": ["flex-wrap:wrap"],
   ".grid": ["display:grid"],
   ".icon-close": ["background: url('icons/close.svg')"],
   ".mrgn-none": ["margin:0"],

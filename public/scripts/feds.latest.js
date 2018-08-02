@@ -1,82 +1,94 @@
 var feds = {};
-var feds = (function(m) {
+var feds = (function (m) {
   function ContainerQuery(opts) {
     var opts = opts || {};
-    this.target = opts.target;
+    this.target = opts.target.length === void 0 ? [opts.target] : Array.prototype.slice.call(opts.target);
     this.queries = opts.queries;
     this.locked = [];
     this.registerListeners().init();
   }
 
   ContainerQuery.prototype = {
-    classesAdd: function(list) {
+    classesAdd: function (list) {
       var that = this;
       if (!list) return this;
-      list.forEach(function(i) {
-        if (!that.classIsLocked(i)) that.target.classList.add(i);
+      list.forEach(function (i) {
+        if (!that.classIsLocked(i)) {
+          that.target.forEach(function (t) {
+            t.classList.add(i)
+          });
+        }
       });
       return this;
     },
-    classIsLocked: function(i) {
+    classIsLocked: function (i) {
       return this.locked.indexOf(i) > -1;
     },
-    classesLock: function(list) {
+    classesLock: function (list) {
       var that = this;
       if (!list) return this;
-      list.forEach(function(i) {
+      list.forEach(function (i) {
         if (!that.classIsLocked(i)) that.locked.push(i);
       });
       return this;
     },
-    classesRemove: function(list) {
+    classesRemove: function (list) {
       var that = this;
       if (!list) return this;
-      list.forEach(function(i) {
-        if (!that.classIsLocked(i)) that.target.classList.remove(i);
+      list.forEach(function (i) {
+        if (!that.classIsLocked(i)) {
+          that.target.forEach(function (t) {
+            t.classList.remove(i)
+          });
+        }
       });
       return this;
     },
-    classesToggle: function(list) {
+    classesToggle: function (list) {
       var that = this;
       if (!list) return this;
-      list.forEach(function(i) {
-        if (!that.classIsLocked(i)) that.target.classList.toggle(i);
+      list.forEach(function (i) {
+        if (!that.classIsLocked(i)) {
+          that.target.forEach(function (t) {
+            t.classList.toggle(i)
+          });
+        }
       });
       return this;
     },
-    classesUnlock: function(list) {
+    classesUnlock: function (list) {
       var that = this;
       if (!list) return this;
-      list.forEach(function(i) {
+      list.forEach(function (i) {
         that.locked.splice(that.locked.indexOf(i), 1);
       });
       return this;
     },
-    handleClick: function(query) {
+    handleClick: function (query) {
       this.process(query);
       return this;
     },
-    handleResize: function(query) {
+    handleResize: function (query) {
       var r0 = parseInt(query.range[0]);
       var r1 = parseInt(query.range[1] === "*" ? 100000 : query.range[1]);
       if (query.source.innerWidth >= r0 && query.source.innerWidth <= r1)
         this.process(query);
       return this;
     },
-    handleScroll: function(query) {
+    handleScroll: function (query) {
       var r0 = parseInt(query.range[0]);
       var r1 = parseInt(query.range[1] === "*" ? 100000 : query.range[1]);
       if (query.source.scrollY >= r0 && query.source.scrollY <= r1)
         this.process(query);
       return this;
     },
-    init: function() {
-      this.queries.forEach(function(i) {
+    init: function () {
+      this.queries.forEach(function (i) {
         if (i.event === "scroll") i.source.dispatchEvent(new Event("scroll"));
         if (i.event === "resize") i.source.dispatchEvent(new Event("resize"));
       });
     },
-    process: function(query) {
+    process: function (query) {
       if (query.unlock) this.classesUnlock(query.unlock);
       if (query.add) this.classesAdd(query.add);
       if (query.remove) this.classesRemove(query.remove);
@@ -84,9 +96,9 @@ var feds = (function(m) {
       if (query.lock) this.classesLock(query.lock);
       return this;
     },
-    registerListeners: function() {
+    registerListeners: function () {
       var that = this;
-      this.queries.forEach(function(i) {
+      this.queries.forEach(function (i) {
         var scroll = that.handleScroll.bind(that, i);
         var resize = that.handleResize.bind(that, i);
         var click = that.handleClick.bind(that, i);
