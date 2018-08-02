@@ -161,6 +161,12 @@ ul { font-size:1.4rem; }
 .block { display:block; }
 .inline-block { display:inline-block; }
 .hide { display:none; }
+.height-xs { height:1.6rem; }
+.height-s { height:1.8rem; }
+.height-m { height:2.4rem; }
+.height-l { height:3.2rem; }
+.height-xl { height:4rem; }
+.height-xxl { height:5rem; }
 .flex-col-half { flex:0 0 50%; }
 .flex-col-fifth { flex:0 0 20%; }
 .flex-col-fourth { flex:0 0 25%; }
@@ -280,6 +286,7 @@ ul { font-size:1.4rem; }
 .tbl--full { width:100%; }
 .tbl--fixed { table-layout:fixed; }
 .text-align-center { text-align:center; }
+.text-align-right { text-align:right; }
 .text-case-lower { text-transform:lowercase; }
 .text-case-title { text-transform:capitalize; }
 .text-case-upper { text-transform:uppercase; }
