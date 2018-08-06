@@ -1,116 +1,225 @@
 var feds = {};
-var feds = (function (m) {
+(function (m) {
+
   function ContainerQuery(opts) {
     var opts = opts || {};
-    this.target = opts.target.length === void 0 ? [opts.target] : Array.prototype.slice.call(opts.target);
-    this.queries = opts.queries;
-    this.locked = [];
-    this.registerListeners().init();
+    this.add = opts.add || [];
+    this.debounceTime = opts.debounce || 200;
+    this.event = opts.event;
+    this.lock = opts.lock || [];
+    this.observable = this.constructObservable(opts.observable);
+    this.observer = opts.observer ? this.constructObserver(opts.observer) : this.observable;
+    this.range = opts.range || [0, 0];
+    this.remove = opts.remove || [];
+    this.toggle = opts.toggle || [];
+    this.unlock = opts.unlock || [];
   }
 
   ContainerQuery.prototype = {
-    classesAdd: function (list) {
+    classAdd: function (i) {
       var that = this;
-      if (!list) return this;
-      list.forEach(function (i) {
-        if (!that.classIsLocked(i)) {
-          that.target.forEach(function (t) {
-            t.classList.add(i)
-          });
-        }
+      this.observer.forEach(function (ii) {
+        if (!that.classIsLocked(ii, i)) ii.classList.add(i);
       });
-      return this;
     },
-    classIsLocked: function (i) {
-      return this.locked.indexOf(i) > -1;
+    classIsLocked: function (i, c) {
+      return i.dataset.locked ? i.dataset.locked.split(',').indexOf(c) > -1 : false;
     },
-    classesLock: function (list) {
+    classRemove: function (i) {
       var that = this;
-      if (!list) return this;
-      list.forEach(function (i) {
-        if (!that.classIsLocked(i)) that.locked.push(i);
+      this.observer.forEach(function (ii) {
+        if (!that.classIsLocked(ii, i)) ii.classList.remove(i);
       });
-      return this;
     },
-    classesRemove: function (list) {
+    classToggle: function (i) {
       var that = this;
-      if (!list) return this;
-      list.forEach(function (i) {
-        if (!that.classIsLocked(i)) {
-          that.target.forEach(function (t) {
-            t.classList.remove(i)
-          });
-        }
+      this.observer.forEach(function (ii) {
+        if (!that.classIsLocked(ii, i)) ii.classList.toggle(i);
       });
+    },
+    classesAdd: function () {
+      this.add.forEach(this.classAdd.bind(this));
       return this;
     },
-    classesToggle: function (list) {
+    classesLock: function () {
+      if (this.lock.length === 0) return;
       var that = this;
-      if (!list) return this;
-      list.forEach(function (i) {
-        if (!that.classIsLocked(i)) {
-          that.target.forEach(function (t) {
-            t.classList.toggle(i)
-          });
-        }
+      this.observer.forEach(function (ii) {
+        ii.dataset.locked = that.lock.join(',');
       });
+    },
+    classesRemove: function () {
+      this.remove.forEach(this.classRemove.bind(this));
       return this;
     },
-    classesUnlock: function (list) {
+    classesToggle: function () {
+      this.toggle.forEach(this.classToggle.bind(this));
+      return this;
+    },
+    classesUnlock: function () {
+      if (this.unlock.length === 0) return;
       var that = this;
-      if (!list) return this;
-      list.forEach(function (i) {
-        that.locked.splice(that.locked.indexOf(i), 1);
+      this.observer.forEach(function (i) {
+        var locked = i.dataset.locked ? i.dataset.locked.split(',') : [];
+        i.dataset.locked = locked
+          .filter(function (ii) {
+            return that.unlock.indexOf(ii) === -1;
+          })
+          .join(',');
       });
+    },
+    constructObserver: function (observer) {
+      if (observer === void 0) return null;
+      if (typeof observer === "string") return document.querySelectorAll(observer);
+      return observer.hasOwnProperty('length') ? observer : [observer];
+    },
+    constructObservable: function (observable) {
+      if (observable === void 0) return null;
+      if (typeof observable === "string") return document.querySelectorAll(observable);
+      return observable.length === 0 ? [observable] : observable;
+    },
+    debounce: function (func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this,
+          args = arguments;
+        var later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    },
+    handleClick: function (e) {
+      this.onClick();
       return this;
     },
-    handleClick: function (query) {
-      this.process(query);
+    handleHover: function (e) {
+      this.onHover();
       return this;
     },
-    handleResize: function (query) {
-      var r0 = parseInt(query.range[0]);
-      var r1 = parseInt(query.range[1] === "*" ? 100000 : query.range[1]);
-      if (query.source.innerWidth >= r0 && query.source.innerWidth <= r1)
-        this.process(query);
-      return this;
+    handleResize: function (e) {
+      this.onResize();
     },
-    handleScroll: function (query) {
-      var r0 = parseInt(query.range[0]);
-      var r1 = parseInt(query.range[1] === "*" ? 100000 : query.range[1]);
-      if (query.source.scrollY >= r0 && query.source.scrollY <= r1)
-        this.process(query);
+    handleScroll: function (e) {
+      this.onScroll();
+    },
+    handleToggle: function (e) {
+      this.onToggle();
       return this;
     },
     init: function () {
-      this.queries.forEach(function (i) {
-        if (i.event === "scroll") i.source.dispatchEvent(new Event("scroll"));
-        if (i.event === "resize") i.source.dispatchEvent(new Event("resize"));
+      if (this.event === Responsifier.EVENT.SCROLL) this.initScroll();
+      if (this.event === Responsifier.EVENT.RESIZE) this.initResize();
+      if (this.event === Responsifier.EVENT.CLICK) this.initClick();
+      if (this.event === Responsifier.EVENT.HOVER) this.initHover();
+      if (this.event === Responsifier.EVENT.TOGGLE) this.initToggle();
+    },
+    initClick: function () {
+      var that = this;
+      this.observable.forEach(function (i) {
+        i.addEventListener("click", that.handleClick.bind(that));
       });
     },
-    process: function (query) {
-      if (query.unlock) this.classesUnlock(query.unlock);
-      if (query.add) this.classesAdd(query.add);
-      if (query.remove) this.classesRemove(query.remove);
-      if (query.toggle) this.classesToggle(query.toggle);
-      if (query.lock) this.classesLock(query.lock);
+    initHover: function () {
+      var that = this;
+      this.observable.forEach(function (i) {
+        i.addEventListener("hover", that.handleHover.bind(that));
+      });
+    },
+    initResize: function () {
+      var that = this;
+      this.observable.forEach(function (i) {
+        var debouncedResize = that.debounce(that.handleResize.bind(that), that.debounceTime);
+        i.addEventListener("resize", debouncedResize);
+      });
+      this.onResize();
+    },
+    initScroll: function () {
+      var that = this;
+      this.observable.forEach(function (i) {
+        var debouncedScroll = that.debounce(that.handleScroll.bind(that), that.debounceTime);
+        i.addEventListener("scroll", debouncedScroll);
+      });
+      this.onScroll();
+    },
+    initToggle: function () {
+      var that = this;
+      this.observable.forEach(function (i) {
+        i.addEventListener("click", that.handleToggle.bind(that));
+      });
+    },
+    onClick: function () {
+      this.process();
       return this;
     },
-    registerListeners: function () {
+    onHover: function () {
+      this.process();
+      return this;
+    },
+    onResize: function () {
       var that = this;
-      this.queries.forEach(function (i) {
-        var scroll = that.handleScroll.bind(that, i);
-        var resize = that.handleResize.bind(that, i);
-        var click = that.handleClick.bind(that, i);
-        if (i.event === "scroll") i.source.addEventListener(i.event, scroll);
-        if (i.event === "resize") i.source.addEventListener(i.event, resize);
-        if (i.event === "click") i.source.addEventListener(i.event, click);
+      var r0 = parseInt(this.range[0]);
+      var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
+      this.observable.forEach(function (i) {
+        if (i.innerWidth >= r0 && i.innerWidth <= r1) that.process();
       });
+      return this;
+    },
+    onScroll: function () {
+      var that = this;
+      var r0 = parseInt(this.range[0]);
+      var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
+      this.observable.forEach(function (i) {
+        if (i.scrollY >= r0 && i.scrollY <= r1) that.process();
+      });
+      return this;
+    },
+    onToggle: function () {
+      this.process();
+      return this;
+    },
+    process: function () {
+      this.classesUnlock(this.unlock);
+      this.classesAdd(this.add);
+      this.classesRemove(this.remove);
+      this.classesToggle(this.toggle);
+      this.classesLock(this.lock);
       return this;
     }
   };
 
+  function Responsifier(opts) {
+    this.queries = [];
+    return this;
+  }
+
+  Responsifier.EVENT = {
+    SCROLL: "SCROLL",
+    RESIZE: "RESIZE",
+    CLICK: "CLICK",
+    HOVER: "HOVER",
+    TOGGLE: "TOGGLE"
+  };
+
+  Responsifier.prototype = {
+    add: function (opts) {
+      var opts = opts || {};
+      this.queries.push(new ContainerQuery(opts));
+      return this;
+    },
+    init: function () {
+      this.queries.forEach(function (i) {
+        i.init();
+      });
+    }
+  };
+
   // export
+  m.Responsifier = Responsifier;
   m.ContainerQuery = ContainerQuery;
 
   // return module

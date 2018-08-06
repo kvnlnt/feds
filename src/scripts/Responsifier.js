@@ -1,4 +1,3 @@
-var feds = {};
 (function (m) {
 
   function ContainerQuery(opts) {

@@ -14,9 +14,12 @@
 </head>
 
 <body>
-    <a id="top" href="#" class="button secondary medium pos-fix hide" onclick="document.body.scrollTop=0" style="bottom:20px; left:20px;">TOP</a>
+    <a id="top" href="#" class="button secondary medium pos-fix hide pos-bottom-s pos-left-s z-infinite" onclick="document.body.scrollTop=0">TOP</a>
+    <div id="menuToggle" class="pos-fix hide top-right pos-right-none pos-left-none z-infinite">
+        <a href="#layout" class="button bg-primary text-align-right block bdr-radius-none">&#x2630;</a>
+    </div>
     <div id="layout" class="columns">
-        <aside class="column pad-m" style="flex: 0 0 200px">
+        <aside id="mainMenu" class="column pad-m" style="flex: 0 0 200px">
             <!-- MENU -->
         </aside>
         <div id="layout-content" class="column pad-m">

@@ -16,8 +16,8 @@ const importStyleConfig = (t, f) => {
 
 const importFonts = fonts =>
   Object.entries(fonts)
-    .map(([k, v]) => fs.readFileSync("./public/fonts/" + v, "utf-8"))
-    .join("");
+  .map(([k, v]) => fs.readFileSync("./public/fonts/" + v, "utf-8"))
+  .join("");
 
 // import style (& theme) files
 const config = importStyleConfig(theme, "config.json");
@@ -49,7 +49,7 @@ const compiledResets = compiler.compileRules(precompiledResets).join("");
 const styles = `${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
 const scripts =
   fs.readFileSync("./src/scripts/namespacer.js", "utf-8") +
-  fs.readFileSync("./src/scripts/ContainerQuery.js", "utf-8");
+  fs.readFileSync("./src/scripts/Responsifier.js", "utf-8");
 
 // output
 const stylesFile = `${config.name}.${config.version}.css`;

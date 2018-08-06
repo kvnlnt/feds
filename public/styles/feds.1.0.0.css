@@ -92,6 +92,7 @@ a { color:hsl(212, 64%, 49%);cursor:pointer; }
 code { font-size:1.3rem; }
 .column { flex:1; }
 .column.half { flex:0 0 50%; }
+.column.full { flex:0 0 100%; }
 .column.third { flex:0 0 33.33333%; }
 .column.fourth { flex:0 0 25%; }
 .column.fifth { flex:0 0 20%; }
@@ -168,6 +169,7 @@ ul { font-size:1.4rem; }
 .height-xl { height:4rem; }
 .height-xxl { height:5rem; }
 .flex-col-half { flex:0 0 50%; }
+.flex-col-full { flex:0 0 100%; }
 .flex-col-fifth { flex:0 0 20%; }
 .flex-col-fourth { flex:0 0 25%; }
 .flex-col-third { flex:0 0 33.33333%; }
@@ -278,8 +280,36 @@ ul { font-size:1.4rem; }
 .pad-lft-l { padding-left:4rem; }
 .pad-lft-xl { padding-left:5rem; }
 .pos-abs { position:absolute; }
+.pos-bottom-xs { bottom:1.6rem; }
+.pos-bottom-s { bottom:1.8rem; }
+.pos-bottom-m { bottom:2.4rem; }
+.pos-bottom-none { bottom:0; }
+.pos-bottom-l { bottom:3.2rem; }
+.pos-bottom-xl { bottom:4rem; }
+.pos-bottom-xxl { bottom:5rem; }
 .pos-fix { position:fixed; }
+.pos-left-xs { left:1.6rem; }
+.pos-left-s { left:1.8rem; }
+.pos-left-m { left:2.4rem; }
+.pos-left-none { left:0; }
+.pos-left-l { left:3.2rem; }
+.pos-left-xl { left:4rem; }
+.pos-left-xxl { left:5rem; }
 .pos-rel { position:relative; }
+.pos-right-xs { right:1.6rem; }
+.pos-right-s { right:1.8rem; }
+.pos-right-m { right:2.4rem; }
+.pos-right-none { right:0; }
+.pos-right-l { right:3.2rem; }
+.pos-right-xl { right:4rem; }
+.pos-right-xxl { right:5rem; }
+.pos-top-xs { top:1.6rem; }
+.pos-top-s { top:1.8rem; }
+.pos-top-m { top:2.4rem; }
+.pos-top-none { top:0; }
+.pos-top-l { top:3.2rem; }
+.pos-top-xl { top:4rem; }
+.pos-top-xxl { top:5rem; }
 .shadow-s { box-shadow:0 1px 5px rgba(0, 0, 0, 0.3); }
 .tbl { display:table; }
 .tbl-row { display:table-row; }
@@ -330,3 +360,20 @@ ul { font-size:1.4rem; }
 .trans-all-slow { transition: all 1s; }
 .trans-all-med { transition: all 0.5s; }
 .trans-all-fast { transition: all 0.3s; }
+.width-half { width: 50%; }
+.width-full { width: 100%; }
+.width-fifth { width: 20%; }
+.width-fourth { width: 25%; }
+.width-third { width: 33.33333%; }
+.width-sixth { width: 16.66%; }
+.z-0 { z-index:0; }
+.z-1 { z-index:1; }
+.z-2 { z-index:2; }
+.z-3 { z-index:3; }
+.z-4 { z-index:4; }
+.z-5 { z-index:5; }
+.z-6 { z-index:6; }
+.z-7 { z-index:7; }
+.z-8 { z-index:8; }
+.z-9 { z-index:9; }
+.z-infinite { z-index:100000; }

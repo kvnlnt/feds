@@ -14,9 +14,12 @@
 </head>
 
 <body>
-    <a id="top" href="#" class="button secondary medium pos-fix hide" onclick="document.body.scrollTop=0" style="bottom:20px; left:20px;">TOP</a>
+    <a id="top" href="#" class="button secondary medium pos-fix hide pos-bottom-s pos-left-s z-infinite" onclick="document.body.scrollTop=0">TOP</a>
+    <div id="menuToggle" class="pos-fix hide top-right pos-right-none pos-left-none z-infinite">
+        <a href="#layout" class="button bg-primary text-align-right block bdr-radius-none">&#x2630;</a>
+    </div>
     <div id="layout" class="columns">
-        <aside class="column pad-m" style="flex: 0 0 200px">
+        <aside id="mainMenu" class="column pad-m" style="flex: 0 0 200px">
             <a href="#Buttons" class="text-size-l text-height-xl text-indent-2 block">Buttons</a>
 <a href="#Colors" class="text-size-l text-height-xl text-indent-2 block">Colors</a>
 <a href="#Forms" class="text-size-l text-height-xl text-indent-2 block">Forms</a>
@@ -207,13 +210,15 @@
   </pre>
 </div>
             <div class="mrgn-vert-xl">
-  <h2 id="Responsifier">Responsifier</h2>
+  <h2 id="Responsifier">Container Query</h2>
+  <p>The
+    <strong>Container Query</strong> component is an implementation of Container Queries.</p>
   <div class="box">
     <div class="bg-black text-align-right height-xl">
-      <a id="responsiveUIToggleMenu" class="button hide bg-black bdr-none">&#x2630;</a>
+      <a id="cqToggleMenu" class="button hide bg-black bdr-none">&#x2630;</a>
     </div>
-    <div id="responsiveUIBody" class="columns bdr-s bdr-color-grey-light">
-      <aside id="responsiveUIMainMenu" class="column fifth bg-primary">
+    <div id="cqBody" class="columns bdr-s bdr-color-grey-light">
+      <aside id="cqMainMenu" class="column fifth bg-primary">
         <div class="block height-xxl"></div>
         <div class="block height-xxl"></div>
         <div class="block height-xxl"></div>
@@ -221,7 +226,7 @@
         <div class="block height-xxl"></div>
         <div class="block height-xxl"></div>
       </aside>
-      <div id="responsiveUIContent" class="column">
+      <div id="cqContent" class="column">
         <div class="columns text-align-centerf">
           <div class="column">
             <div class="box pad-xl mrgn-s"></div>
