@@ -3,6 +3,7 @@
   function ContainerQuery(opts) {
     var opts = opts || {};
     this.add = opts.add || [];
+    this.conditions = opts.conditions || [];
     this.debounceTime = opts.debounce || 200;
     this.event = opts.event;
     this.lock = opts.lock || [];
@@ -65,6 +66,12 @@
             return that.unlock.indexOf(ii) === -1;
           })
           .join(',');
+      });
+    },
+    conditionsMet: function () {
+      if (this.conditions.length === 0) return true;
+      return this.conditions.every(function (i) {
+        return i();
       });
     },
     constructObserver: function (observer) {
@@ -152,11 +159,11 @@
       });
     },
     onClick: function () {
-      this.process();
+      if (this.conditionsMet()) this.process();
       return this;
     },
     onHover: function () {
-      this.process();
+      if (this.conditionsMet()) this.process();
       return this;
     },
     onResize: function () {
@@ -164,7 +171,7 @@
       var r0 = parseInt(this.range[0]);
       var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
       this.observable.forEach(function (i) {
-        if (i.innerWidth >= r0 && i.innerWidth <= r1) that.process();
+        if (i.innerWidth >= r0 && i.innerWidth <= r1 && that.conditionsMet()) that.process();
       });
       return this;
     },
@@ -173,12 +180,12 @@
       var r0 = parseInt(this.range[0]);
       var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
       this.observable.forEach(function (i) {
-        if (i.scrollY >= r0 && i.scrollY <= r1) that.process();
+        if (i.scrollY >= r0 && i.scrollY <= r1 && that.conditionsMet()) that.process();
       });
       return this;
     },
     onToggle: function () {
-      this.process();
+      if (this.conditionsMet()) this.process();
       return this;
     },
     process: function () {

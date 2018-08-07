@@ -210,9 +210,10 @@
   </pre>
 </div>
             <div class="mrgn-vert-xl">
-  <h2 id="Responsifier">Container Query</h2>
+  <h2 id="Responsifier">Responsifier</h2>
   <p>The
-    <strong>Container Query</strong> component is an implementation of Container Queries.</p>
+    <strong>Responsifier</strong> component is an implementation of Container Queries. Here is an example of a UI implementation
+    with a responsive menu and body.</p>
   <div class="box">
     <div class="bg-black text-align-right height-xl">
       <a id="cqToggleMenu" class="button hide bg-black bdr-none">&#x2630;</a>
@@ -227,7 +228,7 @@
         <div class="block height-xxl"></div>
       </aside>
       <div id="cqContent" class="column">
-        <div class="columns text-align-centerf">
+        <div class="columns text-align-center">
           <div class="column">
             <div class="box pad-xl mrgn-s"></div>
           </div>
@@ -241,6 +242,91 @@
       </div>
     </div>
   </div>
+  <pre>
+  <code data-language="html">
+    <div>
+      <a id="cqToggleMenu">&#x2630;</a>
+    </div>
+    <div id="cqBody" class="columns">
+      <aside id="cqMainMenu" class="column"></aside>
+      <div id="cqContent" class="column">
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+        </div>
+      </div>
+    </div></code>
+  </pre>
+  <pre>
+  <code data-language="js">
+    new feds.Responsifier()
+    .add({
+      observer: "#cqBody",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [0, 799],
+      add: ["flex-dir-col"]
+    })
+    .add({
+      observer: "#cqBody",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [800, "*"],
+      remove: ["flex-dir-col"]
+    })
+    .add({
+      observer: "#cqMainMenu",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [0, 799],
+      add: ["hide"]
+    })
+    .add({
+      observer: "#cqMainMenu",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [800, "*"],
+      remove: ["hide"]
+    })
+    .add({
+      observer: "#cqMainMenu",
+      observable: "#cqToggleMenu",
+      event: feds.Responsifier.EVENT.CLICK,
+      range: [800, "*"],
+      toggle: ["hide"]
+    })
+    .add({
+      observer: "#cqToggleMenu",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [0, 799],
+      remove: ["hide"]
+    })
+    .add({
+      observer: "#cqToggleMenu",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [800, "*"],
+      add: ["hide"]
+    })
+    .add({
+      observer: "#cqContent .column:nth-child(-n+2)",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [0, 799],
+      add: ["half"]
+    })
+    .add({
+      observer: "#cqContent .column:nth-child(-n+2)",
+      observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
+      range: [800, "*"],
+      remove: ["half"]
+    })
+    .init();
+  </code>
+  </pre>
 </div>
             <div class="mrgn-vert-xl">
   <h2 id="Typography">Typography</h2>

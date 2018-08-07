@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   new feds.Responsifier()
     // TOP
     .add({
@@ -38,14 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
       observable: window,
       event: feds.Responsifier.EVENT.RESIZE,
       range: [0, 999],
-      add: ["flex-dir-col", "pad-top-xl"]
+      add: ["flex-dir-col", "pad-top-xl", "is-mobile"]
     })
     .add({
       observer: "#layout",
       observable: window,
       event: feds.Responsifier.EVENT.RESIZE,
-      range: [1000, '*'],
-      remove: ["flex-dir-col", "pad-top-xl"]
+      range: [1000, "*"],
+      remove: ["flex-dir-col", "pad-top-xl", "is-mobile"]
     })
     // MENU
     .add({
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       observer: "#menuToggle",
       observable: window,
       event: feds.Responsifier.EVENT.RESIZE,
-      range: [1000, '*'],
+      range: [1000, "*"],
       add: ["hide"]
     })
     .add({
@@ -79,15 +78,18 @@ document.addEventListener("DOMContentLoaded", function () {
       observer: "#mainMenu",
       observable: window,
       event: feds.Responsifier.EVENT.RESIZE,
-      range: [1000, '*'],
+      range: [1000, "*"],
       remove: ["hide"]
     })
     .add({
       observer: "#mainMenu",
       observable: "#mainMenu a",
       event: feds.Responsifier.EVENT.CLICK,
-      range: [1000, '*'],
-      toggle: ["hide"]
+      range: [1000, "*"],
+      toggle: ["hide"],
+      conditions: [function () {
+        return document.querySelector("#layout").classList.contains("is-mobile");
+      }]
     })
     // RESPONSIVE GRID
     .add({
@@ -101,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
       observer: "#responsiveGrid",
       observable: window,
       event: feds.Responsifier.EVENT.RESIZE,
-      range: [1000, '*'],
+      range: [1000, "*"],
       remove: ["flex-dir-col"]
     })
     .add({
@@ -135,31 +137,35 @@ document.addEventListener("DOMContentLoaded", function () {
     .add({
       observer: "#cqMainMenu",
       observable: "#cqToggleMenu",
-      event: feds.Responsifier.EVENT.RESIZE,
+      event: feds.Responsifier.EVENT.CLICK,
       range: [800, "*"],
       toggle: ["hide"]
     })
     .add({
       observer: "#cqToggleMenu",
       observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
       range: [0, 799],
       remove: ["hide"]
     })
     .add({
       observer: "#cqToggleMenu",
       observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
       range: [800, "*"],
       add: ["hide"]
     })
     .add({
       observer: "#cqContent .column:nth-child(-n+2)",
       observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
       range: [0, 799],
       add: ["half"]
     })
     .add({
       observer: "#cqContent .column:nth-child(-n+2)",
       observable: window,
+      event: feds.Responsifier.EVENT.RESIZE,
       range: [800, "*"],
       remove: ["half"]
     })
