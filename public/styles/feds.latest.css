@@ -280,6 +280,7 @@ ul { font-size:1.4rem; }
 .pad-lft-l { padding-left:4rem; }
 .pad-lft-xl { padding-left:5rem; }
 .pos-abs { position:absolute; }
+.pos-bottom-hide { bottom:-100%; }
 .pos-bottom-xs { bottom:1.6rem; }
 .pos-bottom-s { bottom:1.8rem; }
 .pos-bottom-m { bottom:2.4rem; }
@@ -288,6 +289,7 @@ ul { font-size:1.4rem; }
 .pos-bottom-xl { bottom:4rem; }
 .pos-bottom-xxl { bottom:5rem; }
 .pos-fix { position:fixed; }
+.pos-left-hide { left:-100%; }
 .pos-left-xs { left:1.6rem; }
 .pos-left-s { left:1.8rem; }
 .pos-left-m { left:2.4rem; }
@@ -296,6 +298,7 @@ ul { font-size:1.4rem; }
 .pos-left-xl { left:4rem; }
 .pos-left-xxl { left:5rem; }
 .pos-rel { position:relative; }
+.pos-right-hide { right:-100%; }
 .pos-right-xs { right:1.6rem; }
 .pos-right-s { right:1.8rem; }
 .pos-right-m { right:2.4rem; }
@@ -303,6 +306,7 @@ ul { font-size:1.4rem; }
 .pos-right-l { right:3.2rem; }
 .pos-right-xl { right:4rem; }
 .pos-right-xxl { right:5rem; }
+.pos-top-hide { top:-100%; }
 .pos-top-xs { top:1.6rem; }
 .pos-top-s { top:1.8rem; }
 .pos-top-m { top:2.4rem; }

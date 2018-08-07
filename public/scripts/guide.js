@@ -6,14 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
       observable: window,
       event: feds.Responsifier.EVENT.SCROLL,
       range: [0, 199],
-      add: ["hide"]
+      add: ["pos-bottom-hide"],
+      remove: ["pos-bottom-s"],
     })
     .add({
       observer: "#top",
       observable: window,
       event: feds.Responsifier.EVENT.SCROLL,
       range: [200, "*"],
-      remove: ["hide"]
+      add: ["pos-bottom-s"],
+      remove: ["pos-bottom-hide"]
     })
     .add({
       observer: "#top",
@@ -85,11 +87,14 @@ document.addEventListener("DOMContentLoaded", function () {
       observer: "#mainMenu",
       observable: "#mainMenu a",
       event: feds.Responsifier.EVENT.CLICK,
-      range: [1000, "*"],
       toggle: ["hide"],
-      conditions: [function () {
-        return document.querySelector("#layout").classList.contains("is-mobile");
-      }]
+      conditions: [
+        function () {
+          return document
+            .querySelector("#layout")
+            .classList.contains("is-mobile");
+        }
+      ]
     })
     // RESPONSIVE GRID
     .add({
@@ -138,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
       observer: "#cqMainMenu",
       observable: "#cqToggleMenu",
       event: feds.Responsifier.EVENT.CLICK,
-      range: [800, "*"],
       toggle: ["hide"]
     })
     .add({
