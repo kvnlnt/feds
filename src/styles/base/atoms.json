@@ -1,4 +1,16 @@
 {
+  ".anim-speed-slow": ["transition: all 1s"],
+  ".anim-speed-med": ["transition: all 0.5s"],
+  ".anim-speed-fast": ["transition: all 0.3s"],
+  ".anim-ease-in": [
+    "animation-timing-function:cubic-bezier(0.55, 0.055, 0.675, 0.19)"
+  ],
+  ".anim-ease-out": [
+    "animation-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)"
+  ],
+  ".anim-ease-in-out": [
+    "animation-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1)"
+  ],
   ".bdr-none": ["border-width:0", "border-style:none"],
   ".bdr-xs": ["border-width:1px", "border-style:solid"],
   ".bdr-s": ["border-width:2px", "border-style:solid"],
@@ -247,9 +259,6 @@
   ".text-size-l": ["font-size:1.8${unit.base}"],
   ".text-size-xl": ["font-size:2.4${unit.base}"],
   ".text-size-xxl": ["font-size:4${unit.base}"],
-  ".trans-all-slow": ["transition: all 1s"],
-  ".trans-all-med": ["transition: all 0.5s"],
-  ".trans-all-fast": ["transition: all 0.3s"],
   ".width-half": ["width: 50%"],
   ".width-full": ["width: 100%"],
   ".width-fifth": ["width: 20%"],
@@ -267,5 +276,4 @@
   ".z-8": ["z-index:8"],
   ".z-9": ["z-index:9"],
   ".z-infinite": ["z-index:100000"]
-
 }
