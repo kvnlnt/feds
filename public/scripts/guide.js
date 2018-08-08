@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   new feds.Responsifier()
     // TOP
     .add({

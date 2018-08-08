@@ -6,6 +6,7 @@
     "blue": "hsl(212, 64%, 49%)",
     "green": "hsl(158, 100%, 26%)",
     "grey-light": "hsl(218,8%,48%)",
+    "grey-light-tint": "#CACED9",
     "grey": "hsl(219, 22%, 25%)",
     "light-blue-light": "hsl(0,0%,100%)",
     "light-blue": "hsl(212,74%,93%)",

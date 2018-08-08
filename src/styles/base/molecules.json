@@ -83,6 +83,8 @@
   "small": [".text-size-s"],
   "strong": [".text-font-primary-bold"],
   "strong > em, em > strong": [".text-font-primary-bold-italic"],
-  "table": [""],
+  "table": [".text-size-m", ".bdr-collapse"],
+  "table th": [".bdr-bot-xs", ".bdr-color-grey-light-tint", ".text-font-bold", ".pad-horz-s", ".text-size-s", ".pad-vert-xs", ".text-case-upper", ".text-space-s", ".text-align-left"],
+  "table td": [".pad-vert-xs", ".pad-horz-s", ".bdr-bot-xs", ".bdr-color-grey-light-tint"],
   "ul": [".text-size-m"]
 }
