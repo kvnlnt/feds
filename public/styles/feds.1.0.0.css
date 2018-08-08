@@ -119,6 +119,12 @@ strong { font-family:OpenSansBold, Arial; }
 strong > em, em > strong { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
 table { undefined; }
 ul { font-size:1.4rem; }
+.anim-speed-slow { transition: all 1s; }
+.anim-speed-med { transition: all 0.5s; }
+.anim-speed-fast { transition: all 0.3s; }
+.anim-ease-in { animation-timing-function:cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.anim-ease-out { animation-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1); }
+.anim-ease-in-out { animation-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1); }
 .bdr-none { border-width:0;border-style:none; }
 .bdr-xs { border-width:1px;border-style:solid; }
 .bdr-s { border-width:2px;border-style:solid; }
@@ -361,9 +367,6 @@ ul { font-size:1.4rem; }
 .text-size-l { font-size:1.8rem; }
 .text-size-xl { font-size:2.4rem; }
 .text-size-xxl { font-size:4rem; }
-.trans-all-slow { transition: all 1s; }
-.trans-all-med { transition: all 0.5s; }
-.trans-all-fast { transition: all 0.3s; }
 .width-half { width: 50%; }
 .width-full { width: 100%; }
 .width-fifth { width: 20%; }

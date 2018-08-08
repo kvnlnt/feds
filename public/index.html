@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <a id="top" href="#" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite trans-all-med" onclick="document.body.scrollTop=0">TOP</a>
+    <a id="top" href="#" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite anim-speed-med" onclick="document.body.scrollTop=0">TOP</a>
     <div id="menuToggle" class="pos-fix hide top-right pos-right-none pos-left-none z-infinite">
         <a href="#layout" class="button bg-primary text-align-right block bdr-radius-none">&#x2630;</a>
     </div>
@@ -79,8 +79,7 @@
 <div data-responsifier data-target=".button" data-source="window" data-event="resize" data-range="900,*" data-remove="block, mrgn-bot-xs"></div>
             <div class="mrgn-vert-xl">
     <h2 id="Colors">Colors</h2>
-    <h3>Atoms</h3>
-    <h4>Backgrounds</h4>
+    <h3>Backgrounds</h3>
     <p>Background colors will only set the color of the background. Therefore
         <code>.text-color-*</code> classes must be used in conjunction with them.</p>
     <div class="box">
@@ -212,120 +211,88 @@
             <div class="mrgn-vert-xl">
   <h2 id="Responsifier">Responsifier</h2>
   <p>The
-    <strong>Responsifier</strong> component is an implementation of Container Queries. Here is an example of a UI implementation
-    with a responsive menu and body.</p>
-  <div class="box">
-    <div class="bg-black text-align-right height-xl">
-      <a id="cqToggleMenu" class="button hide bg-black bdr-none">&#x2630;</a>
-    </div>
-    <div id="cqBody" class="columns bdr-s bdr-color-grey-light">
-      <aside id="cqMainMenu" class="column fifth bg-primary">
-        <div class="block height-xxl"></div>
-        <div class="block height-xxl"></div>
-        <div class="block height-xxl"></div>
-        <div class="block height-xxl"></div>
-        <div class="block height-xxl"></div>
-        <div class="block height-xxl"></div>
-      </aside>
-      <div id="cqContent" class="column">
-        <div class="columns text-align-center">
-          <div class="column">
-            <div class="box pad-xl mrgn-s"></div>
-          </div>
-          <div class="column">
-            <div class="box pad-xl mrgn-s"></div>
-          </div>
-          <div class="column">
-            <div class="box pad-xl mrgn-s"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <pre>
-  <code data-language="html">
-    <div>
-      <a id="cqToggleMenu">&#x2630;</a>
-    </div>
-    <div id="cqBody" class="columns">
-      <aside id="cqMainMenu" class="column"></aside>
-      <div id="cqContent" class="column">
-        <div class="columns">
-          <div class="column"></div>
-          <div class="column"></div>
-          <div class="column"></div>
-        </div>
-      </div>
-    </div></code>
-  </pre>
-  <pre>
-  <code data-language="js">
-    new feds.Responsifier()
-    .add({
-      observer: "#cqBody",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [0, 799],
-      add: ["flex-dir-col"]
-    })
-    .add({
-      observer: "#cqBody",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [800, "*"],
-      remove: ["flex-dir-col"]
-    })
-    .add({
-      observer: "#cqMainMenu",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [0, 799],
-      add: ["hide"]
-    })
-    .add({
-      observer: "#cqMainMenu",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [800, "*"],
-      remove: ["hide"]
-    })
-    .add({
-      observer: "#cqMainMenu",
-      observable: "#cqToggleMenu",
-      event: feds.Responsifier.EVENT.CLICK,
-      toggle: ["hide"]
-    })
-    .add({
-      observer: "#cqToggleMenu",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [0, 799],
-      remove: ["hide"]
-    })
-    .add({
-      observer: "#cqToggleMenu",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [800, "*"],
-      add: ["hide"]
-    })
-    .add({
-      observer: "#cqContent .column:nth-child(-n+2)",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [0, 799],
-      add: ["half"]
-    })
-    .add({
-      observer: "#cqContent .column:nth-child(-n+2)",
-      observable: window,
-      event: feds.Responsifier.EVENT.RESIZE,
-      range: [800, "*"],
-      remove: ["half"]
-    })
-    .init();
-  </code>
-  </pre>
+    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide a simple mechanism
+    to add, remove and toggle classes in response to events. Combined with
+    <strong>Atoms</strong> and
+    <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
+  <ul>
+    <li>Replaces the need for media queries</li>
+    <li>Eliminates the need for ad-hoc responsive styles and scripts</li>
+    <li>Is framework agnostic</li>
+    <li>Has a small footprint (~5kb)</li>
+  </ul>
+  <h3>Usage</h3>
+
+  <h3>Methods</h3>
+
+  <h4>add(options)</h4>
+  <p>Adds a media query to a responsifier instance.</p>
+  <h5>Options</h5>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Example</th>
+      <th>Desc</th>
+    </tr>
+    <tr>
+      <td>observer</td>
+      <td>String|[Node List]</td>
+      <td>".some-button"</td>
+      <td>element to update</td>
+    </tr>
+    <tr>
+      <td>observable</td>
+      <td>String|[Node List]</td>
+      <td>"body"</td>
+      <td>element to watch</td>
+    </tr>
+    <tr>
+      <td>event</td>
+      <td>Responsifier event constant</td>
+      <td>Responsifier.SCROLL</td>
+      <td>event to watch for (see events for options)</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td>[number,number|"*"]</td>
+      <td>[0,100]</td>
+      <td>Start and ending ranges. Ending range can optionally be set to "*".</td>
+    </tr>
+    <tr>
+      <td>add</td>
+      <td>[string]</td>
+      <td>["hide"]</td>
+      <td>Array of classes to add</td>
+    </tr>
+    <tr>
+      <td>remove</td>
+      <td>[string]</td>
+      <td>["hide"]</td>
+      <td>Array of classes to remove</td>
+    </tr>
+    <tr>
+      <td>toggle</td>
+      <td>[string]</td>
+      <td>["hide"]</td>
+      <td>Array of classes to toggle</td>
+    </tr>
+    <tr>
+      <td>conditions</td>
+      <td>[function]</td>
+      <td>[function(){return true;}]</td>
+      <td>Callback functions to call before making class changes. All must return true.</td>
+    </tr>
+  </table>
+
+  <h3>Events</h3>
+  <ul>
+    <li>Responsifier.SCROLL</li>
+    <li>Responsifier.RESIZE</li>
+    <li>Responsifier.CLICK</li>
+    <li>Responsifier.HOVER</li>
+    <li>Responsifier.TOGGLE</li>
+  </ul>
 </div>
             <div class="mrgn-vert-xl">
   <h2 id="Typography">Typography</h2>

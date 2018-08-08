@@ -118,11 +118,11 @@
       return this;
     },
     init: function () {
-      if (this.event === Responsifier.EVENT.SCROLL) this.initScroll();
-      if (this.event === Responsifier.EVENT.RESIZE) this.initResize();
-      if (this.event === Responsifier.EVENT.CLICK) this.initClick();
-      if (this.event === Responsifier.EVENT.HOVER) this.initHover();
-      if (this.event === Responsifier.EVENT.TOGGLE) this.initToggle();
+      if (this.event === Responsifier.SCROLL) this.initScroll();
+      if (this.event === Responsifier.RESIZE) this.initResize();
+      if (this.event === Responsifier.CLICK) this.initClick();
+      if (this.event === Responsifier.HOVER) this.initHover();
+      if (this.event === Responsifier.TOGGLE) this.initToggle();
     },
     initClick: function () {
       var that = this;
@@ -203,13 +203,11 @@
     return this;
   }
 
-  Responsifier.EVENT = {
-    SCROLL: "SCROLL",
-    RESIZE: "RESIZE",
-    CLICK: "CLICK",
-    HOVER: "HOVER",
-    TOGGLE: "TOGGLE"
-  };
+  Responsifier.SCROLL = "SCROLL";
+  Responsifier.RESIZE = "RESIZE";
+  Responsifier.CLICK = "CLICK";
+  Responsifier.HOVER = "HOVER";
+  Responsifier.TOGGLE = "TOGGLE";
 
   Responsifier.prototype = {
     add: function (opts) {
