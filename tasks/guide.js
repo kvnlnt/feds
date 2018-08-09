@@ -17,6 +17,10 @@ module.exports = (stylesheet, script) => {
     fs.readFileSync("./src/patterns/grids.html", "utf-8")
   );
   index = index.replace(
+    "<!-- ICONS -->",
+    fs.readFileSync("./src/patterns/icons.html", "utf-8")
+  );
+  index = index.replace(
     "<!-- MENU -->",
     fs.readFileSync("./src/patterns/menu.html", "utf-8")
   );
