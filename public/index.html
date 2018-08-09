@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>FEDS</title>
     <link rel="stylesheet" type="text/css" href="styles/feds.latest.css" />
-    <link rel="stylesheet" type="text/css" href="styles/guide.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/sunburst.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
@@ -188,7 +189,7 @@
   </pre>
   <h4>JS</h4>
   <pre>
-    <code data-language="js">
+    <code data-language="javascript">
     new feds.ContainerQuery({
       target: document.querySelector("#responsiveGrid"),
       queries: [
@@ -298,10 +299,9 @@
   </ul>
 
   <h3>Usage</h3>
-
   <pre>
-  <code data-language="js">
-  new feds.Responsifier()
+  <code data-language="javascript">
+  var r = new feds.Responsifier()
     .add({
       observer: "#mobile-menu",
       observable: window,
