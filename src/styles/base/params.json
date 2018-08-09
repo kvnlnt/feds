@@ -17,6 +17,31 @@
     "yellow": "hsl(63, 74%, 69%)",
     "white": "#FFFFFF"
   },
+  "img": {
+    "administration": "../gfx/icons/administration.svg",
+    "analytics": "../gfx/icons/analytics.svg",
+    "calendar": "../gfx/icons/calendar.svg",
+    "collapse-expand": "../gfx/icons/collapse-expand.svg",
+    "daily-roster": "../gfx/icons/daily-roster.svg",
+    "data-intelligence": "../gfx/icons/data-intelligence.svg",
+    "demographics": "../gfx/icons/demographics.svg",
+    "events": "../gfx/icons/events.svg",
+    "home": "../gfx/icons/home.svg",
+    "hydrants": "../gfx/icons/hydrants.svg",
+    "incidents": "../gfx/icons/incidents.svg",
+    "inventory": "../gfx/icons/inventory.svg",
+    "invoicing": "../gfx/icons/invoicing.svg",
+    "library": "../gfx/icons/library.svg",
+    "maintenance": "../gfx/icons/maintenance.svg",
+    "message-center": "../gfx/icons/message-center.svg",
+    "my-profile": "../gfx/icons/my-profile.svg",
+    "occupancies": "../gfx/icons/occupancies.svg",
+    "payroll": "../gfx/icons/payroll.svg",
+    "reports": "../gfx/icons/reports.svg",
+    "roster": "../gfx/icons/roster.svg",
+    "shifts": "../gfx/icons/shifts.svg",
+    "training": "../gfx/icons/training.svg"
+  },
   "unit": {
     "base": "rem"
   },
