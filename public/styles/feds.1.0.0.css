@@ -98,11 +98,11 @@ code { font-size:1.3rem; }
 .column.fifth { flex:0 0 20%; }
 .column.sixth { flex:0 0 16.66%; }
 .columns { display:flex;flex-direction:row;flex-wrap:wrap; }
-.icon { display:block;background-size:cover;background-position:center;margin:auto; }
+.icon { display:block;background-size:cover;background-position:center;margin:auto;height:3.2rem;width:3.2rem; }
 .icon.black { filter:brightness(0); }
 .icon.white { filter:brightness(1); }
 .icon.l { height:3.2rem;width:3.2rem; }
-.icon.m { undefined;width:2.4rem; }
+.icon.m { height:2.4rem;width:2.4rem; }
 .icon.s { height:1.8rem;width:1.8rem; }
 .icon.xl { height:4rem;width:4rem; }
 .icon.xs { height:1.6rem;width:1.6rem; }
