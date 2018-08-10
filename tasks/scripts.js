@@ -1,5 +1,9 @@
 const fs = require("fs");
 const config = require("../package.json");
+const color = require("./lib/color");
+
+// setup
+console.time(color.ok("Scripts"));
 
 const code = {
     ContainerQuery: fs.readFileSync("./src/scripts/ContainerQuery.js", "utf-8"),
@@ -40,3 +44,6 @@ fs.writeFileSync(`./public/scripts/${config.name}.amd.${config.version}.js`, Wra
 fs.writeFileSync(`./public/scripts/${config.name}.amd.latest.js`, WrapInAMD());
 fs.writeFileSync(`./public/scripts/${config.name}.es6.${config.version}.js`, WrapInEs6());
 fs.writeFileSync(`./public/scripts/${config.name}.es6.latest.js`, WrapInEs6());
+
+// Running time
+console.timeEnd(color.ok("Scripts"));

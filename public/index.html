@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FEDS</title>
+    <link rel="stylesheet" type="text/css" href="styles/feds.latest.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/sunburst.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="scripts/feds.latest.js"></script>
+    <script src="scripts/guide.js"></script>
+</head>
+
+<body>
+    <a id="top" href="#" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite anim-speed-med" onclick="document.body.scrollTop=0">TOP</a>
+    <div id="menuToggle" class="pos-fix hide top-right pos-right-none pos-left-none z-infinite">
+        <a href="#layout" class="button bg-primary text-align-right block bdr-radius-none">&#x2630;</a>
+    </div>
+    <div id="layout" class="columns">
+        <aside id="mainMenu" class="column pad-m" style="flex: 0 0 200px">
+            <a href="#Buttons" class="text-size-l text-height-xl text-indent-2 block">Buttons</a>
+<a href="#Colors" class="text-size-l text-height-xl text-indent-2 block">Colors</a>
+<a href="#Forms" class="text-size-l text-height-xl text-indent-2 block">Forms</a>
+<a href="#Grids" class="text-size-l text-height-xl text-indent-2 block">Grids</a>
+<a href="#Icons" class="text-size-l text-height-xl text-indent-2 block">Icons</a>
+<a href="#Navigations" class="text-size-l text-height-xl text-indent-2 block">Navigations</a>
+<a href="#Responsifier" class="text-size-l text-height-xl text-indent-2 block">Responsifier</a>
+<a href="#Tables" class="text-size-l text-height-xl text-indent-2 block">Tables</a>
+<a href="#Typography" class="text-size-l text-height-xl text-indent-2 block">Typography</a>
+        </aside>
+        <div id="layout-content" class="column pad-m">
+            <h1 class="mrgn-top-none">FEDS</h1>
+            <p class="text-size-l text-color-grey-light">Front-end Design System</p>
+            <div class="mrgn-vert-xl">
+  <h2 id="Buttons">Buttons</h2>
+  <h3>Types</h3>
+  <div class="box">
+    <a class="button">Primary</a>
+    <a class="button secondary">Secondary</a>
+    <a class="button danger">Danger</a>
+  </div>
+  <pre>
+  <code data-language="html">
+  <a class="button">Primary</a>
+  <a class="button secondary">Secondary</a>
+  <a class="button danger">Danger</a></code>
+  </pre>
+  <h3>Sizes</h3>
+  <div class="box">
+    <a class="button large">Large Button</a>
+    <a class="button">Default Button</a>
+    <a class="button medium">Medium Button</a>
+    <a class="button small">Small Button</a>
+  </div>
+  <pre>
+  <code data-language="html">
+  <a class="button large">Large Button</a>
+  <a class="button">Default Button</a>
+  <a class="button medium">Medium Button</a>
+  <a class="button small">Small Button</a></code>
+  </pre>
+  <h3>States</h3>
+  <div class="box">
+    <a class="button">Primary Active</a>
+    <a class="button disabled">Primary Disabled</a>
+    <a class="button secondary">Secondary Active</a>
+    <a class="button secondary disabled">Secondary Disabled</a>
+  </div>
+  <pre>
+  <code data-language="html">
+  <a class="button">Active</a>
+  <a class="button disabled">Disabled</a>
+  <a class="button secondary">Active</a>
+  <a class="button secondary disabled">Disabled</a></code>
+  </pre>
+</div>
+<div data-responsifier data-target=".button" data-source="window" data-event="resize" data-range="0,899" data-add="block, mrgn-bot-xs"></div>
+<div data-responsifier data-target=".button" data-source="window" data-event="resize" data-range="900,*" data-remove="block, mrgn-bot-xs"></div>
+            <div class="mrgn-vert-xl">
+    <h2 id="Colors">Colors</h2>
+    <h3>Backgrounds</h3>
+    <p>Background colors will only set the color of the background. Therefore
+        <code>.text-color-*</code> classes must be used in conjunction with them.</p>
+    <div class="box">
+        <div class="bg-primary text-height-xl text-color-white text-size-m text-indent-m">.bg-primary</div>
+        <div class="bg-primary-light text-height-xl text-color-white text-size-m text-indent-m">.bg-primary-light</div>
+        <div class="bg-secondary text-height-xl text-color-white text-size-m text-indent-m">.bg-secondary</div>
+        <div class="bg-success text-height-xl text-color-white text-size-m text-indent-m">.bg-success</div>
+        <div class="bg-danger text-height-xl text-color-white text-size-m text-indent-m">.bg-danger</div>
+        <div class="bg-black text-height-xl text-color-white text-size-m text-indent-m">.bg-black</div>
+        <div class="bg-grey text-height-xl text-color-white text-size-m text-indent-m">.bg-grey</div>
+        <div class="bg-grey-light text-height-xl text-color-white text-size-m text-indent-m">.bg-grey-light</div>
+    </div>
+    <h3 class="mrgn-top-3">Text</h3>
+    <div class="box">
+        <div class="text-color-primary text-height-m text-size-m text-indent-m">.text-color-primary</div>
+        <div class="text-color-primary-light text-height-m text-size-m text-indent-m">.text-color-primary-light</div>
+        <div class="text-color-secondary text-height-m text-size-m text-indent-m">.text-color-secondary</div>
+        <div class="text-color-success text-height-m text-size-m text-indent-m">.text-color-success</div>
+        <div class="text-color-danger text-height-m text-size-m text-indent-m">.text-color-danger</div>
+        <div class="text-color-black text-height-m text-size-m text-indent-m">.text-color-black</div>
+        <div class="text-color-grey text-height-m text-size-m text-indent-m">.text-color-grey</div>
+        <div class="text-color-grey-light text-height-m text-size-m text-indent-m">.text-color-grey-light</div>
+    </div>
+</div>
+            <div class="mrgn-vert-xl">
+  <h2 id="Grids">Grids</h2>
+  <h3>Sizes</h3>
+  <div class="box">
+    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+      <div class="column half bg-primary">.half</div>
+      <div class="column bg-primary-light">Auto</div>
+      <div class="column bg-primary-light">Auto</div>
+    </div>
+    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+      <div class="column third bg-primary">.third</div>
+      <div class="column bg-primary-light">Auto</div>
+      <div class="column bg-primary-light">Auto</div>
+    </div>
+    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+      <div class="column fourth bg-primary">.fourth</div>
+      <div class="column bg-primary-light">Auto</div>
+      <div class="column bg-primary-light">Auto</div>
+    </div>
+    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+      <div class="column fifth bg-primary">.fifth</div>
+      <div class="column bg-primary-light">Auto</div>
+      <div class="column bg-primary-light">Auto</div>
+    </div>
+    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+      <div class="column sixth bg-primary">.sixth</div>
+      <div class="column bg-primary-light">Auto</div>
+      <div class="column bg-primary-light">Auto</div>
+    </div>
+  </div>
+  <pre>
+  <code data-language="html">
+    <div class="columns">
+      <div class="column half">.half</div>
+      <div class="column">Auto</div>
+      <div class="column">Auto</div>
+    </div>
+    <div class="columns">
+      <div class="column third">.third</div>
+      <div class="column">Auto</div>
+      <div class="column">Auto</div>
+    </div>
+    <div class="columns">
+      <div class="column fourth">.fourth</div>
+      <div class="column">Auto</div>
+      <div class="column">Auto</div>
+    </div>
+    <div class="columns">
+      <div class="column fifth">.fifth</div>
+      <div class="column">Auto</div>
+      <div class="column">Auto</div>
+    </div>
+    <div class="columns">
+      <div class="column sixth">.sixth</div>
+      <div class="column">Auto</div>
+      <div class="column">Auto</div>
+    </div></code>
+  </pre>
+  <h3>Responsive</h3>
+  <p>Responsive behaviors are provided by the
+    <a href="#Responsifier">Responsifier</a>. The following illustrates how it can be used to to create a responsive grid. Resize your browser to
+    stack/unstack grid items. To stack grid items, add the
+    <em>flex-dir-col</em> class.
+  </p>
+  <div class="box">
+    <div id="responsiveGrid" class="columns text-align-center text-height-xl text-size-m text-color-white">
+      <div class="column bg-primary">Col 1</div>
+      <div class="column bg-primary-light">Col 2</div>
+      <div class="column bg-primary">Col 3</div>
+    </div>
+  </div>
+  <h4>HTML</h4>
+  <pre>
+    <code data-language="html">
+    <div id="responsiveGridExample" class="columns">
+      <div class="column bg-primary">Col 1</div>
+      <div class="column bg-primary-light">Col 2</div>
+      <div class="column bg-primary">Col 3</div>
+    </div>
+  </code>
+  </pre>
+  <h4>JS</h4>
+  <pre>
+    <code data-language="javascript">
+    new feds.ContainerQuery({
+      target: document.querySelector("#responsiveGrid"),
+      queries: [
+        {
+          source: window,
+          event: "resize",
+          range: [0, 799],
+          add: ["flex-dir-col"]
+        },
+        {
+          source: window,
+          event: "resize",
+          range: [800, "*"],
+          remove: ["flex-dir-col"]
+        }
+      ]
+    });
+  </code>
+  </pre>
+</div>
+            <div class="mrgn-vert-xl">
+  <h2 id="Icons">Icons</h2>
+  <div class="columns">
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black administration"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black analytics"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black calendar"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black collapse-expand"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black daily-roster"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black data-intelligence"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black demographics"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black events"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black home"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black hydrants"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black incidents"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black inventory"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black invoicing"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black library"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black maintenance"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black message-center"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black my-profile"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black occupancies"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black payroll"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black reports"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black roster"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black shifts"></i>
+    </div>
+    <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
+      <i class="icon xl black training"></i>
+    </div>
+  </div>
+
+  <h3>Example</h3>
+  <pre>
+  <code data-language="html">
+  <i class="icon administration"></i></code>
+  </pre>
+
+  <h4>Sizes</h4>
+  <div class="box">
+    <div class="columns">
+      <div class="columnflex-fit mrgn-xs pad-xs">
+        <i class="icon black xxl administration"></i>
+      </div>
+      <div class="columnflex-fit mrgn-xs pad-xs">
+        <i class="icon black xl administration"></i>
+      </div>
+      <div class="columnflex-fit mrgn-xs pad-xs">
+        <i class="icon black l administration"></i>
+      </div>
+      <div class="columnflex-fit mrgn-xs pad-xs">
+        <i class="icon black m administration"></i>
+      </div>
+      <div class="columnflex-fit mrgn-xs pad-xs">
+        <i class="icon black s administration"></i>
+      </div>
+      <div class="columnflex-fit mrgn-xs pad-xs">
+        <i class="icon black xs administration"></i>
+      </div>
+    </div>
+  </div>
+  <pre>
+  <code data-language="html">
+  <i class="icon xxl administration"></i>
+  <i class="icon xl administration"></i>
+  <i class="icon l administration"></i>
+  <i class="icon m administration"></i>
+  <i class="icon s administration"></i>
+  <i class="icon xs administration"></i></code>
+  </pre>
+
+  <h4>Colors</h4>
+  <div class="box">
+    <div class="columns">
+      <div class="column flex-fit mrgn-xs pad-xs">
+        <i class="icon xxl black administration"></i>
+      </div>
+      <div class="column flex-fit mrgn-xs pad-xs bg-black bdr-radius-m">
+        <i class="icon xxl white administration"></i>
+      </div>
+    </div>
+  </div>
+  <pre>
+  <code data-language="html">
+  <i class="icon black administration"></i>
+  <i class="icon white administration"></i></code>
+  </pre>
+</div>
+            <div class="mrgn-vert-xl">
+  <h2 id="Responsifier">Responsifier</h2>
+  <p>The
+    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide a simple mechanism
+    to add, remove and toggle classes in response to events. Combined with
+    <strong>Atoms</strong> and
+    <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
+  <ul>
+    <li>Replaces the need for media queries</li>
+    <li>Eliminates the need for ad-hoc responsive styles and scripts</li>
+    <li>Is framework agnostic</li>
+    <li>Has a small footprint (~5kb)</li>
+  </ul>
+
+  <h3>Usage</h3>
+  <pre>
+  <code data-language="javascript">
+  var r = new feds.Responsifier()
+    .add({
+      observer: "#mobile-menu",
+      observable: window,
+      event: feds.Responsifier.RESIZE,
+      range: [0, 799],
+      add: ["show"]
+    })
+    .add({
+      observer: "#mobile-menu",
+      observable: window,
+      event: feds.Responsifier.RESIZE,
+      range: [800, "*"],
+      remove: ["show"]
+    })
+  .init();</code>
+  </pre>
+
+
+  <h3>Methods</h3>
+
+  <h4>add(options)</h4>
+  <p>Adds a media query to a responsifier instance.</p>
+  <h5>Options</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Example</th>
+        <th>Desc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>observer</td>
+        <td>String|[Node List]</td>
+        <td>".some-button"</td>
+        <td>element to update</td>
+      </tr>
+      <tr>
+        <td>observable</td>
+        <td>String|[Node List]</td>
+        <td>"body"</td>
+        <td>element to watch</td>
+      </tr>
+      <tr>
+        <td>event</td>
+        <td>Responsifier event constant</td>
+        <td>Responsifier.SCROLL</td>
+        <td>event to watch for (see events for options)</td>
+      </tr>
+      <tr>
+        <td>range</td>
+        <td>[number,number|"*"]</td>
+        <td>[0,100]</td>
+        <td>Start and ending ranges. Ending range can optionally be set to "*".</td>
+      </tr>
+      <tr>
+        <td>add</td>
+        <td>[string]</td>
+        <td>["hide"]</td>
+        <td>Array of classes to add</td>
+      </tr>
+      <tr>
+        <td>remove</td>
+        <td>[string]</td>
+        <td>["hide"]</td>
+        <td>Array of classes to remove</td>
+      </tr>
+      <tr>
+        <td>toggle</td>
+        <td>[string]</td>
+        <td>["hide"]</td>
+        <td>Array of classes to toggle</td>
+      </tr>
+      <tr>
+        <td>conditions</td>
+        <td>[function]</td>
+        <td>[function(){return true;}]</td>
+        <td>Callback functions to call before making class changes. All must return true.</td>
+      </tr>
+      <tr>
+        <td>lock</td>
+        <td>[string]</td>
+        <td>["hide"]</td>
+        <td>Prevent class from being added, removed, toggled, etc.</td>
+      </tr>
+      <tr>
+        <td>unlock</td>
+        <td>[string]</td>
+        <td>["hide"]</td>
+        <td>Renable class for being added, removed, toggled, etc.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>Events</h4>
+  <ul>
+    <li>Responsifier.SCROLL</li>
+    <li>Responsifier.RESIZE</li>
+    <li>Responsifier.CLICK</li>
+    <li>Responsifier.HOVER</li>
+    <li>Responsifier.TOGGLE</li>
+  </ul>
+</div>
+            <div class="mrgn-vert-xl">
+  <h2 id="Typography">Typography</h2>
+  <h3>Headers</h3>
+  <div class="box">
+    <h1 class="mrgn-none">H1 Header</h1>
+    <h2>H2 Header</h2>
+    <h3>H3 Header</h3>
+    <h4>H4 Header</h4>
+    <h5>H5 Header</h5>
+  </div>
+  <pre>
+  <code data-language="html">
+  <h1>H1 Header</h1>
+  <h2>H2 Header</h2>
+  <h3>H3 Header</h3>
+  <h4>H4 Header</h4>
+  <h5>H5 Header</h5></code>
+  </pre>
+  <h3>Text</h3>
+  <div class="box">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada, risus ipsum sodales
+      est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a felis bibendum aliquet aliquam sit amet
+      nisl. Quisque vel tempus leo.</p>
+    <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat. Integer quis neque mollis
+      diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet pellentesque. Ut sodales, massa in finibus
+      bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc. Maecenas efficitur volutpat ex, ut accumsan velit
+      tincidunt euismod. Nulla vulputate quis est eget consectetur.</p>
+  </div>
+  <pre>
+  <code data-language="html">
+  <p>Lorem ipsum dolor...</p>
+  <p>Etiam at venenatis sapien...</p></code>
+  </pre>
+  <!-- <h4>Acronyms</h4>
+  <h4>Lead</h4>
+  <h4>Quote</h4> -->
+  <h3>Utility</h3>
+  <h3>Colors</h3>
+  <div class="box">
+    <div class="text-color-primary text-height-m text-size-m text-indent-2 ">.text-color-primary</div>
+    <div class="text-color-primary-light text-height-m text-size-m text-indent-2 ">.text-color-primary-light</div>
+    <div class="text-color-secondary text-height-m text-size-m text-indent-2 ">.text-color-secondary</div>
+    <div class="text-color-success text-height-m text-size-m text-indent-2 ">.text-color-success</div>
+    <div class="text-color-danger text-height-m text-size-m text-indent-2 ">.text-color-danger</div>
+    <div class="text-color-black text-height-m text-size-m text-indent-2 ">.text-color-black</div>
+    <div class="text-color-grey text-height-m text-size-m text-indent-2 ">.text-color-grey</div>
+    <div class="text-color-grey-light text-height-m text-size-m text-indent-2 ">.text-color-grey-light</div>
+  </div>
+  <pre>
+  <code data-language="html">
+  <div class="text-color-primary ">.text-color-primary</div>
+  <div class="text-color-primary-light ">.text-color-primary-light</div>
+  <div class="text-color-secondary ">.text-color-secondary</div>
+  <div class="text-color-success ">.text-color-success</div>
+  <div class="text-color-danger ">.text-color-danger</div>
+  <div class="text-color-black ">.text-color-black</div>
+  <div class="text-color-grey ">.text-color-grey</div>
+  <div class="text-color-grey-light ">.text-color-grey-light</div></code>
+  </pre>
+  <h3>Sizes</h3>
+  <div class="box">
+    <div class="text-size-xxl text-height-xxl text-indent-2 ">Giant Text</div>
+    <div class="text-size-xl text-height-xl text-indent-2 ">Extra Large Text</div>
+    <div class="text-size-l text-height-l text-indent-2 ">Large Text</div>
+    <div class="text-size-m text-height-l text-indent-2 ">Medium Text</div>
+    <div class="text-size-s text-height-l text-indent-2 ">Small Text</div>
+    <div class="text-size-xs text-height-m text-indent-2 ">Extra Small Text</div>
+  </div>
+  <pre>
+  <code data-language="html">
+  <div class="text-size-xxl ">Giant Text</div>
+  <div class="text-size-xl ">Extra Large Text</div>
+  <div class="text-size-l ">Large Text</div>
+  <div class="text-size-m ">Medium Text</div>
+  <div class="text-size-s ">Small Text</div>
+  <div class="text-size-xs ">Extra Small Text</div></code>
+  </pre>
+  <h3>Fonts</h3>
+  <div class="box">
+    <div class="text-size-xl text-height-xl text-indent-2 ">Open Sans - Regular</div>
+    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-italic ">Open Sans - Italic</div>
+    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold ">Open Sans - Bold</div>
+    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold-italic ">Open Sans - Bold Italic</div>
+  </div>
+  <pre>
+  <code data-language="html">
+  <div class="text-font-primary ">Open Sans - Regular</div>
+  <div class="text-font-primary-italic ">Open Sans - Italic</div>
+  <div class="text-font-primary-bold ">Open Sans - Bold</div>
+  <div class="text-font-primary-bold-italic ">Open Sans - Bold Italic</div></code>
+  </pre>
+  <h3>Styles</h3>
+  <div class="box">
+    <p class="text-size-l">Regular Text</p>
+    <p class="text-size-l">
+      <em>Italicized Text</em>
+    </p>
+    <p class="text-size-l">
+      <strong>Strong Text</strong>
+    </p>
+    <p class="text-size-l">
+      <strong>
+        <em>Strong Italicized Text</em>
+      </strong>
+    </p>
+  </div>
+  <pre>
+  <code data-language="html">
+  <p>Regular Text</p>
+  <p><em>Italicized Text</em></p>
+  <p><strong>Strong Text</strong></p>
+  <p><strong><em>Strong Italicized Text</em></strong></p></code>
+  </pre>
+  <h3>Leading</h3>
+  <h3>Alignment</h3>
+</div>
+        </div>
+    </div>
+</body>
+
+</html>
