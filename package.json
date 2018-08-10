@@ -1,11 +1,14 @@
 {
-  "name": "styler",
+  "name": "feds",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "build": "node ./tasks/build.js",
-    "clean": "rimraf ./index.html"
+    "build:guide": "node ./tasks/guide.js",
+    "build:styles": "node ./tasks/styles.js",
+    "build:scripts": "node ./tasks/scripts.js",
+    "clean": "rimraf ./public/index.html && rimraf ./public/styles/* && rimraf ./public/scripts/*"
   },
   "author": "",
   "license": "ISC",

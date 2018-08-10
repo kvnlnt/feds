@@ -4,11 +4,6 @@
     "blue-dark": "hsl(212, 70%, 40%)",
     "blue-light": "hsl(212, 100%, 60%)",
     "blue": "hsl(212, 64%, 49%)",
-    "bluef": {
-      "hue": 212,
-      "saturation": 64,
-      "lightness": 49
-    },
     "green": "hsl(158, 100%, 26%)",
     "grey-light": "hsl(218,8%,48%)",
     "grey-light-tint": "#CACED9",

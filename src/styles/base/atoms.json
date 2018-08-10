@@ -94,9 +94,6 @@
   ".cursor-pointer": ["cursor:pointer"],
   ".filter-color-white": ["filter:brightness(1)"],
   ".filter-color-black": ["filter:brightness(0)"],
-  ".filter-color-primary": [
-    "filter:hue-rotate(${color.bluef.hue}deg) saturate(${color.bluef.saturation}%) brightness(.${color.bluef.hue})"
-  ],
   ".flex-fit": ["flex-grow:0"],
   ".flex-align-center": ["align-items:center"],
   ".flex-align-start": ["align-items:flex-start"],
