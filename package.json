@@ -1,8 +1,8 @@
 {
   "name": "feds",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Front End Design System",
+  "main": "./tasks/build.js",
   "scripts": {
     "build": "node ./tasks/build.js",
     "build:guide": "node ./tasks/guide.js",
