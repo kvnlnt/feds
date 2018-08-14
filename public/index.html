@@ -132,6 +132,8 @@
             var sections = [].slice.call(document.querySelectorAll("section"));
             [].slice.call(document.querySelectorAll("#mainMenu a")).forEach(function (i) {
                 i.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.location.hash = e.target.getAttribute("href");
                     sections.forEach(function (ii) {
                         ii.classList.add("hide");
                     });
@@ -178,9 +180,9 @@
         </aside>
         <div id="layout-content" class="column pad-m">
             <h1 class="mrgn-top-none">FEDS</h1>
-            <p class="text-size-l text-color-grey-light">Front-end Design System</p>
+            <p class="text-size-l text-color-grey-light mrgn-bot-l">Front-end Design System</p>
             <!-- Buttons -->
-            <section class="pad-top-xl hide" id="Buttons">
+            <section class="hide" id="Buttons">
                 <h2>Buttons</h2>
                 <h3>Types</h3>
                 <div class="box">
@@ -227,7 +229,7 @@
                 </pre>
             </section>
             <!-- Colors -->
-            <section class="pad-top-xl hide" id="Colors">
+            <section class="hide" id="Colors">
                 <h2>Colors</h2>
                 <h3>Backgrounds</h3>
                 <p>Background colors will only set the color of the background. Therefore
@@ -255,7 +257,7 @@
                 </div>
             </section>
             <!-- Grids -->
-            <section class="pad-top-xl hide" id="Grids">
+            <section class="hide" id="Grids">
                 <h2>Grids</h2>
                 <h3>Sizes</h3>
                 <div class="box">
@@ -362,7 +364,7 @@
                 </pre>
             </section>
             <!-- Icons -->
-            <section class="pad-top-xl hide" id="Icons">
+            <section class="hide" id="Icons">
                 <h2>Icons</h2>
                 <div class="columns">
                     <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
@@ -496,7 +498,7 @@
                 </pre>
             </section>
             <!-- Responsifier -->
-            <section class="pad-top-xl hide" id="Responsifier">
+            <section class="hide" id="Responsifier">
                 <h2>Responsifier</h2>
                 <p>The
                     <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide
@@ -620,7 +622,7 @@
                 </ul>
             </section>
             <!-- Tooltip -->
-            <section class="pad-top-xl hide" id="Tooltip">
+            <section class="hide" id="Tooltip">
                 <h2>Tooltip</h2>
                 <div class="box">
                     <a href="#" data-tooltip="A Tooltip">Hover over me</a>
@@ -632,7 +634,7 @@
                 </pre>
             </section>
             <!-- Typography -->
-            <section class="pad-top-xl hide" id="Typography">
+            <section class="hide" id="Typography">
                 <h2>Typography</h2>
                 <h3>Headers</h3>
                 <div class="box">
