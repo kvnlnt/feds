@@ -6,20 +6,27 @@ const color = require("./lib/color");
 console.time(color.ok("Scripts"));
 
 const code = {
-    ContainerQuery: fs.readFileSync("./src/scripts/ContainerQuery.js", "utf-8"),
-    Responsifier: fs.readFileSync("./src/scripts/Responsifier.js", "utf-8")
+  ContainerQuery: fs.readFileSync("./src/scripts/ContainerQuery.js", "utf-8"),
+  Responsifier: fs.readFileSync("./src/scripts/Responsifier.js", "utf-8")
 };
 
-// requires: require and module.exports
-// works in: node only
+// IIFE: Browser only
+const WrapInIIFE = () => `var feds = (function(m){
+    ${code.ContainerQuery}
+    ${code.Responsifier}
+    m.ContainerQuery = ContainerQuery;
+    m.Responsifier = Responsifier;
+    return m;
+}(feds || {}))`;
+
+// CommonJS: Node only
 const WrapInCommonJs = () => `${code.ContainerQuery}${code.Responsifier}
 module.exports = {
     ContainerQuery: ContainerQuery,
     Responsifier: Responsifier
 };`;
 
-// requires: define function
-// works in: browser
+// AMD: Browser only, with AMD
 const WrapInAMD = () => `
 define('feds', [], 
 function () {
@@ -32,17 +39,36 @@ function () {
     return module;
 });`;
 
-// requires: import 
-// works in: some browsers (but should be transpiled to es5)
+// ESM: Browsers only (via Bundler)
 const WrapInEs6 = () => `
 export ${code.ContainerQuery}
 export ${code.Responsifier}`;
 
-fs.writeFileSync(`./public/scripts/${config.name}.common.${config.version}.js`, WrapInCommonJs());
-fs.writeFileSync(`./public/scripts/${config.name}.common.latest.js`, WrapInCommonJs());
-fs.writeFileSync(`./public/scripts/${config.name}.amd.${config.version}.js`, WrapInAMD());
+fs.writeFileSync(
+  `./public/scripts/${config.name}.iife.${config.version}.js`,
+  WrapInIIFE()
+);
+fs.writeFileSync(
+  `./public/scripts/${config.name}.iife.latest.js`,
+  WrapInIIFE()
+);
+fs.writeFileSync(
+  `./public/scripts/${config.name}.common.${config.version}.js`,
+  WrapInCommonJs()
+);
+fs.writeFileSync(
+  `./public/scripts/${config.name}.common.latest.js`,
+  WrapInCommonJs()
+);
+fs.writeFileSync(
+  `./public/scripts/${config.name}.amd.${config.version}.js`,
+  WrapInAMD()
+);
 fs.writeFileSync(`./public/scripts/${config.name}.amd.latest.js`, WrapInAMD());
-fs.writeFileSync(`./public/scripts/${config.name}.es6.${config.version}.js`, WrapInEs6());
+fs.writeFileSync(
+  `./public/scripts/${config.name}.es6.${config.version}.js`,
+  WrapInEs6()
+);
 fs.writeFileSync(`./public/scripts/${config.name}.es6.latest.js`, WrapInEs6());
 
 // Running time

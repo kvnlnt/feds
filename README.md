@@ -12,13 +12,13 @@ Framework agnostic CSS library starter toolkit utilizing best practices
 - Responsive (mobile first, container-queries)
 - Framework agnostic (it's just css)
 - Intuitive conventions (BEM, OOCSS)
-- Styleguide (called "patterns")
+- Styleguide
 - Deployment friendly (autoprefixed, optimized, CI friendly)
 - Standards based (Future proof, IDE friendly)
 
 # Usage
 
-    npm build
+    npm run build
 
 Workflow is based around the auto generated style guide. Start the app, edit code and checkout the style guide generated in the [public folder](./public)
 
@@ -39,13 +39,12 @@ You can create a set of Patterns. Once established, you want to avoid changing P
 Take a look at the `./styles/base` folder. It's a collection of config files.
 
 - [atoms](./themes/base/atoms.json) - config file for your atoms css
-- [config](./themes/base/config.json) - basic metadata about the theme
 - [fonts](./themes/base/fonts.json) - config file for your fonts
 - [molecules](./themes/base/molecules.json) - config file for your molecules css
 - [params](./themes/base/params.json) - config file for your variables
 - [resets](./themes/base/resets.json) - config file for any reset/normalizing css
 
-There's an npm task called `build`. It reads the configs and spits out an artifact. Pretty simple. The entire app is ~100 LOC and at this point I consider it's simplicity to be self documenting.
+There's an npm task called `build`. It reads the configs and spits out artifacts. Pretty simple.
 
 # Articles / Influences
 

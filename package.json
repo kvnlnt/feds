@@ -5,7 +5,6 @@
   "main": "./tasks/build.js",
   "scripts": {
     "build": "node ./tasks/build.js",
-    "build:guide": "node ./tasks/guide.js",
     "build:styles": "node ./tasks/styles.js",
     "build:scripts": "node ./tasks/scripts.js",
     "clean": "rimraf ./public/index.html && rimraf ./public/styles/* && rimraf ./public/scripts/*"

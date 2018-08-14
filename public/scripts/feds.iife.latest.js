@@ -1,6 +1,4 @@
-
-define('feds', [], 
-function () {
+var feds = (function(m){
     function ContainerQuery(opts) {
   var opts = opts || {};
   this.add = opts.add || [];
@@ -242,9 +240,7 @@ Responsifier.prototype = {
     });
   }
 };
-    var module = {
-        ContainerQuery: ContainerQuery,
-        Responsifier: Responsifier
-    };
-    return module;
-});
+    m.ContainerQuery = ContainerQuery;
+    m.Responsifier = Responsifier;
+    return m;
+}(feds || {}))
