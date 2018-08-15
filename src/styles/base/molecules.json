@@ -1,5 +1,6 @@
 {
   "a": [
+    ".text-font-primary",
     ".text-color-primary",
     ".cursor-pointer",
     ".text-size-m",
@@ -26,9 +27,9 @@
   ".button:focus": [".bg-secondary", ".anim-speed-fast", ".text-color-white"],
   ".button:hover": [".bg-secondary", ".anim-speed-fast", ".text-color-white"],
   ".button:active": [".opac-70", ".anim-speed-fast", ".shadow-s"],
-  ".button.disabled": [".bg-grey-light", ".opac-50", ".bdr-color-grey-light"],
-  ".button.disabled:hover": [".bg-grey-light", ".opac-50"],
-  ".button.disabled:active": [".bg-grey-light", ".opac-50"],
+  ".button.disabled": [".bg-grey-l", ".opac-50", ".bdr-color-grey-l"],
+  ".button.disabled:hover": [".bg-grey-l", ".opac-50"],
+  ".button.disabled:active": [".bg-grey-l", ".opac-50"],
   ".button.large": [".text-size-l", ".text-height-xxl"],
   ".button.medium": [".text-height-l"],
   ".button.small": [".text-height-m"],
@@ -95,10 +96,10 @@
   "h1": [".text-size-xxl", ".text-font-primary", ".text-space-s"],
   "h2": [
     ".text-size-xl",
-    ".text-font-primary",
+    ".text-font-primary-light",
     ".text-space-s",
     ".bdr-bot-xs",
-    ".bdr-bot-color-grey-light-tint",
+    ".bdr-bot-color-grey-l",
     ".pad-bot-s"
   ],
   "h3": [
@@ -129,7 +130,7 @@
   "table": [".text-size-m", ".bdr-collapse"],
   "table th": [
     ".bdr-bot-xs",
-    ".bdr-color-grey-light-tint",
+    ".bdr-color-grey-extra-l",
     ".text-font-bold",
     ".pad-horz-s",
     ".text-size-s",
@@ -142,13 +143,13 @@
     ".pad-vert-xs",
     ".pad-horz-s",
     ".bdr-bot-xs",
-    ".bdr-color-grey-light-tint"
+    ".bdr-color-grey-extra-l"
   ],
   "[data-tooltip]": [".pos-rel"],
   "[data-tooltip]:hover:after": [
     ".content-attr-tooltip",
     ".pad-xs",
-    ".bg-grey-light-tint",
+    ".bg-grey-extra-l",
     ".text-underline-none",
     ".text-color-grey",
     ".mrgn-horz-xs",
