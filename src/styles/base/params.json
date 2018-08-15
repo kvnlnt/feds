@@ -48,6 +48,8 @@
   "font": {
     "open-sans": "OpenSans",
     "open-sans-italic": "OpenSansItalic",
+    "open-sans": "OpenSansLight",
+    "open-sans-light-italic": "OpenSansLightItalic",
     "open-sans-bold": "OpenSansBold",
     "open-sans-bold-italic": "OpenSansBoldItalic"
   }

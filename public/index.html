@@ -54,14 +54,14 @@
                     observable: window,
                     event: feds.Responsifier.RESIZE,
                     range: [0, 999],
-                    add: ["flex-dir-col", "pad-top-xl", "is-mobile"]
+                    add: ["flex-dir-col", "pad-top-s", "is-mobile"]
                 })
                 .add({
                     observer: "#layout",
                     observable: window,
                     event: feds.Responsifier.RESIZE,
                     range: [1000, "*"],
-                    remove: ["flex-dir-col", "pad-top-xl", "is-mobile"]
+                    remove: ["flex-dir-col", "pad-top-s", "is-mobile"]
                 })
                 // MENU
                 .add({
@@ -138,7 +138,7 @@
                     document.querySelector(e.target.getAttribute("href")).classList.remove("hide");
                 });
             });
-            document.querySelector(window.location.hash).classList.remove("hide");
+            if (window.location.hash) document.querySelector(window.location.hash).classList.remove("hide");
         }
 
         function cleanUpExamples() {
@@ -177,10 +177,21 @@
             <a href="#Typography" class="text-size-l text-height-xl text-indent-2 block">Typography</a>
         </aside>
         <div id="layout-content" class="column pad-m">
-            <h1 class="mrgn-top-none">FEDS</h1>
-            <p class="text-size-l text-color-grey-light">Front-end Design System</p>
+            <!-- About -->
+            <section class="pad-top-s" id="About">
+                <h2 class="mrgn-top-none">About the ER Frontend Design System</h2>
+                <h3>Purpose</h3>
+                <p>
+                    This is the Frontend Design System for the Emergency Reporting SaaS product. It is a framework agnostic CSS library starter
+                    toolkit utilizing best practices.
+                </p>
+                <h3>Implementation Details</h3>
+                <p>You can find all the details for implementing this Design System at
+                    <a href="https://github.com/kvnlnt/feds">https://github.com/kvnlnt/feds</a>
+                </p>
+            </section>
             <!-- Buttons -->
-            <section class="pad-top-xl hide" id="Buttons">
+            <section class="pad-top-s hide" id="Buttons">
                 <h2>Buttons</h2>
                 <h3>Types</h3>
                 <div class="box">
@@ -227,7 +238,7 @@
                 </pre>
             </section>
             <!-- Colors -->
-            <section class="pad-top-xl hide" id="Colors">
+            <section class="pad-top-s hide" id="Colors">
                 <h2>Colors</h2>
                 <h3>Backgrounds</h3>
                 <p>Background colors will only set the color of the background. Therefore
@@ -255,7 +266,7 @@
                 </div>
             </section>
             <!-- Grids -->
-            <section class="pad-top-xl hide" id="Grids">
+            <section class="pad-top-s hide" id="Grids">
                 <h2>Grids</h2>
                 <h3>Sizes</h3>
                 <div class="box">
@@ -362,7 +373,7 @@
                 </pre>
             </section>
             <!-- Icons -->
-            <section class="pad-top-xl hide" id="Icons">
+            <section class="pad-top-s hide" id="Icons">
                 <h2>Icons</h2>
                 <div class="columns">
                     <div class="column flex-fit bdr-color-grey-light-tint bdr-xs bdr-radius-m mrgn-xs pad-xs">
@@ -496,7 +507,7 @@
                 </pre>
             </section>
             <!-- Responsifier -->
-            <section class="pad-top-xl hide" id="Responsifier">
+            <section class="pad-top-s hide" id="Responsifier">
                 <h2>Responsifier</h2>
                 <p>The
                     <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide
@@ -620,7 +631,7 @@
                 </ul>
             </section>
             <!-- Tooltip -->
-            <section class="pad-top-xl hide" id="Tooltip">
+            <section class="pad-top-s hide" id="Tooltip">
                 <h2>Tooltip</h2>
                 <div class="box">
                     <a href="#" data-tooltip="A Tooltip">Hover over me</a>
@@ -632,7 +643,7 @@
                 </pre>
             </section>
             <!-- Typography -->
-            <section class="pad-top-xl hide" id="Typography">
+            <section class="pad-top-s hide" id="Typography">
                 <h2>Typography</h2>
                 <h3>Headers</h3>
                 <div class="box">
