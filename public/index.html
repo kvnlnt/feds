@@ -130,7 +130,7 @@
 
         function pageManager() {
             var sections = [].slice.call(document.querySelectorAll("section"));
-            [].slice.call(document.querySelectorAll("#mainMenu a")).forEach(function (i) {
+            [].slice.call(document.querySelectorAll("a.menu-item")).forEach(function (i) {
                 i.addEventListener('click', function (e) {
                     var href = e.target.getAttribute("href");
                     if (href.substring(0, 1) === "h") return window.location.href = href;
@@ -173,44 +173,51 @@
     </div>
     <div id="layout" class="columns bg-grey-xxl" style="min-height:100vh">
         <aside id="mainMenu" class="column pad-m bg-grey-xl" style="flex: 0 0 150px">
-            <img src="gfx/er-logo.svg" />
+            <a href="#About" class="menu-item">
+                <img src="gfx/er-logo.svg" style="pointer-events: none" />
+            </a>
             <br/>
             <p class="text-size-xs text-font-primary-bold mrgn-vert-none">Frontend Design System</p>
             <hr class="mrgn-vert-xs" />
-            <a href="#About" class="text-size-m text-color-black text-height-l text-indent-2 block">About</a>
-            <a href="#Concepts" class="text-size-m text-color-black text-height-l text-indent-2 block">Concepts</a>
-            <a href="http://github.com/kvnlnt/feds" class="text-size-m text-color-black text-height-l text-indent-2 block">Repo</a>
+            <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">About</h3>
+            <a href="#About" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Purpose</a>
+            <a href="#Concepts" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Concepts</a>
+            <a href="http://github.com/kvnlnt/feds" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Repo</a>
             <h3 class="text-size-xs text-color-grey opac-60">CSS</h3>
-            <a href="#Atoms" class="text-size-m text-color-black text-height-l text-indent-2 block">Atoms</a>
-            <a href="#Buttons" class="text-size-m text-color-black text-height-l text-indent-2 block">Buttons</a>
-            <a href="#Colors" class="text-size-m text-color-black text-height-l text-indent-2 block">Colors</a>
+            <a href="#Atoms" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Atoms</a>
+            <a href="#Buttons" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Buttons</a>
+            <a href="#Colors" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Colors</a>
             <!-- <a href="#Forms" class="text-size-m text-color-black text-height-l text-indent-2 block">Forms</a> -->
-            <a href="#Grids" class="text-size-m text-color-black text-height-l text-indent-2 block">Grids</a>
-            <a href="#Icons" class="text-size-m text-color-black text-height-l text-indent-2 block">Icons</a>
+            <a href="#Grids" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Grids</a>
+            <a href="#Icons" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Icons</a>
             <!-- <a href="#Navigation" class="text-size-m text-color-black text-height-l text-indent-2 block">Navigations</a> -->
             <!-- <a href="#ables" class="text-size-m text-color-black text-height-l text-indent-2 block">Tables</a> -->
-            <a href="#Tooltip" class="text-size-m text-color-black text-height-l text-indent-2 block">Tooltip</a>
-            <a href="#Typography" class="text-size-m text-color-black text-height-l text-indent-2 block">Typography</a>
+            <a href="#Tooltip" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Tooltip</a>
+            <a href="#Typography" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Typography</a>
             <h3 class="text-size-xs text-color-grey text-case-upper opac-60">Javascript</h3>
-            <a href="#Responsifier" class="text-size-m text-color-black text-height-l text-indent-2 block">Responsifier</a>
+            <a href="#Responsifier" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Responsifier</a>
         </aside>
         <div id="layout-content" class="column pad-m">
             <!-- About -->
             <section class="pad-top-l hide" id="About">
                 <h2 class="mrgn-top-none">About the ER Frontend Design System</h2>
-                <h3>Purpose</h3>
+                <h3>About</h3>
                 <p>
-                    This is the Frontend Design System for the Emergency Reporting SaaS product. It is a framework agnostic CSS library starter
-                    toolkit utilizing best practices.
+                    The ER Frontend Design System (FEDS) has been developed for Emergency Reporting. It aims to serve as a complete toolkit for
+                    facilitating the development of well crafted web applications. This toolkit will provide: style guides,
+                    patterns, components, workflows & best practices, etc.
                 </p>
-                <h3>Implementation Details</h3>
-                <p>You can find all the details for implementing this Design System at
+                <h3>Get Started</h3>
+                <p>To get started click
+                    <a href="#Concepts" class="menu-item">Concepts</a>. To checkout the source code, head over to:
                     <a href="https://github.com/kvnlnt/feds">https://github.com/kvnlnt/feds</a>
                 </p>
+                <a href="#Concepts" class="menu-item button mrgn-vert-s">Concepts</a>
             </section>
             <!-- Concepts -->
             <section class="pad-top-l hide" id="Concepts">
                 <h2 class="mrgn-top-none">Concepts</h2>
+                <a href="https://github.com/kvnlnt/feds">https://github.com/kvnlnt/feds</a>
                 <p>
                     Best Practices
                 </p>
