@@ -1,5 +1,4 @@
 const fs = require("fs");
-const theme = process.argv[2] || "base";
 const config = require("../package.json");
 const color = require("./lib/color");
 
@@ -47,31 +46,21 @@ const precompileResets = resets => {
   }, {});
 };
 
-// helpers
-const importStyleConfig = (t, f) => {
-  let o = require(`../src/styles/base/${f}`);
-  const isCustom = t !== "base" && fs.existsSync(`./src/styles/${t}/${f}`);
-  if (isCustom) o = Object.assign(o, require(`../src/styles/${t}/${f}`));
-  return o;
-};
-
 const importFonts = fonts =>
   Object.entries(fonts)
     .map(([k, v]) => fs.readFileSync("./public/fonts/" + v, "utf-8"))
     .join("");
 
 // import style (& theme) files
-const params = importStyleConfig(theme, "params.json");
-const atoms = importStyleConfig(theme, "atoms.json");
-const molecules = importStyleConfig(theme, "molecules.json");
-const resets = importStyleConfig(theme, "resets.json");
-const fonts = importStyleConfig(theme, "fonts.json");
+const params = require(`../src/styles/params.json`);
+const atoms = require(`../src/styles/atoms.json`);
+const molecules = require(`../src/styles/molecules.json`);
+const resets = require(`../src/styles/resets.json`);
+const fonts = require(`../src/styles/fonts.json`);
 
 // precompile assets
 const precompiledAtoms = precompileAtoms(atoms, interpolate, params);
-
 const precompiledMolecules = precompileMolecules(molecules, precompiledAtoms);
-
 const precompiledResets = precompileResets(resets);
 
 // compile

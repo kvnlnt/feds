@@ -1,0 +1,26 @@
+{
+  "startTime": "2018-08-17T05:10:08.476Z",
+  "endTime": "2018-08-17T05:10:11.180Z",
+  "userAgents": [
+    "Chrome 68.0.3440 / Mac OS X 10.13.4"
+  ],
+  "passed": 1,
+  "total": 1,
+  "skipped": 0,
+  "fixtures": [
+    {
+      "name": "Getting Started",
+      "path": "/Users/kevinlint/Dev/feds/tests/smoke.js",
+      "tests": [
+        {
+          "name": "My first test",
+          "errs": [],
+          "durationMs": 2697,
+          "screenshotPath": null,
+          "skipped": false
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

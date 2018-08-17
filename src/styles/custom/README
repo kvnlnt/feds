@@ -1,5 +1,0 @@
-Copy any config you'd like to extend/overwrite from the base directory and run a build with
-
-        node ./app/main.js custom
-
-But just don't. 

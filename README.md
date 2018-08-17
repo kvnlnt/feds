@@ -46,6 +46,12 @@ Take a look at the `./styles/base` folder. It's a collection of config files.
 
 There's an npm task called `build`. It reads the configs and spits out artifacts. Pretty simple.
 
+## Testing
+
+Tests are run in dev using TestCafe. Running `npm test` triggers all tests in the `test` directory. Upon success the `package.json` file "test" key is set to the current build number. If tests fail, the "test" key is set to "false".
+
+The `npm test:ci` task attempts to match the build number with the test number. A match proves that tests were successfully run against the build. This means all tests are executed and proved as part of dev process, eliminating the need to emulate browsers, etc on the server during deployment.
+
 # Articles / Influences
 
 - [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)- Brad Frost
