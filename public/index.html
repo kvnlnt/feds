@@ -179,9 +179,10 @@
             <br/>
             <p class="text-size-xs text-font-primary-bold mrgn-vert-none">Frontend Design System</p>
             <hr class="mrgn-vert-xs" />
-            <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">About</h3>
-            <a href="#About" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Purpose</a>
+            <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">General</h3>
+            <a href="#About" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">About</a>
             <a href="#Concepts" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Concepts</a>
+            <a href="#Compatibility" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Compatibility</a>
             <a href="http://github.com/kvnlnt/feds" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Repo</a>
             <h3 class="text-size-xs text-color-grey opac-60">CSS</h3>
             <a href="#Atoms" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Atoms</a>
@@ -197,16 +198,32 @@
             <h3 class="text-size-xs text-color-grey text-case-upper opac-60">Javascript</h3>
             <a href="#Responsifier" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Responsifier</a>
         </aside>
-        <div id="layout-content" class="column pad-m">
+        <div id="layout-content" class="column pad-m" style="max-width:900px">
             <!-- About -->
             <section class="pad-top-l hide" id="About">
                 <h2 class="mrgn-top-none">About the ER Frontend Design System</h2>
-                <h3>About</h3>
+                <h3>Purpose</h3>
                 <p>
                     The ER Frontend Design System (FEDS) has been developed for Emergency Reporting. It aims to serve as a complete toolkit for
-                    facilitating the development of well crafted web applications. This toolkit will provide: style guides,
-                    patterns, components, workflows & best practices, etc.
+                    facilitating the development of well crafted web applications.
                 </p>
+                <h3>Toolkit Includes:</h3>
+                <ul>
+                    <li>Living Style Guide</li>
+                    <li>Implementation Patterns</li>
+                    <li>Javascript Components</li>
+                    <li>Prescriptive Workflows</li>
+                    <li>Best Practices & Learning Resources</li>
+                </ul>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Atomic Design</li>
+                    <li>Responsive Design</li>
+                    <li>Framework agnostic</li>
+                    <li>Intuitive conventions (BEM, OOCSS)</li>
+                    <li>Deployment friendly (autoprefixed, optimized, CI friendly)</li>
+                    <li>W3C Compliant</li>
+                </ul>
                 <h3>Get Started</h3>
                 <p>To get started click
                     <a href="#Concepts" class="menu-item">Concepts</a>. To checkout the source code, head over to:
@@ -218,12 +235,48 @@
             <section class="pad-top-l hide" id="Concepts">
                 <h2 class="mrgn-top-none">Concepts</h2>
                 <a href="https://github.com/kvnlnt/feds">https://github.com/kvnlnt/feds</a>
-                <p>
-                    Best Practices
-                </p>
+                <h3>Atomic Design</h3>
+                <h3>Conventions</h3>
+                <h3>Container Queries</h3>
+                <h3>Components</h3>
                 <h3>Flexbox</h3>
                 <h3>Units</h3>
                 <p>vh, vw, rems</p>
+                <h3>Workflow</h3>
+                <h3>References</h3>
+                <ul>
+                    <li>
+                        <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a>- Brad Frost</li>
+                    <li>
+                        <a href="http://getbem.com/">BEM</a> - CSS naming convention</li>
+                    <li>
+                        <a href="https://bulma.io/">Bulma</a> - A great CSS framework</li>
+                    <li>
+                        <a href="http://cardinalcss.com/">Cardinal Css</a> - A great CSS framework</li>
+                    <li>
+                        <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a> - #1 requested feature of web devs</li>
+                    <li>
+                        <a href="http://tachyons.io/">Tachyons</a> - An "atomic" CSS Framework</li>
+                    <li>
+                        <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not Need A CSS Framework</a> - How CSS frameworks might not be the best fit for complex
+                        projects
+                    </li>
+                    <li>
+                        <a href="http://youmightnotneedjs.com/">You Might Not Need Js</a> - Speaks for itself
+                    </li>
+                    <li>
+                        <a href="https://github.com/tc39">TC39</a> - Javascript Standards
+                    </li>
+                </ul>
+            </section>
+            <!-- Compatibility -->
+            <section class="pad-top-l hide" id="Compatibility">
+                <h2 class="mrgn-top-none">Compatibility</h2>
+                <h3>Devices/Browsers</h3>
+                <h3>CSS</h3>
+                <h4>Level 3</h4>
+                <h3>Javascript</h3>
+                <h4>Modules</h4>
             </section>
             <!-- Atoms -->
             <section class="pad-top-l hide" id="Atoms">
@@ -237,45 +290,45 @@
                 <h2 class="mrgn-top-none">Buttons</h2>
                 <h3>Types</h3>
                 <div class="box">
-                    <a class="button mrgn-xs">Primary</a>
-                    <a class="button secondary mrgn-xs">Secondary</a>
-                    <a class="button danger mrgn-xs">Danger</a>
+                    <a class="button">Primary</a>
+                    <a class="button secondary">Secondary</a>
+                    <a class="button danger">Danger</a>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <a class="button mrgn-xs">Primary</a>
-                    <a class="button secondary mrgn-xs">Secondary</a>
-                    <a class="button danger mrgn-xs">Danger</a>
+                    <a class="button">Primary</a>
+                    <a class="button secondary">Secondary</a>
+                    <a class="button danger">Danger</a>
                 </code>
                 </pre>
                 <h3>Sizes</h3>
                 <div class="box">
-                    <a class="button large mrgn-xs">Large Button</a>
-                    <a class="button mrgn-xs">Default Button</a>
-                    <a class="button medium mrgn-xs">Medium Button</a>
-                    <a class="button small mrgn-xs">Small Button</a>
+                    <a class="button large">Large Button</a>
+                    <a class="button">Default Button</a>
+                    <a class="button medium">Medium Button</a>
+                    <a class="button small">Small Button</a>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <a class="button large mrgn-xs">Large Button</a>
-                    <a class="button mrgn-xs">Default Button</a>
-                    <a class="button medium mrgn-xs">Medium Button</a>
-                    <a class="button small mrgn-xs">Small Button</a>
+                    <a class="button large">Large Button</a>
+                    <a class="button">Default Button</a>
+                    <a class="button medium">Medium Button</a>
+                    <a class="button small">Small Button</a>
                 </code>
                 </pre>
                 <h3>States</h3>
                 <div class="box">
-                    <a class="button mrgn-xs">Primary Active</a>
-                    <a class="button disabled mrgn-xs">Primary Disabled</a>
-                    <a class="button secondary mrgn-xs">Secondary Active</a>
-                    <a class="button secondary disabled mrgn-xs">Secondary Disabled</a>
+                    <a class="button">Primary Active</a>
+                    <a class="button disabled">Primary Disabled</a>
+                    <a class="button secondary">Secondary Active</a>
+                    <a class="button secondary disabled">Secondary Disabled</a>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <a class="button mrgn-xs">Active</a>
-                    <a class="button disabled mrgn-xs">Disabled</a>
-                    <a class="button secondary mrgn-xs">Active</a>
-                    <a class="button secondary disabled mrgn-xs">Disabled</a>
+                    <a class="button">Active</a>
+                    <a class="button disabled">Disabled</a>
+                    <a class="button secondary">Active</a>
+                    <a class="button secondary disabled">Disabled</a>
                 </code>
                 </pre>
             </section>
@@ -283,29 +336,80 @@
             <section class="pad-top-l hide" id="Colors">
                 <h2 class="mrgn-top-none">Colors</h2>
                 <h3>Backgrounds</h3>
-                <p>Background colors will only set the color of the background. Therefore
-                    <code>.text-color-*</code> classes must be used in conjunction with them.</p>
                 <div class="box">
-                    <div class="bg-primary text-height-xl text-color-white text-size-m text-indent-m">.bg-primary</div>
-                    <div class="bg-primary-light text-height-xl text-color-white text-size-m text-indent-m">.bg-primary-light</div>
-                    <div class="bg-secondary text-height-xl text-color-white text-size-m text-indent-m">.bg-secondary</div>
-                    <div class="bg-success text-height-xl text-color-white text-size-m text-indent-m">.bg-success</div>
-                    <div class="bg-danger text-height-xl text-color-white text-size-m text-indent-m">.bg-danger</div>
-                    <div class="bg-black text-height-xl text-color-white text-size-m text-indent-m">.bg-black</div>
-                    <div class="bg-grey text-height-xl text-color-white text-size-m text-indent-m">.bg-grey</div>
-                    <div class="bg-grey-l text-height-xl text-color-white text-size-m text-indent-m">.bg-grey-l</div>
+                    <div class="columns spacing-s">
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-primary height-xxl"></div>
+                                <p>.bg-primary</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-primary-l height-xxl"></div>
+                                <p>.bg-primary-l</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-primary-xl height-xxl"></div>
+                                <p>.bg-primary-xl</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="bg-secondary height-xxl"></div>
+                            <p>.bg-secondary</p>
+                        </div>
+
+                    </div>
+                    <div class="columns">
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-success height-xxl"></div>
+                                <p>.bg-success</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-danger height-xxl"></div>
+                                <p>.bg-danger</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-warn height-xxl"></div>
+                                <p>.bg-warn</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-black height-xxl"></div>
+                                <p>.bg-black</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-grey height-xxl"></div>
+                                <p>.bg-grey</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="mrgn-rgt-s">
+                                <div class="bg-grey-l height-xxl"></div>
+                                <p>.bg-grey-l</p>
+                            </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="bg-grey-xl height-xxl"></div>
+                            <p>.bg-grey-xl</p>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="mrgn-top-3">Text</h3>
-                <div class="box">
-                    <div class="text-color-primary text-height-m text-size-m text-indent-m">.text-color-primary</div>
-                    <div class="text-color-primary-light text-height-m text-size-m text-indent-m">.text-color-primary-light</div>
-                    <div class="text-color-secondary text-height-m text-size-m text-indent-m">.text-color-secondary</div>
-                    <div class="text-color-success text-height-m text-size-m text-indent-m">.text-color-success</div>
-                    <div class="text-color-danger text-height-m text-size-m text-indent-m">.text-color-danger</div>
-                    <div class="text-color-black text-height-m text-size-m text-indent-m">.text-color-black</div>
-                    <div class="text-color-grey text-height-m text-size-m text-indent-m">.text-color-grey</div>
-                    <div class="text-color-grey-l text-height-m text-size-m text-indent-m">.text-color-grey-l</div>
-                </div>
+                <h3>Text</h3>
+                <p>See
+                    <a href="#Typography" class="menu-item">Typography</a> for text colors</p>
             </section>
             <!-- Grids -->
             <section class="pad-top-l hide" id="Grids">

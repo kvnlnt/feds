@@ -8,7 +8,7 @@
     ".inline-block",
     ".bdr-none"
   ],
-  ".box": [".pad-s", ".shadow-s"],
+  ".box": [".pad-s", ".shadow-s", ".bg-white"],
   ".button": [
     ".bdr-xs",
     ".bdr-color-primary",
@@ -159,5 +159,5 @@
     ".pos-left-none",
     "top:calc(-100% - 24px)"
   ],
-  "ul": [".text-size-m"]
+  "ul > li": [".text-font-primary", ".text-height-m", ".text-size-m"]
 }
