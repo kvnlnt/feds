@@ -1,17 +1,23 @@
 {
   "name": "feds",
   "version": "1.0.0",
+  "build": 4,
+  "test": 4,
   "description": "Front End Design System",
   "main": "./tasks/build.js",
   "scripts": {
     "build": "node ./tasks/build.js",
     "build:styles": "node ./tasks/styles.js",
     "build:scripts": "node ./tasks/scripts.js",
-    "clean": "rimraf ./public/index.html && rimraf ./public/styles/* && rimraf ./public/scripts/*"
+    "clean": "rimraf ./public/index.html && rimraf ./public/styles/* && rimraf ./public/scripts/*",
+    "test": "node ./tasks/test.js",
+    "test:ci": "node ./tasks/test-ci.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "testcafe": "^0.21.1",
+    "testcafe-reporter-json": "^2.1.0"
   }
 }
