@@ -1,6 +1,6 @@
 const color = require("./lib/color");
-const pkg = require("../package.json");
-if (pkg.build !== pkg.test) {
+const config = require("../feds.json");
+if (config.build !== config.test) {
   console.log(color.error("Tests Invalid"));
   process.exit(1);
 } else {

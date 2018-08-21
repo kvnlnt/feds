@@ -5,11 +5,80 @@
     <meta charset="UTF-8">
     <title>FEDS</title>
     <link rel="stylesheet" type="text/css" href="styles/feds.latest.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/sunburst.min.css"
-    />
     <style>
         pre {
-            overflow: auto
+            overflow: auto;
+            background-color: #f2f2f2;
+            margin: 1px 0;
+        }
+
+        pre,
+        code {
+            font-family: Consolas, 'Liberation Mono', Courier, monospace;
+            color: #333;
+        }
+
+        pre .comment {
+            color: #998
+        }
+
+        pre .support {
+            color: #0086b3
+        }
+
+        pre .tag,
+        pre .tag-name {
+            color: navy
+        }
+
+        pre .keyword,
+        pre .css-property,
+        pre .vendor-prefix,
+        pre .sass,
+        pre .class,
+        pre .id,
+        pre .css-value,
+        pre .entity.function,
+        pre .storage.function {
+            font-weight: bold
+        }
+
+        pre .css-property,
+        pre .css-value,
+        pre .vendor-prefix,
+        pre .support.namespace {
+            color: #333
+        }
+
+        pre .constant.numeric,
+        pre .keyword.unit,
+        pre .hex-color {
+            font-weight: normal;
+            color: #099
+        }
+
+        pre .entity.class {
+            color: #458
+        }
+
+        pre .entity.id,
+        pre .entity.function {
+            color: #900
+        }
+
+        pre .attribute,
+        pre .variable {
+            color: teal
+        }
+
+        pre .string,
+        pre .support.value {
+            font-weight: normal;
+            color: #d14
+        }
+
+        pre .regexp {
+            color: #009926
         }
     </style>
     <script>
@@ -187,11 +256,13 @@
             <a href="#Atoms" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Atoms</a>
             <a href="#Buttons" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Buttons</a>
             <a href="#Colors" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Colors</a>
-            <!-- <a href="#Forms" class="text-size-m text-color-black text-height-l text-indent-2 block">Forms</a> -->
-            <a href="#Grids" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Grids</a>
+            <a href="#Forms" class="text-size-m text-color-black text-height-l text-indent-2 block">Forms</a>
             <a href="#Icons" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Icons</a>
-            <!-- <a href="#Navigation" class="text-size-m text-color-black text-height-l text-indent-2 block">Navigations</a> -->
-            <!-- <a href="#ables" class="text-size-m text-color-black text-height-l text-indent-2 block">Tables</a> -->
+            <a href="#Layout" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Layout</a>
+            <a href="#Menus" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Menus</a>
+            <a href="#Modals" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Modals</a>
+            <a href="#Notifications" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Notifications</a>
+            <a href="#Tables" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Tables</a>
             <a href="#Tooltip" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Tooltip</a>
             <a href="#Typography" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Typography</a>
             <h3 class="text-size-xs text-color-grey text-case-upper opac-60">Javascript</h3>
@@ -214,6 +285,7 @@
                 </p>
                 <a href="#Concepts" class="menu-item button mrgn-vert-s">Concepts</a>
             </section>
+
             <!-- Concepts -->
             <section class="pad-top-l hide" id="Concepts">
                 <h2 class="mrgn-top-none">Concepts</h2>
@@ -232,6 +304,7 @@
                     TODO
                 </p>
             </section>
+
             <!-- Buttons -->
             <section class="pad-top-l hide" id="Buttons">
                 <h2 class="mrgn-top-none">Buttons</h2>
@@ -279,6 +352,7 @@
                 </code>
                 </pre>
             </section>
+
             <!-- Colors -->
             <section class="pad-top-l hide" id="Colors">
                 <h2 class="mrgn-top-none">Colors</h2>
@@ -307,115 +381,8 @@
                     <div class="text-color-grey-l text-height-m text-size-m text-indent-m">.text-color-grey-l</div>
                 </div>
             </section>
-            <!-- Grids -->
-            <section class="pad-top-l hide" id="Grids">
-                <h2 class="mrgn-top-none">Grids</h2>
-                <h3>Sizes</h3>
-                <div class="box">
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column half bg-primary">.half</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column third bg-primary">.third</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column fourth bg-primary">.fourth</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column fifth bg-primary">.fifth</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column sixth bg-primary">.sixth</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                </div>
-                <pre>
-                <code data-language="html">
-                  <div class="columns">
-                    <div class="column half">.half</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column third">.third</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column fourth">.fourth</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column fifth">.fifth</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column sixth">.sixth</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                </code>
-                </pre>
-                <h3>Responsive</h3>
-                <p>Responsive behaviors are provided by the
-                    <a href="#Responsifier">Responsifier</a>. The following illustrates how it can be used to to create a responsive grid. Resize
-                    your browser to
-                    <> 800 pixels to stack/unstack grid items. Grid stacking is supporting by add the
-                        <em>flex-dir-col</em> atom.
-                </p>
-                <div class="box">
-                    <div id="responsiveGrid" class="columns text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column bg-primary">Col 1</div>
-                        <div class="column bg-primary-l">Col 2</div>
-                        <div class="column bg-primary">Col 3</div>
-                    </div>
-                </div>
-                <h4>HTML</h4>
-                <pre>
-                <code data-language="html">
-                  <div id="responsiveGridExample" class="columns">
-                    <div class="column bg-primary">Col 1</div>
-                    <div class="column bg-primary-l">Col 2</div>
-                    <div class="column bg-primary">Col 3</div>
-                  </div>
-                </code>
-                </pre>
-                <h4>JS</h4>
-                <pre>
-                  <code data-language="javascript">
-                  new feds.ContainerQuery({
-                    target: document.querySelector("#responsiveGrid"),
-                    queries: [
-                      {
-                        source: window,
-                        event: "resize",
-                        range: [0, 799],
-                        add: ["flex-dir-col"]
-                      },
-                      {
-                        source: window,
-                        event: "resize",
-                        range: [800, "*"],
-                        remove: ["flex-dir-col"]
-                      }
-                    ]
-                  });
-                </code>
-                </pre>
-            </section>
-            <!-- Icons -->
 
+            <!-- Icons -->
             <section class="pad-top-l hide" id="Icons">
                 <h2 class="mrgn-top-none">Icons</h2>
                 <div class="columns">
@@ -492,10 +459,10 @@
 
                 <h3>Example</h3>
                 <pre>
-                <code data-language="html">
-                    <i class="icon administration"></i>
-                </code>
-                </pre>
+                            <code data-language="html">
+                                <i class="icon administration"></i>
+                            </code>
+                            </pre>
 
                 <h4>Sizes</h4>
                 <div class="box">
@@ -521,15 +488,15 @@
                     </div>
                 </div>
                 <pre>
-                <code data-language="html">
-                    <i class="icon xxl administration"></i>
-                    <i class="icon xl administration"></i>
-                    <i class="icon l administration"></i>
-                    <i class="icon m administration"></i>
-                    <i class="icon s administration"></i>
-                    <i class="icon xs administration"></i>
-                </code>
-                </pre>
+                            <code data-language="html">
+                                <i class="icon xxl administration"></i>
+                                <i class="icon xl administration"></i>
+                                <i class="icon l administration"></i>
+                                <i class="icon m administration"></i>
+                                <i class="icon s administration"></i>
+                                <i class="icon xs administration"></i>
+                            </code>
+                            </pre>
 
                 <h4>Colors</h4>
                 <div class="box">
@@ -543,18 +510,136 @@
                     </div>
                 </div>
                 <pre>
+                            <code data-language="html">
+                                <i class="icon black administration"></i>
+                                <i class="icon white administration"></i>
+                            </code>
+                            </pre>
+            </section>
+
+            <!-- Layout -->
+            <section class="pad-top-l hide" id="Layout">
+                <h2 class="mrgn-top-none">Layout</h2>
+                <h3>Sizes</h3>
+                <div class="box">
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column half bg-primary">.half</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column third bg-primary">.third</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column fourth bg-primary">.fourth</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column fifth bg-primary">.fifth</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column sixth bg-primary">.sixth</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                </div>
+                <pre>
                 <code data-language="html">
-                    <i class="icon black administration"></i>
-                    <i class="icon white administration"></i>
+                  <div class="columns">
+                    <div class="column half">.half</div>
+                    <div class="column">Auto</div>
+                    <div class="column">Auto</div>
+                  </div>
+                  <div class="columns">
+                    <div class="column third">.third</div>
+                    <div class="column">Auto</div>
+                    <div class="column">Auto</div>
+                  </div>
+                  <div class="columns">
+                    <div class="column fourth">.fourth</div>
+                    <div class="column">Auto</div>
+                    <div class="column">Auto</div>
+                  </div>
+                  <div class="columns">
+                    <div class="column fifth">.fifth</div>
+                    <div class="column">Auto</div>
+                    <div class="column">Auto</div>
+                  </div>
+                  <div class="columns">
+                    <div class="column sixth">.sixth</div>
+                    <div class="column">Auto</div>
+                    <div class="column">Auto</div>
+                  </div>
+                </code>
+                </pre>
+                <h3>Responsive</h3>
+                <p>Responsive behaviors are provided by the
+                    <a href="#Responsifier">Responsifier</a>. The following illustrates how it can be used to to create a
+                    responsive grid. Resize your browser to
+                    <> 800 pixels to stack/unstack grid items. Grid stacking is supporting by add the
+                        <em>flex-dir-col</em> atom.
+                </p>
+                <div class="box">
+                    <div id="responsiveGrid" class="columns text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column bg-primary">Col 1</div>
+                        <div class="column bg-primary-l">Col 2</div>
+                        <div class="column bg-primary">Col 3</div>
+                    </div>
+                </div>
+                <h4>HTML</h4>
+                <pre>
+                <code data-language="html">
+                  <div id="responsiveGridExample" class="columns">
+                    <div class="column bg-primary">Col 1</div>
+                    <div class="column bg-primary-l">Col 2</div>
+                    <div class="column bg-primary">Col 3</div>
+                  </div>
+                </code>
+                </pre>
+                <h4>JS</h4>
+                <pre>
+                  <code data-language="javascript">
+                  new feds.ContainerQuery({
+                    target: document.querySelector("#responsiveGrid"),
+                    queries: [
+                      {
+                        source: window,
+                        event: "resize",
+                        range: [0, 799],
+                        add: ["flex-dir-col"]
+                      },
+                      {
+                        source: window,
+                        event: "resize",
+                        range: [800, "*"],
+                        remove: ["flex-dir-col"]
+                      }
+                    ]
+                  });
                 </code>
                 </pre>
             </section>
+
+            <!-- Menus -->
+            <section class="pad-top-l hide" id="Menus">
+                <h2 class="mrgn-top-none">Menus</h2>
+                <h3>Breadcrumbs</h3>
+                <h3>Lists</h3>
+                <h3>Pagination</h3>
+                <h3>Tabs</h3>
+            </section>
+
             <!-- Responsifier -->
             <section class="pad-top-l hide" id="Responsifier">
                 <h2 class="mrgn-top-none">Responsifier</h2>
                 <p>The
-                    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide
-                    a simple mechanism to add, remove and toggle classes in response to events. Combined with
+                    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to
+                    provide a simple mechanism to add, remove and toggle classes in response to events. Combined with
                     <strong>Atoms</strong> and
                     <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
                 <ul>
@@ -585,7 +670,6 @@
                     .init();
                 </code>
                 </pre>
-
 
                 <h3>Methods</h3>
 
@@ -673,6 +757,61 @@
                     <li>Responsifier.TOGGLE</li>
                 </ul>
             </section>
+
+            <!-- Tables -->
+            <section class="pad-top-l hide" id="Tables">
+                <h2 class="mrgn-top-none">Tables</h2>
+                <p>Tables are for displaying tabular data. Our implementation utilizes flexbox in order to support responsive
+                    functionality. This includes row or column based tables - allowing for the data to be transformed to
+                    tabs or an accordion. This ultimately means that rowspan is not possible. For complex data layouts, use
+                    flexbox.
+                </p>
+                <h3>Column Based</h3>
+                <div class="table 3cols">
+                    <div class="cell header">Eddard Stark</div>
+                    <div class="cell">Has a sword named Ice</div>
+                    <div class="cell">No direwolf</div>
+                    <div class="cell">Lord of Winterfell</div>
+                    <div class="cell header">Jon Snow</div>
+                    <div class="cell">Has a sword named Longclaw</div>
+                    <div class="cell">Direwolf: Ghost</div>
+                    <div class="cell">Knows nothing</div>
+                    <div class="cell header">Arya Stark</div>
+                    <div class="cell">Has a sword named Needle</div>
+                    <div class="cell">Direwolf: Nymeria</div>
+                    <div class="cell">No one</div>
+                </div>
+                <div class="box">
+                </div>
+                <pre>
+                <code data-language="html"></code>
+                </pre>
+                <h3>Row Based</h3>
+                <div class="box">
+                </div>
+                <pre>
+                <code data-language="html"></code>
+                </pre>
+                <h3>Tabs</h3>
+                <div class="box">
+                </div>
+                <pre>
+                <code data-language="html"></code>
+                </pre>
+                <h3>Accordion</h3>
+                <div class="box">
+                </div>
+                <pre>
+                <code data-language="html"></code>
+                </pre>
+                <h3>Styling</h3>
+                <div class="box">
+                </div>
+                <pre>
+                <code data-language="html"></code>
+                </pre>
+            </section>
+
             <!-- Tooltip -->
             <section class="pad-top-l hide" id="Tooltip">
                 <h2 class="mrgn-top-none">Tooltip</h2>
@@ -685,6 +824,7 @@
                 </code>
                 </pre>
             </section>
+
             <!-- Typography -->
             <section class="pad-top-l hide" id="Typography">
                 <h2 class="mrgn-top-none">Typography</h2>
@@ -707,9 +847,9 @@
                 </pre>
                 <h3>Text</h3>
                 <div class="box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada, risus
-                        ipsum sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a felis
-                        bibendum aliquet aliquam sit amet nisl. Quisque vel tempus leo.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada,
+                        risus ipsum sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a
+                        felis bibendum aliquet aliquam sit amet nisl. Quisque vel tempus leo.</p>
                     <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat. Integer
                         quis neque mollis diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet pellentesque.
                         Ut sodales, massa in finibus bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc. Maecenas
@@ -781,7 +921,9 @@
                     <div class="text-size-xl text-height-xl text-indent-2 ">Open Sans - Regular</div>
                     <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-italic ">Open Sans - Italic</div>
                     <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold ">Open Sans - Bold</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold-italic ">Open Sans - Bold Italic</div>
+                    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold-italic ">Open Sans - Bold
+                        Italic
+                    </div>
                 </div>
                 <pre>
                 <code data-language="html">
@@ -817,6 +959,7 @@
                 <h3>Leading</h3>
                 <h3>Alignment</h3>
             </section>
+
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>

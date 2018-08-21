@@ -127,8 +127,23 @@
   "small": [".text-size-s"],
   "strong": [".text-font-primary-bold"],
   "strong > em, em > strong": [".text-font-primary-bold-italic"],
-  "table": [".text-size-m", ".bdr-collapse"],
-  "table th": [
+  ".table": [
+    ".flex",
+    ".flex-dir-row",
+    ".flex-wrap",
+    ".text-size-m",
+    ".bdr-collapse"
+  ],
+  ".table.3cols .cell": [".flex-col-third"],
+  ".table .cell": [
+    ".flex-col",
+    ".width-full",
+    ".pad-vert-xs",
+    ".pad-horz-s",
+    ".bdr-bot-xs",
+    ".bdr-color-grey-extra-l"
+  ],
+  ".table .cell.header": [
     ".bdr-bot-xs",
     ".bdr-color-grey-extra-l",
     ".text-font-bold",
@@ -138,12 +153,6 @@
     ".text-case-upper",
     ".text-space-s",
     ".text-align-left"
-  ],
-  "table td": [
-    ".pad-vert-xs",
-    ".pad-horz-s",
-    ".bdr-bot-xs",
-    ".bdr-color-grey-extra-l"
   ],
   "[data-tooltip]": [".pos-rel"],
   "[data-tooltip]:hover:after": [

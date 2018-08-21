@@ -1,5 +1,5 @@
 const fs = require("fs");
-const config = require("../package.json");
+const config = require("../feds.json");
 const color = require("./lib/color");
 
 // setup

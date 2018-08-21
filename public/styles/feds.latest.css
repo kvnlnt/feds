@@ -177,9 +177,10 @@ section { ; }
 small { font-size:1.3rem; }
 strong { font-family:OpenSansBold, Arial; }
 strong > em, em > strong { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
-table { font-size:1.4rem;border-collapse:collapse; }
-table th { border-bottom-width:1px;border-bottom-style:solid;undefined;undefined;padding-left:2rem;padding-right:2rem;font-size:1.3rem;padding-top:1.4rem;padding-bottom:1.4rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left; }
-table td { padding-top:1.4rem;padding-bottom:1.4rem;padding-left:2rem;padding-right:2rem;border-bottom-width:1px;border-bottom-style:solid;undefined; }
+.table { display:flex;flex-direction:row;flex-wrap:wrap;font-size:1.4rem;border-collapse:collapse; }
+.table.3cols .cell { flex:0 0 33.33333%; }
+.table .cell { flex:1;width: 100%;padding-top:1.4rem;padding-bottom:1.4rem;padding-left:2rem;padding-right:2rem;border-bottom-width:1px;border-bottom-style:solid;undefined; }
+.table .cell.header { border-bottom-width:1px;border-bottom-style:solid;undefined;undefined;padding-left:2rem;padding-right:2rem;font-size:1.3rem;padding-top:1.4rem;padding-bottom:1.4rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left; }
 [data-tooltip] { position:relative; }
 [data-tooltip]:hover:after { content: attr(data-tooltip);padding:1.4rem;undefined;text-decoration:none;color:hsl(219, 22%, 25%);margin-left:1.4rem;margin-right:1.4rem;font-size:1.1rem;border-width:0;border-style:none;position:absolute;left:0;top:calc(-100% - 24px); }
 ul { font-size:1.4rem; }
