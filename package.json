@@ -1,7 +1,7 @@
 {
   "name": "feds",
   "version": "1.0.0",
-  "build": 4,
+  "build": 57,
   "test": 4,
   "description": "Front End Design System",
   "main": "./tasks/build.js",
@@ -17,7 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "rimraf": "^2.6.2",
-    "testcafe": "^0.21.1",
-    "testcafe-reporter-json": "^2.1.0"
+    "testcafe": "^0.21.1"
   }
 }

@@ -127,29 +127,45 @@
   "small": [".text-size-s"],
   "strong": [".text-font-primary-bold"],
   "strong > em, em > strong": [".text-font-primary-bold-italic"],
-  "table": [".text-size-m", ".bdr-collapse"],
-  "table th": [
+  ".table": [".flex", ".flex-wrap", ".text-size-m", ".bdr-collapse"],
+  ".table > .cell": [
     ".bdr-bot-xs",
-    ".bdr-color-grey-extra-l",
+    ".bdr-color-grey-xl",
+    ".width-full",
+    ".hide-overflow",
+    ".flex-grow",
+    ".pad-xs"
+  ],
+  ".table > .cell.header": [
+    ".bdr-bot-xs",
+    ".bdr-color-grey-l",
     ".text-font-bold",
-    ".pad-horz-s",
     ".text-size-s",
-    ".pad-vert-xs",
     ".text-case-upper",
     ".text-space-s",
-    ".text-align-left"
+    ".text-align-left",
+    ".text-font-primary-bold"
   ],
-  "table td": [
-    ".pad-vert-xs",
-    ".pad-horz-s",
-    ".bdr-bot-xs",
-    ".bdr-color-grey-extra-l"
+  ".table.three-columns > .cell": [
+    ".width-third"
+  ],
+  ".table.four-columns > .cell": [
+    ".width-fourth"
+  ],
+  ".table.rows.four-columns > .cell:nth-child(3n+1)": [
+    "order:1"
+  ],
+  ".table.rows.four-columns > .cell:nth-child(3n+2)": [
+    "order:2"
+  ],
+  ".table.rows.four-columns > .cell:nth-child(3n+3)": [
+    "order:3"
   ],
   "[data-tooltip]": [".pos-rel"],
   "[data-tooltip]:hover:after": [
     ".content-attr-tooltip",
     ".pad-xs",
-    ".bg-grey-extra-l",
+    ".bg-grey-xl",
     ".text-underline-none",
     ".text-color-grey",
     ".mrgn-horz-xs",

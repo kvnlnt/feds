@@ -36,7 +36,7 @@ You can create a set of Patterns. Once established, you want to avoid changing P
 
 ## How It Works
 
-Take a look at the `./styles/base` folder. It's a collection of config files.
+Take a look at the `./src/styles` folder. It's a collection of config files.
 
 - [atoms](./themes/base/atoms.json) - config file for your atoms css
 - [fonts](./themes/base/fonts.json) - config file for your fonts

@@ -1,6 +1,5 @@
 const fs = require("fs");
 const createTestCafe = require("testcafe");
-const report = fs.createWriteStream("tests/report.json");
 const pkg = require("../package.json");
 let testcafe = null;
 
@@ -11,7 +10,6 @@ createTestCafe("localhost", 1337, 1338)
       .createRunner()
       .src(["tests/*.js"])
       .browsers(["chrome"])
-      .reporter("json", report)
       .run();
   })
   .then(failedCount => {
