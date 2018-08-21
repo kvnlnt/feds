@@ -1,6 +1,7 @@
 const fs = require("fs");
 const createTestCafe = require("testcafe");
-const pkg = require("../package.json");
+const report = fs.createWriteStream("tests/report.json");
+const config = require("../feds.json");
 let testcafe = null;
 
 createTestCafe("localhost", 1337, 1338)
@@ -15,10 +16,10 @@ createTestCafe("localhost", 1337, 1338)
   .then(failedCount => {
     console.log("Tests failed: " + failedCount);
     if (failedCount > 0) {
-      pkg.test = false;
+      config.test = false;
     } else {
-      pkg.test = pkg.build;
+      config.test = config.build;
     }
-    fs.writeFileSync("./package.json", JSON.stringify(pkg, null, 2), "utf-8");
+    fs.writeFileSync("./feds.json", JSON.stringify(config, null, 2), "utf-8");
     testcafe.close();
   });

@@ -1,0 +1,11 @@
+{
+  "name": "feds",
+  "version": "1.0.0",
+  "build": 26,
+  "test": 4,
+  "scripts": {
+    "ContainerQuery": "./src/scripts/ContainerQuery.js",
+    "Responsifier": "./src/scripts/Responsifier.js",
+    "DataTable": "./src/scripts/DataTable.js"
+  }
+}

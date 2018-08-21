@@ -1,14 +1,14 @@
 const fs = require("fs");
-const config = require("../package.json");
+const config = require("../feds.json");
 const color = require("./lib/color");
 
 // setup
 console.time(color.ok("Scripts"));
 
-const code = {
-  ContainerQuery: fs.readFileSync("./src/scripts/ContainerQuery.js", "utf-8"),
-  Responsifier: fs.readFileSync("./src/scripts/Responsifier.js", "utf-8")
-};
+const code = Object.keys(config.scripts).reduce((acc, curr) => {
+  acc[curr] = fs.readFileSync(config.scripts[curr], "utf-8");
+  return acc;
+}, {});
 
 // IIFE: Browser only
 const WrapInIIFE = () => `var feds = (function(m){
