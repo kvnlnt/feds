@@ -65,6 +65,7 @@ ContainerQuery.prototype = {
     return this;
   },
   classesToggle: function(target) {
+    var that = this;
     this.toggle.forEach(function(i) {
       that.classToggle(i, target);
     });
