@@ -127,13 +127,16 @@
   "small": [".text-size-s"],
   "strong": [".text-font-primary-bold"],
   "strong > em, em > strong": [".text-font-primary-bold-italic"],
-  ".table": [".flex", ".flex-wrap", ".text-size-m", ".bdr-collapse"],
+  ".table": [".flex", ".text-size-m", "flex-direction:row", "flex-wrap:wrap"],
   ".table > .cell": [
     ".bdr-bot-xs",
     ".bdr-color-grey-xl",
     ".width-full",
     ".hide-overflow",
-    ".flex-grow",
+    "flex-grow:0",
+    "flex-shrink:1",
+    "flex-basis:100%",
+    "box-sizing:border-box",
     ".pad-xs"
   ],
   ".table > .cell.header": [
@@ -144,23 +147,12 @@
     ".text-case-upper",
     ".text-space-s",
     ".text-align-left",
-    ".text-font-primary-bold"
+    ".text-font-primary-bold",
+    "order:-1"
   ],
-  ".table.three-columns > .cell": [
-    ".width-third"
-  ],
-  ".table.four-columns > .cell": [
-    ".width-fourth"
-  ],
-  ".table.rows.four-columns > .cell:nth-child(3n+1)": [
-    "order:1"
-  ],
-  ".table.rows.four-columns > .cell:nth-child(3n+2)": [
-    "order:2"
-  ],
-  ".table.rows.four-columns > .cell:nth-child(3n+3)": [
-    "order:3"
-  ],
+  ".table.rows > .cell.header": ["order:0"],
+  ".table.three-columns > .cell": ["width:33%", "flex-basis:33%"],
+  ".table.four-columns > .cell": ["width:25%", "flex-basis:25%"],
   "[data-tooltip]": [".pos-rel"],
   "[data-tooltip]:hover:after": [
     ".content-attr-tooltip",

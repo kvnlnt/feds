@@ -177,14 +177,12 @@ section { ; }
 small { font-size:1.3rem; }
 strong { font-family:OpenSansBold, Arial; }
 strong > em, em > strong { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
-.table { display:flex;flex-wrap:wrap;font-size:1.4rem;border-collapse:collapse; }
-.table > .cell { border-bottom-width:1px;border-bottom-style:solid;border-color:rgba(202,206,217,.3);width: 100%;overflow:hidden;flex-grow:1;padding:1.4rem; }
-.table > .cell.header { border-bottom-width:1px;border-bottom-style:solid;border-color:rgb(202,206,217);undefined;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial; }
-.table.three-columns > .cell { width: 33.33333%; }
-.table.four-columns > .cell { width: 25%; }
-.table.rows.four-columns > .cell:nth-child(3n+1) { order:1; }
-.table.rows.four-columns > .cell:nth-child(3n+2) { order:2; }
-.table.rows.four-columns > .cell:nth-child(3n+3) { order:3; }
+.table { display:flex;font-size:1.4rem;flex-direction:row;flex-wrap:wrap; }
+.table > .cell { border-bottom-width:1px;border-bottom-style:solid;border-color:rgba(202,206,217,.3);width: 100%;overflow:hidden;flex-grow:0;flex-shrink:1;flex-basis:100%;box-sizing:border-box;padding:1.4rem; }
+.table > .cell.header { border-bottom-width:1px;border-bottom-style:solid;border-color:rgb(202,206,217);undefined;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial;order:-1; }
+.table.rows > .cell.header { order:0; }
+.table.three-columns > .cell { width:33%;flex-basis:33%; }
+.table.four-columns > .cell { width:25%;flex-basis:25%; }
 [data-tooltip] { position:relative; }
 [data-tooltip]:hover:after { content: attr(data-tooltip);padding:1.4rem;background-color:rgba(202,206,217,.3);text-decoration:none;color:hsl(219, 22%, 25%);margin-left:1.4rem;margin-right:1.4rem;font-size:1.1rem;border-width:0;border-style:none;position:absolute;left:0;top:calc(-100% - 24px); }
 ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
@@ -253,7 +251,6 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .filter-color-white { filter:brightness(1); }
 .filter-color-black { filter:brightness(0); }
 .flex-fit { flex-grow:0; }
-.flex-grow { flex-grow:1; }
 .flex-horz-center { justify-content:center; }
 .flex-horz-left { justify-content:start; }
 .flex-horz-right { justify-content:end; }
