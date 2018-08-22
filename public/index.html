@@ -179,26 +179,12 @@
                     }
 
                 })
-                .add({
-                    observer: "#responsiveGrid",
-                    observable: window,
-                    event: feds.Responsifier.RESIZE,
-                    range: [0, 799],
-                    add: ["flex-dir-col"]
-                })
-                .add({
-                    observer: "#responsiveGrid",
-                    observable: window,
-                    event: feds.Responsifier.RESIZE,
-                    range: [800, '*'],
-                    remove: ["flex-dir-col"]
-                })
                 .init();
         }
 
         function pageManager() {
             var sections = [].slice.call(document.querySelectorAll("section"));
-            [].slice.call(document.querySelectorAll("a.menu-item")).forEach(function (i) {
+            [].slice.call(document.querySelectorAll("a.nav-item")).forEach(function (i) {
                 i.addEventListener('click', function (e) {
                     var href = e.target.getAttribute("href");
                     if (href.substring(0, 1) === "h") return window.location.href = href;
@@ -241,32 +227,32 @@
     </div>
     <div id="layout" class="columns bg-grey-xxl" style="min-height:100vh">
         <aside id="mainMenu" class="column pad-m bg-grey-xl" style="flex: 0 0 150px">
-            <a href="#About" class="menu-item">
+            <a href="#About" class="nav-item">
                 <img src="gfx/er-logo.svg" style="pointer-events: none" />
             </a>
             <br/>
-            <p class="text-size-xs text-font-primary-bold mrgn-vert-none">Frontend Design System</p>
+            <p class="text-size-xs text-style-bold mrgn-vert-none">Frontend Design System</p>
             <hr class="mrgn-vert-xs" />
             <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">General</h3>
-            <a href="#About" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">About</a>
-            <a href="#Concepts" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Concepts</a>
-            <a href="#Compatibility" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Compatibility</a>
-            <a href="http://github.com/kvnlnt/feds" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Repo</a>
+            <a href="#About" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">About</a>
+            <a href="#Concepts" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Concepts</a>
+            <a href="#Compatibility" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Compatibility</a>
+            <a href="http://github.com/kvnlnt/feds" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Repo</a>
             <h3 class="text-size-xs text-color-grey opac-60">CSS</h3>
-            <a href="#Atoms" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Atoms</a>
-            <a href="#Buttons" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Buttons</a>
-            <a href="#Colors" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Colors</a>
-            <a href="#Forms" class="text-size-m text-color-black text-height-l text-indent-2 block">Forms</a>
-            <a href="#Icons" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Icons</a>
-            <a href="#Layout" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Layout</a>
-            <a href="#Menus" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Menus</a>
-            <a href="#Modals" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Modals</a>
-            <a href="#Notifications" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Notifications</a>
-            <a href="#Tables" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Tables</a>
-            <a href="#Tooltip" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Tooltip</a>
-            <a href="#Typography" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Typography</a>
+            <a href="#Atoms" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Atoms</a>
+            <a href="#Buttons" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Buttons</a>
+            <a href="#Colors" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Colors</a>
+            <a href="#Columns" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Columns</a>
+            <a href="#Forms" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Forms</a>
+            <a href="#Icons" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Icons</a>
+            <a href="#Menus" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Menus</a>
+            <a href="#Modals" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Modals</a>
+            <a href="#Notifications" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Notifications</a>
+            <a href="#Tables" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tables</a>
+            <a href="#Tooltip" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tooltip</a>
+            <a href="#Typography" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Typography</a>
             <h3 class="text-size-xs text-color-grey text-case-upper opac-60">Javascript</h3>
-            <a href="#Responsifier" class="menu-item text-size-m text-color-black text-height-l text-indent-2 block">Responsifier</a>
+            <a href="#Responsifier" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Responsifier</a>
         </aside>
         <div id="layout-content" class="column pad-m" style="max-width:900px">
             <!-- About -->
@@ -297,10 +283,10 @@
                 </ul>
                 <h3>Get Started</h3>
                 <p>To get started click
-                    <a href="#Concepts" class="menu-item">Concepts</a>. To checkout the source code, head over to:
+                    <a href="#Concepts" class="nav-item">Concepts</a>. To checkout the source code, head over to:
                     <a href="https://github.com/kvnlnt/feds">https://github.com/kvnlnt/feds</a>
                 </p>
-                <a href="#Concepts" class="menu-item button mrgn-vert-s">Concepts</a>
+                <a href="#Concepts" class="nav-item button mrgn-vert-s">Concepts</a>
             </section>
 
             <!-- Concepts -->
@@ -355,13 +341,12 @@
                     <li>
                         <a href="http://cardinalcss.com/">Cardinal Css</a> - A great CSS framework</li>
                     <li>
-                        <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a> - #1 requested
-                        feature of web devs</li>
+                        <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a> - #1 requested feature of web devs</li>
                     <li>
                         <a href="http://tachyons.io/">Tachyons</a> - An "atomic" CSS Framework</li>
                     <li>
-                        <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not Need
-                            A CSS Framework</a> - How CSS frameworks might not be the best fit for complex projects
+                        <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not Need A CSS Framework</a> - How CSS frameworks might not be the best fit for complex
+                        projects
                     </li>
                     <li>
                         <a href="http://youmightnotneedjs.com/">You Might Not Need Js</a> - Speaks for itself
@@ -376,6 +361,40 @@
             <section class="pad-top-l hide" id="Compatibility">
                 <h2 class="mrgn-top-none">Compatibility</h2>
                 <h3>Devices/Browsers</h3>
+                <h4>Matrix</h4>
+                <div class="table rows three-columns">
+                    <div class="cell header">Browser</div>
+                    <div class="cell header">Min Version</div>
+                    <div class="cell header">Max Version</div>
+                    <div class="cell text-style-bold">IE</div>
+                    <div class="cell">10</div>
+                    <div class="cell">11</div>
+                    <div class="cell text-style-bold">Edge</div>
+                    <div class="cell">15</div>
+                    <div class="cell">18</div>
+                    <div class="cell text-style-bold">Chrome</div>
+                    <div class="cell">57</div>
+                    <div class="cell">71</div>
+                    <div class="cell text-style-bold">Safari</div>
+                    <div class="cell">10</div>
+                    <div class="cell">12</div>
+                    <div class="cell text-style-bold">Safari IOS</div>
+                    <div class="cell">10</div>
+                    <div class="cell">12</div>
+                </div>
+                <h4>Key</h4>
+                <div class="table cols two-columns">
+                    <div class="cell header">Range</div>
+                    <div class="cell" style="order:1">Within</div>
+                    <div class="cell" style="order:1">Minimum</div>
+                    <div class="cell" style="order:1">Above</div>
+                    <div class="cell" style="order:1">Below</div>
+                    <div class="cell header">Support</div>
+                    <div class="cell" style="order:2">Full</div>
+                    <div class="cell" style="order:2">Partial</div>
+                    <div class="cell" style="order:2">Partial</div>
+                    <div class="cell" style="order:2">None</div>
+                </div>
                 <h3>CSS</h3>
                 <h4>Level 3</h4>
                 <h3>Javascript</h3>
@@ -515,8 +534,104 @@
                 </div>
                 <h3>Text</h3>
                 <p>See
-                    <a href="#Typography" class="menu-item">Typography</a> for text colors</p>
+                    <a href="#Typography" class="nav-item">Typography</a> for text colors</p>
             </section>
+
+            <!-- Columns -->
+            <section class="pad-top-l hide" id="Columns">
+                <h2 class="mrgn-top-none">Columns</h2>
+                <p>Columnss are based on flexbox via a molecule called
+                    <em>columns</em>
+                </p>
+                <h3>Sizes</h3>
+                <div class="box">
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column half bg-primary">.half</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column third bg-primary">.third</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column fourth bg-primary">.fourth</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column fifth bg-primary">.fifth</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column sixth bg-primary">.sixth</div>
+                        <div class="column bg-primary-l">Auto</div>
+                        <div class="column bg-primary-l">Auto</div>
+                    </div>
+                </div>
+                <pre>
+                <code data-language="html">
+                    <div class="columns">
+                        <div class="column half">.half</div>
+                        <div class="column">Auto</div>
+                        <div class="column">Auto</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column third">.third</div>
+                        <div class="column">Auto</div>
+                        <div class="column">Auto</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column fourth">.fourth</div>
+                        <div class="column">Auto</div>
+                        <div class="column">Auto</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column fifth">.fifth</div>
+                        <div class="column">Auto</div>
+                        <div class="column">Auto</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column sixth">.sixth</div>
+                        <div class="column">Auto</div>
+                        <div class="column">Auto</div>
+                    </div>
+                </code>
+                </pre>
+                <h3>Responsive</h3>
+                <p>Responsive behaviors are provided by the
+                    <a href="#Responsifier" class="nav-item">Responsifier</a>. Grid stacking is supporting by add the
+                    <em>flex-dir-col</em> atom.
+                </p>
+                <div class="box">
+                    <div class="flex-dir-col columns text-align-center text-height-xl text-size-m text-color-white">
+                        <div class="column bg-primary">Col 1</div>
+                        <div class="column bg-primary-l">Col 2</div>
+                        <div class="column bg-primary">Col 3</div>
+                    </div>
+                </div>
+                <h4>HTML</h4>
+                <pre>
+                <code data-language="html">
+                    <div class="columns flex-dir-col">
+                        <div class="column">Col 1</div>
+                        <div class="column">Col 2</div>
+                        <div class="column">Col 3</div>
+                    </div>
+                </code>
+                </pre>
+            </section>
+
+            <!-- Forms -->
+            <section class="pad-top-l hide" id="Forms">
+                <h2 class="mrgn-top-none">Forms</h2>
+                <p>
+                    TODO
+                </p>
+            </section>
+
             <!-- Icons -->
             <section class="pad-top-l hide" id="Icons">
                 <h2 class="mrgn-top-none">Icons</h2>
@@ -652,114 +767,6 @@
                             </pre>
             </section>
 
-            <!-- Layout -->
-            <section class="pad-top-l hide" id="Layout">
-                <h2 class="mrgn-top-none">Layout</h2>
-                <h3>Sizes</h3>
-                <div class="box">
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column half bg-primary">.half</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column third bg-primary">.third</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column fourth bg-primary">.fourth</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column fifth bg-primary">.fifth</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                    <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column sixth bg-primary">.sixth</div>
-                        <div class="column bg-primary-l">Auto</div>
-                        <div class="column bg-primary-l">Auto</div>
-                    </div>
-                </div>
-                <pre>
-                <code data-language="html">
-                  <div class="columns">
-                    <div class="column half">.half</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column third">.third</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column fourth">.fourth</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column fifth">.fifth</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                  <div class="columns">
-                    <div class="column sixth">.sixth</div>
-                    <div class="column">Auto</div>
-                    <div class="column">Auto</div>
-                  </div>
-                </code>
-                </pre>
-                <h3>Responsive</h3>
-                <p>Responsive behaviors are provided by the
-                    <a href="#Responsifier">Responsifier</a>. The following illustrates how it can be used to to create a
-                    responsive grid. Resize your browser to
-                    <> 800 pixels to stack/unstack grid items. Grid stacking is supporting by add the
-                        <em>flex-dir-col</em> atom.
-                </p>
-                <div class="box">
-                    <div id="responsiveGrid" class="columns text-align-center text-height-xl text-size-m text-color-white">
-                        <div class="column bg-primary">Col 1</div>
-                        <div class="column bg-primary-l">Col 2</div>
-                        <div class="column bg-primary">Col 3</div>
-                    </div>
-                </div>
-                <h4>HTML</h4>
-                <pre>
-                <code data-language="html">
-                  <div id="responsiveGridExample" class="columns">
-                    <div class="column bg-primary">Col 1</div>
-                    <div class="column bg-primary-l">Col 2</div>
-                    <div class="column bg-primary">Col 3</div>
-                  </div>
-                </code>
-                </pre>
-                <h4>JS</h4>
-                <pre>
-                  <code data-language="javascript">
-                  new feds.ContainerQuery({
-                    target: document.querySelector("#responsiveGrid"),
-                    queries: [
-                      {
-                        source: window,
-                        event: "resize",
-                        range: [0, 799],
-                        add: ["flex-dir-col"]
-                      },
-                      {
-                        source: window,
-                        event: "resize",
-                        range: [800, "*"],
-                        remove: ["flex-dir-col"]
-                      }
-                    ]
-                  });
-                </code>
-                </pre>
-            </section>
-
             <!-- Menus -->
             <section class="pad-top-l hide" id="Menus">
                 <h2 class="mrgn-top-none">Menus</h2>
@@ -769,12 +776,34 @@
                 <h3>Tabs</h3>
             </section>
 
+            <!-- Modals -->
+            <section class="pad-top-l hide" id="Modals">
+                <h2 class="mrgn-top-none">Modals</h2>
+                <h3>Dialogs</h3>
+                <h3>Popups</h3>
+                <h3>Wizards</h3>
+            </section>
+
+            <!-- Notifications -->
+            <section class="pad-top-l hide" id="Notifications">
+                <h2 class="mrgn-top-none">Notifications</h2>
+                <h3>Toasts</h3>
+                <h3>Popups</h3>
+                <p>See
+                    <a href="#Modals" class="nav-item">Modals (Popups)</a>
+                </p>
+                <h3>Messages</h3>
+                <h4>Info</h4>
+                <h4>Warning</h4>
+                <h4>Alert</h4>
+            </section>
+
             <!-- Responsifier -->
             <section class="pad-top-l hide" id="Responsifier">
                 <h2 class="mrgn-top-none">Responsifier</h2>
                 <p>The
-                    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to
-                    provide a simple mechanism to add, remove and toggle classes in response to events. Combined with
+                    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide
+                    a simple mechanism to add, remove and toggle classes in response to events. Combined with
                     <strong>Atoms</strong> and
                     <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
                 <ul>
@@ -1006,9 +1035,9 @@
                 </pre>
                 <h3>Text</h3>
                 <div class="box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada,
-                        risus ipsum sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a
-                        felis bibendum aliquet aliquam sit amet nisl. Quisque vel tempus leo.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada, risus
+                        ipsum sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a felis
+                        bibendum aliquet aliquam sit amet nisl. Quisque vel tempus leo.</p>
                     <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat. Integer
                         quis neque mollis diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet pellentesque.
                         Ut sodales, massa in finibus bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc. Maecenas
@@ -1078,18 +1107,17 @@
                 <h3>Fonts</h3>
                 <div class="box">
                     <div class="text-size-xl text-height-xl text-indent-2 ">Open Sans - Regular</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-italic ">Open Sans - Italic</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold ">Open Sans - Bold</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-font-primary-bold-italic ">Open Sans - Bold
-                        Italic
+                    <div class="text-size-xl text-height-xl text-indent-2 text-style-italic ">Open Sans - Italic</div>
+                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold ">Open Sans - Bold</div>
+                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold-italic ">Open Sans - Bold Italic
                     </div>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <div class="text-font-primary ">Open Sans - Regular</div>
-                    <div class="text-font-primary-italic ">Open Sans - Italic</div>
-                    <div class="text-font-primary-bold ">Open Sans - Bold</div>
-                    <div class="text-font-primary-bold-italic ">Open Sans - Bold Italic</div>
+                    <div class="text-style ">Open Sans - Regular</div>
+                    <div class="text-style-italic ">Open Sans - Italic</div>
+                    <div class="text-style-bold ">Open Sans - Bold</div>
+                    <div class="text-style-bold-italic ">Open Sans - Bold Italic</div>
                 </code>
                 </pre>
                 <h3>Styles</h3>

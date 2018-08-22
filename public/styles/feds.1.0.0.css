@@ -179,10 +179,13 @@ strong { font-family:OpenSansBold, Arial; }
 strong > em, em > strong { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
 .table { display:flex;font-size:1.4rem;flex-direction:row;flex-wrap:wrap; }
 .table > .cell { border-bottom-width:1px;border-bottom-style:solid;border-color:rgba(202,206,217,.3);width: 100%;overflow:hidden;flex-grow:0;flex-shrink:1;flex-basis:100%;box-sizing:border-box;padding:1.4rem; }
-.table > .cell.header { border-bottom-width:1px;border-bottom-style:solid;border-color:rgb(202,206,217);undefined;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial;order:-1; }
+.table > .cell.header { border-bottom-width:1px;border-bottom-style:solid;border-color:rgb(202,206,217);font-family:OpenSansBold, Arial;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial; }
+.table.two-columns > .cell { width: 50%;flex-basis:50%; }
+.table.three-columns > .cell { width: 33.33333%;flex-basis:33.3333%; }
+.table.four-columns > .cell { width: 25%;flex-basis:25%; }
+.table.five-columns > .cell { width: 20%;flex-basis:20%; }
 .table.rows > .cell.header { order:0; }
-.table.three-columns > .cell { width:33%;flex-basis:33%; }
-.table.four-columns > .cell { width:25%;flex-basis:25%; }
+.table.cols > .cell.header { order:-1; }
 [data-tooltip] { position:relative; }
 [data-tooltip]:hover:after { content: attr(data-tooltip);padding:1.4rem;background-color:rgba(202,206,217,.3);text-decoration:none;color:hsl(219, 22%, 25%);margin-left:1.4rem;margin-right:1.4rem;font-size:1.1rem;border-width:0;border-style:none;position:absolute;left:0;top:calc(-100% - 24px); }
 ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
@@ -251,6 +254,10 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .filter-color-white { filter:brightness(1); }
 .filter-color-black { filter:brightness(0); }
 .flex-fit { flex-grow:0; }
+.flex-basis-half { flex-basis:50%; }
+.flex-basis-third { flex-basis:33.3333%; }
+.flex-basis-fourth { flex-basis:25%; }
+.flex-basis-fifth { flex-basis:20%; }
 .flex-horz-center { justify-content:center; }
 .flex-horz-left { justify-content:start; }
 .flex-horz-right { justify-content:end; }
@@ -458,14 +465,14 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .text-color-success { color:hsl(158, 100%, 26%); }
 .text-color-warn { color:#F7D31E; }
 .text-color-white { color:#FFFFFF; }
-.text-font-monospace { font-family:monospace; }
-.text-font-primary-bold-italic { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
-.text-font-primary-bold { font-family:OpenSansBold, Arial; }
-.text-font-primary-semi-bold { font-family:undefined, Arial; }
-.text-font-primary-semi-bold-italic { font-family:undefined, Arial; }
-.text-font-primary-italic { font-family:OpenSansItalic, Arial;font-style:italic; }
-.text-font-primary { font-family:OpenSans, Arial; }
-.text-font-primary-light { font-family:OpenSansLight, Arial; }
+.text-style-monospace { font-family:monospace; }
+.text-style-bold-italic { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
+.text-style-bold { font-family:OpenSansBold, Arial; }
+.text-style-semi-bold { font-family:undefined, Arial; }
+.text-style-semi-bold-italic { font-family:undefined, Arial; }
+.text-style-italic { font-family:OpenSansItalic, Arial;font-style:italic; }
+.text-style { font-family:OpenSans, Arial; }
+.text-style-l { font-family:OpenSansLight, Arial; }
 .text-height-l { line-height:3.2rem; }
 .text-height-m { line-height:2.4rem; }
 .text-height-s { line-height:1.8rem; }
