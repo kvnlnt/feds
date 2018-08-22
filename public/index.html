@@ -172,13 +172,12 @@
                     observable: "#mainMenu a",
                     event: feds.Responsifier.CLICK,
                     toggle: ["hide"],
-                    conditions: [
-                        function () {
-                            return document
-                                .querySelector("#layout")
-                                .classList.contains("is-mobile");
-                        }
-                    ]
+                    condition: function (r, e) {
+                        return document
+                            .querySelector("#layout")
+                            .classList.contains("is-mobile");
+                    }
+
                 })
                 .add({
                     observer: "#responsiveGrid",
@@ -371,6 +370,7 @@
                     </li>
                 </ul>
             </section>
+
             <!-- Compatibility -->
             <section class="pad-top-l hide" id="Compatibility">
                 <h2 class="mrgn-top-none">Compatibility</h2>
@@ -380,6 +380,7 @@
                 <h3>Javascript</h3>
                 <h4>Modules</h4>
             </section>
+
             <!-- Atoms -->
             <section class="pad-top-l hide" id="Atoms">
                 <h2 class="mrgn-top-none">Atoms</h2>

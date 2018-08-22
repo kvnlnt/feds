@@ -4,14 +4,14 @@ function () {
     function ContainerQuery(opts) {
   var opts = opts || {};
   this.add = opts.add || [];
-  this.conditions = opts.conditions || [];
+  this.condition = opts.condition || null;
   this.debounceTime = opts.debounce || 200;
   this.event = opts.event;
   this.lock = opts.lock || [];
   this.observable = this.constructObservable(opts.observable);
-  this.observer = opts.observer
-    ? this.constructObserver(opts.observer)
-    : this.observable;
+  this.observer = opts.observer ?
+    this.constructObserver(opts.observer) :
+    this.observable;
   this.range = opts.range || [0, 0];
   this.remove = opts.remove || [];
   this.toggle = opts.toggle || [];
@@ -19,90 +19,87 @@ function () {
 }
 
 ContainerQuery.prototype = {
-  classAdd: function(i) {
+  classAdd: function (i) {
     var that = this;
-    this.observer.forEach(function(ii) {
+    this.observer.forEach(function (ii) {
       if (typeof ii === "function") ii = ii(that.observable);
       if (!that.classIsLocked(ii, i)) ii.classList.add(i);
     });
   },
-  classIsLocked: function(i, c) {
-    return i.dataset.locked
-      ? i.dataset.locked.split(",").indexOf(c) > -1
-      : false;
+  classIsLocked: function (i, c) {
+    return i.dataset.locked ?
+      i.dataset.locked.split(",").indexOf(c) > -1 :
+      false;
   },
-  classRemove: function(i) {
+  classRemove: function (i) {
     var that = this;
-    this.observer.forEach(function(ii) {
+    this.observer.forEach(function (ii) {
       if (typeof ii === "function") ii = ii(that.observable);
       if (!that.classIsLocked(ii, i)) ii.classList.remove(i);
     });
   },
-  classToggle: function(i) {
+  classToggle: function (i) {
     var that = this;
-    this.observer.forEach(function(ii) {
+    this.observer.forEach(function (ii) {
       if (typeof ii === "function") ii = ii(that.observable);
       if (!that.classIsLocked(ii, i)) ii.classList.toggle(i);
     });
   },
-  classesAdd: function() {
+  classesAdd: function () {
     this.add.forEach(this.classAdd.bind(this));
     return this;
   },
-  classesLock: function() {
+  classesLock: function () {
     if (this.lock.length === 0) return;
     var that = this;
-    this.observer.forEach(function(ii) {
+    this.observer.forEach(function (ii) {
       if (typeof ii === "function") ii = ii(that.observable);
       ii.dataset.locked = that.lock.join(",");
     });
   },
-  classesRemove: function() {
+  classesRemove: function () {
     this.remove.forEach(this.classRemove.bind(this));
     return this;
   },
-  classesToggle: function() {
+  classesToggle: function () {
     this.toggle.forEach(this.classToggle.bind(this));
     return this;
   },
-  classesUnlock: function() {
+  classesUnlock: function () {
     if (this.unlock.length === 0) return;
     var that = this;
-    this.observer.forEach(function(i) {
+    this.observer.forEach(function (i) {
       if (typeof i === "function") i = i(that.observable);
       var locked = i.dataset.locked ? i.dataset.locked.split(",") : [];
       i.dataset.locked = locked
-        .filter(function(ii) {
+        .filter(function (ii) {
           return that.unlock.indexOf(ii) === -1;
         })
         .join(",");
     });
   },
-  conditionsMet: function() {
-    if (this.conditions.length === 0) return true;
-    return this.conditions.every(function(i) {
-      return i();
-    });
+  conditionMet: function (target) {
+    return this.condition ? this.condition(this, target) : true;
   },
-  constructObserver: function(observer) {
+  constructObserver: function (observer) {
     if (observer === void 0) return null;
     if (typeof observer === "function") return [observer];
     if (typeof observer === "string")
       return document.querySelectorAll(observer);
     return observer.hasOwnProperty("length") ? observer : [observer];
   },
-  constructObservable: function(observable) {
+  constructObservable: function (observable) {
     if (observable === void 0) return null;
     if (typeof observable === "string")
       return document.querySelectorAll(observable);
     return observable.length === 0 ? [observable] : observable;
   },
-  debounce: function(func, wait, immediate) {
+  debounce: function (func, wait, immediate) {
     var timeout;
-    return function() {
+    return function () {
       var context = this,
         args = arguments;
-      var later = function() {
+      var later = function () {
         timeout = null;
         if (!immediate) func.apply(context, args);
       };
@@ -112,104 +109,96 @@ ContainerQuery.prototype = {
       if (callNow) func.apply(context, args);
     };
   },
-  handleClick: function(e) {
-    this.onClick();
-    return this;
-  },
-  handleHover: function(e) {
-    this.onHover();
-    return this;
-  },
-  handleResize: function(e) {
-    this.onResize();
-  },
-  handleScroll: function(e) {
-    this.onScroll();
-  },
-  handleToggle: function(e) {
-    this.onToggle();
-    return this;
-  },
-  init: function() {
+  init: function () {
     if (this.event === Responsifier.SCROLL) this.initScroll();
     if (this.event === Responsifier.RESIZE) this.initResize();
     if (this.event === Responsifier.CLICK) this.initClick();
     if (this.event === Responsifier.HOVER) this.initHover();
     if (this.event === Responsifier.TOGGLE) this.initToggle();
   },
-  initClick: function() {
+  initClick: function () {
     var that = this;
-    this.observable.forEach(function(i) {
-      i.addEventListener("click", that.handleClick.bind(that));
+    this.observable.forEach(function (i) {
+      i.addEventListener("click", function (e) {
+        that.onClick(e.target);
+      });
     });
   },
-  initHover: function() {
+  initHover: function () {
     var that = this;
-    this.observable.forEach(function(i) {
-      i.addEventListener("hover", that.handleHover.bind(that));
+    this.observable.forEach(function (i) {
+      i.addEventListener("hover", function (e) {
+        that.onHover(e.target);
+      });
     });
   },
-  initResize: function() {
+  initResize: function () {
     var that = this;
-    this.observable.forEach(function(i) {
+    this.observable.forEach(function (i) {
       var debouncedResize = that.debounce(
-        that.handleResize.bind(that),
+        function (e) {
+          that.onResize(e.target);
+        },
         that.debounceTime
       );
       i.addEventListener("resize", debouncedResize);
+      that.onResize(i);
     });
-    this.onResize();
   },
-  initScroll: function() {
+  initScroll: function () {
     var that = this;
-    this.observable.forEach(function(i) {
+    this.observable.forEach(function (i) {
       var debouncedScroll = that.debounce(
-        that.handleScroll.bind(that),
+        function (e) {
+          that.onScroll(e.target);
+        },
         that.debounceTime
       );
       i.addEventListener("scroll", debouncedScroll);
+      that.onScroll(i);
     });
-    this.onScroll();
   },
-  initToggle: function() {
+  initToggle: function () {
     var that = this;
-    this.observable.forEach(function(i) {
-      i.addEventListener("click", that.handleToggle.bind(that));
+    this.observable.forEach(function (i) {
+      i.addEventListener("click", function (e) {
+        that.onToggle(e.target);
+      });
     });
   },
-  onClick: function() {
-    if (this.conditionsMet()) this.process();
+  onClick: function (target) {
+    if (this.conditionMet()) this.process(target);
     return this;
   },
-  onHover: function() {
-    if (this.conditionsMet()) this.process();
+  onHover: function (target) {
+    if (this.conditionMet()) this.process(target);
     return this;
   },
-  onResize: function() {
-    var that = this;
-    var r0 = parseInt(this.range[0]);
-    var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
-    this.observable.forEach(function(i) {
-      if (i.innerWidth >= r0 && i.innerWidth <= r1 && that.conditionsMet())
-        that.process();
-    });
-    return this;
-  },
-  onScroll: function() {
+  onResize: function (target) {
     var that = this;
     var r0 = parseInt(this.range[0]);
     var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
-    this.observable.forEach(function(i) {
-      if (i.scrollY >= r0 && i.scrollY <= r1 && that.conditionsMet())
-        that.process();
+    this.observable.forEach(function (i) {
+      if (i.innerWidth >= r0 && i.innerWidth <= r1 && that.conditionMet())
+        that.process(target);
     });
     return this;
   },
-  onToggle: function() {
-    if (this.conditionsMet()) this.process();
+  onScroll: function () {
+    var that = this;
+    var r0 = parseInt(this.range[0]);
+    var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
+    this.observable.forEach(function (i) {
+      if (i.scrollY >= r0 && i.scrollY <= r1 && that.conditionMet(target))
+        that.process(target);
+    });
     return this;
   },
-  process: function() {
+  onToggle: function () {
+    if (this.conditionMet(target)) this.process(target);
+    return this;
+  },
+  process: function () {
     this.classesUnlock(this.unlock);
     this.classesAdd(this.add);
     this.classesRemove(this.remove);
@@ -218,7 +207,6 @@ ContainerQuery.prototype = {
     return this;
   }
 };
-
     function Responsifier(opts) {
   this.queries = [];
   return this;
