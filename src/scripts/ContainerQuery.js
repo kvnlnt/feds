@@ -16,10 +16,10 @@ function ContainerQuery(opts) {
 }
 
 ContainerQuery.prototype = {
-  classAdd: function(i) {
+  classAdd: function(i, target) {
     var that = this;
     this.observer.forEach(function(ii) {
-      if (typeof ii === "function") ii = ii(that.observable);
+      if (typeof ii === "function") ii = ii(target);
       if (!that.classIsLocked(ii, i)) ii.classList.add(i);
     });
   },
@@ -28,45 +28,53 @@ ContainerQuery.prototype = {
       ? i.dataset.locked.split(",").indexOf(c) > -1
       : false;
   },
-  classRemove: function(i) {
+  classRemove: function(i, target) {
     var that = this;
     this.observer.forEach(function(ii) {
-      if (typeof ii === "function") ii = ii(that.observable);
+      if (typeof ii === "function") ii = ii(target);
       if (!that.classIsLocked(ii, i)) ii.classList.remove(i);
     });
   },
-  classToggle: function(i) {
+  classToggle: function(i, target) {
     var that = this;
     this.observer.forEach(function(ii) {
-      if (typeof ii === "function") ii = ii(that.observable);
+      if (typeof ii === "function") ii = ii(target);
       if (!that.classIsLocked(ii, i)) ii.classList.toggle(i);
     });
   },
   classesAdd: function(target) {
-    this.add.forEach(this.classAdd.bind(this));
+    var that = this;
+    this.add.forEach(function(i) {
+      that.classAdd(i, target);
+    });
     return this;
   },
   classesLock: function(target) {
     if (this.lock.length === 0) return;
     var that = this;
     this.observer.forEach(function(ii) {
-      if (typeof ii === "function") ii = ii(that.observable);
+      if (typeof ii === "function") ii = ii(target);
       ii.dataset.locked = that.lock.join(",");
     });
   },
   classesRemove: function(target) {
-    this.remove.forEach(this.classRemove.bind(this));
+    var that = this;
+    this.remove.forEach(function(i) {
+      that.classRemove(i, target);
+    });
     return this;
   },
   classesToggle: function(target) {
-    this.toggle.forEach(this.classToggle.bind(this));
+    this.toggle.forEach(function(i) {
+      that.classToggle(i, target);
+    });
     return this;
   },
   classesUnlock: function(target) {
     if (this.unlock.length === 0) return;
     var that = this;
     this.observer.forEach(function(i) {
-      if (typeof i === "function") i = i(that.observable);
+      if (typeof i === "function") i = i(target);
       var locked = i.dataset.locked ? i.dataset.locked.split(",") : [];
       i.dataset.locked = locked
         .filter(function(ii) {
@@ -175,7 +183,7 @@ ContainerQuery.prototype = {
     });
     return this;
   },
-  onScroll: function() {
+  onScroll: function(target) {
     var that = this;
     var r0 = parseInt(this.range[0]);
     var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
@@ -185,7 +193,7 @@ ContainerQuery.prototype = {
     });
     return this;
   },
-  onToggle: function() {
+  onToggle: function(target) {
     if (this.conditionMet(target)) this.process(target);
     return this;
   },
