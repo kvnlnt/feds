@@ -12,64 +12,32 @@ function () {
   this.observer = opts.observer
     ? this.constructObserver(opts.observer)
     : this.observable;
-  this.range = opts.range || [0, 0];
+  this.range = opts.range || null;
   this.remove = opts.remove || [];
   this.toggle = opts.toggle || [];
   this.unlock = opts.unlock || [];
 }
 
 ContainerQuery.prototype = {
-  classAdd: function(i, target) {
-    var that = this;
-    this.observer.forEach(function(ii) {
-      if (typeof ii === "function") ii = ii(target);
-      if (!that.classIsLocked(ii, i)) ii.classList.add(i);
-    });
-  },
   classIsLocked: function(i, c) {
     return i.dataset.locked
       ? i.dataset.locked.split(",").indexOf(c) > -1
       : false;
-  },
-  classRemove: function(i, target) {
-    var that = this;
-    this.observer.forEach(function(ii) {
-      if (typeof ii === "function") ii = ii(target);
-      if (!that.classIsLocked(ii, i)) ii.classList.remove(i);
-    });
-  },
-  classToggle: function(i, target) {
-    var that = this;
-    this.observer.forEach(function(ii) {
-      if (typeof ii === "function") ii = ii(target);
-      if (!that.classIsLocked(ii, i)) ii.classList.toggle(i);
-    });
-  },
-  classesAdd: function(target) {
-    var that = this;
-    this.add.forEach(function(i) {
-      that.classAdd(i, target);
-    });
     return this;
   },
-  classesLock: function(target) {
-    if (this.lock.length === 0) return;
+  classProcess: function(method, target, klass) {
     var that = this;
+    this.observer.forEach(function(ii) {
+      if (typeof ii === "function") ii = ii(target);
+      if (!that.classIsLocked(ii, klass)) ii.classList[method](klass);
+    });
+  },
+  classesLock: function(target) {
+    var that = this;
+    if (this.lock.length === 0) return;
     this.observer.forEach(function(ii) {
       if (typeof ii === "function") ii = ii(target);
       ii.dataset.locked = that.lock.join(",");
-    });
-  },
-  classesRemove: function(target) {
-    var that = this;
-    this.remove.forEach(function(i) {
-      that.classRemove(i, target);
-    });
-    return this;
-  },
-  classesToggle: function(target) {
-    this.toggle.forEach(function(i) {
-      that.classToggle(i, target);
     });
     return this;
   },
@@ -85,6 +53,7 @@ ContainerQuery.prototype = {
         })
         .join(",");
     });
+    return this;
   },
   conditionMet: function(target) {
     return this.condition ? this.condition(this, target) : true;
@@ -118,65 +87,51 @@ ContainerQuery.prototype = {
     };
   },
   init: function() {
-    if (this.event === Responsifier.SCROLL) this.initScroll();
-    if (this.event === Responsifier.RESIZE) this.initResize();
-    if (this.event === Responsifier.CLICK) this.initClick();
-    if (this.event === Responsifier.HOVER) this.initHover();
-    if (this.event === Responsifier.TOGGLE) this.initToggle();
-  },
-  initClick: function() {
     var that = this;
+
     this.observable.forEach(function(i) {
-      i.addEventListener("click", function(e) {
-        that.onClick(e.target);
-      });
+      if (that.event === Responsifier.CLICK) {
+        i.addEventListener("click", function(e) {
+          that.triggerClick(e.target);
+        });
+      }
+      if (that.event === Responsifier.HOVER) {
+        i.addEventListener("hover", function(e) {
+          that.triggerHover(e.target);
+        });
+      }
+      if (that.event === Responsifier.RESIZE) {
+        var debouncedResize = that.debounce(function(e) {
+          that.triggerResize(e.target);
+        }, that.debounceTime);
+        i.addEventListener("resize", debouncedResize);
+        that.triggerResize(i);
+      }
+      if (that.event === Responsifier.SCROLL) {
+        var debouncedScroll = that.debounce(function(e) {
+          that.triggerScroll(e.target);
+        }, that.debounceTime);
+        i.addEventListener("scroll", debouncedScroll);
+        that.triggerScroll(i);
+      }
+      if (that.event === Responsifier.TOGGLE) {
+        i.addEventListener("click", function(e) {
+          that.triggerToggle(e.target);
+        });
+      }
     });
+    return this;
   },
-  initHover: function() {
-    var that = this;
-    this.observable.forEach(function(i) {
-      i.addEventListener("hover", function(e) {
-        that.onHover(e.target);
-      });
-    });
-  },
-  initResize: function() {
-    var that = this;
-    this.observable.forEach(function(i) {
-      var debouncedResize = that.debounce(function(e) {
-        that.onResize(e.target);
-      }, that.debounceTime);
-      i.addEventListener("resize", debouncedResize);
-      that.onResize(i);
-    });
-  },
-  initScroll: function() {
-    var that = this;
-    this.observable.forEach(function(i) {
-      var debouncedScroll = that.debounce(function(e) {
-        that.onScroll(e.target);
-      }, that.debounceTime);
-      i.addEventListener("scroll", debouncedScroll);
-      that.onScroll(i);
-    });
-  },
-  initToggle: function() {
-    var that = this;
-    this.observable.forEach(function(i) {
-      i.addEventListener("click", function(e) {
-        that.onToggle(e.target);
-      });
-    });
-  },
-  onClick: function(target) {
+  triggerClick: function(target) {
     if (this.conditionMet(target)) this.process(target);
     return this;
   },
-  onHover: function(target) {
+  triggerHover: function(target) {
     if (this.conditionMet(target)) this.process(target);
     return this;
   },
-  onResize: function(target) {
+  triggerResize: function(target) {
+    if (!this.range) return this;
     var that = this;
     var r0 = parseInt(this.range[0]);
     var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
@@ -186,7 +141,8 @@ ContainerQuery.prototype = {
     });
     return this;
   },
-  onScroll: function(target) {
+  triggerScroll: function(target) {
+    if (!this.range) return this;
     var that = this;
     var r0 = parseInt(this.range[0]);
     var r1 = parseInt(this.range[1] === "*" ? 100000 : this.range[1]);
@@ -196,15 +152,15 @@ ContainerQuery.prototype = {
     });
     return this;
   },
-  onToggle: function(target) {
+  triggerToggle: function(target) {
     if (this.conditionMet(target)) this.process(target);
     return this;
   },
   process: function(target) {
     this.classesUnlock(target);
-    this.classesAdd(target);
-    this.classesRemove(target);
-    this.classesToggle(target);
+    this.add.forEach(this.classProcess.bind(this, "add", target));
+    this.remove.forEach(this.classProcess.bind(this, "remove", target));
+    this.toggle.forEach(this.classProcess.bind(this, "toggle", target));
     this.classesLock(target);
     return this;
   }
