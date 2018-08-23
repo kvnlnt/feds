@@ -177,15 +177,9 @@ section { ; }
 small { font-size:1.3rem; }
 strong { font-family:OpenSansBold, Arial; }
 strong > em, em > strong { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
-.table { display:flex;font-size:1.4rem;flex-direction:row;flex-wrap:wrap; }
-.table > .cell { border-bottom-width:1px;border-bottom-style:solid;border-color:rgba(202,206,217,.3);width: 100%;overflow:hidden;flex-grow:0;flex-shrink:1;flex-basis:100%;box-sizing:border-box;padding:1.4rem; }
-.table > .cell.header { border-bottom-width:1px;border-bottom-style:solid;border-color:rgb(202,206,217);font-family:OpenSansBold, Arial;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial; }
-.table.two-columns > .cell { width: 50%;flex-basis:50%; }
-.table.three-columns > .cell { width: 33.33333%;flex-basis:33.3333%; }
-.table.four-columns > .cell { width: 25%;flex-basis:25%; }
-.table.five-columns > .cell { width: 20%;flex-basis:20%; }
-.table.rows > .cell.header { order:0; }
-.table.cols > .cell.header { order:-1; }
+table { width: 100%;border-collapse:collapse; }
+table td { border-bottom-width:1px;border-bottom-style:solid;border-color:rgba(202,206,217,.3);overflow:hidden;padding:1.4rem;font-size:1.4rem; }
+table th { border-bottom-width:1px;border-bottom-style:solid;border-color:rgb(202,206,217);font-family:OpenSansBold, Arial;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial;padding:1.4rem; }
 [data-tooltip] { position:relative; }
 [data-tooltip]:hover:after { content: attr(data-tooltip);padding:1.4rem;background-color:rgba(202,206,217,.3);text-decoration:none;color:hsl(219, 22%, 25%);margin-left:1.4rem;margin-right:1.4rem;font-size:1.1rem;border-width:0;border-style:none;position:absolute;left:0;top:calc(-100% - 24px); }
 ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
