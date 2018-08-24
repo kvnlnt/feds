@@ -178,8 +178,18 @@ small { font-size:1.3rem; }
 strong { font-family:OpenSansBold, Arial; }
 strong > em, em > strong { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
 table { width: 100%;border-collapse:collapse; }
-table td { border-bottom-width:1px;border-bottom-style:solid;border-color:rgba(202,206,217,.3);overflow:hidden;padding:1.4rem;font-size:1.4rem; }
+table td { border-bottom-width:1px;border-bottom-style:solid;border-color:rgba(202,206,217,.3);padding:1.4rem;font-size:1.4rem; }
 table th { border-bottom-width:1px;border-bottom-style:solid;border-color:rgb(202,206,217);font-family:OpenSansBold, Arial;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial;padding:1.4rem; }
+table.pivot { display:flex;overflow:hidden; }
+table.pivot thead { display: flex;flex-shrink: 0;min-width: min-content; }
+table.pivot tbody { display: flex;position: relative;overflow-x: auto;overflow-y: hidden; }
+table.pivot tr { display: flex;flex-direction: column;min-width: min-content;flex-shrink: 0; }
+table.pivot td, table.pivot th { display: block;font-size:1.3rem; }
+table.wrap, table.wrap tbody { display:block; }
+table.wrap thead { display:none; }
+table.wrap tr { display:flex;flex-direction:column;margin-bottom:3rem; }
+table.wrap td { ; }
+table.wrap td:before { content:attr(title);display:block;width: 50%;float:left;font-family:OpenSansBold, Arial;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.1rem;text-align:left;font-family:OpenSansBold, Arial;padding-right:2rem; }
 [data-tooltip] { position:relative; }
 [data-tooltip]:hover:after { content: attr(data-tooltip);padding:1.4rem;background-color:rgba(202,206,217,.3);text-decoration:none;color:hsl(219, 22%, 25%);margin-left:1.4rem;margin-right:1.4rem;font-size:1.1rem;border-width:0;border-style:none;position:absolute;left:0;top:calc(-100% - 24px); }
 ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
