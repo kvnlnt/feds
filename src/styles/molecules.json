@@ -113,6 +113,33 @@
   "h4": [".text-size-m", ".text-style", ".text-space-s"],
   "h5": [".text-size-s", ".text-style", ".text-space-s"],
   "hr": [""],
+  ".modal": [
+    ".flex-horz-center",
+    ".flex-vert-center",
+    ".pos-fix",
+    ".width-full",
+    ".height-full",
+    ".pos-top-none",
+    ".pos-left-none",
+    ".bg-black-half",
+    ".z-infinite",
+    ".hide"
+  ],
+  ".modal > .window": [
+    ".pos-rel",
+    ".bg-white",
+    ".height-max-full",
+    ".scroll-overflow-y"
+  ],
+  ".modal > .window.l": [".width-view-l"],
+  ".modal > .window.m": [".width-view-m"],
+  ".modal > .window > .close": [
+    ".pos-abs",
+    ".pos-right-m",
+    ".pos-top-m",
+    ".cursor-pointer",
+    ".block"
+  ],
   "nav": [""],
   "p": [
     ".text-style",

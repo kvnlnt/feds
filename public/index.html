@@ -178,7 +178,30 @@
                             .querySelector("#layout")
                             .classList.contains("is-mobile");
                     }
-
+                })
+                .add({
+                    observer: "#modalExample",
+                    observable: "#modalExampleTrigger",
+                    event: feds.Responsifier.CLICK,
+                    toggle: ["flex"]
+                })
+                .add({
+                    observer: "#modalExample",
+                    observable: "#modalExampleClose",
+                    event: feds.Responsifier.CLICK,
+                    toggle: ["flex"]
+                })
+                .add({
+                    observer: "#popupExample",
+                    observable: "#popupExampleTrigger",
+                    event: feds.Responsifier.CLICK,
+                    toggle: ["flex"]
+                })
+                .add({
+                    observer: "#popupExample",
+                    observable: "#popupExampleClose",
+                    event: feds.Responsifier.CLICK,
+                    toggle: ["flex"]
                 })
                 .init();
         }
@@ -195,6 +218,7 @@
                         ii.classList.add("hide");
                     });
                     document.querySelector(href).classList.remove("hide");
+                    window.scrollTo(0, 0);
                 });
             });
             if (window.location.hash) {
@@ -227,7 +251,7 @@
         <a href="#layout" class="button bg-primary text-align-right block bdr-radius-none">&#x2630;</a>
     </div>
     <div id="layout" class="columns bg-grey-xxl" style="min-height:100vh">
-        <aside id="mainMenu" class="column pad-m bg-grey-xl" style="flex: 0 0 150px">
+        <aside id="mainMenu" class="column pad-m bg-grey-xl" style="flex: 0 0 150px;padding-bottom:70px">
             <a href="#About" class="nav-item">
                 <img src="gfx/er-logo.svg" style="pointer-events: none" />
             </a>
@@ -271,8 +295,8 @@
                 <h3>FEDS (Frontend Design System)</h3>
                 <p>
                     FEDS is a Design System developed for Emergency Reporting for the purpose of standardizing it's use of CSS and Javascript.
-                    It's goal is to create well a defined toolkit of reusable styles and components that leverage functionality
-                    native to most platforms.
+                    It's goal is to create well a defined toolkit of reusable standards based styles and components that
+                    leverage native platform functionality.
                 </p>
                 <h3>Toolkit Includes:</h3>
                 <ul>
@@ -372,40 +396,44 @@
             <section class="pad-top-l hide" id="Compatibility">
                 <h2 class="mrgn-top-none">Compatibility</h2>
                 <h3>Devices/Browsers</h3>
-                <h4>Matrix</h4>
-                <div class="table rows three-columns">
-                    <div class="cell header">Browser</div>
-                    <div class="cell header">Min Version</div>
-                    <div class="cell header">Max Version</div>
-                    <div class="cell text-style-bold">IE</div>
-                    <div class="cell">10</div>
-                    <div class="cell">11</div>
-                    <div class="cell text-style-bold">Edge</div>
-                    <div class="cell">15</div>
-                    <div class="cell">18</div>
-                    <div class="cell text-style-bold">Chrome</div>
-                    <div class="cell">57</div>
-                    <div class="cell">71</div>
-                    <div class="cell text-style-bold">Safari</div>
-                    <div class="cell">10</div>
-                    <div class="cell">12</div>
-                    <div class="cell text-style-bold">Safari IOS</div>
-                    <div class="cell">10</div>
-                    <div class="cell">12</div>
-                </div>
-                <h4>Key</h4>
-                <div class="table cols two-columns">
-                    <div class="cell header">Range</div>
-                    <div class="cell" style="order:1">Within</div>
-                    <div class="cell" style="order:1">Minimum</div>
-                    <div class="cell" style="order:1">Above</div>
-                    <div class="cell" style="order:1">Below</div>
-                    <div class="cell header">Support</div>
-                    <div class="cell" style="order:2">Full</div>
-                    <div class="cell" style="order:2">Partial</div>
-                    <div class="cell" style="order:2">Partial</div>
-                    <div class="cell" style="order:2">None</div>
-                </div>
+                <h4>Support Matrix</h4>
+                <ul>
+                    <li>Full Support = Greater than Min & less than or equal to Max.</li>
+                    <li>Partial Support = Equal to Min or greater than Max</li>
+                    <li>No Support = Below Min</li>
+                </ul>
+                <table class="table rows three-columns">
+                    <tr>
+                        <th>Browser</th>
+                        <th>Min</th>
+                        <th>Max</th>
+                    </tr>
+                    <tr>
+                        <td>IE</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>Edge</td>
+                        <td>15</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>Chrome</td>
+                        <td>57</td>
+                        <td>71</td>
+                    </tr>
+                    <tr>
+                        <td>Safari</td>
+                        <td>10</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Safari IOS</td>
+                        <td>10</td>
+                        <td>12</td>
+                    </tr>
+                </table>
                 <h3>CSS</h3>
                 <h4>Level 3</h4>
                 <h3>Javascript</h3>
@@ -415,9 +443,8 @@
             <!-- Compliance -->
             <section class="pad-top-l hide" id="Compliance">
                 <h2 class="mrgn-top-none">Compliance</h2>
-                <p>
-                    TODO
-                </p>
+                <h3>W3C</h3>
+                <h3>Legal</h3>
             </section>
 
             <!-- CSS -->
@@ -815,7 +842,70 @@
             <section class="pad-top-l hide" id="Modals">
                 <h2 class="mrgn-top-none">Modals</h2>
                 <h3>Dialogs</h3>
+                <div class="box">
+                    <a class="button" id="modalExampleTrigger">Open Dialog</a>
+                </div>
+                <div id="modalExample" class="modal" tabindex="-1">
+                    <div class="window l">
+                        <a id="modalExampleClose" class="close">
+                            <i class="icon m black close"></i>
+                        </a>
+                        <div class="pad-m">
+                            <h2>Title</h2>
+                            <p>Content</p>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+                <h4>HTML</h4>
+                <pre>
+                <code data-language="html">
+                    <a class="button" id="modalExampleTrigger">Open Dialog</a>
+                    <div id="modalExample" class="modal" tabindex="-1">
+                        <div class="window l">
+                            <a id="modalExampleClose" class="close">
+                                <i class="icon m black close"></i>
+                            </a>
+                            <div class="pad-m">
+                                <h2>Title</h2>
+                                <p>Content</p>
+                            </div>
+                        </div>
+                    </div></code>
+                </pre>
+                <h4>Javascript</h4>
+                <pre>
+                <code data-language="javascript">
+                    new feds.Responsifier 
+                    .add({
+                        observer: "#modalExample",
+                        observable: "#modalExampleTrigger",
+                        event: feds.Responsifier.CLICK,
+                        toggle: ["hide"]
+                    })
+                    .add({
+                        observer: "#modalExample",
+                        observable: "#modalExampleClose",
+                        event: feds.Responsifier.CLICK,
+                        toggle: ["hide"]
+                    })
+                    .init()</code>
+                </pre>
                 <h3>Popups</h3>
+                <div class="box">
+                    <a class="button" id="popupExampleTrigger">Open Popup</a>
+                </div>
+                <div id="popupExample" class="modal" tabindex="-1">
+                    <div class="window m">
+                        <a id="popupExampleClose" class="close">
+                            <i class="icon m black close"></i>
+                        </a>
+                        <div class="pad-m">
+                            <h2>Title</h2>
+                            <p>Content</p>
+                        </div>
+                    </div>
+                </div>
                 <h3>Wizards</h3>
             </section>
 
@@ -825,7 +915,7 @@
                 <h3>Toasts</h3>
                 <h3>Popups</h3>
                 <p>See
-                    <a href="#Modals" class="nav-item">Modals (Popups)</a>
+                    <a href="#Modals " class="nav-item">Modals (Popups)</a>
                 </p>
                 <h3>Messages</h3>
                 <h4>Info</h4>
@@ -834,7 +924,7 @@
             </section>
 
             <!-- Tables -->
-            <section class="pad-top-l hide" id="Tables">
+            <section class="pad-top-l hide " id="Tables">
                 <h2 class="mrgn-top-none">Tables</h2>
                 <p>Tables are for displaying tabular data and therefore it's important to leverage the default syntax.
                 </p>
@@ -899,7 +989,7 @@
                 </code>
                 </pre>
                 <h3>Pivot</h3>
-                <p>A table can be "pivoted" by adding the molecule <em>pivot</em> creating a row based layout of the same
+                <p>A table can be "pivoted " by adding the molecule <em>pivot</em> creating a row based layout of the same
                     table.
                 </p>
                 <div class="box">
@@ -973,7 +1063,7 @@
             </section>
 
             <!-- Tabs -->
-            <section class="pad-top-l hide" id="Tabs">
+            <section class="pad-top-l hide " id="Tabs">
                 <h2 class="mrgn-top-none">Tabs</h2>
                 <p>
                     TODO
@@ -982,20 +1072,20 @@
 
 
             <!-- Tooltip -->
-            <section class="pad-top-l hide" id="Tooltip">
+            <section class="pad-top-l hide " id="Tooltip">
                 <h2 class="mrgn-top-none">Tooltip</h2>
                 <div class="box">
-                    <a href="#" data-tooltip="A Tooltip">Hover over me</a>
+                    <a href="# " data-tooltip="A Tooltip">Hover over me</a>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <a href="#" data-tooltip="A Tooltip">Hover over me</a>
+                    <a href="# " data-tooltip="A Tooltip">Hover over me</a>
                 </code>
                 </pre>
             </section>
 
             <!-- Typography -->
-            <section class="pad-top-l hide" id="Typography">
+            <section class="pad-top-l hide " id="Typography">
                 <h2 class="mrgn-top-none">Typography</h2>
                 <h3>Headers</h3>
                 <div class="box">
@@ -1042,60 +1132,60 @@
                 <h3>Utility</h3>
                 <h3>Colors</h3>
                 <div class="box">
-                    <div class="text-color-primary text-height-m text-size-m text-indent-2 ">.text-color-primary</div>
-                    <div class="text-color-primary-light text-height-m text-size-m text-indent-2 ">.text-color-primary-light</div>
-                    <div class="text-color-secondary text-height-m text-size-m text-indent-2 ">.text-color-secondary</div>
-                    <div class="text-color-success text-height-m text-size-m text-indent-2 ">.text-color-success</div>
-                    <div class="text-color-danger text-height-m text-size-m text-indent-2 ">.text-color-danger</div>
-                    <div class="text-color-black text-height-m text-size-m text-indent-2 ">.text-color-black</div>
-                    <div class="text-color-grey text-height-m text-size-m text-indent-2 ">.text-color-grey</div>
-                    <div class="text-color-grey-l text-height-m text-size-m text-indent-2 ">.text-color-grey-l</div>
+                    <div class="text-color-primary text-height-m text-size-m text-indent-2">.text-color-primary</div>
+                    <div class="text-color-primary-light text-height-m text-size-m text-indent-2">.text-color-primary-light</div>
+                    <div class="text-color-secondary text-height-m text-size-m text-indent-2">.text-color-secondary</div>
+                    <div class="text-color-success text-height-m text-size-m text-indent-2">.text-color-success</div>
+                    <div class="text-color-danger text-height-m text-size-m text-indent-2">.text-color-danger</div>
+                    <div class="text-color-black text-height-m text-size-m text-indent-2">.text-color-black</div>
+                    <div class="text-color-grey text-height-m text-size-m text-indent-2">.text-color-grey</div>
+                    <div class="text-color-grey-l text-height-m text-size-m text-indent-2">.text-color-grey-l</div>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <div class="text-color-primary ">.text-color-primary</div>
-                    <div class="text-color-primary-light ">.text-color-primary-light</div>
-                    <div class="text-color-secondary ">.text-color-secondary</div>
-                    <div class="text-color-success ">.text-color-success</div>
-                    <div class="text-color-danger ">.text-color-danger</div>
-                    <div class="text-color-black ">.text-color-black</div>
-                    <div class="text-color-grey ">.text-color-grey</div>
-                    <div class="text-color-grey-l ">.text-color-grey-l</div>
+                    <div class="text-color-primary">.text-color-primary</div>
+                    <div class="text-color-primary-light">.text-color-primary-light</div>
+                    <div class="text-color-secondary">.text-color-secondary</div>
+                    <div class="text-color-success">.text-color-success</div>
+                    <div class="text-color-danger">.text-color-danger</div>
+                    <div class="text-color-black">.text-color-black</div>
+                    <div class="text-color-grey">.text-color-grey</div>
+                    <div class="text-color-grey-l">.text-color-grey-l</div>
                 </code>
                 </pre>
                 <h3>Sizes</h3>
                 <div class="box">
-                    <div class="text-size-xxl text-height-xxl text-indent-2 ">Giant Text</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 ">Extra Large Text</div>
-                    <div class="text-size-l text-height-l text-indent-2 ">Large Text</div>
-                    <div class="text-size-m text-height-l text-indent-2 ">Medium Text</div>
-                    <div class="text-size-s text-height-l text-indent-2 ">Small Text</div>
-                    <div class="text-size-xs text-height-m text-indent-2 ">Extra Small Text</div>
+                    <div class="text-size-xxl text-height-xxl text-indent-2">Giant Text</div>
+                    <div class="text-size-xl text-height-xl text-indent-2">Extra Large Text</div>
+                    <div class="text-size-l text-height-l text-indent-2">Large Text</div>
+                    <div class="text-size-m text-height-l text-indent-2">Medium Text</div>
+                    <div class="text-size-s text-height-l text-indent-2">Small Text</div>
+                    <div class="text-size-xs text-height-m text-indent-2">Extra Small Text</div>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <div class="text-size-xxl ">Giant Text</div>
-                    <div class="text-size-xl ">Extra Large Text</div>
-                    <div class="text-size-l ">Large Text</div>
-                    <div class="text-size-m ">Medium Text</div>
-                    <div class="text-size-s ">Small Text</div>
-                    <div class="text-size-xs ">Extra Small Text</div>
+                    <div class="text-size-xxl">Giant Text</div>
+                    <div class="text-size-xl">Extra Large Text</div>
+                    <div class="text-size-l">Large Text</div>
+                    <div class="text-size-m">Medium Text</div>
+                    <div class="text-size-s">Small Text</div>
+                    <div class="text-size-xs">Extra Small Text</div>
                 </code>
                 </pre>
                 <h3>Fonts</h3>
                 <div class="box">
-                    <div class="text-size-xl text-height-xl text-indent-2 ">Open Sans - Regular</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-style-italic ">Open Sans - Italic</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold ">Open Sans - Bold</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold-italic ">Open Sans - Bold Italic
+                    <div class="text-size-xl text-height-xl text-indent-2">Open Sans - Regular</div>
+                    <div class="text-size-xl text-height-xl text-indent-2 text-style-italic">Open Sans - Italic</div>
+                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold">Open Sans - Bold</div>
+                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold-italic">Open Sans - Bold Italic
                     </div>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <div class="text-style ">Open Sans - Regular</div>
-                    <div class="text-style-italic ">Open Sans - Italic</div>
-                    <div class="text-style-bold ">Open Sans - Bold</div>
-                    <div class="text-style-bold-italic ">Open Sans - Bold Italic</div>
+                    <div class="text-style">Open Sans - Regular</div>
+                    <div class="text-style-italic">Open Sans - Italic</div>
+                    <div class="text-style-bold">Open Sans - Bold</div>
+                    <div class="text-style-bold-italic">Open Sans - Bold Italic</div>
                 </code>
                 </pre>
                 <h3>Styles</h3>
@@ -1128,7 +1218,7 @@
             <!-- JAVASCRIPT -->
 
             <!-- Polyfills -->
-            <section class="pad-top-l hide" id="Polyfills">
+            <section class="pad-top-l hide " id="Polyfills">
                 <h2 class="mrgn-top-none">Polyfills</h2>
                 <ul>
                     <li>Dialog</li>
@@ -1136,7 +1226,7 @@
             </section>
 
             <!-- Reifier -->
-            <section class="pad-top-l hide" id="Reifier">
+            <section class="pad-top-l hide " id="Reifier">
                 <h2 class="mrgn-top-none">Reifier</h2>
                 <h3>components</h3>
                 <p>The
@@ -1144,7 +1234,7 @@
             </section>
 
             <!-- Responsifier -->
-            <section class="pad-top-l hide" id="Responsifier">
+            <section class="pad-top-l hide " id="Responsifier">
                 <h2 class="mrgn-top-none">Responsifier</h2>
                 <p>The
                     <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to
@@ -1163,18 +1253,18 @@
                 <code data-language="javascript">
                     var r = new feds.Responsifier()
                     .add({
-                        observer: "#mobile-menu",
+                        observer: "#mobile-menu ",
                         observable: window,
                         event: feds.Responsifier.RESIZE,
                         range: [0, 799],
-                        add: ["show"]
+                        add: ["show "]
                     })
                     .add({
-                        observer: "#mobile-menu",
+                        observer: "#mobile-menu ",
                         observable: window,
                         event: feds.Responsifier.RESIZE,
-                        range: [800, "*"],
-                        remove: ["show"]
+                        range: [800, "* "],
+                        remove: ["show "]
                     })
                     .init();
                 </code>
@@ -1198,13 +1288,13 @@
                         <tr>
                             <td>observer</td>
                             <td>String|[Node List]</td>
-                            <td>".some-button"</td>
+                            <td>".some-button "</td>
                             <td>element to update</td>
                         </tr>
                         <tr>
                             <td>observable</td>
                             <td>String|[Node List]</td>
-                            <td>"body"</td>
+                            <td>"body "</td>
                             <td>element to watch</td>
                         </tr>
                         <tr>
@@ -1215,44 +1305,50 @@
                         </tr>
                         <tr>
                             <td>range</td>
-                            <td>[number,number|"*"]</td>
+                            <td>[number,number|"* "]</td>
                             <td>[0,100]</td>
-                            <td>Start and ending ranges. Ending range can optionally be set to "*".</td>
+                            <td>Start and ending ranges. Ending range can optionally be set to "* ".</td>
                         </tr>
                         <tr>
                             <td>add</td>
                             <td>[string]</td>
-                            <td>["hide"]</td>
+                            <td>["hide "]</td>
                             <td>Array of classes to add</td>
                         </tr>
                         <tr>
                             <td>remove</td>
                             <td>[string]</td>
-                            <td>["hide"]</td>
+                            <td>["hide "]</td>
                             <td>Array of classes to remove</td>
                         </tr>
                         <tr>
                             <td>toggle</td>
                             <td>[string]</td>
-                            <td>["hide"]</td>
+                            <td>["hide "]</td>
                             <td>Array of classes to toggle</td>
                         </tr>
                         <tr>
-                            <td>conditions</td>
-                            <td>[function]</td>
-                            <td>[function(){return true;}]</td>
-                            <td>Callback functions to call before making class changes. All must return true.</td>
+                            <td>callback</td>
+                            <td>function</td>
+                            <td>function(observer){return true;}</td>
+                            <td>Callback function on completion</td>
+                        </tr>
+                        <tr>
+                            <td>condition</td>
+                            <td>function</td>
+                            <td>function(observer){return true;}</td>
+                            <td>noop if returns false</td>
                         </tr>
                         <tr>
                             <td>lock</td>
                             <td>[string]</td>
-                            <td>["hide"]</td>
+                            <td>["hide "]</td>
                             <td>Prevent class from being added, removed, toggled, etc.</td>
                         </tr>
                         <tr>
                             <td>unlock</td>
                             <td>[string]</td>
-                            <td>["hide"]</td>
+                            <td>["hide "]</td>
                             <td>Renable class for being added, removed, toggled, etc.</td>
                         </tr>
                     </tbody>

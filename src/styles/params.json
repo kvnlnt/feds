@@ -1,6 +1,7 @@
 {
   "color": {
-    "black": "hsl(230,45%,10%)",
+    "black": "rgb(14,18,87)",
+    "black-50": "rgba(14,18,87,.5)",
     "blue-dark": "hsl(212, 70%, 40%)",
     "blue-light": "hsl(212, 100%, 60%)",
     "blue": "hsl(212, 64%, 49%)",
@@ -22,6 +23,7 @@
     "administration": "../gfx/icons/administration.svg",
     "analytics": "../gfx/icons/analytics.svg",
     "calendar": "../gfx/icons/calendar.svg",
+    "close": "../gfx/icons/close.svg",
     "collapse-expand": "../gfx/icons/collapse-expand.svg",
     "daily-roster": "../gfx/icons/daily-roster.svg",
     "data-intelligence": "../gfx/icons/data-intelligence.svg",

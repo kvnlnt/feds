@@ -170,6 +170,11 @@ h3+p { margin-top:-1.4rem; }
 h4 { font-size:1.4rem;font-family:OpenSans, Arial;letter-spacing:0.1rem; }
 h5 { font-size:1.3rem;font-family:OpenSans, Arial;letter-spacing:0.1rem; }
 hr { ; }
+.modal { justify-content:center;align-items:center;position:fixed;width: 100%;height:100%;top:0;left:0;background-color:rgba(14,18,87,.5);z-index:100000;display:none; }
+.modal > .window { position:relative;background-color:#FFFFFF;max-height:100%;overflow-y:auto; }
+.modal > .window.l { width:80vh; }
+.modal > .window.m { width:50vh; }
+.modal > .window > .close { position:absolute;right:2.4rem;top:2.4rem;cursor:pointer;display:block; }
 nav { ; }
 p { font-family:OpenSans, Arial;font-size:1.4rem;line-height:2.4rem;letter-spacing:0.05rem;margin-top:2rem;margin-bottom:2rem; }
 pre { white-space: pre; }
@@ -213,7 +218,7 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .bdr-bot-color-primary { border-bottom-color:hsl(212, 64%, 49%); }
 .bdr-bot-color-grey-l { border-bottom-color:rgb(202,206,217); }
 .bdr-collapse { border-collapse:collapse; }
-.bdr-color-black { border-color:hsl(230,45%,10%); }
+.bdr-color-black { border-color:rgb(14,18,87); }
 .bdr-color-danger { border-color:hsl(358,80%,46%); }
 .bdr-color-grey-xl { border-color:rgba(202,206,217,.3); }
 .bdr-color-grey-l { border-color:rgb(202,206,217); }
@@ -237,7 +242,8 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .bdr-top-m { border-top-width:3px;border-top-style:solid; }
 .bdr-top-s { border-top-width:2px;border-top-style:solid; }
 .bdr-top-xs { border-top-width:1px;border-top-style:solid; }
-.bg-black { background-color:hsl(230,45%,10%); }
+.bg-black { background-color:rgb(14,18,87); }
+.bg-black-half { background-color:rgba(14,18,87,.5); }
 .bg-danger { background-color:hsl(358,80%,46%); }
 .bg-grey-l { background-color:rgb(202,206,217); }
 .bg-grey-xl { background-color:rgba(202,206,217,.3); }
@@ -287,11 +293,17 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .height-xl { height:4rem; }
 .height-xs { height:1.6rem; }
 .height-xxl { height:5rem; }
+.height-view-s { height:25vh; }
+.height-view-m { height:50vh; }
+.height-view-l { height:80vh; }
+.height-full { height:100%; }
+.height-max-full { max-height:100%; }
 .hide { display:none; }
 .hide-overflow { overflow:hidden; }
 .icon.administration { background-image:url(../gfx/icons/administration.svg); }
 .icon.analytics { background-image:url(../gfx/icons/analytics.svg); }
 .icon.calendar { background-image:url(../gfx/icons/calendar.svg); }
+.icon.close { background-image:url(../gfx/icons/close.svg); }
 .icon.collapse-expand { background-image:url(../gfx/icons/collapse-expand.svg); }
 .icon.daily-roster { background-image:url(../gfx/icons/daily-roster.svg); }
 .icon.data-intelligence { background-image:url(../gfx/icons/data-intelligence.svg); }
@@ -445,6 +457,8 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .pos-top-xl { top:4rem; }
 .pos-top-xs { top:1.6rem; }
 .pos-top-xxl { top:5rem; }
+.scroll-overflow { overflow:auto; }
+.scroll-overflow-y { overflow-y:auto; }
 .shadow-s { box-shadow:0 1px 5px rgba(0, 0, 0, 0.3); }
 .tbl--fixed { table-layout:fixed; }
 .tbl--full { width:100%; }
@@ -457,7 +471,7 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .text-case-lower { text-transform:lowercase; }
 .text-case-title { text-transform:capitalize; }
 .text-case-upper { text-transform:uppercase; }
-.text-color-black { color:hsl(230,45%,10%); }
+.text-color-black { color:rgb(14,18,87); }
 .text-color-danger { color:hsl(358,80%,46%); }
 .text-color-grey-extra-l { color:undefined; }
 .text-color-grey-l { color:rgb(202,206,217); }
@@ -511,6 +525,9 @@ ul > li { font-family:OpenSans, Arial;line-height:2.4rem;font-size:1.4rem; }
 .width-xl { width:4rem; }
 .width-xs { width:1.6rem; }
 .width-xxl { width:5rem; }
+.width-view-s { width:25vh; }
+.width-view-m { width:50vh; }
+.width-view-l { width:80vh; }
 .z-0 { z-index:0; }
 .z-1 { z-index:1; }
 .z-2 { z-index:2; }
