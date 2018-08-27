@@ -125,15 +125,13 @@
     ".z-infinite",
     ".hide"
   ],
-  ".modal > .window": [
+  ".modal-view": [
     ".pos-rel",
     ".bg-white",
     ".height-max-full",
     ".scroll-overflow-y"
   ],
-  ".modal > .window.l": [".width-view-l"],
-  ".modal > .window.m": [".width-view-m"],
-  ".modal > .window > .close": [
+  ".modal-close": [
     ".pos-abs",
     ".pos-right-m",
     ".pos-top-m",
@@ -217,5 +215,6 @@
     ".pos-left-none",
     "top:calc(-100% - 24px)"
   ],
-  "ul > li": [".text-style", ".text-height-m", ".text-size-m"]
+  "ul > li": [".text-style", ".text-height-m", ".text-size-m"],
+  "ul.tree, ul.tree li": [".mrgn-none", "list-style:none"]
 }

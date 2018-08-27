@@ -180,14 +180,14 @@
                     }
                 })
                 .add({
-                    observer: "#modalExample",
-                    observable: "#modalExampleTrigger",
+                    observer: "#modal",
+                    observable: "#modalTrigger",
                     event: feds.Responsifier.CLICK,
                     toggle: ["flex"]
                 })
                 .add({
-                    observer: "#modalExample",
-                    observable: "#modalExampleClose",
+                    observer: "#modal",
+                    observable: "#modalClose",
                     event: feds.Responsifier.CLICK,
                     toggle: ["flex"]
                 })
@@ -242,6 +242,15 @@
             responsify();
             pageManager();
         });
+
+        window.addEventListener("hashchange", function () {
+            var sections = [].slice.call(document.querySelectorAll("section"));
+            sections.forEach(function (ii) {
+                ii.classList.add("hide");
+            });
+            document.querySelector(window.location.hash).classList.remove("hide");
+            window.scrollTo(0, 0);
+        }, false);
     </script>
 </head>
 
@@ -275,7 +284,7 @@
             <a href="#Lists" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Lists</a>
             <a href="#Menus" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Menus</a>
             <a href="#Modals" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Modals</a>
-            <a href="#Notifications" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Notifications</a>
+            <a href="#Messaging" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Messaging</a>
             <a href="#Tables" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tables</a>
             <a href="#Tabs" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tabs</a>
             <a href="#Tooltip" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tooltip</a>
@@ -827,6 +836,57 @@
             <!-- Lists -->
             <section class="pad-top-l hide" id="Lists">
                 <h2 class="mrgn-top-none">Lists</h2>
+                <h3>Bulleted</h3>
+                <ul class="tree">
+                    <li>1.
+                        <ul>
+                            <li>1.1</li>
+                            <li>1.2</li>
+                            <li>1.3</li>
+                        </ul>
+                    </li>
+                    <li>2.
+                        <ul>
+                            <li>2.1</li>
+                            <li>2.2</li>
+                        </ul>
+                    </li>
+                    <li>3.</li>
+                </ul>
+                <h3>Numbered</h3>
+                <ol class="tree">
+                    <li>A
+                        <ul>
+                            <li>A1</li>
+                            <li>A2</li>
+                            <li>A3</li>
+                        </ul>
+                    </li>
+                    <li>B
+                        <ul>
+                            <li>B1</li>
+                            <li>B2</li>
+                        </ul>
+                    </li>
+                    <li>C</li>
+                </ol>
+                <h3>Tree</h3>
+                <ul class="tree">
+                    <li>1.
+                        <ul>
+                            <li>1.1</li>
+                            <li>1.2</li>
+                            <li>1.3</li>
+                        </ul>
+                    </li>
+                    <li>2.
+                        <ul>
+                            <li>2.1</li>
+                            <li>2.2</li>
+                        </ul>
+                    </li>
+                    <li>3.</li>
+                </ul>
             </section>
 
             <!-- Menus -->
@@ -841,14 +901,29 @@
             <!-- Modals -->
             <section class="pad-top-l hide" id="Modals">
                 <h2 class="mrgn-top-none">Modals</h2>
-                <h3>Dialogs</h3>
+                <p>Modals have a simple structure:</p>
+                <ul class="tree">
+                    <li>.modal = main wrapper
+                        <ul>
+                            <li>.modal-view = content wrapper</li>
+                            <ul>
+                                <li>.modal-close = close button</li>
+                                <li>...content...</li>
+                            </ul>
+                    </li>
+                    </ul>
+                    </li>
+                </ul>
+                <p>The <em>.main-view</em> molecule are driven by the <a href="#Responsifier" class="nav-item">Responsifier</a>.
+                    The <em>hide</em>
+                    class is added/removed from the <em>modal-view</em> element.</p>
                 <div class="box">
-                    <a class="button" id="modalExampleTrigger">Open Dialog</a>
+                    <a class="button" id="modalTrigger">Open Dialog</a>
                 </div>
-                <div id="modalExample" class="modal" tabindex="-1">
-                    <div class="window l">
-                        <a id="modalExampleClose" class="close">
-                            <i class="icon m black close"></i>
+                <div class="modal" id="modal">
+                    <div class="modal-view width-view-m">
+                        <a class="modal-close" id="modalClose">
+                            <i class="icon m close"></i>
                         </a>
                         <div class="pad-m">
                             <h2>Title</h2>
@@ -860,16 +935,17 @@
                 <h4>HTML</h4>
                 <pre>
                 <code data-language="html">
-                    <a class="button" id="modalExampleTrigger">Open Dialog</a>
-                    <div id="modalExample" class="modal" tabindex="-1">
-                        <div class="window l">
-                            <a id="modalExampleClose" class="close">
-                                <i class="icon m black close"></i>
+                    <a class="button" id="modalTrigger">Open Dialog</a>
+                    <div class="modal" id="modal">
+                        <div class="modal-view width-view-m">
+                            <a class="modal-close" id="modalClose">
+                                <i class="icon m close"></i>
                             </a>
                             <div class="pad-m">
                                 <h2>Title</h2>
                                 <p>Content</p>
                             </div>
+                            </p>
                         </div>
                     </div></code>
                 </pre>
@@ -878,44 +954,28 @@
                 <code data-language="javascript">
                     new feds.Responsifier 
                     .add({
-                        observer: "#modalExample",
-                        observable: "#modalExampleTrigger",
+                        observer: "#modal",
+                        observable: "#modalTrigger",
                         event: feds.Responsifier.CLICK,
                         toggle: ["hide"]
                     })
                     .add({
-                        observer: "#modalExample",
-                        observable: "#modalExampleClose",
+                        observer: "#modal",
+                        observable: "#modalClose",
                         event: feds.Responsifier.CLICK,
                         toggle: ["hide"]
                     })
                     .init()</code>
                 </pre>
-                <h3>Popups</h3>
-                <div class="box">
-                    <a class="button" id="popupExampleTrigger">Open Popup</a>
-                </div>
-                <div id="popupExample" class="modal" tabindex="-1">
-                    <div class="window m">
-                        <a id="popupExampleClose" class="close">
-                            <i class="icon m black close"></i>
-                        </a>
-                        <div class="pad-m">
-                            <h2>Title</h2>
-                            <p>Content</p>
-                        </div>
-                    </div>
-                </div>
-                <h3>Wizards</h3>
             </section>
 
-            <!-- Notifications -->
-            <section class="pad-top-l hide" id="Notifications">
-                <h2 class="mrgn-top-none">Notifications</h2>
+            <!-- Messaging -->
+            <section class="pad-top-l hide" id="Messaging">
+                <h2 class="mrgn-top-none">Messaging</h2>
                 <h3>Toasts</h3>
                 <h3>Popups</h3>
                 <p>See
-                    <a href="#Modals " class="nav-item">Modals (Popups)</a>
+                    <a href="#Modals" class="nav-item">Modals (Popups)</a>
                 </p>
                 <h3>Messages</h3>
                 <h4>Info</h4>
