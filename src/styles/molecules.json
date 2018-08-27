@@ -216,15 +216,10 @@
     "top:calc(-100% - 24px)"
   ],
   "ul > li, ol > li": [".text-style", ".text-height-m", ".text-size-m"],
-  "ul.tree": [".mrgn-lft-s", "list-style:none", ".pos-rel"],
-  "ul.tree:before": [
-    ".content-none",
-    ".block",
-    ".width-none",
-    ".pos-abs",
-    ".pos-top-none",
-    ".pos-left-none",
-    ".bdr-lft-xs",
-    ".bdr-lft-color-primary"
-  ]
+  "ul.tree, u.tree ul": [".mrgn-none", "list-style:none", ".pad-none"],
+  "ul.tree ul": [".mrgn-left-s"],
+  "ul.tree li": [".mrgn-none", ".pad-rgt-s", ".text-height-m", ".bdr-lft-xs", ".bdr-color-primary", ".list-style-none"],
+  "ul.tree li:last-child": [".bdr-left-none"],
+  "ul.tree li:before": [".pos-rel", "top:-3px", ".text-height-s", ".width-xs", ".bdr-bot-xs", ".bdr-lft-xs", ".bdr-color-primary", ".content-none", ".inline-block", ".pos-left-none", "height:1.2rem"],
+  "ul.tree li:last-child": ["border:0"]
 }

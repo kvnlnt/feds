@@ -38,6 +38,7 @@
   ".bdr-lft-m": ["border-left-width:3px", "border-left-style:solid"],
   ".bdr-lft-s": ["border-left-width:2px", "border-left-style:solid"],
   ".bdr-lft-xs": ["border-left-width:1px", "border-left-style:solid"],
+  ".bdr-lft-none": ["border-left-width:0px"],
   ".bdr-m": ["border-width:3px", "border-style:solid"],
   ".bdr-none": ["border-width:0", "border-style:none"],
   ".bdr-radius-l": ["border-radius:4px"],
