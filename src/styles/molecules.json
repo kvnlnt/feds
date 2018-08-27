@@ -215,6 +215,16 @@
     ".pos-left-none",
     "top:calc(-100% - 24px)"
   ],
-  "ul > li": [".text-style", ".text-height-m", ".text-size-m"],
-  "ul.tree, ul.tree li": [".mrgn-none", "list-style:none"]
+  "ul > li, ol > li": [".text-style", ".text-height-m", ".text-size-m"],
+  "ul.tree": [".mrgn-lft-s", "list-style:none", ".pos-rel"],
+  "ul.tree:before": [
+    ".content-none",
+    ".block",
+    ".width-none",
+    ".pos-abs",
+    ".pos-top-none",
+    ".pos-left-none",
+    ".bdr-lft-xs",
+    ".bdr-lft-color-primary"
+  ]
 }
