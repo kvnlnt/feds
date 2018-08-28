@@ -237,6 +237,10 @@
             }
         }
 
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             cleanUpExamples();
             responsify();
@@ -249,13 +253,14 @@
                 ii.classList.add("hide");
             });
             document.querySelector(window.location.hash).classList.remove("hide");
-            window.scrollTo(0, 0);
+            scrollToTop();
         }, false);
     </script>
 </head>
 
 <body>
-    <a id="top" href="#" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite anim-speed-med" onclick="document.body.scrollTop=0">TOP</a>
+    <a id="top" onclick="scrollToTop()" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite anim-speed-med"
+        onclick="document.body.scrollTop=0">TOP</a>
     <div id="menuToggle" class="pos-fix hide top-right pos-right-none pos-left-none z-infinite">
         <a href="#layout" class="button bg-primary text-align-right block bdr-radius-none">&#x2630;</a>
     </div>
@@ -264,7 +269,7 @@
             <a href="#About" class="nav-item">
                 <img src="gfx/er-logo.svg" style="pointer-events: none" />
             </a>
-            <br/>
+            <br />
             <p class="text-size-xs text-style-bold mrgn-vert-none">Frontend Design System</p>
             <hr class="mrgn-vert-xs" />
             <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">General</h3>
@@ -303,8 +308,10 @@
                 <h2 class="mrgn-top-none">About the ER Frontend Design System</h2>
                 <h3>FEDS (Frontend Design System)</h3>
                 <p>
-                    FEDS is a Design System developed for Emergency Reporting for the purpose of standardizing it's use of CSS and Javascript.
-                    It's goal is to create well a defined toolkit of reusable standards based styles and components that
+                    FEDS is a Design System developed for Emergency Reporting for the purpose of standardizing it's use
+                    of CSS and Javascript.
+                    It's goal is to create well a defined toolkit of reusable standards based styles and components
+                    that
                     leverage native platform functionality.
                 </p>
                 <h3>Toolkit Includes:</h3>
@@ -384,13 +391,14 @@
                     <li>
                         <a href="http://cardinalcss.com/">Cardinal Css</a> - A great CSS framework</li>
                     <li>
-                        <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a> - #1 requested
-                        feature of web devs</li>
+                        <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a> - #1
+                        requested feature of web devs</li>
                     <li>
                         <a href="http://tachyons.io/">Tachyons</a> - An "atomic" CSS Framework</li>
                     <li>
-                        <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not Need
-                            A CSS Framework</a> - How CSS frameworks might not be the best fit for complex projects
+                        <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not
+                            Need A CSS Framework</a> - How CSS frameworks might not be the best fit for complex
+                        projects
                     </li>
                     <li>
                         <a href="http://youmightnotneedjs.com/">You Might Not Need Js</a> - Speaks for itself
@@ -453,6 +461,7 @@
             <section class="pad-top-l hide" id="Compliance">
                 <h2 class="mrgn-top-none">Compliance</h2>
                 <h3>W3C</h3>
+                <h3>Accessibility</h3>
                 <h3>Legal</h3>
             </section>
 
@@ -462,7 +471,7 @@
             <section class="pad-top-l hide" id="Atoms">
                 <h2 class="mrgn-top-none">Atoms</h2>
                 <p>
-                    TODO
+                    Atoms are
                 </p>
             </section>
 
@@ -471,45 +480,89 @@
                 <h2 class="mrgn-top-none">Buttons</h2>
                 <h3>Types</h3>
                 <div class="box">
-                    <a class="button">Primary</a>
-                    <a class="button secondary">Secondary</a>
-                    <a class="button danger">Danger</a>
+                    <div class="columns spacing-s">
+                        <div class="column">
+                            <a class="button">Take Action</a>
+                            <p class="text-color-grey-l">default</p>
+                        </div>
+                        <div class="column">
+                            <a class="button secondary">Take Action</a>
+                            <p>.secondary</p>
+                        </div>
+                        <div class="column">
+                            <a class="button link">Take Action</a>
+                            <p>.link</p>
+                        </div>
+                        <div class="column">
+                            <a class="button danger">Take Action</a>
+                            <p>.danger</p>
+                        </div>
+                    </div>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <a class="button">Primary</a>
-                    <a class="button secondary">Secondary</a>
-                    <a class="button danger">Danger</a>
+                    <a class="button">primary</a>
+                    <a class="button secondary">secondary</a>
+                    <a class="button link">link</a>
+                    <a class="button danger">danger</a>
                 </code>
                 </pre>
                 <h3>Sizes</h3>
                 <div class="box">
-                    <a class="button large">Large Button</a>
-                    <a class="button">Default Button</a>
-                    <a class="button medium">Medium Button</a>
-                    <a class="button small">Small Button</a>
+                    <div class="columns spacing-s">
+                        <div class="column">
+                            <a class="button large">Take Action</a>
+                            <p>.large</p>
+                        </div>
+                        <div class="column mrgn-bot-s">
+                            <a class="button">Take Action</a>
+                            <p class="text-color-grey-l">default</p>
+                        </div>
+                        <div class="column mrgn-bot-s">
+                            <a class="button medium">Take Action</a>
+                            <p>.medium</p>
+                        </div>
+                        <div class="column mrgn-bot-s">
+                            <a class="button small">Take Action</a>
+                            <p>.small</p>
+                        </div>
+                    </div>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <a class="button large">Large Button</a>
-                    <a class="button">Default Button</a>
-                    <a class="button medium">Medium Button</a>
-                    <a class="button small">Small Button</a>
+                    <a class="button large">Take Action</a>
+                    <a class="button">Take Action</a>
+                    <a class="button medium">Take Action</a>
+                    <a class="button small">Take Action</a>
                 </code>
                 </pre>
                 <h3>States</h3>
                 <div class="box">
-                    <a class="button">Primary Active</a>
-                    <a class="button disabled">Primary Disabled</a>
-                    <a class="button secondary">Secondary Active</a>
-                    <a class="button secondary disabled">Secondary Disabled</a>
+                    <div class="columns">
+                        <div class="column mrgn-bot-s">
+                            <a class="button">Take Action</a>
+                            <p class="text-color-grey-l">default</p>
+                        </div>
+                        <div class="column mrgn-bot-s">
+                            <a class="button disabled">Take Action</a>
+                            <p>.disabled</p>
+                        </div>
+                        <div class="column mrgn-bot-s">
+                            <a class="button secondary">Take Action</a>
+                            <p>.secondary</p>
+                        </div>
+                        <div class="column mrgn-bot-s">
+                            <a class="button secondary disabled">Take Action</a>
+                            <p>.secondary.disabled</p>
+                        </div>
+                    </div>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <a class="button">Active</a>
-                    <a class="button disabled">Disabled</a>
-                    <a class="button secondary">Active</a>
-                    <a class="button secondary disabled">Disabled</a>
+                    <a class="button">Take Action</a>
+                    <a class="button disabled">Take Action</a>
+                    <a class="button secondary">Take Action</a>
+                    <a class="button secondary disabled">Take Action</a>
                 </code>
                 </pre>
             </section>
@@ -519,7 +572,7 @@
                 <h2 class="mrgn-top-none">Colors</h2>
                 <h3>Backgrounds</h3>
                 <div class="box">
-                    <div class="columns spacing-s">
+                    <div class="columns">
                         <div class="column fourth">
                             <div class="mrgn-rgt-s">
                                 <div class="bg-primary height-xxl"></div>
@@ -562,6 +615,10 @@
                                 <div class="bg-warn height-xxl"></div>
                                 <p>.bg-warn</p>
                             </div>
+                        </div>
+                        <div class="column fourth">
+                            <div class="bg-white height-xxl bdr-xs bdr-color-grey-l"></div>
+                            <p>.bg-white</p>
                         </div>
                     </div>
                     <div class="columns">
@@ -692,136 +749,229 @@
             <!-- Icons -->
             <section class="pad-top-l hide" id="Icons">
                 <h2 class="mrgn-top-none">Icons</h2>
-                <div class="columns">
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black administration"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black analytics"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black calendar"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black collapse-expand"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black daily-roster"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black data-intelligence"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black demographics"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black events"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black home"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black hydrants"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black incidents"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black inventory"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black invoicing"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black library"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black maintenance"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black message-center"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black my-profile"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black occupancies"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black payroll"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black reports"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black roster"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black shifts"></i>
-                    </div>
-                    <div class="column flex-fit bdr-color-grey-extra-light bdr-xs bdr-radius-m mrgn-xs pad-xs">
-                        <i class="icon xl black training"></i>
+                <div class="box">
+                    <div class="columns text-align-left spacing-s">
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black administration"></i>
+                            </div>
+                            <p class="text-size-s">administration</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black analytics"></i>
+                            </div>
+                            <p class="text-size-s">analytics</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black calendar"></i>
+                            </div>
+                            <p class="text-size-s">calendar</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black collapse-expand"></i>
+                            </div>
+                            <p class="text-size-s">collapse-expand</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black daily-roster"></i>
+                            </div>
+                            <p class="text-size-s">daily-roster</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black data-intelligence"></i>
+                            </div>
+                            <p class="text-size-s">data-intelligence</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black demographics"></i>
+                            </div>
+                            <p class="text-size-s">demographics</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black events"></i>
+                            </div>
+                            <p class="text-size-s">events</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black home"></i>
+                            </div>
+                            <p class="text-size-s">home</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black hydrants"></i>
+                            </div>
+                            <p class="text-size-s">hydrants</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black incidents"></i>
+                            </div>
+                            <p class="text-size-s">incidents</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black inventory"></i>
+                            </div>
+                            <p class="text-size-s">inventory</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black invoicing"></i>
+                            </div>
+                            <p class="text-size-s">invoicing</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black library"></i>
+                            </div>
+                            <p class="text-size-s">library</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black maintenance"></i>
+                            </div>
+                            <p class="text-size-s">maintenance</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black message-center"></i>
+                            </div>
+                            <p class="text-size-s">message-center</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black my-profile"></i>
+                            </div>
+                            <p class="text-size-s">my-profile</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black occupancies"></i>
+                            </div>
+                            <p class="text-size-s">occupancies</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black payroll"></i>
+                            </div>
+                            <p class="text-size-s">payroll</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black reports"></i>
+                            </div>
+                            <p class="text-size-s">reports</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black roster"></i>
+                            </div>
+                            <p class="text-size-s">roster</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black shifts"></i>
+                            </div>
+                            <p class="text-size-s">shifts</p>
+                        </div>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black training"></i>
+                            </div>
+                            <p class="text-size-s">training</p>
+                        </div>
                     </div>
                 </div>
 
                 <h3>Example</h3>
                 <pre>
-                            <code data-language="html">
-                                <i class="icon administration"></i>
-                            </code>
-                            </pre>
+                <code data-language="html">
+                    <i class="icon administration"></i></code>
+                </pre>
 
                 <h4>Sizes</h4>
                 <div class="box">
-                    <div class="columns">
-                        <div class="columnflex-fit mrgn-xs pad-xs">
-                            <i class="icon black xxl administration"></i>
+                    <div class="columns spacing-s">
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xxl black administration"></i>
+                            </div>
+                            <p class="text-size-s">xxl</p>
                         </div>
-                        <div class="columnflex-fit mrgn-xs pad-xs">
-                            <i class="icon black xl administration"></i>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xl black administration"></i>
+                            </div>
+                            <p class="text-size-s">xl</p>
                         </div>
-                        <div class="columnflex-fit mrgn-xs pad-xs">
-                            <i class="icon black l administration"></i>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon l black administration"></i>
+                            </div>
+                            <p class="text-size-s">l</p>
                         </div>
-                        <div class="columnflex-fit mrgn-xs pad-xs">
-                            <i class="icon black m administration"></i>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon m black administration"></i>
+                            </div>
+                            <p class="text-size-s">m</p>
                         </div>
-                        <div class="columnflex-fit mrgn-xs pad-xs">
-                            <i class="icon black s administration"></i>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon s black administration"></i>
+                            </div>
+                            <p class="text-size-s">s</p>
                         </div>
-                        <div class="columnflex-fit mrgn-xs pad-xs">
-                            <i class="icon black xs administration"></i>
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xs black administration"></i>
+                            </div>
+                            <p class="text-size-s">xs</p>
                         </div>
                     </div>
                 </div>
                 <pre>
-                            <code data-language="html">
-                                <i class="icon xxl administration"></i>
-                                <i class="icon xl administration"></i>
-                                <i class="icon l administration"></i>
-                                <i class="icon m administration"></i>
-                                <i class="icon s administration"></i>
-                                <i class="icon xs administration"></i>
-                            </code>
-                            </pre>
-
+                <code data-language="html">
+                    <i class="icon xxl administration"></i>
+                    <i class="icon xl administration"></i>
+                    <i class="icon l administration"></i>
+                    <i class="icon m administration"></i>
+                    <i class="icon s administration"></i>
+                    <i class="icon xs administration"></i>
+                </code>
+                </pre>
                 <h4>Colors</h4>
                 <div class="box">
-                    <div class="columns">
-                        <div class="column flex-fit mrgn-xs pad-xs">
-                            <i class="icon xxl black administration"></i>
+                    <div class="columns spacing-s">
+                        <div class="column flex-fit">
+                            <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                                <i class="icon xxl black administration"></i>
+                            </div>
+                            <p class="text-size-s">black</p>
                         </div>
-                        <div class="column flex-fit mrgn-xs pad-xs bg-black bdr-radius-m">
-                            <i class="icon xxl white administration"></i>
+                        <div class="column flex-fit">
+                            <div class="bg-grey bdr-radius-m pad-m">
+                                <i class="icon xxl white administration"></i>
+                            </div>
+                            <p class="text-size-s">white</p>
                         </div>
                     </div>
                 </div>
                 <pre>
-                            <code data-language="html">
-                                <i class="icon black administration"></i>
-                                <i class="icon white administration"></i>
-                            </code>
-                            </pre>
+                <code data-language="html">
+                    <i class="icon black administration"></i>
+                    <i class="icon white administration"></i>
+                </code>
+                </pre>
             </section>
 
             <!-- Indicators -->
@@ -905,18 +1055,22 @@
                 <ul class="tree">
                     <li>.modal = main wrapper
                         <ul>
-                            <li>.modal-view = content wrapper</li>
-                            <ul>
-                                <li>.modal-close = close button</li>
-                                <li>...content...</li>
-                            </ul>
-                    </li>
-                    </ul>
+                            <li>.modal-view = content wrapper
+                                <ul>
+                                    <li>.modal-close = close button</li>
+                                    <li>...content...</li>
+                                </ul>
+                            </li>
                     </li>
                 </ul>
-                <p>The <em>.main-view</em> molecule are driven by the <a href="#Responsifier" class="nav-item">Responsifier</a>.
-                    The <em>hide</em>
-                    class is added/removed from the <em>modal-view</em> element.</p>
+                </li>
+                </ul>
+                <p>The
+                    <em>.main-view</em> molecule are driven by the
+                    <a href="#Responsifier" class="nav-item">Responsifier</a>. The
+                    <em>hide</em>
+                    class is added/removed from the
+                    <em>modal-view</em> element.</p>
                 <div class="box">
                     <a class="button" id="modalTrigger">Open Dialog</a>
                 </div>
@@ -1049,8 +1203,8 @@
                 </code>
                 </pre>
                 <h3>Pivot</h3>
-                <p>A table can be "pivoted " by adding the molecule <em>pivot</em> creating a row based layout of the same
-                    table.
+                <p>A table can be "pivoted " by adding the molecule
+                    <em>pivot</em> creating a row based layout of the same table.
                 </p>
                 <div class="box">
                     <table class="pivot">
@@ -1086,7 +1240,8 @@
                 </code>
                 </pre>
                 <h3>Wrap</h3>
-                <p>An optional <em>wrap</em> class is available to wrap the table data for smaller screens.</p>
+                <p>An optional
+                    <em>wrap</em> class is available to wrap the table data for smaller screens.</p>
                 <div class="box">
                     <table class="wrap">
                         <thead>
@@ -1166,13 +1321,19 @@
                 </pre>
                 <h3>Text</h3>
                 <div class="box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada,
-                        risus ipsum sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a
-                        felis bibendum aliquet aliquam sit amet nisl. Quisque vel tempus leo.</p>
-                    <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat. Integer
-                        quis neque mollis diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet pellentesque.
-                        Ut sodales, massa in finibus bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc. Maecenas
-                        efficitur volutpat ex, ut accumsan velit tincidunt euismod. Nulla vulputate quis est eget consectetur.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur
+                        malesuada, risus
+                        ipsum sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a
+                        felis
+                        bibendum aliquet aliquam sit amet nisl. Quisque vel tempus leo.</p>
+                    <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat.
+                        Integer
+                        quis neque mollis diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet
+                        pellentesque.
+                        Ut sodales, massa in finibus bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc.
+                        Maecenas
+                        efficitur volutpat ex, ut accumsan velit tincidunt euismod. Nulla vulputate quis est eget
+                        consectetur.</p>
                 </div>
                 <pre>
                 <code data-language="html">
@@ -1237,7 +1398,8 @@
                     <div class="text-size-xl text-height-xl text-indent-2">Open Sans - Regular</div>
                     <div class="text-size-xl text-height-xl text-indent-2 text-style-italic">Open Sans - Italic</div>
                     <div class="text-size-xl text-height-xl text-indent-2 text-style-bold">Open Sans - Bold</div>
-                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold-italic">Open Sans - Bold Italic
+                    <div class="text-size-xl text-height-xl text-indent-2 text-style-bold-italic">Open Sans - Bold
+                        Italic
                     </div>
                 </div>
                 <pre>
@@ -1297,8 +1459,9 @@
             <section class="pad-top-l hide " id="Responsifier">
                 <h2 class="mrgn-top-none">Responsifier</h2>
                 <p>The
-                    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to
-                    provide a simple mechanism to add, remove and toggle classes in response to events. Combined with
+                    <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is
+                    to provide
+                    a simple mechanism to add, remove and toggle classes in response to events. Combined with
                     <strong>Atoms</strong> and
                     <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
                 <ul>

@@ -27,9 +27,9 @@
   ".button:focus": [".bg-secondary", ".anim-speed-fast", ".text-color-white"],
   ".button:hover": [".bg-secondary", ".anim-speed-fast", ".text-color-white"],
   ".button:active": [".opac-70", ".anim-speed-fast", ".shadow-s"],
-  ".button.disabled": [".bg-grey-l", ".opac-50", ".bdr-color-grey-l"],
-  ".button.disabled:hover": [".bg-grey-l", ".opac-50"],
-  ".button.disabled:active": [".bg-grey-l", ".opac-50"],
+  ".button.disabled": [".bg-grey", ".opac-50", ".bdr-color-grey-l"],
+  ".button.disabled:hover": [".bg-grey", ".opac-50"],
+  ".button.disabled:active": [".bg-grey", ".opac-50"],
   ".button.large": [".text-size-l", ".text-height-xxl"],
   ".button.medium": [".text-height-l"],
   ".button.small": [".text-height-m"],
@@ -37,29 +37,19 @@
   ".button.danger:hover": [".bg-white", ".text-color-danger"],
   ".button.danger:active": [".opac-50"],
   ".button.secondary": [".text-color-primary", ".bg-white"],
+  ".button.link": [".text-color-primary", ".bg-white", ".bdr-none"],
   ".button.secondary:hover": [
     ".bg-secondary",
     ".anim-speed-fast",
     ".text-color-white"
   ],
   ".button.secondary:active": [".text-color-primary", ".bg-white", ".shadow-s"],
-  ".button.secondary.disabled": [
+  ".button.secondary.disabled, .button.secondary.disabled:hover, .button.secondary.disabled:active": [
     ".text-color-grey",
     ".bdr-xs",
-    ".bdr-color-white",
-    ".bg-white"
-  ],
-  ".button.secondary.disabled:hover": [
-    ".text-color-grey",
-    ".bdr-xs",
-    ".bdr-color-white",
-    ".bg-white"
-  ],
-  ".button.secondary.disabled:active": [
-    ".text-color-grey",
-    ".bdr-xs",
-    ".bdr-color-white",
-    ".bg-white"
+    ".bdr-color-grey-l",
+    ".bg-white",
+    ".opac-100"
   ],
   "code": [".text-style-monospace", ".text-size-s"],
   ".column": [".flex-col"],
@@ -70,6 +60,8 @@
   ".column.fifth": [".flex-col-fifth"],
   ".column.sixth": [".flex-col-sixth"],
   ".columns": [".flex", ".flex-dir-row", ".flex-wrap"],
+  ".columns.spacing-s .column:first-child, .columns.spacing-s .column + .column":[".mrgn-rgt-s",".mrgn-bot-s"],
+  ".columns.spacing-xs .column:first-child, .columns.spacing-xs .column + .column":[".mrgn-rgt-xs",".mrgn-bot-xs"],
   ".icon": [
     ".block",
     ".bg-cover",
@@ -216,10 +208,11 @@
     "top:calc(-100% - 24px)"
   ],
   "ul > li, ol > li": [".text-style", ".text-height-m", ".text-size-m"],
-  "ul.tree, u.tree ul": [".mrgn-none", "list-style:none", ".pad-none"],
-  "ul.tree ul": [".mrgn-left-s"],
-  "ul.tree li": [".mrgn-none", ".pad-rgt-s", ".text-height-m", ".bdr-lft-xs", ".bdr-color-primary", ".list-style-none"],
+  "ul.tree": [".mrgn-lft-xs", "list-style:none", ".pad-none"],
+  "ul.tree ul": [".mrgn-lft-xs", "list-style:none", ".pad-none"],
+  "ul.tree li": [".mrgn-none", ".pad-none", ".text-height-m", ".bdr-lft-xs", ".bdr-color-primary"],
   "ul.tree li:last-child": [".bdr-left-none"],
-  "ul.tree li:before": [".pos-rel", "top:-3px", ".text-height-s", ".width-xs", ".bdr-bot-xs", ".bdr-lft-xs", ".bdr-color-primary", ".content-none", ".inline-block", ".pos-left-none", "height:1.2rem"],
-  "ul.tree li:last-child": ["border:0"]
+  "ul.tree li:before": [".pos-rel", "top:-4px", ".text-height-s", ".width-xs", ".bdr-bot-xs", ".bdr-lft-xs", ".bdr-color-primary", ".content-none", ".inline-block", "left:-1px", "height:1.2rem", "margin-right:5px"],
+  "ul.tree li:last-child": ["border:0"],
+  "ul.tree li:last-child:before": ["left:0"]
 }
