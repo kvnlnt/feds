@@ -314,22 +314,22 @@
   ".text-color-success": ["color:${color.green}"],
   ".text-color-warn": ["color:${color.yellow}"],
   ".text-color-white": ["color:${color.white}"],
-  ".text-style-monospace": ["font-family:monospace"],
-  ".text-style-bold-italic": [
+  ".text-font-monospace": ["font-family:monospace"],
+  ".text-font-bold-italic": [
     "font-family:${font.open-sans-bold-italic}, Arial",
     "font-style:italic"
   ],
-  ".text-style-bold": ["font-family:${font.open-sans-bold}, Arial"],
-  ".text-style-semi-bold": ["font-family:${font.open-sans-semi-bold}, Arial"],
-  ".text-style-semi-bold-italic": [
+  ".text-font-bold": ["font-family:${font.open-sans-bold}, Arial"],
+  ".text-font-semi-bold": ["font-family:${font.open-sans-semi-bold}, Arial"],
+  ".text-font-semi-bold-italic": [
     "font-family:${font.open-sans-semi-bold-italic}, Arial"
   ],
-  ".text-style-italic": [
+  ".text-font-italic": [
     "font-family:${font.open-sans-italic}, Arial",
     "font-style:italic"
   ],
-  ".text-style": ["font-family:${font.open-sans}, Arial"],
-  ".text-style-l": ["font-family:${font.open-sans-light}, Arial"],
+  ".text-font": ["font-family:${font.open-sans}, Arial"],
+  ".text-font-l": ["font-family:${font.open-sans-light}, Arial"],
   ".text-height-l": ["line-height:3.2${unit.base}"],
   ".text-height-m": ["line-height:2.4${unit.base}"],
   ".text-height-s": ["line-height:2.0${unit.base}"],
@@ -352,6 +352,7 @@
   ".text-space-s": ["letter-spacing:0.1${unit.base}"],
   ".text-space-xs": ["letter-spacing:0${unit.base}"],
   ".text-underline-none": ["text-decoration:none"],
+  ".text-weight-normal": ["font-weight:normal"],
   ".width-none": ["width:0"],
   ".width-fifth": ["width: 20%"],
   ".width-fourth": ["width: 25%"],

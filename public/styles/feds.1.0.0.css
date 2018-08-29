@@ -164,8 +164,8 @@ blockquote { ; }
 em { font-family:OpenSansItalic, Arial;font-style:italic; }
 footer { ; }
 form { ; }
-h1 { font-size:4rem;font-family:OpenSans, Arial;letter-spacing:0.1rem; }
-h2 { font-size:2.4rem;font-family:OpenSansLight, Arial;letter-spacing:0.1rem;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(202,206,217);padding-bottom:2rem; }
+h1 { font-size:4rem;font-family:OpenSans, Arial;letter-spacing:0.1rem;font-weight:normal; }
+h2 { font-size:2.4rem;font-family:OpenSansLight, Arial;letter-spacing:0.1rem; }
 h3 { font-size:2.0rem;font-family:OpenSansBold, Arial;letter-spacing:0rem;margin-top:3rem;margin-bottom:2rem; }
 h3+p { margin-top:-1.4rem; }
 h4 { font-size:1.4rem;font-family:OpenSans, Arial;letter-spacing:0.1rem; }
@@ -492,14 +492,14 @@ ul.tree li:last-child:before { left:0; }
 .text-color-success { color:hsl(158, 100%, 26%); }
 .text-color-warn { color:#F7D31E; }
 .text-color-white { color:#FFFFFF; }
-.text-style-monospace { font-family:monospace; }
-.text-style-bold-italic { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
-.text-style-bold { font-family:OpenSansBold, Arial; }
-.text-style-semi-bold { font-family:undefined, Arial; }
-.text-style-semi-bold-italic { font-family:undefined, Arial; }
-.text-style-italic { font-family:OpenSansItalic, Arial;font-style:italic; }
-.text-style { font-family:OpenSans, Arial; }
-.text-style-l { font-family:OpenSansLight, Arial; }
+.text-font-monospace { font-family:monospace; }
+.text-font-bold-italic { font-family:OpenSansBoldItalic, Arial;font-style:italic; }
+.text-font-bold { font-family:OpenSansBold, Arial; }
+.text-font-semi-bold { font-family:undefined, Arial; }
+.text-font-semi-bold-italic { font-family:undefined, Arial; }
+.text-font-italic { font-family:OpenSansItalic, Arial;font-style:italic; }
+.text-font { font-family:OpenSans, Arial; }
+.text-font-l { font-family:OpenSansLight, Arial; }
 .text-height-l { line-height:3.2rem; }
 .text-height-m { line-height:2.4rem; }
 .text-height-s { line-height:2.0rem; }
@@ -522,6 +522,7 @@ ul.tree li:last-child:before { left:0; }
 .text-space-s { letter-spacing:0.1rem; }
 .text-space-xs { letter-spacing:0rem; }
 .text-underline-none { text-decoration:none; }
+.text-weight-normal { font-weight:normal; }
 .width-none { width:0; }
 .width-fifth { width: 20%; }
 .width-fourth { width: 25%; }

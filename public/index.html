@@ -1300,7 +1300,7 @@
 
             <!-- Typography -->
             <section class="pad-top-l hide " id="Typography">
-                <h2 class="mrgn-top-none">Typography</h2>
+                <h2 class="mrgn-top-none bdr-bot-xs bdr-bot-color-grey-l pad-bot-s">Typography</h2>
                 <h3>Fonts</h3>
                 <div class="box">
                     <div class="columns spacing-s">
@@ -1365,32 +1365,47 @@
                 </div>
                 <pre>
                 <code data-language="html">
-                    <div class="text-size-xxl">Giant Text</div>
-                    <div class="text-size-xl">Extra Large Text</div>
-                    <div class="text-size-l">Large Text</div>
-                    <div class="text-size-m">Medium Text</div>
-                    <div class="text-size-s">Small Text</div>
-                    <div class="text-size-xs">Extra Small Text</div>
+                    <div class="text-size-xxl">...</div>
+                    <div class="text-size-xl">...</div>
+                    <div class="text-size-l">...</div>
+                    <div class="text-size-m">...</div>
+                    <div class="text-size-s">...</div>
+                    <div class="text-size-xs">...</div>
                 </code>
                 </pre>
                 <h3>Headers</h3>
                 <div class="box">
-                    <h1 class="mrgn-none">H1 Header</h1>
-                    <h2 class="mrgn-top-none">H2 Header</h2>
-                    <h3>H3 Header</h3>
-                    <h4>H4 Header</h4>
-                    <h5>H5 Header</h5>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+                        <h1>Giant Text: Good design is excellent</h1>
+                    </div>
+                    <p class="mrgn-top-xs">h1</p>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+                        <h2>Giant Text: Good design is excellent business</h2>
+                    </div>
+                    <p class="mrgn-top-xs">h2</p>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+                        <h3>Giant Text: Good design is excellent business</h3>
+                    </div>
+                    <p class="mrgn-top-xs">h3</p>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+                        <h4>Giant Text: Good design is excellent business</h4>
+                    </div>
+                    <p class="mrgn-top-xs">h4</p>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+                        <h5>Giant Text: Good design is excellent business</h5>
+                    </div>
+                    <p class="mrgn-top-xs">h5</p>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <h1>H1 Header</h1>
-                    <h2 class="mrgn-top-none">H2 Header</h2>
-                    <h3>H3 Header</h3>
-                    <h4>H4 Header</h4>
-                    <h5>H5 Header</h5>
+                    <h1>Giant Text: Good design is excellent</h1>
+                    <h2>Giant Text: Good design is excellent business</h2>
+                    <h3>Giant Text: Good design is excellent business</h3>
+                    <h4>Giant Text: Good design is excellent business</h4>
+                    <h5>Giant Text: Good design is excellent business</h5>
                 </code>
                 </pre>
-                <h3>Text</h3>
+                <h3>Paragraph</h3>
                 <div class="box">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur
                         malesuada, risus
@@ -1412,64 +1427,91 @@
                     <p>Etiam at venenatis sapien...</p>
                 </code>
                 </pre>
-                <h3>Links</h3>
-                <div class="box">
-                    <a href="#">Link Text</a>
-                </div>
-                <pre>
-                <code data-language="html">
-                    <a href="#">Link Text</a>
-                </code>
-                </pre>
-                <h3>Utility</h3>
                 <h3>Colors</h3>
+                <p>When selecting a color for a block of text, it's important to take into account the documented
+                    usages below (using green text only for success messaging, for instance).</p>
                 <div class="box">
-                    <div class="text-color-primary text-height-m text-size-m text-indent-2">.text-color-primary</div>
-                    <div class="text-color-primary-light text-height-m text-size-m text-indent-2">.text-color-primary-light</div>
-                    <div class="text-color-secondary text-height-m text-size-m text-indent-2">.text-color-secondary</div>
-                    <div class="text-color-success text-height-m text-size-m text-indent-2">.text-color-success</div>
-                    <div class="text-color-danger text-height-m text-size-m text-indent-2">.text-color-danger</div>
-                    <div class="text-color-black text-height-m text-size-m text-indent-2">.text-color-black</div>
-                    <div class="text-color-grey text-height-m text-size-m text-indent-2">.text-color-grey</div>
-                    <div class="text-color-grey-l text-height-m text-size-m text-indent-2">.text-color-grey-l</div>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Black: This is the default text color
+                    </div>
+                    <p>.text-color-black</p>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Grey: This is grey text
+                    </div>
+                    <p>.text-color-grey</p>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Primary: This is the primary link color
+                    </div>
+                    <p>.text-color-primary</p>
+                    <div class="bg-grey text-color-primary-l bdr-color-grey-l bdr-radius-m pad-xs text-size-l">
+                        Primary-Light: This text color should ONLY be used on a dark background
+                    </div>
+                    <p>.text-color-primary-l</p>
+                    <div class="text-color-secondary bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Secondary: Primarily used as the hover color for .text-color-primary
+                    </div>
+                    <p>.text-color-secondary</p>
+                    <div class="text-color-success bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Success: This is green text for success messaging
+                    </div>
+                    <p>.text-color-success</p>
+                    <div class="text-color-danger bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Danger: This red text is for error messages
+                    </div>
+                    <p>.text-color-danger</p>
+                    <div class="text-color-warn bg-grey bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Yellow: This is for warning messages, it should ONLY be used on a dark background
+                    </div>
+                    <p>.text-color-warn</p>
+                    <div class="text-color-white bg-grey bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        White: White text is for dark backgrounds
+                    </div>
+                    <p>.text-color-white</p>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <div class="text-color-primary">.text-color-primary</div>
-                    <div class="text-color-primary-light">.text-color-primary-light</div>
-                    <div class="text-color-secondary">.text-color-secondary</div>
-                    <div class="text-color-success">.text-color-success</div>
-                    <div class="text-color-danger">.text-color-danger</div>
-                    <div class="text-color-black">.text-color-black</div>
-                    <div class="text-color-grey">.text-color-grey</div>
-                    <div class="text-color-grey-l">.text-color-grey-l</div>
+                    <div>...</div>
+                    <div class="text-color-primary">...</div>
+                    <div class="text-color-primary-l">...</div>
+                    <div class="text-color-secondary">...</div>
+                    <div class="text-color-success">...</div>
+                    <div class="text-color-danger">...</div>
+                    <div class="text-color-black">...</div>
+                    <div class="text-color-grey">...</div>
+                    <div class="text-color-grey-l">...</div>
                 </code>
                 </pre>
                 <h3>Styles</h3>
                 <div class="box">
-                    <p class="text-size-l">Regular Text</p>
-                    <p class="text-size-l">
-                        <em>Italicized Text</em>
-                    </p>
-                    <p class="text-size-l">
-                        <strong>Strong Text</strong>
-                    </p>
-                    <p class="text-size-l">
-                        <strong>
-                            <em>Strong Italicized Text</em>
-                        </strong>
-                    </p>
+                    <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Regular text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+                    </div>
+                    <p class="text-font-italic">default</p>
+                    <div class="text-font-italic bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Italicized Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+                    </div>
+                    <p>.text-font-italic</p>
+                    <div class="text-font-bold bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Strong Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+                    </div>
+                    <p>.text-font-bold</p>
+                    <div class="text-font-bold-italic bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+                        Strong Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+                    </div>
+                    <p>.text-font-semi-italic</p>
                 </div>
                 <pre>
                 <code data-language="html">
-                    <p>Regular Text</p>
-                    <p><em>Italicized Text</em></p>
-                    <p><strong>Strong Text</strong></p>
-                    <p><strong><em>Strong Italicized Text</em></strong></p>
+                    <p>...</p>
+                    <p class="text-font-italic">...</p>
+                    <p class="text-font-bold">...</p>
+                    <p class="text-font-bold-italic">...</p>
                 </code>
                 </pre>
+                <!-- <h3>Links</h3>
+                <h3>Utility</h3>
                 <h3>Leading</h3>
-                <h3>Alignment</h3>
+                <h3>Alignment</h3> -->
             </section>
 
             <!-- JAVASCRIPT -->
