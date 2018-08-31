@@ -1,7 +1,7 @@
 const fs = require("fs");
 const createTestCafe = require("testcafe");
 const report = fs.createWriteStream("tests/report.json");
-const config = require("../feds.json");
+const config = require("../../feds.json");
 let testcafe = null;
 
 createTestCafe("localhost", 1337, 1338)
