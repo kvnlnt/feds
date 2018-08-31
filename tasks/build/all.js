@@ -1,3 +1,4 @@
+require("./guide");
 require("./styles");
 require("./scripts");
 

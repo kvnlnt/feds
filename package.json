@@ -4,11 +4,12 @@
   "description": "Front End Design System",
   "main": "./tasks/build.js",
   "scripts": {
-    "build": "node ./tasks/build.js",
-    "build:styles": "node ./tasks/styles.js",
-    "build:scripts": "node ./tasks/scripts.js",
-    "test": "node ./tasks/test.js",
-    "test:ci": "node ./tasks/test-ci.js"
+    "build": "node ./tasks/build/all.js",
+    "build:guide":"node ./tasks/build/guide.js",
+    "build:styles": "node ./tasks/build/styles.js",
+    "build:scripts": "node ./tasks/build/scripts.js",
+    "test": "node ./tasks/test/all.js",
+    "test:ci": "node ./tasks/test/ci.js"
   },
   "author": "",
   "license": "ISC",

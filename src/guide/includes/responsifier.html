@@ -1,0 +1,129 @@
+<section class="pad-top-l hide " id="Responsifier">
+    <h2 class="mrgn-top-none">Responsifier</h2>
+    <p>The
+        <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is
+        to provide
+        a simple mechanism to add, remove and toggle classes in response to events. Combined with
+        <strong>Atoms</strong> and
+        <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
+    <ul>
+        <li>Replaces the need for media queries</li>
+        <li>Eliminates the need for ad-hoc responsive styles and scripts</li>
+        <li>Is framework agnostic</li>
+        <li>Has a small footprint (~5kb)</li>
+    </ul>
+
+    <h3>Usage</h3>
+    <pre>
+    <code data-language="javascript">
+        var r = new feds.Responsifier()
+        .add({
+            observer: "#mobile-menu ",
+            observable: window,
+            event: feds.Responsifier.RESIZE,
+            range: [0, 799],
+            add: ["show "]
+        })
+        .add({
+            observer: "#mobile-menu ",
+            observable: window,
+            event: feds.Responsifier.RESIZE,
+            range: [800, "* "],
+            remove: ["show "]
+        })
+        .init();
+    </code>
+    </pre>
+
+    <h3>Methods</h3>
+
+    <h4>add(options)</h4>
+    <p>Adds a media query to a responsifier instance.</p>
+    <h5>Options</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Example</th>
+                <th>Desc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>observer</td>
+                <td>String|[Node List]</td>
+                <td>".some-button "</td>
+                <td>element to update</td>
+            </tr>
+            <tr>
+                <td>observable</td>
+                <td>String|[Node List]</td>
+                <td>"body "</td>
+                <td>element to watch</td>
+            </tr>
+            <tr>
+                <td>event</td>
+                <td>Responsifier event constant</td>
+                <td>Responsifier.SCROLL</td>
+                <td>event to watch for (see events for options)</td>
+            </tr>
+            <tr>
+                <td>range</td>
+                <td>[number,number|"* "]</td>
+                <td>[0,100]</td>
+                <td>Start and ending ranges. Ending range can optionally be set to "* ".</td>
+            </tr>
+            <tr>
+                <td>add</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Array of classes to add</td>
+            </tr>
+            <tr>
+                <td>remove</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Array of classes to remove</td>
+            </tr>
+            <tr>
+                <td>toggle</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Array of classes to toggle</td>
+            </tr>
+            <tr>
+                <td>callback</td>
+                <td>function</td>
+                <td>function(observer){return true;}</td>
+                <td>Callback function on completion</td>
+            </tr>
+            <tr>
+                <td>condition</td>
+                <td>function</td>
+                <td>function(observer){return true;}</td>
+                <td>noop if returns false</td>
+            </tr>
+            <tr>
+                <td>lock</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Prevent class from being added, removed, toggled, etc.</td>
+            </tr>
+            <tr>
+                <td>unlock</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Renable class for being added, removed, toggled, etc.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Events</h4>
+    <ul>
+        <li>Responsifier.SCROLL</li>
+        <li>Responsifier.RESIZE</li>
+        <li>Responsifier.CLICK</li>
+        <li>Responsifier.HOVER</li>
+        <li>Responsifier.TOGGLE</li>
+    </ul>
+</section>

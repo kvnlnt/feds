@@ -1,0 +1,73 @@
+<section class="pad-top-l hide" id="Modals">
+    <h2 class="mrgn-top-none">Modals</h2>
+    <p>Modals have a simple structure:</p>
+    <ul class="tree">
+        <li>.modal = main wrapper
+            <ul>
+                <li>.modal-view = content wrapper
+                    <ul>
+                        <li>.modal-close = close button</li>
+                        <li>...content...</li>
+                    </ul>
+                </li>
+        </li>
+    </ul>
+    </li>
+    </ul>
+    <p>The
+        <em>.main-view</em> molecule are driven by the
+        <a href="#Responsifier" class="nav-item">Responsifier</a>. The
+        <em>hide</em>
+        class is added/removed from the
+        <em>modal-view</em> element.</p>
+    <div class="box">
+        <a class="button" id="modalTrigger">Open Dialog</a>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-view width-view-m">
+            <a class="modal-close" id="modalClose">
+                <i class="icon m close"></i>
+            </a>
+            <div class="pad-m">
+                <h2>Title</h2>
+                <p>Content</p>
+            </div>
+            </p>
+        </div>
+    </div>
+    <h4>HTML</h4>
+    <pre>
+    <code data-language="html">
+        <a class="button" id="modalTrigger">Open Dialog</a>
+        <div class="modal" id="modal">
+            <div class="modal-view width-view-m">
+                <a class="modal-close" id="modalClose">
+                    <i class="icon m close"></i>
+                </a>
+                <div class="pad-m">
+                    <h2>Title</h2>
+                    <p>Content</p>
+                </div>
+                </p>
+            </div>
+        </div></code>
+    </pre>
+    <h4>Javascript</h4>
+    <pre>
+    <code data-language="javascript">
+        new feds.Responsifier 
+        .add({
+            observer: "#modal",
+            observable: "#modalTrigger",
+            event: feds.Responsifier.CLICK,
+            toggle: ["hide"]
+        })
+        .add({
+            observer: "#modal",
+            observable: "#modalClose",
+            event: feds.Responsifier.CLICK,
+            toggle: ["hide"]
+        })
+        .init()</code>
+    </pre>
+</section>
