@@ -70,7 +70,7 @@ const compiledMolecules = compileRules(precompiledMolecules).join("");
 const compiledResets = compileRules(precompiledResets).join("");
 
 // render
-const styles = `${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
+const styles = `/* Build: ${config.name}.${config.version}.${config.build+1} */\n${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
 
 // output
 const stylesFile = `${config.name}.${config.version}.css`;

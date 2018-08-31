@@ -1,6 +1,7 @@
 const fs = require("fs");
 const config = require("../feds.json");
 const color = require("./lib/color");
+const build = `// Build: ${config.name}.${config.version}.${config.build+1}`
 
 // setup
 console.time(color.ok("Scripts"));
@@ -11,7 +12,8 @@ const code = Object.keys(config.scripts).reduce((acc, curr) => {
 }, {});
 
 // IIFE: Browser only
-const WrapInIIFE = () => `var feds = (function(m){
+const WrapInIIFE = () => `${build}
+var feds = (function(m){
     ${code.ContainerQuery}
     ${code.Responsifier}
     m.ContainerQuery = ContainerQuery;
@@ -20,14 +22,15 @@ const WrapInIIFE = () => `var feds = (function(m){
 }(feds || {}))`;
 
 // CommonJS: Node only
-const WrapInCommonJs = () => `${code.ContainerQuery}${code.Responsifier}
+const WrapInCommonJs = () => `${build}
+${code.ContainerQuery}${code.Responsifier}
 module.exports = {
     ContainerQuery: ContainerQuery,
     Responsifier: Responsifier
 };`;
 
 // AMD: Browser only, with AMD
-const WrapInAMD = () => `
+const WrapInAMD = () => `${build}
 define('feds', [], 
 function () {
     ${code.ContainerQuery}
@@ -40,7 +43,7 @@ function () {
 });`;
 
 // ESM: Browsers only (via Bundler)
-const WrapInEs6 = () => `
+const WrapInEs6 = () => `${build}
 export ${code.ContainerQuery}
 export ${code.Responsifier}`;
 
