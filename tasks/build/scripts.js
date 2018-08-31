@@ -1,6 +1,6 @@
 const fs = require("fs");
-const config = require("../feds.json");
-const color = require("./lib/color");
+const config = require("../../feds.json");
+const color = require("../lib/color");
 const build = `// Build: ${config.name}.${config.version}.${config.build+1}`;
 
 // setup
