@@ -2,7 +2,7 @@
   "name": "feds",
   "version": "1.0.0",
   "build": 220,
-  "test": 4,
+  "test": 220,
   "scripts": {
     "ContainerQuery": "./src/scripts/ContainerQuery.js",
     "Responsifier": "./src/scripts/Responsifier.js",
