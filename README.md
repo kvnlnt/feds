@@ -2,6 +2,8 @@
 
 Front-end Design System
 
+![Build Status](https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline)
+
 ## Purpose
 
 Framework agnostic CSS library starter toolkit utilizing best practices
