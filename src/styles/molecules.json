@@ -60,8 +60,14 @@
   ".column.fifth": [".flex-col-fifth"],
   ".column.sixth": [".flex-col-sixth"],
   ".columns": [".flex", ".flex-dir-row", ".flex-wrap"],
-  ".columns.spacing-s .column:first-child, .columns.spacing-s .column + .column": [".mrgn-rgt-s", ".mrgn-bot-s"],
-  ".columns.spacing-xs .column:first-child, .columns.spacing-xs .column + .column": [".mrgn-rgt-xs", ".mrgn-bot-xs"],
+  ".columns.spacing-s .column:first-child, .columns.spacing-s .column + .column": [
+    ".mrgn-rgt-s",
+    ".mrgn-bot-s"
+  ],
+  ".columns.spacing-xs .column:first-child, .columns.spacing-xs .column + .column": [
+    ".mrgn-rgt-xs",
+    ".mrgn-bot-xs"
+  ],
   ".icon": [
     ".block",
     ".bg-cover",
@@ -85,12 +91,13 @@
   "em": [".text-font-italic"],
   "footer": [""],
   "form": [""],
-  "h1": [".text-size-xxl", ".text-font", ".text-space-s", ".text-weight-normal"],
-  "h2": [
-    ".text-size-xl",
-    ".text-font-l",
-    ".text-space-s"
+  "h1": [
+    ".text-size-xxl",
+    ".text-font",
+    ".text-space-s",
+    ".text-weight-normal"
   ],
+  "h2": [".text-size-xl", ".text-font-l", ".text-space-s"],
   "h3": [
     ".text-size-l",
     ".text-font-bold",
@@ -190,26 +197,98 @@
     ".text-font-bold",
     ".pad-rgt-s"
   ],
-  "[data-tooltip]": [".pos-rel"],
-  "[data-tooltip]:hover:after": [
-    ".content-attr-tooltip",
+  ".tooltip": [".pos-rel"],
+  ".tooltip:hover:before": [
+    ".content-data-alt",
     ".pad-xs",
-    ".bg-grey-xl",
+    ".bg-grey-l",
     ".text-underline-none",
     ".text-color-grey",
-    ".mrgn-horz-xs",
     ".text-size-xs",
     ".bdr-none",
     ".pos-abs",
     ".pos-left-none",
-    "top:calc(-100% - 24px)"
+    "width:150px",
+    "bottom:calc(100% + 10px)"
+  ],
+  ".tooltip:hover:after": [
+    ".block",
+    ".content-none",
+    "width:0",
+    "height:0",
+    "border-top:8px solid rgb(202,206,217)",
+    "border-left:8px solid transparent",
+    "border-right:8px solid transparent",
+    "border-bottom:8px solid transparent",
+    "position:absolute",
+    "bottom:calc(100% - 6px)",
+    "left:10px"
+  ],
+  ".tooltip.right:hover:before": [
+    "left:calc(100% + 20px)",
+    "top: -10px",
+    "bottom:auto"
+  ],
+  ".tooltip.right:hover:after": [
+    "border-top:8px solid transparent",
+    "border-left:8px solid transparent",
+    "border-right:8px solid rgb(202,206,217)",
+    "border-bottom:8px solid transparent",
+    "bottom:auto",
+    "top: 0",
+    "left:calc(100% + 4px)"
+  ],
+  ".tooltip.left:hover:before": [
+    "right:calc(100% + 20px)",
+    "left:auto",
+    "top: -10px",
+    "bottom:auto"
+  ],
+  ".tooltip.left:hover:after": [
+    "border-top:8px solid transparent",
+    "border-left:8px solid rgb(202,206,217)",
+    "border-right:8px solid transparent",
+    "border-bottom:8px solid transparent",
+    "bottom:auto",
+    "top: 0",
+    "right:calc(100% + 4px)",
+    "left:auto"
+  ],
+  ".tooltip.bottom:hover:before": ["bottom:auto", "top:calc(100% + 10px)"],
+  ".tooltip.bottom:hover:after": [
+    "border-top:8px solid transparent",
+    "border-left:8px solid transparent",
+    "border-right:8px solid transparent",
+    "border-bottom:8px solid rgb(202,206,217)",
+    "top: auto",
+    "bottom: -10px",
+    "left: 10px"
   ],
   "ul > li, ol > li": [".text-font", ".text-height-m", ".text-size-m"],
   "ul.tree": [".mrgn-lft-xs", "list-style:none", ".pad-none"],
   "ul.tree ul": [".mrgn-lft-xs", "list-style:none", ".pad-none"],
-  "ul.tree li": [".mrgn-none", ".pad-none", ".text-height-m", ".bdr-lft-xs", ".bdr-color-primary"],
+  "ul.tree li": [
+    ".mrgn-none",
+    ".pad-none",
+    ".text-height-m",
+    ".bdr-lft-xs",
+    ".bdr-color-primary"
+  ],
   "ul.tree li:last-child": [".bdr-left-none"],
-  "ul.tree li:before": [".pos-rel", "top:-4px", ".text-height-s", ".width-xs", ".bdr-bot-xs", ".bdr-lft-xs", ".bdr-color-primary", ".content-none", ".inline-block", "left:-1px", "height:1.2rem", "margin-right:5px"],
+  "ul.tree li:before": [
+    ".pos-rel",
+    "top:-4px",
+    ".text-height-s",
+    ".width-xs",
+    ".bdr-bot-xs",
+    ".bdr-lft-xs",
+    ".bdr-color-primary",
+    ".content-none",
+    ".inline-block",
+    "left:-1px",
+    "height:1.2rem",
+    "margin-right:5px"
+  ],
   "ul.tree li:last-child": ["border:0"],
   "ul.tree li:last-child:before": ["left:0"]
 }

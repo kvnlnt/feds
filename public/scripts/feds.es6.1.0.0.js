@@ -1,4 +1,4 @@
-// Build: feds.1.0.0.262
+// Build: feds.1.0.0.332
 export function ContainerQuery(opts) {
   var opts = opts || {};
   this.add = opts.add || [];
@@ -166,7 +166,25 @@ ContainerQuery.prototype = {
   }
 };
 
+export function Reifier() {
+    this.components = this.collect();
+    return this.components;
+}
+
+Reifier.prototype = {
+    collect: function () {
+        var that = this;
+        return [].slice.call(document.querySelectorAll('[data-reify]')).map(function (i) {
+            if (!feds[i.dataset.reify]) return null;
+            return that.reify(i);
+        });
+    },
+    reify: function (el) {
+        return new feds[el.dataset.reify](el.dataset);
+    }
+};
 export function Responsifier(opts) {
+  var opts = opts || {};
   this.queries = [];
   return this;
 }
@@ -189,3 +207,12 @@ Responsifier.prototype = {
     });
   }
 };
+export function Tooltip(opts) {
+    var opts = opts || {};
+    this.tip = opts.tooltip || '';
+    console.log(this);
+    return this;
+}
+
+
+Tooltip.prototype = {};

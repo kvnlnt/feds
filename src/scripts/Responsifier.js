@@ -1,4 +1,5 @@
 function Responsifier(opts) {
+  var opts = opts || {};
   this.queries = [];
   return this;
 }

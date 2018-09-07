@@ -1,6 +1,7 @@
-// Build: feds.1.0.0.262
+// Build: feds.1.0.0.332
 var feds = (function(m){
-    function ContainerQuery(opts) {
+
+function ContainerQuery(opts) {
   var opts = opts || {};
   this.add = opts.add || [];
   this.callback = opts.callback || null;
@@ -167,7 +168,27 @@ ContainerQuery.prototype = {
   }
 };
 
-    function Responsifier(opts) {
+
+function Reifier() {
+    this.components = this.collect();
+    return this.components;
+}
+
+Reifier.prototype = {
+    collect: function () {
+        var that = this;
+        return [].slice.call(document.querySelectorAll('[data-reify]')).map(function (i) {
+            if (!feds[i.dataset.reify]) return null;
+            return that.reify(i);
+        });
+    },
+    reify: function (el) {
+        return new feds[el.dataset.reify](el.dataset);
+    }
+};
+
+function Responsifier(opts) {
+  var opts = opts || {};
   this.queries = [];
   return this;
 }
@@ -190,7 +211,20 @@ Responsifier.prototype = {
     });
   }
 };
-    m.ContainerQuery = ContainerQuery;
-    m.Responsifier = Responsifier;
-    return m;
+
+function Tooltip(opts) {
+    var opts = opts || {};
+    this.tip = opts.tooltip || '';
+    console.log(this);
+    return this;
+}
+
+
+Tooltip.prototype = {};
+
+m.ContainerQuery = ContainerQuery;
+m.Reifier = Reifier;
+m.Responsifier = Responsifier;
+m.Tooltip = Tooltip;
+return m;
 }(feds || {}))

@@ -1,7 +1,8 @@
-// Build: feds.1.0.0.262
+// Build: feds.1.0.0.332
 define('feds', [], 
 function () {
-    function ContainerQuery(opts) {
+  
+function ContainerQuery(opts) {
   var opts = opts || {};
   this.add = opts.add || [];
   this.callback = opts.callback || null;
@@ -168,7 +169,25 @@ ContainerQuery.prototype = {
   }
 };
 
-    function Responsifier(opts) {
+function Reifier() {
+    this.components = this.collect();
+    return this.components;
+}
+
+Reifier.prototype = {
+    collect: function () {
+        var that = this;
+        return [].slice.call(document.querySelectorAll('[data-reify]')).map(function (i) {
+            if (!feds[i.dataset.reify]) return null;
+            return that.reify(i);
+        });
+    },
+    reify: function (el) {
+        return new feds[el.dataset.reify](el.dataset);
+    }
+};
+function Responsifier(opts) {
+  var opts = opts || {};
   this.queries = [];
   return this;
 }
@@ -191,9 +210,21 @@ Responsifier.prototype = {
     });
   }
 };
-    var module = {
-        ContainerQuery: ContainerQuery,
-        Responsifier: Responsifier
-    };
-    return module;
+function Tooltip(opts) {
+    var opts = opts || {};
+    this.tip = opts.tooltip || '';
+    console.log(this);
+    return this;
+}
+
+
+Tooltip.prototype = {};
+
+var module = {
+    ContainerQuery: ContainerQuery,
+    Reifier: Reifier,
+    Responsifier: Responsifier,
+    Tooltip: Tooltip
+};
+return module;
 });

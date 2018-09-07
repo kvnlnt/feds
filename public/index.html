@@ -83,178 +83,183 @@ pre .regexp {
 }
 </style>
     <script>
-function responsify() {
-    new feds.Responsifier()
-        // TOP
-        .add({
-            observer: "#top",
-            observable: window,
-            event: feds.Responsifier.SCROLL,
-            range: [0, 199],
-            add: ["pos-bottom-hide"],
-            remove: ["pos-bottom-s"]
-        })
-        .add({
-            observer: "#top",
-            observable: window,
-            event: feds.Responsifier.SCROLL,
-            range: [200, "*"],
-            add: ["pos-bottom-s"],
-            remove: ["pos-bottom-hide"]
-        })
-        .add({
-            observer: "#top",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [0, 999],
-            add: ["hide"],
-            lock: ["hide"]
-        })
-        .add({
-            observer: "#top",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [1000, "*"],
-            remove: ["hide"],
-            unlock: ["hide"]
-        })
-        // LAYOUT
-        .add({
-            observer: "#layout",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [0, 999],
-            add: ["flex-dir-col", "pad-top-l", "is-mobile"]
-        })
-        .add({
-            observer: "#layout",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [1000, "*"],
-            remove: ["flex-dir-col", "pad-top-l", "is-mobile"]
-        })
-        // MENU
-        .add({
-            observer: "#menuToggle",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [0, 999],
-            remove: ["hide"]
-        })
-        .add({
-            observer: "#menuToggle",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [1000, "*"],
-            add: ["hide"]
-        })
-        .add({
-            observer: "#mainMenu",
-            observable: "#menuToggle",
-            event: feds.Responsifier.CLICK,
-            toggle: ["hide"]
-        })
-        .add({
-            observer: "#mainMenu",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [0, 999],
-            add: ["hide"]
-        })
-        .add({
-            observer: "#mainMenu",
-            observable: window,
-            event: feds.Responsifier.RESIZE,
-            range: [1000, "*"],
-            remove: ["hide"]
-        })
-        .add({
-            observer: "#mainMenu",
-            observable: "#mainMenu a",
-            event: feds.Responsifier.CLICK,
-            toggle: ["hide"],
-            condition: function (r, e) {
-                return document
-                    .querySelector("#layout")
-                    .classList.contains("is-mobile");
-            }
-        })
-        .add({
-            observer: "#modal",
-            observable: "#modalTrigger",
-            event: feds.Responsifier.CLICK,
-            toggle: ["flex"]
-        })
-        .add({
-            observer: "#modal",
-            observable: "#modalClose",
-            event: feds.Responsifier.CLICK,
-            toggle: ["flex"]
-        })
-        .add({
-            observer: "#popupExample",
-            observable: "#popupExampleTrigger",
-            event: feds.Responsifier.CLICK,
-            toggle: ["flex"]
-        })
-        .add({
-            observer: "#popupExample",
-            observable: "#popupExampleClose",
-            event: feds.Responsifier.CLICK,
-            toggle: ["flex"]
-        })
-        .init();
-}
+    function responsify() {
+        new feds.Responsifier()
+            // TOP
+            .add({
+                observer: "#top",
+                observable: window,
+                event: feds.Responsifier.SCROLL,
+                range: [0, 199],
+                add: ["pos-bottom-hide"],
+                remove: ["pos-bottom-s"]
+            })
+            .add({
+                observer: "#top",
+                observable: window,
+                event: feds.Responsifier.SCROLL,
+                range: [200, "*"],
+                add: ["pos-bottom-s"],
+                remove: ["pos-bottom-hide"]
+            })
+            .add({
+                observer: "#top",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [0, 999],
+                add: ["hide"],
+                lock: ["hide"]
+            })
+            .add({
+                observer: "#top",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [1000, "*"],
+                remove: ["hide"],
+                unlock: ["hide"]
+            })
+            // LAYOUT
+            .add({
+                observer: "#layout",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [0, 999],
+                add: ["flex-dir-col", "pad-top-l", "is-mobile"]
+            })
+            .add({
+                observer: "#layout",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [1000, "*"],
+                remove: ["flex-dir-col", "pad-top-l", "is-mobile"]
+            })
+            // MENU
+            .add({
+                observer: "#menuToggle",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [0, 999],
+                remove: ["hide"]
+            })
+            .add({
+                observer: "#menuToggle",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [1000, "*"],
+                add: ["hide"]
+            })
+            .add({
+                observer: "#mainMenu",
+                observable: "#menuToggle",
+                event: feds.Responsifier.CLICK,
+                toggle: ["hide"]
+            })
+            .add({
+                observer: "#mainMenu",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [0, 999],
+                add: ["hide"]
+            })
+            .add({
+                observer: "#mainMenu",
+                observable: window,
+                event: feds.Responsifier.RESIZE,
+                range: [1000, "*"],
+                remove: ["hide"]
+            })
+            .add({
+                observer: "#mainMenu",
+                observable: "#mainMenu a",
+                event: feds.Responsifier.CLICK,
+                toggle: ["hide"],
+                condition: function (r, e) {
+                    return document
+                        .querySelector("#layout")
+                        .classList.contains("is-mobile");
+                }
+            })
+            .add({
+                observer: "#modal",
+                observable: "#modalTrigger",
+                event: feds.Responsifier.CLICK,
+                toggle: ["flex"]
+            })
+            .add({
+                observer: "#modal",
+                observable: "#modalClose",
+                event: feds.Responsifier.CLICK,
+                toggle: ["flex"]
+            })
+            .add({
+                observer: "#popupExample",
+                observable: "#popupExampleTrigger",
+                event: feds.Responsifier.CLICK,
+                toggle: ["flex"]
+            })
+            .add({
+                observer: "#popupExample",
+                observable: "#popupExampleClose",
+                event: feds.Responsifier.CLICK,
+                toggle: ["flex"]
+            })
+            .init();
+    }
 
-function pageManager() {
-    var sections = [].slice.call(document.querySelectorAll("section"));
-    [].slice.call(document.querySelectorAll("a.nav-item")).forEach(function (i) {
-        i.addEventListener('click', function (e) {
-            var href = e.target.getAttribute("href");
-            if (href.substring(0, 1) === "h") return window.location.href = href;
-            e.preventDefault();
-            window.location.hash = href;
-            sections.forEach(function (ii) {
-                ii.classList.add("hide");
+    function reify() {
+        feds.components = new feds.Reifier();
+    }
+
+    function pageManager() {
+        var sections = [].slice.call(document.querySelectorAll("section"));
+        [].slice.call(document.querySelectorAll("a.nav-item")).forEach(function (i) {
+            i.addEventListener('click', function (e) {
+                var href = e.target.getAttribute("href");
+                if (href.substring(0, 1) === "h") return window.location.href = href;
+                e.preventDefault();
+                window.location.hash = href;
+                sections.forEach(function (ii) {
+                    ii.classList.add("hide");
+                });
+                document.querySelector(href).classList.remove("hide");
+                window.scrollTo(0, 0);
             });
-            document.querySelector(href).classList.remove("hide");
-            window.scrollTo(0, 0);
         });
+        if (window.location.hash) {
+            document.querySelector(window.location.hash).classList.remove("hide");
+        } else {
+            document.querySelector("#About").classList.remove("hide")
+        }
+    }
+
+    function cleanUpExamples() {
+        var code = document.querySelectorAll("*");
+        for (var i = 0; i < code.length; i++) {
+            code[i].innerHTML = code[i].innerHTML
+                .replace(/                 /g, "")
+                .trim();
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        cleanUpExamples();
+        responsify();
+        reify();
+        pageManager();
     });
-    if (window.location.hash) {
+
+    window.addEventListener("hashchange", function () {
+        var sections = [].slice.call(document.querySelectorAll("section"));
+        sections.forEach(function (ii) {
+            ii.classList.add("hide");
+        });
         document.querySelector(window.location.hash).classList.remove("hide");
-    } else {
-        document.querySelector("#About").classList.remove("hide")
-    }
-}
-
-function cleanUpExamples() {
-    var code = document.querySelectorAll("*");
-    for (var i = 0; i < code.length; i++) {
-        code[i].innerHTML = code[i].innerHTML
-            .replace(/                 /g, "")
-            .trim();
-    }
-}
-
-function scrollToTop() {
-    window.scrollTo(0, 0);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    cleanUpExamples();
-    responsify();
-    pageManager();
-});
-
-window.addEventListener("hashchange", function () {
-    var sections = [].slice.call(document.querySelectorAll("section"));
-    sections.forEach(function (ii) {
-        ii.classList.add("hide");
-    });
-    document.querySelector(window.location.hash).classList.remove("hide");
-    scrollToTop();
-}, false);
+        scrollToTop();
+    }, false);
 </script>
     <!-- FEDS -->
     <link rel="stylesheet" type="text/css" href="styles/feds.latest.css" />
@@ -270,7 +275,7 @@ window.addEventListener("hashchange", function () {
         <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline"
             style="float:left" class="mrgn-rgt-xs">
         <span class="opac-30">
-            1.0.0.262</span>
+            1.0.0.332</span>
     </div>
     <a id="top" onclick="scrollToTop()" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite anim-speed-med"
         onclick="document.body.scrollTop=0">TOP</a>
@@ -529,6 +534,7 @@ window.addEventListener("hashchange", function () {
 .bdr-rgt-s { border-right-width:2px;border-right-style:solid; }
 .bdr-rgt-xs { border-right-width:1px;border-right-style:solid; }
 .bdr-top-color-primary { border-top-color:hsl(212, 64%, 49%); }
+.bdr-top-color-grey-l { border-top-color:undefined; }
 .bdr-top-m { border-top-width:3px;border-top-style:solid; }
 .bdr-top-s { border-top-width:2px;border-top-style:solid; }
 .bdr-top-xs { border-top-width:1px;border-top-style:solid; }
@@ -550,7 +556,7 @@ window.addEventListener("hashchange", function () {
 .bg-white { background-color:#FFFFFF; }
 .block { display:block; }
 .content-none { content:""; }
-.content-attr-tooltip { content: attr(data-tooltip); }
+.content-data-alt { content: attr(data-alt); }
 .cursor-pointer { cursor:pointer; }
 .filter-color-white { filter:brightness(1); }
 .filter-color-black { filter:brightness(0); }
@@ -1619,12 +1625,17 @@ window.addEventListener("hashchange", function () {
             <section class="pad-top-l hide " id="Tooltip">
     <h2 class="mrgn-top-none">Tooltip</h2>
     <div class="box">
-        <a href="# " data-tooltip="A Tooltip">Hover over me</a>
+        <a href="#" class="tooltip" data-alt="The Tooltip">Hover over top</a><br />
+        <a href="#" class="tooltip right" data-alt="The Tooltip">Hover to the right</a><br />
+        <a href="#" class="tooltip left" data-alt="The Tooltip">Hover to the left</a><br />
+        <a href="#" class="tooltip bottom" data-alt="The Tooltip">Hover to the bottom</a>
     </div>
     <pre>
     <code data-language="html">
-        <a href="# " data-tooltip="A Tooltip">Hover over me</a>
-    </code>
+    <a href="#" class="tooltip" data-alt="The Tooltip">Hover over top</a>
+    <a href="#" class="tooltip right" data-alt="The Tooltip">Hover to the right</a>
+    <a href="#" class="tooltip left" data-alt="The Tooltip">Hover to the left</a>
+    <a href="#" class="tooltip bottom" data-alt="The Tooltip">Hover to the bottom</a></code>
     </pre>
 </section>
             <section class="pad-top-l hide " id="Typography">

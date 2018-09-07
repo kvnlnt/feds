@@ -1,7 +1,6 @@
-export default class DataTable {
-  constructor(opts){
-    opts = opts || {};
-    console.log(opts);
-  }
-};
+function Datatable(opts) {
+  this.opts = opts || {};
+  return this;
+}
 
+Datatable.prototype = {};

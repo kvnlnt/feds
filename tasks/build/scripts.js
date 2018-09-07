@@ -14,38 +14,58 @@ const code = Object.keys(config.scripts).reduce((acc, curr) => {
 // IIFE: Browser only
 const WrapInIIFE = () => `${build}
 var feds = (function(m){
-    ${code.ContainerQuery}
-    ${code.Responsifier}
-    m.ContainerQuery = ContainerQuery;
-    m.Responsifier = Responsifier;
-    return m;
+
+${code.ContainerQuery}\n
+${code.Reifier}\n
+${code.Responsifier}\n
+${code.Tooltip}
+
+m.ContainerQuery = ContainerQuery;
+m.Reifier = Reifier;
+m.Responsifier = Responsifier;
+m.Tooltip = Tooltip;
+return m;
 }(feds || {}))`;
 
 // CommonJS: Node only
 const WrapInCommonJs = () => `${build}
-${code.ContainerQuery}${code.Responsifier}
+${code.ContainerQuery}
+${code.Reifier}
+${code.Responsifier}
+${code.Tooltip}
+
 module.exports = {
-    ContainerQuery: ContainerQuery,
-    Responsifier: Responsifier
+  ContainerQuery: ContainerQuery,
+  Reifier: Reifier,
+  Responsifier: Responsifier,
+  Tooltip: Tooltip
 };`;
 
 // AMD: Browser only, with AMD
 const WrapInAMD = () => `${build}
 define('feds', [], 
 function () {
-    ${code.ContainerQuery}
-    ${code.Responsifier}
-    var module = {
-        ContainerQuery: ContainerQuery,
-        Responsifier: Responsifier
-    };
-    return module;
+  
+${code.ContainerQuery}
+${code.Reifier}
+${code.Responsifier}
+${code.Tooltip}
+
+var module = {
+    ContainerQuery: ContainerQuery,
+    Reifier: Reifier,
+    Responsifier: Responsifier,
+    Tooltip: Tooltip
+};
+return module;
 });`;
 
 // ESM: Browsers only (via Bundler)
 const WrapInEs6 = () => `${build}
 export ${code.ContainerQuery}
-export ${code.Responsifier}`;
+export ${code.Reifier}
+export ${code.Responsifier}
+export ${code.Tooltip}`;
 
 fs.writeFileSync(
   `./public/scripts/${config.name}.iife.${config.version}.js`,
