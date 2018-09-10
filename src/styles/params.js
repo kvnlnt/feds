@@ -1,6 +1,7 @@
 module.exports = {
   color: {
     black: "rgb(14,18,37)",
+    black25: "rgba(14,18,37,.25)",
     black50: "rgba(14,18,37,.5)",
     blueDark: "hsl(212, 70%, 40%)",
     blueLight: "hsl(212, 100%, 60%)",

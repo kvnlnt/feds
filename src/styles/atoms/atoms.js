@@ -1,6 +1,16 @@
-module.exports = Object.assign(
-  {},
-  require("./animation"),
+module.exports = Object.assign({},
+  require("./alignment"),
   require("./bg"),
-  require("./borders")
+  require("./borders"),
+  require("./content"),
+  require("./cursor"),
+  require("./display"),
+  require("./flex"),
+  require("./fx"),
+  require("./icons"),
+  require("./margins"),
+  require("./padding"),
+  require("./positioning"),
+  require("./scrolling"),
+  require("./sizing")
 );
