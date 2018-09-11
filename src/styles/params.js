@@ -50,11 +50,13 @@ module.exports = {
     base: "rem"
   },
   font: {
-    openSans: "OpenSans",
-    openSansItalic: "OpenSansItalic",
-    openSansLight: "OpenSansLight",
-    openSansLightItalic: "OpenSansLightItalic",
-    openSansBold: "OpenSansBold",
-    openSansBoldItalic: "OpenSansBoldItalic"
+    primary: {
+      openSans: "OpenSans",
+      openSansItalic: "OpenSansItalic",
+      openSansLight: "OpenSansLight",
+      openSansLightItalic: "OpenSansLightItalic",
+      openSansBold: "OpenSansBold",
+      openSansBoldItalic: "OpenSansBoldItalic"
+    }
   }
 };

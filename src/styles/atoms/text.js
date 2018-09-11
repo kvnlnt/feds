@@ -1,61 +1,174 @@
 const params = require("../params.js");
-module.exports = {};
-
-
-// ".text-align-center": ["text-align:center"],
-//   ".text-align-left": ["text-align:left"],
-//   ".text-align-right": ["text-align:right"],
-//   ".text-case-lower": ["text-transform:lowercase"],
-//   ".text-case-title": ["text-transform:capitalize"],
-//   ".text-case-upper": ["text-transform:uppercase"],
-//   ".text-color-black": ["color:${color.black}"],
-//   ".text-color-danger": ["color:${color.red}"],
-//   ".text-color-grey-extra-l": ["color:${color.grey-light-at-50}"],
-//   ".text-color-grey-l": ["color:${color.grey-light}"],
-//   ".text-color-grey": ["color:${color.grey}"],
-//   ".text-color-info": ["color:${color.blue}"],
-//   ".text-color-primary-l": ["color:${color.blue-light}"],
-//   ".text-color-primary": ["color:${color.blue}"],
-//   ".text-color-secondary": ["color:${color.blue-dark}"],
-//   ".text-color-success": ["color:${color.green}"],
-//   ".text-color-warn": ["color:${color.yellow}"],
-//   ".text-color-white": ["color:${color.white}"],
-//   ".text-font-monospace": ["font-family:monospace"],
-//   ".text-font-bold-italic": [
-//     "font-family:${font.open-sans-bold-italic}, Arial",
-//     "font-style:italic"
-//   ],
-//   ".text-font-bold": ["font-family:${font.open-sans-bold}, Arial"],
-//   ".text-font-semi-bold": ["font-family:${font.open-sans-semi-bold}, Arial"],
-//   ".text-font-semi-bold-italic": [
-//     "font-family:${font.open-sans-semi-bold-italic}, Arial"
-//   ],
-//   ".text-font-italic": [
-//     "font-family:${font.open-sans-italic}, Arial",
-//     "font-style:italic"
-//   ],
-//   ".text-font": ["font-family:${font.open-sans}, Arial"],
-//   ".text-font-l": ["font-family:${font.open-sans-light}, Arial"],
-//   ".text-height-l": ["line-height:3.2${unit.base}"],
-//   ".text-height-m": ["line-height:2.4${unit.base}"],
-//   ".text-height-s": ["line-height:2.0${unit.base}"],
-//   ".text-height-xl": ["line-height:4${unit.base}"],
-//   ".text-height-xs": ["line-height:1.6${unit.base}"],
-//   ".text-height-xxl": ["line-height:5${unit.base}"],
-//   ".text-indent-l": ["text-indent:2${unit.base}"],
-//   ".text-indent-m": ["text-indent:1.5${unit.base}"],
-//   ".text-indent-s": ["text-indent:1.4${unit.base}"],
-//   ".text-indent-xl": ["text-indent:2.5${unit.base}"],
-//   ".text-indent-xs": ["text-indent:.5${unit.base}"],
-//   ".text-nowrap": ["white-space:nowrap"],
-//   ".text-preformat": ["white-space: pre"],
-//   ".text-size-l": ["font-size:2.0${unit.base}"],
-//   ".text-size-m": ["font-size:1.4${unit.base}"],
-//   ".text-size-s": ["font-size:1.3${unit.base}"],
-//   ".text-size-xl": ["font-size:2.4${unit.base}"],
-//   ".text-size-xs": ["font-size:1.1${unit.base}"],
-//   ".text-size-xxl": ["font-size:4${unit.base}"],
-//   ".text-space-s": ["letter-spacing:0.1${unit.base}"],
-//   ".text-space-xs": ["letter-spacing:0${unit.base}"],
-//   ".text-underline-none": ["text-decoration:none"],
-//   ".text-weight-normal": ["font-weight:normal"],
+module.exports = {
+    text: {
+        align: {
+            center: {
+                textAlign: "center"
+            },
+            left: {
+                textAlign: "left"
+            },
+            right: {
+                textAlign: "right"
+            }
+        },
+        case: {
+            lower: {
+                textTransform: "lowercase"
+            },
+            title: {
+                textTransform: "capitalize"
+            },
+            upper: {
+                textTransform: "uppercase"
+            }
+        },
+        color: {
+            black: {
+                color: `${params.color.black}`
+            },
+            danger: {
+                color: `${params.color.red}`
+            },
+            grey: {
+                xxl: {
+                    color: `${params.color.greyLight12}`
+                },
+                xl: {
+                    color: `${params.color.greyLight30}`
+                },
+                l: {
+                    color: `${params.color.greyLight}`
+                },
+                m: {
+                    color: `${params.color.grey}`
+                }
+            },
+            info: {
+                color: `${params.color.blue}`
+            },
+            primary: {
+                m: {
+                    color: `${params.color.blue}`
+                },
+                l: {
+                    color: `${params.color.blueLight}`
+                }
+            },
+            secondary: {
+                color: `${params.color.blueDark}`
+            },
+            success: {
+                color: `${params.color.green}`
+            },
+            warn: {
+                color: `${params.color.yellow}`
+            },
+            white: {
+                color: `${params.color.white}`
+            }
+        },
+        font: {
+            mono: {
+                fontFamily: "monospace"
+            },
+            primary: {
+                fontFamily: `${params.font.primary.openSans}`,
+                bold: {
+                    fontFamily: `${params.font.primary.openSansBold}, Arial`,
+                    italic: {
+                        fontFamily: `${params.font.primary.openSansBoldItalic}`
+                    }
+                },
+                italic: {
+                    fontFamily: `${params.font.primary.openSansItalic}`,
+                    fontStyle: `italic`
+                }
+            }
+        },
+        height: {
+            xs: {
+                lineHeight: `1.6${params.unit.base}`
+            },
+            s: {
+                lineHeight: `2.0${params.unit.base}`
+            },
+            m: {
+                lineHeight: `2.4${params.unit.base}`
+            },
+            l: {
+                lineHeight: `3.2${params.unit.base}`
+            },
+            xl: {
+                lineHeight: `4${params.unit.base}`
+            },
+            xxl: {
+                lineHeight: `5${params.unit.base}`
+            }
+        },
+        indent: {
+            xs: {
+                textIndent: `0.5${params.unit.base}`
+            },
+            s: {
+                textIndent: `1.0${params.unit.base}`
+            },
+            m: {
+                textIndent: `1.5${params.unit.base}`
+            },
+            l: {
+                textIndent: `2.0${params.unit.base}`
+            },
+            xl: {
+                textIndent: `2.5${params.unit.base}`
+            },
+            xxl: {
+                textIndent: `3${params.unit.base}`
+            }
+        },
+        pre: {
+            whiteSpace: "pre"
+        },
+        size: {
+            xs: {
+                fontSize: `1.1${params.unit.base}`
+            },
+            s: {
+                fontSize: `1.3${params.unit.base}`
+            },
+            m: {
+                fontSize: `1.4${params.unit.base}`
+            },
+            l: {
+                fontSize: `2.0${params.unit.base}`
+            },
+            xl: {
+                fontSize: `2.4${params.unit.base}`
+            },
+            xxl: {
+                fontSize: `4${params.unit.base}`
+            }
+        },
+        space: {
+            xs: {
+                letterSpacing: `0${params.unit.base}`
+            },
+            s: {
+                letterSpacing: `0.1${params.unit.base}`
+            }
+        },
+        underline: {
+            textDecoration: "none"
+        },
+        weight: {
+            normal: {
+                fontWeight: "normal"
+            }
+        },
+        wrap: {
+            none: {
+                whiteSpace: "nowrap"
+            }
+        }
+    }
+};

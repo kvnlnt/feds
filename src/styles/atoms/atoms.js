@@ -12,5 +12,6 @@ module.exports = Object.assign({},
   require("./padding"),
   require("./positioning"),
   require("./scrolling"),
-  require("./sizing")
+  require("./sizing"),
+  require("./text.js")
 );
