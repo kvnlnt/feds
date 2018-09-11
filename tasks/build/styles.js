@@ -12,12 +12,20 @@ console.time(util.ok("Styles"));
 
 // render
 const styles = `${build}\n${compiler.compileJavascriptToCSS(atoms)}`;
+const stylesMin = styles.replace(/\s/g, "");
+
+// files
+const path = "./public/styles";
+const file = `${path}/${config.name}.${config.version}.css`;
+const fileMin = `${path}/${config.name}.${config.version}.min.css`;
+const fileLatest = `${path}/${config.name}.latest.css`;
+const fileLatestMin = `${path}/${config.name}.latest.min.css`;
 
 // output
-const stylesFile = `${config.name}.${config.version}.css`;
-const stylesFileLatest = `${config.name}.latest.css`;
-fs.writeFileSync("./public/styles/" + stylesFile, styles);
-fs.writeFileSync("./public/styles/" + stylesFileLatest, styles);
+fs.writeFileSync(`${file}`, styles);
+fs.writeFileSync(`${fileMin}`, stylesMin);
+fs.writeFileSync(`${fileLatest}`, styles);
+fs.writeFileSync(`${fileLatestMin}`, stylesMin);
 
 // Running time
 console.timeEnd(util.ok("Styles"));
