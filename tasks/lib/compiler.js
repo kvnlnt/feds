@@ -13,11 +13,11 @@ const compileJavascriptToCSS = (obj, stack = "", css = {}) => {
       compileJavascriptToCSS(obj[p], stack + (stack ? "-" : ".") + p, css);
     } else {
       if (!css.hasOwnProperty(stack)) css[stack] = [];
-      css[stack].push(`${unCamelCase(p)}:${obj[p]};`);
+      css[stack].push(`\n  ${unCamelCase(p)}:${obj[p]};`);
     }
   }
   return Object.keys(css).reduce((acc, curr) => {
-    acc += `${curr}{${css[curr].join("")}}`;
+    acc += `${curr} {${css[curr].join("")}\n}\n`;
     return acc;
   }, "");
 };

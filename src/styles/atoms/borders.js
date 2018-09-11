@@ -30,17 +30,19 @@ const borderSize = prop => {
 };
 
 module.exports = {
-  bdr: {
+  border: {
     collapse: {
       borderCollapse: "collapse"
     },
-    color: {
-      all: borderColor("borderColor"),
-      bot: borderColor("borderBottomColor"),
-      top: borderColor("borderTopColor"),
-      left: borderColor("borderLeftpColor"),
-      right: borderColor("borderRightColor")
-    },
+    color: Object.assign(
+      {
+        bot: borderColor("borderBottomColor"),
+        top: borderColor("borderTopColor"),
+        left: borderColor("borderLeftpColor"),
+        right: borderColor("borderRightColor")
+      },
+      borderColor("borderColor")
+    ),
     round: {
       xs: { borderRadius: "1px" },
       s: { borderRadius: "2px" },
@@ -49,12 +51,14 @@ module.exports = {
       xl: { borderRadius: "5px" },
       none: { borderRadius: "0px" }
     },
-    size: {
-      all: borderSize("borderWidth"),
-      top: borderSize("borderTopWidth"),
-      bot: borderSize("borderBottomWidth"),
-      left: borderSize("borderLeftWidth"),
-      right: borderSize("borderRightWidth")
-    }
+    size: Object.assign(
+      {
+        top: borderSize("borderTopWidth"),
+        bot: borderSize("borderBottomWidth"),
+        left: borderSize("borderLeftWidth"),
+        right: borderSize("borderRightWidth")
+      },
+      borderSize("borderWidth")
+    )
   }
 };
