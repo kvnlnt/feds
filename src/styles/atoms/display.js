@@ -2,7 +2,10 @@ const params = require("../params.js");
 module.exports = {
   display: {
     block: {
-      display: "block"
+      display: "block",
+      inline: {
+        display: "inline-block"
+      }
     },
     flex: {
       display: "flex"
@@ -14,7 +17,9 @@ module.exports = {
       display: "none"
     },
     inline: {
-      display: "inline-block"
+      block: {
+        display: "inline-block"
+      }
     },
     overflow: {
       hide: {

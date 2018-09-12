@@ -38,7 +38,7 @@ module.exports = {
       {
         bot: borderColor("borderBottomColor"),
         top: borderColor("borderTopColor"),
-        left: borderColor("borderLeftpColor"),
+        left: borderColor("borderLeftColor"),
         right: borderColor("borderRightColor")
       },
       borderColor("borderColor")

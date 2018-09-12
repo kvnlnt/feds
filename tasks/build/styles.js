@@ -10,8 +10,12 @@ const build = `/* Build: ${config.name}.${config.version}.${config.build +
 // setup
 console.time(util.ok("Styles"));
 
+// compile
+const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
+const compiledMolecules = compiler.compileJavascriptToCSS(molecules, 1, "");
+
 // render
-const styles = `${build}\n${compiler.compileJavascriptToCSS(atoms)}`;
+const styles = `${build}\n${compiledMolecules}${compiledAtoms}`;
 const stylesMin = styles.replace(/\s/g, "");
 
 // files

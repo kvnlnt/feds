@@ -1,4 +1,12 @@
 /* Build: feds.1.0.0.333 */
+a {
+  font-family:OpenSans;
+  font-size:1.4rem;
+  text-decoration:none;
+  display:inline-block;
+  border-width:0;
+  border-style:none;
+}
 .align-top {
   vertical-align:top;
 }
@@ -102,28 +110,28 @@
   border-top-color:hsl(358,80%,46%);
 }
 .border-color-left-black {
-  border-leftp-color:rgb(14,18,37);
+  border-left-color:rgb(14,18,37);
 }
 .border-color-left-grey-xxl {
-  border-leftp-color:undefined;
+  border-left-color:undefined;
 }
 .border-color-left-grey-xl {
-  border-leftp-color:undefined;
+  border-left-color:undefined;
 }
 .border-color-left-grey-l {
-  border-leftp-color:rgb(202,206,217);
+  border-left-color:rgb(202,206,217);
 }
 .border-color-left-grey-m {
-  border-leftp-color:hsl(219, 22%, 25%);
+  border-left-color:hsl(219, 22%, 25%);
 }
 .border-color-left-primary {
-  border-leftp-color:hsl(212, 64%, 49%);
+  border-left-color:hsl(212, 64%, 49%);
 }
 .border-color-left-white {
-  border-leftp-color:#FFFFFF;
+  border-left-color:#FFFFFF;
 }
 .border-color-left-danger {
-  border-leftp-color:hsl(358,80%,46%);
+  border-left-color:hsl(358,80%,46%);
 }
 .border-color-right-black {
   border-right-color:rgb(14,18,37);
@@ -323,6 +331,9 @@
 .display-block {
   display:block;
 }
+.display-block-inline {
+  display:inline-block;
+}
 .display-flex {
   display:flex;
 }
@@ -332,7 +343,7 @@
 .display-hide {
   display:none;
 }
-.display-inline {
+.display-inline-block {
   display:inline-block;
 }
 .display-overflow-hide {
@@ -1072,6 +1083,11 @@
 }
 .text-font-primary {
   font-family:OpenSans;
+  font-size:1.4rem;
+  text-decoration:none;
+  display:inline-block;
+  border-width:0;
+  border-style:none;
 }
 .text-font-primary-bold {
   font-family:OpenSansBold, Arial;
@@ -1082,6 +1098,12 @@
 .text-font-primary-italic {
   font-family:OpenSansItalic;
   font-style:italic;
+}
+.text-font-primary-m {
+  color:hsl(212, 64%, 49%);
+}
+.text-font-primary-l {
+  color:hsl(212, 100%, 60%);
 }
 .text-height-xs {
   line-height:1.6rem;
@@ -1146,7 +1168,7 @@
 .text-space-s {
   letter-spacing:0.1rem;
 }
-.text-underline {
+.text-underline-none {
   text-decoration:none;
 }
 .text-weight-normal {

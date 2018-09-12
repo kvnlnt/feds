@@ -1,5 +1,5 @@
-const unCamelCase = (str, separator) =>
-  str.replace(/([A-Z])/g, "-$1").toLowerCase();
+const unCamelCase = (str, separator = "-") =>
+  str.replace(/([A-Z])/g, `${separator}$1`).toLowerCase();
 
 /**
  * Compiles Javascript to CSS
@@ -7,13 +7,28 @@ const unCamelCase = (str, separator) =>
  * @param {*} stack recursive stack
  * @param {*} css concat css obj
  */
-const compileJavascriptToCSS = (obj, stack = "", css = {}) => {
+const compileJavascriptToCSS = (
+  obj,
+  maxTraverse = 1000,
+  prefix = ".",
+  stack = "",
+  css = {},
+  curLevel = 1
+) => {
   for (var p in obj) {
-    if (typeof obj[p] == "object") {
-      compileJavascriptToCSS(obj[p], stack + (stack ? "-" : ".") + p, css);
+    if (typeof obj[p] == "object" && curLevel <= maxTraverse) {
+      compileJavascriptToCSS(
+        obj[p],
+        maxTraverse,
+        prefix,
+        stack + (stack ? "-" : prefix) + p,
+        css,
+        curLevel + 1
+      );
     } else {
       if (!css.hasOwnProperty(stack)) css[stack] = [];
-      css[stack].push(`\n  ${unCamelCase(p)}:${obj[p]};`);
+      if (typeof obj[p] != "object")
+        css[stack].push(`\n  ${unCamelCase(p)}:${obj[p]};`);
     }
   }
   return Object.keys(css).reduce((acc, curr) => {
