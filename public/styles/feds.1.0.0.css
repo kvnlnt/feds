@@ -1,5 +1,30 @@
-/* Build: feds.1.0.0.333 */
-a {
+/* Build: feds.1.0.0.340 */
+box {
+  padding:2rem;
+  box-shadow:0 1px 5px rgba(14,18,37,.25);
+  background-color:#FFFFFF;
+}
+.button {
+  border-width:1px;
+  border-style:solid;
+  border-color:hsl(212, 64%, 49%);
+  background-color:hsl(212, 64%, 49%);
+  display:inline-block;
+  padding-left:2rem;
+  padding-right:2rem;
+  font-family:OpenSans;
+  color:#FFFFFF;
+  line-height:3.2rem;
+  font-size:1.4rem;
+  white-space:nowrap;
+  text-align:center;
+  text-decoration:none;
+}
+.button:focus {
+  transition:all 0.3s;
+  color:#FFFFFF;
+}
+link {
   font-family:OpenSans;
   font-size:1.4rem;
   text-decoration:none;
@@ -592,25 +617,25 @@ a {
 .icon-training {
   background-image:url(../gfx/icons/training.svg);
 }
-.margin-all-xs {
+.margin-xs {
   margin:1.4rem;
 }
-.margin-all-s {
+.margin-s {
   margin:2rem;
 }
-.margin-all-m {
+.margin-m {
   margin:3rem;
 }
-.margin-all-l {
+.margin-l {
   margin:4rem;
 }
-.margin-all-xl {
+.margin-xl {
   margin:5rem;
 }
-.margin-all-none {
+.margin-none {
   margin:none;
 }
-.margin-all-auto {
+.margin-auto {
   margin:auto;
 }
 .margin-top-xs {
@@ -697,25 +722,25 @@ a {
 .margin-right-auto {
   margin-right:auto;
 }
-.pad-all-xs {
+.pad-xs {
   padding:1.4rem;
 }
-.pad-all-s {
+.pad-s {
   padding:2rem;
 }
-.pad-all-m {
+.pad-m {
   padding:3rem;
 }
-.pad-all-l {
+.pad-l {
   padding:4rem;
 }
-.pad-all-xl {
+.pad-xl {
   padding:5rem;
 }
-.pad-all-none {
+.pad-none {
   padding:none;
 }
-.pad-all-auto {
+.pad-auto {
   padding:auto;
 }
 .pad-top-xs {
@@ -1083,11 +1108,6 @@ a {
 }
 .text-font-primary {
   font-family:OpenSans;
-  font-size:1.4rem;
-  text-decoration:none;
-  display:inline-block;
-  border-width:0;
-  border-style:none;
 }
 .text-font-primary-bold {
   font-family:OpenSansBold, Arial;
@@ -1098,12 +1118,6 @@ a {
 .text-font-primary-italic {
   font-family:OpenSansItalic;
   font-style:italic;
-}
-.text-font-primary-m {
-  color:hsl(212, 64%, 49%);
-}
-.text-font-primary-l {
-  color:hsl(212, 100%, 60%);
 }
 .text-height-xs {
   line-height:1.6rem;

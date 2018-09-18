@@ -1,7 +1,7 @@
 module.exports = Object.assign(
   {},
-  // require("./boxes"),
-  // require("./buttons"),
+  require("./boxes"),
+  require("./buttons"),
   // require("./colors"),
   // require("./columns"),
   // require("./fonts"),

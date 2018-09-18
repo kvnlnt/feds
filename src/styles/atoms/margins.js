@@ -28,7 +28,7 @@ const margin = prop => {
 
 module.exports = {
   margin: {
-    all: margin("margin"),
+    ...margin("margin"),
     top: margin("margin-top"),
     bot: margin("margin-bottom"),
     left: margin("margin-left"),

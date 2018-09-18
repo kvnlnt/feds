@@ -2,12 +2,11 @@ const fs = require("fs");
 const config = require("../../feds.json");
 const util = require("../lib/util");
 const build = `${config.version}.${config.build + 1}`;
+const compiler = require("../lib/compiler");
+const atoms = require("../../src/styles/atoms/atoms.js");
+const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
 let tmpl = fs.readFileSync("./src/guide/index.html", "utf-8");
 let reg = /<!--.*include:(.*).*-->/g;
-const params = require(`../../src/styles/params.json`);
-const atoms = require(`../../src/styles/atoms.json`);
-const compiler = require("../lib/compiler");
-const compiledAtoms = compiler.compileAtoms(atoms, params);
 
 // setup
 console.time(util.ok("Guide"));
