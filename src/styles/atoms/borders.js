@@ -43,7 +43,7 @@ module.exports = {
       },
       borderColor("borderColor")
     ),
-    round: {
+    radius: {
       xs: { borderRadius: "1px" },
       s: { borderRadius: "2px" },
       m: { borderRadius: "3px" },

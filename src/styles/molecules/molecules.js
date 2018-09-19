@@ -3,10 +3,9 @@ module.exports = Object.assign(
   require("./boxes"),
   require("./buttons"),
   require("./columns"),
-  // require("./fonts"),
   // require("./forms"),
-  // require("./headers"),
-  // require("./icons"),
+  require("./headers"),
+  require("./icons"),
   // require("./indicators"),
   require("./links")
   // require("./lists"),

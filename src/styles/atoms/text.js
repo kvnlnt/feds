@@ -103,7 +103,7 @@ module.exports = {
         lineHeight: `4${params.unit.base}`
       },
       xxl: {
-        lineHeight: `5${params.unit.base}`
+        lineHeight: `4.8${params.unit.base}`
       }
     },
     indent: {
@@ -140,7 +140,7 @@ module.exports = {
         fontSize: `1.4${params.unit.base}`
       },
       l: {
-        fontSize: `2.0${params.unit.base}`
+        fontSize: `1.8${params.unit.base}`
       },
       xl: {
         fontSize: `2.4${params.unit.base}`

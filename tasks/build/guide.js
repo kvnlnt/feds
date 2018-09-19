@@ -24,7 +24,7 @@ while ((x = reg.exec(tmpl)) !== null) {
 }
 
 // atoms
-tmpl = tmpl.replace("<!-- ATOMS -->", compiledAtoms);
+// tmpl = tmpl.replace("<!-- ATOMS -->", compiledAtoms);
 
 fs.writeFileSync("./public/index.html", tmpl, "utf-8");
 

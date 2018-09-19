@@ -272,15 +272,15 @@ pre .regexp {
 
 <body>
     <div class="text-size-xs pos-abs pos-top-s pos-right-s text-height-s">
-        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline"
-            style="float:left" class="mrgn-rgt-xs">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" style="float:left"
+            class="mrgn-rgt-xs">
         <span class="opac-30">
-            1.0.0.340</span>
+            1.0.0.344</span>
     </div>
     <a id="top" onclick="scrollToTop()" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite anim-speed-med"
         onclick="document.body.scrollTop=0">TOP</a>
     <div id="menuToggle" class="pos-fix hide top-right pos-right-none pos-left-none z-infinite">
-        <a href="#layout" class="button bg-primary text-align-right block bdr-radius-none">&#x2630;</a>
+        <a href="#layout" class="button bg-primary text-align-right block border-radius-none">&#x2630;</a>
     </div>
     <div id="layout" class="columns bg-grey-xxl" style="min-height:100vh">
         <aside id="mainMenu" class="column pad-m bg-grey-xl" style="flex: 0 0 150px;padding-bottom:70px">
@@ -491,1166 +491,7 @@ pre .regexp {
     <p>
         Atoms are simple css classes designed to be aggregated together. A preset pattern of atoms is called a <em>Molecule</em>. Molecules are themselves css classes that serve as the base theme. For example: there exists a <em>.columns</em> class which is a composition of atoms based on flexbox. Applying the <em>.columns</em> class gives you everything you need out the box to work with a flexbox based grid. Atoms can then be further applied to elements to overwrite this default base theme behavior.
     </p>
-    <pre><code data-language="css">.align-top {
-  vertical-align:top;
-}
-.align-bot {
-  vertical-align:bottom;
-}
-.bg-center {
-  background-position:center;
-}
-.bg-color-black {
-  background-color:rgb(14,18,37);
-}
-.bg-color-grey-xxl {
-  background-color:rgba(202,206,217,.12);
-}
-.bg-color-grey-xl {
-  background-color:rgba(202,206,217,.3);
-}
-.bg-color-grey-l {
-  background-color:hsl(219, 22%, 25%);
-}
-.bg-color-blackHalf {
-  background-color:NaN;
-}
-.bg-color-danger {
-  background-color:hsl(358,80%,46%);
-}
-.bg-color-primary-xl {
-  background-color:hsl(212,74%,93%);
-}
-.bg-color-primary-l {
-  background-color:hsl(0,0%,100%);
-}
-.bg-color-primary-m {
-  background-color:hsl(212, 64%, 49%);
-}
-.bg-color-secondary {
-  background-color:hsl(212, 70%, 40%);
-}
-.bg-color-success {
-  background-color:hsl(158, 100%, 26%);
-}
-.bg-color-warn {
-  background-color:#F7D31E;
-}
-.bg-color-white {
-  background-color:#FFFFFF;
-}
-.bg-cover {
-  background-size:cover;
-}
-.border-collapse {
-  border-collapse:collapse;
-}
-.border-color-bot-black {
-  border-bottom-color:rgb(14,18,37);
-}
-.border-color-bot-grey-xxl {
-  border-bottom-color:undefined;
-}
-.border-color-bot-grey-xl {
-  border-bottom-color:undefined;
-}
-.border-color-bot-grey-l {
-  border-bottom-color:rgb(202,206,217);
-}
-.border-color-bot-grey-m {
-  border-bottom-color:hsl(219, 22%, 25%);
-}
-.border-color-bot-primary {
-  border-bottom-color:hsl(212, 64%, 49%);
-}
-.border-color-bot-white {
-  border-bottom-color:#FFFFFF;
-}
-.border-color-bot-danger {
-  border-bottom-color:hsl(358,80%,46%);
-}
-.border-color-top-black {
-  border-top-color:rgb(14,18,37);
-}
-.border-color-top-grey-xxl {
-  border-top-color:undefined;
-}
-.border-color-top-grey-xl {
-  border-top-color:undefined;
-}
-.border-color-top-grey-l {
-  border-top-color:rgb(202,206,217);
-}
-.border-color-top-grey-m {
-  border-top-color:hsl(219, 22%, 25%);
-}
-.border-color-top-primary {
-  border-top-color:hsl(212, 64%, 49%);
-}
-.border-color-top-white {
-  border-top-color:#FFFFFF;
-}
-.border-color-top-danger {
-  border-top-color:hsl(358,80%,46%);
-}
-.border-color-left-black {
-  border-left-color:rgb(14,18,37);
-}
-.border-color-left-grey-xxl {
-  border-left-color:undefined;
-}
-.border-color-left-grey-xl {
-  border-left-color:undefined;
-}
-.border-color-left-grey-l {
-  border-left-color:rgb(202,206,217);
-}
-.border-color-left-grey-m {
-  border-left-color:hsl(219, 22%, 25%);
-}
-.border-color-left-primary {
-  border-left-color:hsl(212, 64%, 49%);
-}
-.border-color-left-white {
-  border-left-color:#FFFFFF;
-}
-.border-color-left-danger {
-  border-left-color:hsl(358,80%,46%);
-}
-.border-color-right-black {
-  border-right-color:rgb(14,18,37);
-}
-.border-color-right-grey-xxl {
-  border-right-color:undefined;
-}
-.border-color-right-grey-xl {
-  border-right-color:undefined;
-}
-.border-color-right-grey-l {
-  border-right-color:rgb(202,206,217);
-}
-.border-color-right-grey-m {
-  border-right-color:hsl(219, 22%, 25%);
-}
-.border-color-right-primary {
-  border-right-color:hsl(212, 64%, 49%);
-}
-.border-color-right-white {
-  border-right-color:#FFFFFF;
-}
-.border-color-right-danger {
-  border-right-color:hsl(358,80%,46%);
-}
-.border-color-black {
-  border-color:rgb(14,18,37);
-}
-.border-color-grey-xxl {
-  border-color:undefined;
-}
-.border-color-grey-xl {
-  border-color:undefined;
-}
-.border-color-grey-l {
-  border-color:rgb(202,206,217);
-}
-.border-color-grey-m {
-  border-color:hsl(219, 22%, 25%);
-}
-.border-color-primary {
-  border-color:hsl(212, 64%, 49%);
-}
-.border-color-white {
-  border-color:#FFFFFF;
-}
-.border-color-danger {
-  border-color:hsl(358,80%,46%);
-}
-.border-round-xs {
-  border-radius:1px;
-}
-.border-round-s {
-  border-radius:2px;
-}
-.border-round-m {
-  border-radius:3px;
-}
-.border-round-l {
-  border-radius:4px;
-}
-.border-round-xl {
-  border-radius:5px;
-}
-.border-round-none {
-  border-radius:0px;
-}
-.border-size-top-xs {
-  border-top-width:1px;
-  border-style:solid;
-}
-.border-size-top-s {
-  border-top-width:2px;
-  border-style:solid;
-}
-.border-size-top-m {
-  border-top-width:3px;
-  border-style:solid;
-}
-.border-size-top-l {
-  border-top-width:4px;
-  border-style:solid;
-}
-.border-size-top-xl {
-  border-top-width:5px;
-  border-style:solid;
-}
-.border-size-top-none {
-  border-top-width:0;
-  border-style:none;
-}
-.border-size-bot-xs {
-  border-bottom-width:1px;
-  border-style:solid;
-}
-.border-size-bot-s {
-  border-bottom-width:2px;
-  border-style:solid;
-}
-.border-size-bot-m {
-  border-bottom-width:3px;
-  border-style:solid;
-}
-.border-size-bot-l {
-  border-bottom-width:4px;
-  border-style:solid;
-}
-.border-size-bot-xl {
-  border-bottom-width:5px;
-  border-style:solid;
-}
-.border-size-bot-none {
-  border-bottom-width:0;
-  border-style:none;
-}
-.border-size-left-xs {
-  border-left-width:1px;
-  border-style:solid;
-}
-.border-size-left-s {
-  border-left-width:2px;
-  border-style:solid;
-}
-.border-size-left-m {
-  border-left-width:3px;
-  border-style:solid;
-}
-.border-size-left-l {
-  border-left-width:4px;
-  border-style:solid;
-}
-.border-size-left-xl {
-  border-left-width:5px;
-  border-style:solid;
-}
-.border-size-left-none {
-  border-left-width:0;
-  border-style:none;
-}
-.border-size-right-xs {
-  border-right-width:1px;
-  border-style:solid;
-}
-.border-size-right-s {
-  border-right-width:2px;
-  border-style:solid;
-}
-.border-size-right-m {
-  border-right-width:3px;
-  border-style:solid;
-}
-.border-size-right-l {
-  border-right-width:4px;
-  border-style:solid;
-}
-.border-size-right-xl {
-  border-right-width:5px;
-  border-style:solid;
-}
-.border-size-right-none {
-  border-right-width:0;
-  border-style:none;
-}
-.border-size-xs {
-  border-width:1px;
-  border-style:solid;
-}
-.border-size-s {
-  border-width:2px;
-  border-style:solid;
-}
-.border-size-m {
-  border-width:3px;
-  border-style:solid;
-}
-.border-size-l {
-  border-width:4px;
-  border-style:solid;
-}
-.border-size-xl {
-  border-width:5px;
-  border-style:solid;
-}
-.border-size-none {
-  border-width:0;
-  border-style:none;
-}
-.content-none {
-  content:"";
-}
-.content-data-alt {
-  content:attr(data-alt);
-}
-.cursor-pointer {
-  cursor:pointer;
-}
-.display-block {
-  display:block;
-}
-.display-block-inline {
-  display:inline-block;
-}
-.display-flex {
-  display:flex;
-}
-.display-grid {
-  display:grid;
-}
-.display-hide {
-  display:none;
-}
-.display-inline-block {
-  display:inline-block;
-}
-.display-overflow-hide {
-  overflow:hidden;
-}
-.display-table {
-  display:table;
-}
-.display-table-cell {
-  display:table-cell;
-}
-.display-table-fixed {
-  table-layout:fixed;
-}
-.display-table-row {
-  display:table-row;
-}
-.z-0 {
-  z-index:0;
-}
-.z-1 {
-  z-index:1;
-}
-.z-2 {
-  z-index:2;
-}
-.z-3 {
-  z-index:3;
-}
-.z-4 {
-  z-index:4;
-}
-.z-5 {
-  z-index:5;
-}
-.z-6 {
-  z-index:6;
-}
-.z-7 {
-  z-index:7;
-}
-.z-8 {
-  z-index:8;
-}
-.z-9 {
-  z-index:9;
-}
-.z-infinite {
-  z-index:100000;
-}
-.flex-basis-half {
-  flex-basis:50%;
-}
-.flex-basis-third {
-  flex-basis:33.3333%;
-}
-.flex-basis-fourth {
-  flex-basis:25%;
-}
-.flex-basis-fifth {
-  flex-basis:20%;
-}
-.flex-col-half {
-  flex-basis:50%;
-}
-.flex-col-third {
-  flex-basis:33.3333%;
-}
-.flex-col-fourth {
-  flex-basis:25%;
-}
-.flex-col-fifth {
-  flex-basis:20%;
-}
-.flex-col-sixth {
-  flex-basis:16.6666%;
-}
-.flex-dir-col {
-  flex-direction:column;
-}
-.flex-dir-row {
-  flex-direction:row;
-}
-.flex-fit {
-  flex-grow:0;
-}
-.flex-horz-center {
-  justify-content:center;
-}
-.flex-horz-left {
-  justify-content:left;
-}
-.flex-horz-right {
-  justify-content:right;
-}
-.flex-vert-center {
-  align-items:center;
-}
-.flex-vert-left {
-  align-items:left;
-}
-.flex-vert-right {
-  align-items:right;
-}
-.flex-wrap {
-  flex-wrap:wrap;
-}
-.anim-ease-in {
-  transition-timing-function:cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.anim-ease-out {
-  transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.anim-ease-inOut {
-  transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.anim-delay-slow {
-  transition:all 1s;
-}
-.anim-delay-med {
-  transition:all 0.5s;
-}
-.anim-delay-fast {
-  transition:all 0.3s;
-}
-.anim-speed-slow {
-  transition:all 1s;
-}
-.anim-speed-med {
-  transition:all 0.5s;
-}
-.anim-speed-fast {
-  transition:all 0.3s;
-}
-.filter-black {
-  filter:brightness(0);
-}
-.filter-white {
-  filter:brightness(1);
-}
-.opac-0 {
-  opacity:0;
-}
-.opac-10 {
-  opacity:0.1;
-}
-.opac-20 {
-  opacity:0.2;
-}
-.opac-30 {
-  opacity:0.3;
-}
-.opac-40 {
-  opacity:0.4;
-}
-.opac-50 {
-  opacity:0.5;
-}
-.opac-60 {
-  opacity:0.6;
-}
-.opac-70 {
-  opacity:0.7;
-}
-.opac-80 {
-  opacity:0.8;
-}
-.opac-90 {
-  opacity:0.9;
-}
-.opac-100 {
-  opacity:1;
-}
-.shadow-s {
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
-}
-.icon-administration {
-  background-image:url(../gfx/icons/administration.svg);
-}
-.icon-analytics {
-  background-image:url(../gfx/icons/analytics.svg);
-}
-.icon-calendar {
-  background-image:url(../gfx/icons/calendar.svg);
-}
-.icon-close {
-  background-image:url(../gfx/icons/close.svg);
-}
-.icon-collapseExpand {
-  background-image:url(../gfx/icons/collapse-expand.svg);
-}
-.icon-dailyRoster {
-  background-image:url(../gfx/icons/daily-roster.svg);
-}
-.icon-dataIntelligence {
-  background-image:url(../gfx/icons/data-intelligence.svg);
-}
-.icon-demographics {
-  background-image:url(../gfx/icons/demographics.svg);
-}
-.icon-events {
-  background-image:url(../gfx/icons/events.svg);
-}
-.icon-home {
-  background-image:url(../gfx/icons/home.svg);
-}
-.icon-hydrants {
-  background-image:url(../gfx/icons/hydrants.svg);
-}
-.icon-incidents {
-  background-image:url(../gfx/icons/incidents.svg);
-}
-.icon-inventory {
-  background-image:url(../gfx/icons/inventory.svg);
-}
-.icon-invoicing {
-  background-image:url(../gfx/icons/invoicing.svg);
-}
-.icon-library {
-  background-image:url(../gfx/icons/library.svg);
-}
-.icon-maintenance {
-  background-image:url(../gfx/icons/maintenance.svg);
-}
-.icon-messageCenter {
-  background-image:url(../gfx/icons/message-center.svg);
-}
-.icon-myProfile {
-  background-image:url(../gfx/icons/my-profile.svg);
-}
-.icon-occupancies {
-  background-image:url(../gfx/icons/occupancies.svg);
-}
-.icon-payroll {
-  background-image:url(../gfx/icons/payroll.svg);
-}
-.icon-reports {
-  background-image:url(../gfx/icons/reports.svg);
-}
-.icon-roster {
-  background-image:url(../gfx/icons/roster.svg);
-}
-.icon-shifts {
-  background-image:url(../gfx/icons/shifts.svg);
-}
-.icon-training {
-  background-image:url(../gfx/icons/training.svg);
-}
-.margin-xs {
-  margin:1.4rem;
-}
-.margin-s {
-  margin:2rem;
-}
-.margin-m {
-  margin:3rem;
-}
-.margin-l {
-  margin:4rem;
-}
-.margin-xl {
-  margin:5rem;
-}
-.margin-none {
-  margin:none;
-}
-.margin-auto {
-  margin:auto;
-}
-.margin-top-xs {
-  margin-top:1.4rem;
-}
-.margin-top-s {
-  margin-top:2rem;
-}
-.margin-top-m {
-  margin-top:3rem;
-}
-.margin-top-l {
-  margin-top:4rem;
-}
-.margin-top-xl {
-  margin-top:5rem;
-}
-.margin-top-none {
-  margin-top:none;
-}
-.margin-top-auto {
-  margin-top:auto;
-}
-.margin-bot-xs {
-  margin-bottom:1.4rem;
-}
-.margin-bot-s {
-  margin-bottom:2rem;
-}
-.margin-bot-m {
-  margin-bottom:3rem;
-}
-.margin-bot-l {
-  margin-bottom:4rem;
-}
-.margin-bot-xl {
-  margin-bottom:5rem;
-}
-.margin-bot-none {
-  margin-bottom:none;
-}
-.margin-bot-auto {
-  margin-bottom:auto;
-}
-.margin-left-xs {
-  margin-left:1.4rem;
-}
-.margin-left-s {
-  margin-left:2rem;
-}
-.margin-left-m {
-  margin-left:3rem;
-}
-.margin-left-l {
-  margin-left:4rem;
-}
-.margin-left-xl {
-  margin-left:5rem;
-}
-.margin-left-none {
-  margin-left:none;
-}
-.margin-left-auto {
-  margin-left:auto;
-}
-.margin-right-xs {
-  margin-right:1.4rem;
-}
-.margin-right-s {
-  margin-right:2rem;
-}
-.margin-right-m {
-  margin-right:3rem;
-}
-.margin-right-l {
-  margin-right:4rem;
-}
-.margin-right-xl {
-  margin-right:5rem;
-}
-.margin-right-none {
-  margin-right:none;
-}
-.margin-right-auto {
-  margin-right:auto;
-}
-.pad-xs {
-  padding:1.4rem;
-}
-.pad-s {
-  padding:2rem;
-}
-.pad-m {
-  padding:3rem;
-}
-.pad-l {
-  padding:4rem;
-}
-.pad-xl {
-  padding:5rem;
-}
-.pad-none {
-  padding:none;
-}
-.pad-auto {
-  padding:auto;
-}
-.pad-top-xs {
-  padding-top:1.4rem;
-}
-.pad-top-s {
-  padding-top:2rem;
-}
-.pad-top-m {
-  padding-top:3rem;
-}
-.pad-top-l {
-  padding-top:4rem;
-}
-.pad-top-xl {
-  padding-top:5rem;
-}
-.pad-top-none {
-  padding-top:none;
-}
-.pad-top-auto {
-  padding-top:auto;
-}
-.pad-bot-xs {
-  padding-bottom:1.4rem;
-}
-.pad-bot-s {
-  padding-bottom:2rem;
-}
-.pad-bot-m {
-  padding-bottom:3rem;
-}
-.pad-bot-l {
-  padding-bottom:4rem;
-}
-.pad-bot-xl {
-  padding-bottom:5rem;
-}
-.pad-bot-none {
-  padding-bottom:none;
-}
-.pad-bot-auto {
-  padding-bottom:auto;
-}
-.pad-left-xs {
-  padding-left:1.4rem;
-}
-.pad-left-s {
-  padding-left:2rem;
-}
-.pad-left-m {
-  padding-left:3rem;
-}
-.pad-left-l {
-  padding-left:4rem;
-}
-.pad-left-xl {
-  padding-left:5rem;
-}
-.pad-left-none {
-  padding-left:none;
-}
-.pad-left-auto {
-  padding-left:auto;
-}
-.pad-right-xs {
-  padding-right:1.4rem;
-}
-.pad-right-s {
-  padding-right:2rem;
-}
-.pad-right-m {
-  padding-right:3rem;
-}
-.pad-right-l {
-  padding-right:4rem;
-}
-.pad-right-xl {
-  padding-right:5rem;
-}
-.pad-right-none {
-  padding-right:none;
-}
-.pad-right-auto {
-  padding-right:auto;
-}
-.position-abs {
-  position:absolute;
-}
-.position-fix {
-  position:fixed;
-}
-.position-rel {
-  position:relative;
-}
-.position-top-xs {
-  top:1.6rem;
-}
-.position-top-s {
-  top:2rem;
-}
-.position-top-m {
-  top:2.4rem;
-}
-.position-top-l {
-  top:3.2rem;
-}
-.position-top-xl {
-  top:4rem;
-}
-.position-top-xxl {
-  top:5rem;
-}
-.position-top-none {
-  top:0;
-}
-.position-top-auto {
-  top:auto;
-}
-.position-top-hide {
-  top:-100%;
-}
-.position-bot-xs {
-  bottom:1.6rem;
-}
-.position-bot-s {
-  bottom:2rem;
-}
-.position-bot-m {
-  bottom:2.4rem;
-}
-.position-bot-l {
-  bottom:3.2rem;
-}
-.position-bot-xl {
-  bottom:4rem;
-}
-.position-bot-xxl {
-  bottom:5rem;
-}
-.position-bot-none {
-  bottom:0;
-}
-.position-bot-auto {
-  bottom:auto;
-}
-.position-bot-hide {
-  bottom:-100%;
-}
-.position-left-xs {
-  left:1.6rem;
-}
-.position-left-s {
-  left:2rem;
-}
-.position-left-m {
-  left:2.4rem;
-}
-.position-left-l {
-  left:3.2rem;
-}
-.position-left-xl {
-  left:4rem;
-}
-.position-left-xxl {
-  left:5rem;
-}
-.position-left-none {
-  left:0;
-}
-.position-left-auto {
-  left:auto;
-}
-.position-left-hide {
-  left:-100%;
-}
-.position-right-xs {
-  right:1.6rem;
-}
-.position-right-s {
-  right:2rem;
-}
-.position-right-m {
-  right:2.4rem;
-}
-.position-right-l {
-  right:3.2rem;
-}
-.position-right-xl {
-  right:4rem;
-}
-.position-right-xxl {
-  right:5rem;
-}
-.position-right-none {
-  right:0;
-}
-.position-right-auto {
-  right:auto;
-}
-.position-right-hide {
-  right:-100%;
-}
-.scroll-overflow-auto {
-  overflow:auto;
-}
-.scroll-overflow-y {
-  overflow-y:auto;
-}
-.height {
-  max-height:100%;
-}
-.height-none {
-  height:0;
-}
-.height-full {
-  height:100%;
-}
-.height-half {
-  height:50%;
-}
-.height-third {
-  height:33.3333%;
-}
-.height-fourth {
-  height:25%;
-}
-.height-fifth {
-  height:20%;
-}
-.height-sixth {
-  height:16.666%;
-}
-.width {
-  max-width:100%;
-}
-.width-none {
-  width:0;
-}
-.width-full {
-  width:100%;
-}
-.width-half {
-  width:50%;
-}
-.width-third {
-  width:33.3333%;
-}
-.width-fourth {
-  width:25%;
-}
-.width-fifth {
-  width:20%;
-}
-.width-sixth {
-  width:16.666%;
-}
-.view-height {
-  max-height:100%;
-}
-.view-height-none {
-  height:0;
-}
-.view-height-full {
-  height:100vh;
-}
-.view-height-half {
-  height:50vh;
-}
-.view-height-third {
-  height:33.3333vh;
-}
-.view-height-fourth {
-  height:25vh;
-}
-.view-height-fifth {
-  height:20vh;
-}
-.view-height-sixth {
-  height:16.666vh;
-}
-.view-width {
-  max-width:100%;
-}
-.view-width-none {
-  width:0;
-}
-.view-width-full {
-  width:100v2;
-}
-.view-width-half {
-  width:50v2;
-}
-.view-width-third {
-  width:33.3333v2;
-}
-.view-width-fourth {
-  width:25v2;
-}
-.view-width-fifth {
-  width:20v2;
-}
-.view-width-sixth {
-  width:16.666v2;
-}
-.text-align-center {
-  text-align:center;
-}
-.text-align-left {
-  text-align:left;
-}
-.text-align-right {
-  text-align:right;
-}
-.text-case-lower {
-  text-transform:lowercase;
-}
-.text-case-title {
-  text-transform:capitalize;
-}
-.text-case-upper {
-  text-transform:uppercase;
-}
-.text-color-black {
-  color:rgb(14,18,37);
-}
-.text-color-danger {
-  color:hsl(358,80%,46%);
-}
-.text-color-grey-xxl {
-  color:rgba(202,206,217,.12);
-}
-.text-color-grey-xl {
-  color:rgba(202,206,217,.3);
-}
-.text-color-grey-l {
-  color:rgb(202,206,217);
-}
-.text-color-grey-m {
-  color:hsl(219, 22%, 25%);
-}
-.text-color-info {
-  color:hsl(212, 64%, 49%);
-}
-.text-color-primary-m {
-  color:hsl(212, 64%, 49%);
-}
-.text-color-primary-l {
-  color:hsl(212, 100%, 60%);
-}
-.text-color-secondary {
-  color:hsl(212, 70%, 40%);
-}
-.text-color-success {
-  color:hsl(158, 100%, 26%);
-}
-.text-color-warn {
-  color:#F7D31E;
-}
-.text-color-white {
-  color:#FFFFFF;
-}
-.text-font-mono {
-  font-family:monospace;
-}
-.text-font-primary {
-  font-family:OpenSans;
-}
-.text-font-primary-bold {
-  font-family:OpenSansBold, Arial;
-}
-.text-font-primary-bold-italic {
-  font-family:OpenSansBoldItalic;
-}
-.text-font-primary-italic {
-  font-family:OpenSansItalic;
-  font-style:italic;
-}
-.text-height-xs {
-  line-height:1.6rem;
-}
-.text-height-s {
-  line-height:2.0rem;
-}
-.text-height-m {
-  line-height:2.4rem;
-}
-.text-height-l {
-  line-height:3.2rem;
-}
-.text-height-xl {
-  line-height:4rem;
-}
-.text-height-xxl {
-  line-height:5rem;
-}
-.text-indent-xs {
-  text-indent:0.5rem;
-}
-.text-indent-s {
-  text-indent:1.0rem;
-}
-.text-indent-m {
-  text-indent:1.5rem;
-}
-.text-indent-l {
-  text-indent:2.0rem;
-}
-.text-indent-xl {
-  text-indent:2.5rem;
-}
-.text-indent-xxl {
-  text-indent:3rem;
-}
-.text-pre {
-  white-space:pre;
-}
-.text-size-xs {
-  font-size:1.1rem;
-}
-.text-size-s {
-  font-size:1.3rem;
-}
-.text-size-m {
-  font-size:1.4rem;
-}
-.text-size-l {
-  font-size:2.0rem;
-}
-.text-size-xl {
-  font-size:2.4rem;
-}
-.text-size-xxl {
-  font-size:4rem;
-}
-.text-space-xs {
-  letter-spacing:0rem;
-}
-.text-space-s {
-  letter-spacing:0.1rem;
-}
-.text-underline-none {
-  text-decoration:none;
-}
-.text-weight-normal {
-  font-weight:normal;
-}
-.text-wrap-none {
-  white-space:nowrap;
-}
-</code>
+    <pre><code data-language="css"><!-- ATOMS --></code>
     </pre>
 </section>
             <section class="pad-top-l hide" id="Buttons">
@@ -1789,7 +630,7 @@ pre .regexp {
                 </div>
             </div>
             <div class="column fourth">
-                <div class="bg-white height-xxl bdr-xs bdr-color-grey-l"></div>
+                <div class="bg-white height-xxl border-size-xs border-color-grey-l"></div>
                 <p>.bg-white</p>
             </div>
         </div>
@@ -1918,139 +759,139 @@ pre .regexp {
     <div class="box">
         <div class="columns text-align-left spacing-s">
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black administration"></i>
                 </div>
                 <p class="text-size-s">administration</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black analytics"></i>
                 </div>
                 <p class="text-size-s">analytics</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black calendar"></i>
                 </div>
                 <p class="text-size-s">calendar</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black collapse-expand"></i>
                 </div>
                 <p class="text-size-s">collapse-expand</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black daily-roster"></i>
                 </div>
                 <p class="text-size-s">daily-roster</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black data-intelligence"></i>
                 </div>
                 <p class="text-size-s">data-intelligence</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black demographics"></i>
                 </div>
                 <p class="text-size-s">demographics</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black events"></i>
                 </div>
                 <p class="text-size-s">events</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black home"></i>
                 </div>
                 <p class="text-size-s">home</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black hydrants"></i>
                 </div>
                 <p class="text-size-s">hydrants</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black incidents"></i>
                 </div>
                 <p class="text-size-s">incidents</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black inventory"></i>
                 </div>
                 <p class="text-size-s">inventory</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black invoicing"></i>
                 </div>
                 <p class="text-size-s">invoicing</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black library"></i>
                 </div>
                 <p class="text-size-s">library</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black maintenance"></i>
                 </div>
                 <p class="text-size-s">maintenance</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black message-center"></i>
                 </div>
                 <p class="text-size-s">message-center</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black my-profile"></i>
                 </div>
                 <p class="text-size-s">my-profile</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black occupancies"></i>
                 </div>
                 <p class="text-size-s">occupancies</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black payroll"></i>
                 </div>
                 <p class="text-size-s">payroll</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black reports"></i>
                 </div>
                 <p class="text-size-s">reports</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black roster"></i>
                 </div>
                 <p class="text-size-s">roster</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black shifts"></i>
                 </div>
                 <p class="text-size-s">shifts</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black training"></i>
                 </div>
                 <p class="text-size-s">training</p>
@@ -2068,37 +909,37 @@ pre .regexp {
     <div class="box">
         <div class="columns spacing-s">
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xxl black administration"></i>
                 </div>
                 <p class="text-size-s">xxl</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xl black administration"></i>
                 </div>
                 <p class="text-size-s">xl</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon l black administration"></i>
                 </div>
                 <p class="text-size-s">l</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon m black administration"></i>
                 </div>
                 <p class="text-size-s">m</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon s black administration"></i>
                 </div>
                 <p class="text-size-s">s</p>
             </div>
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xs black administration"></i>
                 </div>
                 <p class="text-size-s">xs</p>
@@ -2119,13 +960,13 @@ pre .regexp {
     <div class="box">
         <div class="columns spacing-s">
             <div class="column flex-fit">
-                <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-m">
+                <div class="border-color-grey-l border-size-xs border-radius-m pad-m">
                     <i class="icon xxl black administration"></i>
                 </div>
                 <p class="text-size-s">black</p>
             </div>
             <div class="column flex-fit">
-                <div class="bg-grey bdr-radius-m pad-m">
+                <div class="bg-grey border-radius-m pad-m">
                     <i class="icon xxl white administration"></i>
                 </div>
                 <p class="text-size-s">white</p>
@@ -2450,24 +1291,24 @@ pre .regexp {
     </pre>
 </section>
             <section class="pad-top-l hide " id="Typography">
-    <h2 class="mrgn-top-none bdr-bot-xs bdr-bot-color-grey-l pad-bot-s">Typography</h2>
+    <h2 class="mrgn-top-none border-bot-xs border-bot-color-grey-l pad-bot-s">Typography</h2>
     <h3>Fonts</h3>
     <div class="box">
         <div class="columns spacing-s">
             <div class="column flex-fit">
-                <div class="text-size-xxl bdr-color-grey-l bdr-xs bdr-radius-m pad-xl">Aa</div>
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m pad-xl">Aa</div>
                 <p>Open Sans - Regular</p>
             </div>
             <div class="column flex-fit">
-                <div class="text-size-xxl bdr-color-grey-l bdr-xs bdr-radius-m pad-xl text-style-italic">Aa</div>
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m pad-xl text-style-italic">Aa</div>
                 <p>Open Sans - Italic</p>
             </div>
             <div class="column flex-fit">
-                <div class="text-size-xxl bdr-color-grey-l bdr-xs bdr-radius-m pad-xl text-style-bold">Aa</div>
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m pad-xl text-style-bold">Aa</div>
                 <p>Open Sans - Bold</p>
             </div>
             <div class="column flex-fit">
-                <div class="text-size-xxl bdr-color-grey-l bdr-xs bdr-radius-m pad-xl text-style-bold-italic">Aa</div>
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m pad-xl text-style-bold-italic">Aa</div>
                 <p>Open Sans - Bold Italic</p>
             </div>
         </div>
@@ -2482,34 +1323,32 @@ pre .regexp {
     </pre>
     <h3>Sizes</h3>
     <div class="box">
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-s">
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
             <div class="text-size-xxl text-height-xxl text-indent-2">Giant Text: Good design is excellent</div>
         </div>
         <p class="mrgn-top-xs">text-size-xxl</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-s">
-            <div class="text-size-xl text-height-xl text-indent-2">Extra Large Text: Good design is
-                excellent business</div>
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
+            <div class="text-size-xl text-height-xl text-indent-2">Extra Large Text: Good design is excellent business</div>
         </div>
         <p class="mrgn-top-xs">text-size-xl</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-s">
-            <div class="text-size-l text-height-l text-indent-2">Large Text: Good design is excellent
-                business</div>
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
+            <div class="text-size-l text-height-l text-indent-2">Large Text: Good design is excellent business
+            </div>
         </div>
         <p class="mrgn-top-xs">text-size-l</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-s">
-            <div class="text-size-m text-height-m text-indent-2">Medium Text: Good design is excellent
-                business</div>
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
+            <div class="text-size-m text-height-m text-indent-2">Medium Text: Good design is excellent business
+            </div>
         </div>
         <p class="mrgn-top-xs">text-size-m</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-s">
-            <div class="text-size-s text-height-m text-indent-2">Small Text: Good design is excellent
-                business</div>
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
+            <div class="text-size-s text-height-m text-indent-2">Small Text: Good design is excellent business
+            </div>
         </div>
         <p class="mrgn-top-xs">text-size-s</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-s">
-            <div class="text-size-xs text-height-m text-indent-2">Extra Small Text: Good design is
-                excellent
-                business</div>
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
+            <div class="text-size-xs text-height-m text-indent-2">Extra Small Text: Good design is excellent business
+            </div>
         </div>
         <p class="mrgn-top-xs">text-size-xs</p>
     </div>
@@ -2525,23 +1364,23 @@ pre .regexp {
     </pre>
     <h3>Headers</h3>
     <div class="box">
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+        <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h1>Giant Text: Good design is excellent</h1>
         </div>
         <p class="mrgn-top-xs">h1</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+        <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h2>Giant Text: Good design is excellent business</h2>
         </div>
         <p class="mrgn-top-xs">h2</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+        <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h3>Giant Text: Good design is excellent business</h3>
         </div>
         <p class="mrgn-top-xs">h3</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+        <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h4>Giant Text: Good design is excellent business</h4>
         </div>
         <p class="mrgn-top-xs">h4</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m text-indent-m">
+        <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h5>Giant Text: Good design is excellent business</h5>
         </div>
         <p class="mrgn-top-xs">h5</p>
@@ -2557,19 +1396,14 @@ pre .regexp {
     </pre>
     <h3>Paragraph</h3>
     <div class="box">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur
-            malesuada, risus
-            ipsum sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a
-            felis
-            bibendum aliquet aliquam sit amet nisl. Quisque vel tempus leo.</p>
-        <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat.
-            Integer
-            quis neque mollis diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet
-            pellentesque.
-            Ut sodales, massa in finibus bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc.
-            Maecenas
-            efficitur volutpat ex, ut accumsan velit tincidunt euismod. Nulla vulputate quis est eget
-            consectetur.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada, risus ipsum
+            sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a felis bibendum aliquet
+            aliquam sit amet nisl. Quisque vel tempus leo.</p>
+        <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat. Integer quis neque
+            mollis diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet pellentesque. Ut sodales, massa
+            in finibus bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc. Maecenas efficitur volutpat ex,
+            ut accumsan velit tincidunt euismod. Nulla vulputate quis est eget consectetur.
+        </p>
     </div>
     <pre>
     <code data-language="html">
@@ -2578,42 +1412,42 @@ pre .regexp {
     </code>
     </pre>
     <h3>Colors</h3>
-    <p>When selecting a color for a block of text, it's important to take into account the documented
-        usages below (using green text only for success messaging, for instance).</p>
+    <p>When selecting a color for a block of text, it's important to take into account the documented usages below (using
+        green text only for success messaging, for instance).</p>
     <div class="box">
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Black: This is the default text color
         </div>
         <p>.text-color-black</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Grey: This is grey text
         </div>
         <p>.text-color-grey</p>
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Primary: This is the primary link color
         </div>
         <p>.text-color-primary</p>
-        <div class="bg-grey text-color-primary-l bdr-color-grey-l bdr-radius-m pad-xs text-size-l">
+        <div class="bg-grey text-color-primary-l border-color-grey-l border-radius-m pad-xs text-size-l">
             Primary-Light: This text color should ONLY be used on a dark background
         </div>
         <p>.text-color-primary-l</p>
-        <div class="text-color-secondary bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-color-secondary border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Secondary: Primarily used as the hover color for .text-color-primary
         </div>
         <p>.text-color-secondary</p>
-        <div class="text-color-success bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-color-success border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Success: This is green text for success messaging
         </div>
         <p>.text-color-success</p>
-        <div class="text-color-danger bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-color-danger border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Danger: This red text is for error messages
         </div>
         <p>.text-color-danger</p>
-        <div class="text-color-warn bg-grey bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-color-warn bg-grey border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Yellow: This is for warning messages, it should ONLY be used on a dark background
         </div>
         <p>.text-color-warn</p>
-        <div class="text-color-white bg-grey bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-color-white bg-grey border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             White: White text is for dark backgrounds
         </div>
         <p>.text-color-white</p>
@@ -2633,19 +1467,19 @@ pre .regexp {
     </pre>
     <h3>Styles</h3>
     <div class="box">
-        <div class="bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Regular text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
         </div>
         <p class="text-font-italic">default</p>
-        <div class="text-font-italic bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-font-italic border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Italicized Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
         </div>
         <p>.text-font-italic</p>
-        <div class="text-font-bold bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-font-bold border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Strong Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
         </div>
         <p>.text-font-bold</p>
-        <div class="text-font-bold-italic bdr-color-grey-l bdr-xs bdr-radius-m pad-xs text-size-l">
+        <div class="text-font-bold-italic border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Strong Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
         </div>
         <p>.text-font-semi-italic</p>

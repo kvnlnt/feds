@@ -4,17 +4,19 @@ module.exports = {
   ".button": {
     ...atoms.border.size.xs,
     ...atoms.border.color.primary,
+    ...atoms.border.radius.l,
     ...atoms.bg.color.primary.m,
     ...atoms.display.block.inline,
     ...atoms.pad.left.s,
     ...atoms.pad.right.s,
     ...atoms.text.font.primary,
     ...atoms.text.color.white,
-    ...atoms.text.height.l,
+    ...atoms.text.height.xl,
     ...atoms.text.size.m,
     ...atoms.text.wrap.none,
     ...atoms.text.align.center,
-    ...atoms.text.underline.none
+    ...atoms.text.underline.none,
+    ...atoms.cursor.pointer
   },
   ".button:focus": {
     ...atoms.bg.color.secondary,
@@ -44,9 +46,9 @@ module.exports = {
     ...atoms.bg.color.grey.m,
     ...atoms.opac["50"]
   },
-  ".button.large": { ...atoms.text.size.l, ...atoms.text.height.l },
-  ".button.medium": { ...atoms.text.size.m, ...atoms.text.height.m },
-  ".button.small": { ...atoms.text.size.s, ...atoms.text.height.s },
+  ".button.large": { ...atoms.text.size.l, ...atoms.text.height.xxl },
+  ".button.medium": { ...atoms.text.size.m, ...atoms.text.height.l },
+  ".button.small": { ...atoms.text.size.s, ...atoms.text.height.m },
   ".button.danger": {
     ...atoms.text.color.white,
     ...atoms.bg.color.danger,
@@ -54,7 +56,7 @@ module.exports = {
   },
   ".button.danger:hover": {
     ...atoms.bg.color.white,
-    ...atoms.text.color.white
+    ...atoms.text.color.danger
   },
   ".button.danger:active": { ...atoms.opac["50"] },
   ".button.secondary": {

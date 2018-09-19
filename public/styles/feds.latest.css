@@ -1,4 +1,4 @@
-/* Build: feds.1.0.0.341 */
+/* Build: feds.1.0.0.344 */
 :root {
   font-size:62.5%;
 }
@@ -227,17 +227,19 @@ box {
   border-width:1px;
   border-style:solid;
   border-color:hsl(212, 64%, 49%);
+  border-radius:4px;
   background-color:hsl(212, 64%, 49%);
   display:inline-block;
   padding-left:2rem;
   padding-right:2rem;
   font-family:OpenSans;
   color:#FFFFFF;
-  line-height:3.2rem;
+  line-height:4rem;
   font-size:1.4rem;
   white-space:nowrap;
   text-align:center;
   text-decoration:none;
+  cursor:pointer;
 }
 .button:focus {
   background-color:hsl(212, 70%, 40%);
@@ -268,16 +270,16 @@ box {
   opacity:0.5;
 }
 .button.large {
-  font-size:2.0rem;
-  line-height:3.2rem;
+  font-size:1.8rem;
+  line-height:4.8rem;
 }
 .button.medium {
   font-size:1.4rem;
-  line-height:2.4rem;
+  line-height:3.2rem;
 }
 .button.small {
   font-size:1.3rem;
-  line-height:2.0rem;
+  line-height:2.4rem;
 }
 .button.danger {
   color:#FFFFFF;
@@ -286,7 +288,7 @@ box {
 }
 .button.danger:hover {
   background-color:#FFFFFF;
-  color:#FFFFFF;
+  color:hsl(358,80%,46%);
 }
 .button.danger:active {
   opacity:0.5;
@@ -352,6 +354,145 @@ box {
 .columns.spacing-xs .column:first-child, .columns.spacing-xs .column + .column {
   margin-right:1.4rem;
   margin-bottom:1.4rem;
+}
+h1 {
+  font-size:4rem;
+  font-family:OpenSans;
+  letter-spacing:0.1rem;
+  font-weight:normal;
+}
+h2 {
+  font-family:OpenSans;
+  font-size:2.4rem;
+  letter-spacing:0.1rem;
+}
+h3 {
+  font-size:1.8rem;
+  font-family:OpenSansBold, Arial;
+  letter-spacing:0.1rem;
+  margin-top:3rem;
+  margin-bottom:2rem;
+}
+h3+p {
+  margin-top:-1.4rem;
+}
+h4 {
+  font-size:1.4rem;
+  font-family:OpenSans;
+  letter-spacing:0.1rem;
+}
+h5 {
+  font-size:1.3rem;
+  font-family:OpenSans;
+  letter-spacing:0.1rem;
+}
+.icon {
+  display:block;
+  background-size:cover;
+  background-position:center;
+  margin:auto;
+}
+.icon.black {
+  filter:brightness(0);
+}
+.icon.white {
+  filter:brightness(1);
+}
+.icon.xs {
+  width:1.6rem;
+  height:1.6rem;
+}
+.icon.s {
+  width:2.0rem;
+  height:2.0rem;
+}
+.icon.m {
+  width:2.4rem;
+  height:2.4rem;
+}
+.icon.l {
+  width:3.2rem;
+  height:3.2rem;
+}
+.icon.xl {
+  width:4rem;
+  height:4rem;
+}
+.icon.xxl {
+  width:4.8rem;
+  height:4.8rem;
+}
+.icon.administration {
+  background-image:url(../gfx/icons/administration.svg);
+}
+.icon.analytics {
+  background-image:url(../gfx/icons/analytics.svg);
+}
+.icon.calendar {
+  background-image:url(../gfx/icons/calendar.svg);
+}
+.icon.close {
+  background-image:url(../gfx/icons/close.svg);
+}
+.icon.collapse-expand {
+  background-image:url(../gfx/icons/collapse-expand.svg);
+}
+.icon.daily-roster {
+  background-image:url(../gfx/icons/daily-roster.svg);
+}
+.icon.data-intelligence {
+  background-image:url(../gfx/icons/data-intelligence.svg);
+}
+.icon.demographics {
+  background-image:url(../gfx/icons/demographics.svg);
+}
+.icon.events {
+  background-image:url(../gfx/icons/events.svg);
+}
+.icon.home {
+  background-image:url(../gfx/icons/home.svg);
+}
+.icon.hydrants {
+  background-image:url(../gfx/icons/hydrants.svg);
+}
+.icon.incidents {
+  background-image:url(../gfx/icons/incidents.svg);
+}
+.icon.inventory {
+  background-image:url(../gfx/icons/inventory.svg);
+}
+.icon.invoicing {
+  background-image:url(../gfx/icons/invoicing.svg);
+}
+.icon.library {
+  background-image:url(../gfx/icons/library.svg);
+}
+.icon.maintenance {
+  background-image:url(../gfx/icons/maintenance.svg);
+}
+.icon.message-center {
+  background-image:url(../gfx/icons/message-center.svg);
+}
+.icon.my-profile {
+  background-image:url(../gfx/icons/my-profile.svg);
+}
+.icon.occupancies {
+  background-image:url(../gfx/icons/occupancies.svg);
+}
+.icon.payroll {
+  background-image:url(../gfx/icons/payroll.svg);
+}
+.icon.reports {
+  background-image:url(../gfx/icons/reports.svg);
+}
+.icon.roster {
+  background-image:url(../gfx/icons/roster.svg);
+}
+.icon.shifts {
+  background-image:url(../gfx/icons/shifts.svg);
+}
+.icon.training {
+  background-image:url(../gfx/icons/training.svg);
 }
 link {
   font-family:OpenSans;
@@ -539,22 +680,22 @@ link {
 .border-color-danger {
   border-color:hsl(358,80%,46%);
 }
-.border-round-xs {
+.border-radius-xs {
   border-radius:1px;
 }
-.border-round-s {
+.border-radius-s {
   border-radius:2px;
 }
-.border-round-m {
+.border-radius-m {
   border-radius:3px;
 }
-.border-round-l {
+.border-radius-l {
   border-radius:4px;
 }
-.border-round-xl {
+.border-radius-xl {
   border-radius:5px;
 }
-.border-round-none {
+.border-radius-none {
   border-radius:0px;
 }
 .border-size-top-xs {
@@ -881,77 +1022,29 @@ link {
 .shadow-s {
   box-shadow:0 1px 5px rgba(14,18,37,.25);
 }
-.icon-administration {
-  background-image:url(../gfx/icons/administration.svg);
+.icon-size-xs {
+  width:1.6rem;
+  height:1.6rem;
 }
-.icon-analytics {
-  background-image:url(../gfx/icons/analytics.svg);
+.icon-size-s {
+  width:2.0rem;
+  height:2.0rem;
 }
-.icon-calendar {
-  background-image:url(../gfx/icons/calendar.svg);
+.icon-size-m {
+  width:2.4rem;
+  height:2.4rem;
 }
-.icon-close {
-  background-image:url(../gfx/icons/close.svg);
+.icon-size-l {
+  width:3.2rem;
+  height:3.2rem;
 }
-.icon-collapseExpand {
-  background-image:url(../gfx/icons/collapse-expand.svg);
+.icon-size-xl {
+  width:4rem;
+  height:4rem;
 }
-.icon-dailyRoster {
-  background-image:url(../gfx/icons/daily-roster.svg);
-}
-.icon-dataIntelligence {
-  background-image:url(../gfx/icons/data-intelligence.svg);
-}
-.icon-demographics {
-  background-image:url(../gfx/icons/demographics.svg);
-}
-.icon-events {
-  background-image:url(../gfx/icons/events.svg);
-}
-.icon-home {
-  background-image:url(../gfx/icons/home.svg);
-}
-.icon-hydrants {
-  background-image:url(../gfx/icons/hydrants.svg);
-}
-.icon-incidents {
-  background-image:url(../gfx/icons/incidents.svg);
-}
-.icon-inventory {
-  background-image:url(../gfx/icons/inventory.svg);
-}
-.icon-invoicing {
-  background-image:url(../gfx/icons/invoicing.svg);
-}
-.icon-library {
-  background-image:url(../gfx/icons/library.svg);
-}
-.icon-maintenance {
-  background-image:url(../gfx/icons/maintenance.svg);
-}
-.icon-messageCenter {
-  background-image:url(../gfx/icons/message-center.svg);
-}
-.icon-myProfile {
-  background-image:url(../gfx/icons/my-profile.svg);
-}
-.icon-occupancies {
-  background-image:url(../gfx/icons/occupancies.svg);
-}
-.icon-payroll {
-  background-image:url(../gfx/icons/payroll.svg);
-}
-.icon-reports {
-  background-image:url(../gfx/icons/reports.svg);
-}
-.icon-roster {
-  background-image:url(../gfx/icons/roster.svg);
-}
-.icon-shifts {
-  background-image:url(../gfx/icons/shifts.svg);
-}
-.icon-training {
-  background-image:url(../gfx/icons/training.svg);
+.icon-size-xxl {
+  width:4.8rem;
+  height:4.8rem;
 }
 .margin-xs {
   margin:1.4rem;
@@ -1471,7 +1564,7 @@ link {
   line-height:4rem;
 }
 .text-height-xxl {
-  line-height:5rem;
+  line-height:4.8rem;
 }
 .text-indent-xs {
   text-indent:0.5rem;
@@ -1504,7 +1597,7 @@ link {
   font-size:1.4rem;
 }
 .text-size-l {
-  font-size:2.0rem;
+  font-size:1.8rem;
 }
 .text-size-xl {
   font-size:2.4rem;
