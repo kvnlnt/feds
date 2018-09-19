@@ -9,8 +9,8 @@ const unCamelCase = (str, separator = "-") =>
  */
 const compileJavascriptToCSS = (
   obj,
-  maxTraverse = 1000,
   prefix = ".",
+  maxTraverse = 1000,
   stack = "",
   css = {},
   curLevel = 1
@@ -19,8 +19,8 @@ const compileJavascriptToCSS = (
     if (typeof obj[p] == "object" && curLevel <= maxTraverse) {
       compileJavascriptToCSS(
         obj[p],
-        maxTraverse,
         prefix,
+        maxTraverse,
         stack + (stack ? "-" : prefix) + p,
         css,
         curLevel + 1

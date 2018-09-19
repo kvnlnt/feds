@@ -10,3 +10,13 @@ module.exports = {
     ...atoms.border.size.none
   }
 };
+
+// "a": [
+//   ".text-font",
+//   ".text-color-primary",
+//   ".cursor-pointer",
+//   ".text-size-m",
+//   ".text-underline-none",
+//   ".inline-block",
+//   ".bdr-none"
+// ],

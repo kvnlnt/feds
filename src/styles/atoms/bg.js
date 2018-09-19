@@ -9,9 +9,6 @@ module.exports = {
       black: {
         backgroundColor: `${params.color.black}`
       },
-      grey: {
-        backgroundColor: `${params.color.grey}`
-      },
       black: { backgroundColor: `${params.color.black}` },
       blackHalf: { backgroundColor: `${params.color.black - 50}` },
       danger: { backgroundColor: `${params.color.red}` },
@@ -19,7 +16,7 @@ module.exports = {
         xxl: { backgroundColor: `${params.color.greyLight12}` },
         xl: { backgroundColor: `${params.color.greyLight30}` },
         l: { backgroundColor: `${params.color.greyLight}` },
-        l: { backgroundColor: `${params.color.grey}` }
+        m: { backgroundColor: `${params.color.grey}` }
       },
       primary: {
         xl: { backgroundColor: `${params.color.lightBlue}` },

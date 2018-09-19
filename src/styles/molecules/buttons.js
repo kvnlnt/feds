@@ -17,34 +17,70 @@ module.exports = {
     ...atoms.text.underline.none
   },
   ".button:focus": {
-    ...atoms.bg.secondary,
+    ...atoms.bg.color.secondary,
     ...atoms.anim.speed.fast,
     ...atoms.text.color.white
+  },
+  ".button:hover": {
+    ...atoms.bg.color.secondary,
+    ...atoms.anim.speed.fast,
+    ...atoms.text.color.white
+  },
+  ".button:active": {
+    ...atoms.opac["70"],
+    ...atoms.anim.speed.fast,
+    ...atoms.shadow.s
+  },
+  ".button.disabled": {
+    ...atoms.bg.color.grey.m,
+    ...atoms.opac["50"],
+    ...atoms.border.color.grey.m
+  },
+  ".button.disabled:hover": {
+    ...atoms.bg.color.grey.m,
+    ...atoms.opac["50"]
+  },
+  ".button.disabled:active": {
+    ...atoms.bg.color.grey.m,
+    ...atoms.opac["50"]
+  },
+  ".button.large": { ...atoms.text.size.l, ...atoms.text.height.l },
+  ".button.medium": { ...atoms.text.size.m, ...atoms.text.height.m },
+  ".button.small": { ...atoms.text.size.s, ...atoms.text.height.s },
+  ".button.danger": {
+    ...atoms.text.color.white,
+    ...atoms.bg.color.danger,
+    ...atoms.border.color.danger
+  },
+  ".button.danger:hover": {
+    ...atoms.bg.color.white,
+    ...atoms.text.color.white
+  },
+  ".button.danger:active": { ...atoms.opac["50"] },
+  ".button.secondary": {
+    ...atoms.text.color.secondary,
+    ...atoms.bg.color.white
+  },
+  ".button.link": {
+    ...atoms.text.color.primary.m,
+    ...atoms.bg.color.white,
+    ...atoms.border.size.none
+  },
+  ".button.secondary:hover": {
+    ...atoms.bg.color.secondary,
+    ...atoms.anim.speed.fast,
+    ...atoms.text.color.white
+  },
+  ".button.secondary:active": {
+    ...atoms.text.color.primary.m,
+    ...atoms.bg.color.white,
+    ...atoms.shadow.s
+  },
+  ".button.secondary.disabled, .button.secondary.disabled:hover, .button.secondary.disabled:active": {
+    ...atoms.text.color.grey.m,
+    ...atoms.border.size.xs,
+    ...atoms.border.color.grey.l,
+    ...atoms.bg.color.white,
+    ...atoms.opac["100"]
   }
-  // ".button:hover": [".bg-secondary", ".anim-speed-fast", ".text-color-white"],
-  // ".button:active": [".opac-70", ".anim-speed-fast", ".shadow-s"],
-  // ".button.disabled": [".bg-grey", ".opac-50", ".bdr-color-grey-l"],
-  // ".button.disabled:hover": [".bg-grey", ".opac-50"],
-  // ".button.disabled:active": [".bg-grey", ".opac-50"],
-  // ".button.large": [".text-size-l", ".text-height-xxl"],
-  // ".button.medium": [".text-height-l"],
-  // ".button.small": [".text-height-m"],
-  // ".button.danger": [".text-color-white", ".bg-danger", ".bdr-color-danger"],
-  // ".button.danger:hover": [".bg-white", ".text-color-danger"],
-  // ".button.danger:active": [".opac-50"],
-  // ".button.secondary": [".text-color-primary", ".bg-white"],
-  // ".button.link": [".text-color-primary", ".bg-white", ".bdr-none"],
-  // ".button.secondary:hover": [
-  //   ".bg-secondary",
-  //   ".anim-speed-fast",
-  //   ".text-color-white"
-  // ],
-  // ".button.secondary:active": [".text-color-primary", ".bg-white", ".shadow-s"],
-  // ".button.secondary.disabled, .button.secondary.disabled:hover, .button.secondary.disabled:active": [
-  //   ".text-color-grey",
-  //   ".bdr-xs",
-  //   ".bdr-color-grey-l",
-  //   ".bg-white",
-  //   ".opac-100"
-  // ]
 };

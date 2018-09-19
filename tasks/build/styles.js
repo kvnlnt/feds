@@ -2,8 +2,10 @@ const fs = require("fs");
 const config = require("../../feds.json");
 const util = require("../lib/util");
 const compiler = require("../lib/compiler");
-const atoms = require("../../src/styles/atoms/atoms.js");
-const molecules = require("../../src/styles/molecules/molecules.js");
+const fonts = require("../../src/styles/lib/fonts");
+const normalize = require("../../src/styles/lib/normalize");
+const atoms = require("../../src/styles/atoms/atoms");
+const molecules = require("../../src/styles/molecules/molecules");
 const build = `/* Build: ${config.name}.${config.version}.${config.build +
   1} */`;
 
@@ -11,11 +13,17 @@ const build = `/* Build: ${config.name}.${config.version}.${config.build +
 console.time(util.ok("Styles"));
 
 // compile
+const compiledFonts = fonts;
+const compiledNormalized = compiler.compileJavascriptToCSS(normalize, "");
 const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
-const compiledMolecules = compiler.compileJavascriptToCSS(molecules, 1, "");
+const compiledMolecules = compiler.compileJavascriptToCSS(molecules, "", 1);
 
 // render
-const styles = `${build}\n${compiledMolecules}${compiledAtoms}`;
+const styles = `${build}
+${compiledNormalized}
+${compiledFonts}
+${compiledMolecules}
+${compiledAtoms}`;
 const stylesMin = styles.replace(/\s/g, "");
 
 // files

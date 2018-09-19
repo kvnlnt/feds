@@ -35,7 +35,7 @@ module.exports = {
    */
   h1: {
     fontSize: "2em",
-    margin: [["0.67em", 0]]
+    margin: "0.67em"
   },
 
   /**
@@ -218,8 +218,8 @@ module.exports = {
    */
   fieldset: {
     border: "1px solid #c0c0c0",
-    margin: [[0, "2px"]],
-    padding: [["0.35em", "0.625em", "0.75em"]]
+    margin: "0, 2px",
+    padding: "0.35em, 0.625em, 0.75em"
   },
 
   /**
