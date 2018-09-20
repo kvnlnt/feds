@@ -1,7 +1,7 @@
 const atoms = require("../atoms/atoms");
 
 module.exports = {
-  ".column": { ...atoms.flex.dir.col },
+  ".column": { ...atoms.flex.col },
   ".column.half": { ...atoms.flex.col.half },
   ".column.full": { ...atoms.flex.col.full },
   ".column.third": { ...atoms.flex.col.third },

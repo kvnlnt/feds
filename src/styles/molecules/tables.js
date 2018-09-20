@@ -1,53 +1,72 @@
 const atoms = require("../atoms/atoms");
 
-module.exports = {};
-
-// "table": [".width-full", ".bdr-collapse"],
-//   "table td": [".bdr-bot-xs", ".bdr-color-grey-xl", ".pad-xs", ".text-size-m"],
-//   "table th": [
-//     ".bdr-bot-xs",
-//     ".bdr-color-grey-l",
-//     ".text-font-bold",
-//     ".text-size-s",
-//     ".text-case-upper",
-//     ".text-space-s",
-//     ".text-align-left",
-//     ".text-font-bold",
-//     ".pad-xs"
-//   ],
-//   "table.pivot": [".flex", ".hide-overflow"],
-//   "table.pivot thead": [
-//     "display: flex",
-//     "flex-shrink: 0",
-//     "min-width: min-content"
-//   ],
-//   "table.pivot tbody": [
-//     "display: flex",
-//     "position: relative",
-//     "overflow-x: auto",
-//     "overflow-y: hidden"
-//   ],
-//   "table.pivot tr": [
-//     "display: flex",
-//     "flex-direction: column",
-//     "min-width: min-content",
-//     "flex-shrink: 0"
-//   ],
-//   "table.pivot td, table.pivot th": ["display: block", "font-size:1.3rem"],
-//   "table.wrap, table.wrap tbody": [".block"],
-//   "table.wrap thead": [".hide"],
-//   "table.wrap tr": [".flex", ".flex-dir-col", ".margin-bot-m"],
-//   "table.wrap td": [""],
-//   "table.wrap td:before": [
-//     "content:attr(title)",
-//     ".block",
-//     ".width-half",
-//     "float:left",
-//     ".text-font-bold",
-//     ".text-size-s",
-//     ".text-case-upper",
-//     ".text-space-s",
-//     ".text-align-left",
-//     ".text-font-bold",
-//     ".pad-rgt-s"
-//   ],
+module.exports = {
+  table: { ...atoms.width.full, borderCollapse: "collapse" },
+  "table td": {
+    ...atoms.border.size.bot.xs,
+    ...atoms.border.color.grey.xl,
+    ...atoms.border.style.solid.bot,
+    ...atoms.pad.xs,
+    ...atoms.text.size.m
+  },
+  "table th": {
+    ...atoms.border.size.bot.xs,
+    ...atoms.border.color.grey.l,
+    ...atoms.border.style.solid.bot,
+    ...atoms.text.font.primary.bold,
+    ...atoms.text.size.s,
+    ...atoms.text.case.upper,
+    ...atoms.text.space.s,
+    ...atoms.text.align.left,
+    ...atoms.pad.xs
+  },
+  "table.pivot": {
+    ...atoms.display.flex,
+    ...atoms.display.overflow.hide
+  },
+  "table.pivot thead": {
+    ...atoms.display.flex,
+    flexShrink: 0,
+    minWidth: "min-content"
+  },
+  "table.pivot tbody": {
+    ...atoms.display.flex,
+    ...atoms.position.rel,
+    ...atoms.display.overflow.x.auto,
+    ...atoms.display.overflow.y.hidden,
+    flex: 1
+  },
+  "table.pivot tr": {
+    ...atoms.display.flex,
+    ...atoms.flex.dir.col,
+    minWidth: "min-content",
+    flex: 1
+  },
+  "table.pivot td, table.pivot th": {
+    ...atoms.display.block,
+    ...atoms.text.size.s
+  },
+  "table.wrap, table.wrap tbody": {
+    ...atoms.display.block
+  },
+  "table.wrap thead": {
+    ...atoms.display.hide
+  },
+  "table.wrap tr": {
+    ...atoms.display.flex,
+    ...atoms.flex.dir.col,
+    ...atoms.margin.bot.m
+  },
+  "table.wrap td:before": {
+    ...atoms.content.data.title,
+    ...atoms.display.block,
+    ...atoms.width.half,
+    ...atoms.text.font.primary.bold,
+    ...atoms.text.size.s,
+    ...atoms.text.case.upper,
+    ...atoms.text.space.s,
+    ...atoms.text.align.left,
+    ...atoms.pad.right.s,
+    float: "left"
+  }
+};

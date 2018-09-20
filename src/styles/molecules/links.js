@@ -3,7 +3,7 @@ const atoms = require("../atoms/atoms");
 module.exports = {
   a: {
     ...atoms.text.font.primary,
-    ...atoms.text.color.primary.m,
+    ...atoms.text.color.primary,
     ...atoms.text.size.m,
     ...atoms.text.underline.none,
     ...atoms.display.inline.block,

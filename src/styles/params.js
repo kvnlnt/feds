@@ -11,7 +11,7 @@ module.exports = {
     greyLight30: "rgba(202,206,217,.3)",
     greyLight12: "rgba(202,206,217,.12)",
     grey: "hsl(219, 22%, 25%)",
-    lightBlueLight: "hsl(0,0%,100%)",
+    lightBlueLight: "hsl(212, 100%, 60%)",
     lightBlue: "hsl(212,74%,93%)",
     lightGreyLight: "hsl(222,17%,88%)",
     lightGreyWhiten: "hsl(240,14%,99%)",

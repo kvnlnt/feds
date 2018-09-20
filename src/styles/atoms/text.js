@@ -31,26 +31,22 @@ module.exports = {
         color: `${params.color.red}`
       },
       grey: {
-        xxl: {
-          color: `${params.color.greyLight12}`
+        color: `${params.color.grey}`,
+        l: {
+          color: `${params.color.greyLight}`
         },
         xl: {
           color: `${params.color.greyLight30}`
         },
-        l: {
-          color: `${params.color.greyLight}`
-        },
-        m: {
-          color: `${params.color.grey}`
+        xxl: {
+          color: `${params.color.greyLight12}`
         }
       },
       info: {
         color: `${params.color.blue}`
       },
       primary: {
-        m: {
-          color: `${params.color.blue}`
-        },
+        color: `${params.color.blue}`,
         l: {
           color: `${params.color.blueLight}`
         }

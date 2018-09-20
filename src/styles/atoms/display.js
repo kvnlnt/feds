@@ -24,6 +24,22 @@ module.exports = {
     overflow: {
       hide: {
         overflow: "hidden"
+      },
+      x: {
+        auto: {
+          overflowX: "auto"
+        },
+        hidden: {
+          overflowX: "hidden"
+        }
+      },
+      y: {
+        auto: {
+          overflowY: "auto"
+        },
+        hidden: {
+          overflowY: "hidden"
+        }
       }
     },
     table: {

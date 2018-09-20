@@ -13,15 +13,15 @@ module.exports = {
       blackHalf: { backgroundColor: `${params.color.black - 50}` },
       danger: { backgroundColor: `${params.color.red}` },
       grey: {
+        backgroundColor: `${params.color.grey}`,
         xxl: { backgroundColor: `${params.color.greyLight12}` },
         xl: { backgroundColor: `${params.color.greyLight30}` },
-        l: { backgroundColor: `${params.color.greyLight}` },
-        m: { backgroundColor: `${params.color.grey}` }
+        l: { backgroundColor: `${params.color.greyLight}` }
       },
       primary: {
+        backgroundColor: `${params.color.blue}`,
         xl: { backgroundColor: `${params.color.lightBlue}` },
-        l: { backgroundColor: `${params.color.lightBlueLight}` },
-        m: { backgroundColor: `${params.color.blue}` }
+        l: { backgroundColor: `${params.color.lightBlueLight}` }
       },
       secondary: { backgroundColor: `${params.color.blueDark}` },
       success: { backgroundColor: `${params.color.green}` },

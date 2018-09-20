@@ -12,19 +12,17 @@ module.exports = {
   code: {
     ...atoms.text.font.monospace,
     ...atoms.text.size.s
+  },
+  pre: {
+    ...atoms.text.pre
+  },
+  small: {
+    ...atoms.text.size.s
+  },
+  strong: {
+    ...atoms.text.font.primary.bold,
+    em: {
+      ...atoms.text.font.primary.bold.italic
+    }
   }
 };
-
-// "code": [".text-font-monospace", ".text-size-s"],
-// "p": [
-//   ".text-font",
-//   ".text-size-m",
-//   ".text-height-m",
-//   ".text-space-xs",
-//   ".margin-vert-s"
-// ],
-// "pre": [".text-preformat"],
-// "blockquote": [""],
-// "small": [".text-size-s"],
-//   "strong": [".text-font-bold"],
-//   "strong > em, em > strong": [".text-font-bold-italic"],

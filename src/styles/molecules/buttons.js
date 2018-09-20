@@ -5,7 +5,7 @@ module.exports = {
     ...atoms.border.size.xs,
     ...atoms.border.color.primary,
     ...atoms.border.radius.l,
-    ...atoms.bg.color.primary.m,
+    ...atoms.bg.color.primary,
     ...atoms.display.block.inline,
     ...atoms.pad.left.s,
     ...atoms.pad.right.s,
@@ -34,16 +34,16 @@ module.exports = {
     ...atoms.shadow.s
   },
   ".button.disabled": {
-    ...atoms.bg.color.grey.m,
+    ...atoms.bg.color.grey,
     ...atoms.opac["50"],
-    ...atoms.border.color.grey.m
+    ...atoms.border.color.grey
   },
   ".button.disabled:hover": {
-    ...atoms.bg.color.grey.m,
+    ...atoms.bg.color.grey,
     ...atoms.opac["50"]
   },
   ".button.disabled:active": {
-    ...atoms.bg.color.grey.m,
+    ...atoms.bg.color.grey,
     ...atoms.opac["50"]
   },
   ".button.large": { ...atoms.text.size.l, ...atoms.text.height.xxl },
@@ -64,7 +64,7 @@ module.exports = {
     ...atoms.bg.color.white
   },
   ".button.link": {
-    ...atoms.text.color.primary.m,
+    ...atoms.text.color.primary,
     ...atoms.bg.color.white,
     ...atoms.border.size.none
   },
@@ -74,12 +74,12 @@ module.exports = {
     ...atoms.text.color.white
   },
   ".button.secondary:active": {
-    ...atoms.text.color.primary.m,
+    ...atoms.text.color.primary,
     ...atoms.bg.color.white,
     ...atoms.shadow.s
   },
   ".button.secondary.disabled, .button.secondary.disabled:hover, .button.secondary.disabled:active": {
-    ...atoms.text.color.grey.m,
+    ...atoms.text.color.grey,
     ...atoms.border.size.xs,
     ...atoms.border.color.grey.l,
     ...atoms.bg.color.white,

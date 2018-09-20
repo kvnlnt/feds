@@ -4,10 +4,10 @@ const borderColor = prop => {
   return {
     black: { [prop]: `${params.color.black}` },
     grey: {
-      xxl: { [prop]: `${params.color.greyLightAt12}` },
-      xl: { [prop]: `${params.color.greyLightAt12}` },
-      l: { [prop]: `${params.color.greyLight}` },
-      m: { [prop]: `${params.color.grey}` }
+      [prop]: `${params.color.grey}`,
+      xxl: { [prop]: `${params.color.greyLight30}` },
+      xl: { [prop]: `${params.color.greyLight30}` },
+      l: { [prop]: `${params.color.greyLight}` }
     },
     primary: { [prop]: `${params.color.blue}` },
     white: { [prop]: `${params.color.white}` },
@@ -17,11 +17,11 @@ const borderColor = prop => {
 
 const borderSize = prop => {
   return {
-    xs: { [prop]: "1px", borderStyle: "solid" },
-    s: { [prop]: "2px", borderStyle: "solid" },
-    m: { [prop]: "3px", borderStyle: "solid" },
-    l: { [prop]: "4px", borderStyle: "solid" },
-    xl: { [prop]: "5px", borderStyle: "solid" },
+    xs: { [prop]: "1px" },
+    s: { [prop]: "2px" },
+    m: { [prop]: "3px" },
+    l: { [prop]: "4px" },
+    xl: { [prop]: "5px" },
     none: {
       [prop]: 0,
       borderStyle: "none"
@@ -59,6 +59,23 @@ module.exports = {
         right: borderSize("borderRightWidth")
       },
       borderSize("borderWidth")
-    )
+    ),
+    style: {
+      solid: {
+        borderStyle: "solid",
+        bot: {
+          borderBottomStyle: "solid"
+        },
+        top: {
+          borderTopStyle: "solid"
+        },
+        left: {
+          borderLeftStyle: "solid"
+        },
+        right: {
+          borderRightStyle: "solid"
+        }
+      }
+    }
   }
 };

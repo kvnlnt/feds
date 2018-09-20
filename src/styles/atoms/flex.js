@@ -1,21 +1,8 @@
 const params = require("../params.js");
 module.exports = {
   flex: {
-    basis: {
-      half: {
-        flexBasis: "50%"
-      },
-      third: {
-        flexBasis: "33.3333%"
-      },
-      fourth: {
-        flexBasis: "25%"
-      },
-      fifth: {
-        flexBasis: "20%"
-      }
-    },
     col: {
+      flex: 1,
       full: {
         flexBasis: "100%"
       },
