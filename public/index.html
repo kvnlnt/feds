@@ -91,32 +91,32 @@ pre .regexp {
                 observable: window,
                 event: feds.Responsifier.SCROLL,
                 range: [0, 199],
-                add: ["pos-bottom-hide"],
-                remove: ["pos-bottom-s"]
+                add: ["position-bot-hide"],
+                remove: ["position-bot-s"]
             })
             .add({
                 observer: "#top",
                 observable: window,
                 event: feds.Responsifier.SCROLL,
                 range: [200, "*"],
-                add: ["pos-bottom-s"],
-                remove: ["pos-bottom-hide"]
+                add: ["position-bot-s"],
+                remove: ["position-bot-hide"]
             })
             .add({
                 observer: "#top",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [0, 999],
-                add: ["hide"],
-                lock: ["hide"]
+                add: ["display-hide"],
+                lock: ["display-hide"]
             })
             .add({
                 observer: "#top",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [1000, "*"],
-                remove: ["hide"],
-                unlock: ["hide"]
+                remove: ["display-hide"],
+                unlock: ["display-hide"]
             })
             // LAYOUT
             .add({
@@ -139,40 +139,40 @@ pre .regexp {
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [0, 999],
-                remove: ["hide"]
+                remove: ["display-hide"]
             })
             .add({
                 observer: "#menuToggle",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [1000, "*"],
-                add: ["hide"]
+                add: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: "#menuToggle",
                 event: feds.Responsifier.CLICK,
-                toggle: ["hide"]
+                toggle: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [0, 999],
-                add: ["hide"]
+                add: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [1000, "*"],
-                remove: ["hide"]
+                remove: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: "#mainMenu a",
                 event: feds.Responsifier.CLICK,
-                toggle: ["hide"],
+                toggle: ["display-hide"],
                 condition: function (r, e) {
                     return document
                         .querySelector("#layout")
@@ -219,16 +219,16 @@ pre .regexp {
                 e.preventDefault();
                 window.location.hash = href;
                 sections.forEach(function (ii) {
-                    ii.classList.add("hide");
+                    ii.classList.add("display-hide");
                 });
-                document.querySelector(href).classList.remove("hide");
+                document.querySelector(href).classList.remove("display-hide");
                 window.scrollTo(0, 0);
             });
         });
         if (window.location.hash) {
-            document.querySelector(window.location.hash).classList.remove("hide");
+            document.querySelector(window.location.hash).classList.remove("display-hide");
         } else {
-            document.querySelector("#About").classList.remove("hide")
+            document.querySelector("#About").classList.remove("display-hide")
         }
     }
 
@@ -255,9 +255,9 @@ pre .regexp {
     window.addEventListener("hashchange", function () {
         var sections = [].slice.call(document.querySelectorAll("section"));
         sections.forEach(function (ii) {
-            ii.classList.add("hide");
+            ii.classList.add("display-hide");
         });
-        document.querySelector(window.location.hash).classList.remove("hide");
+        document.querySelector(window.location.hash).classList.remove("display-hide");
         scrollToTop();
     }, false);
 </script>
@@ -271,63 +271,61 @@ pre .regexp {
 </head>
 
 <body>
-    <div class="text-size-xs pos-abs pos-top-s pos-right-s text-height-s">
+    <div class="text-size-xs position-abs position-top-s position-right-s text-height-s">
         <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" style="float:left"
-            class="mrgn-rgt-xs">
+            class="margin-right-xs">
         <span class="opac-30">
-            1.0.0.344</span>
+            1.0.0.378</span>
     </div>
-    <a id="top" onclick="scrollToTop()" class="button secondary medium pos-fix pos-bottom-hide pos-left-s z-infinite anim-speed-med"
+    <a id="top" onclick="scrollToTop()" class="button secondary medium position-fix position-bot-hide position-left-s z-infinite anim-speed-med"
         onclick="document.body.scrollTop=0">TOP</a>
-    <div id="menuToggle" class="pos-fix hide top-right pos-right-none pos-left-none z-infinite">
-        <a href="#layout" class="button bg-primary text-align-right block border-radius-none">&#x2630;</a>
+    <div id="menuToggle" class="position-fix display-hide top-right position-right-none position-left-none z-infinite">
+        <a href="#layout" class="button bg-primary text-align-right display-block border-radius-none">&#x2630;</a>
     </div>
-    <div id="layout" class="columns bg-grey-xxl" style="min-height:100vh">
-        <aside id="mainMenu" class="column pad-m bg-grey-xl" style="flex: 0 0 150px;padding-bottom:70px">
-            <a href="#About" class="nav-item"><img src="gfx/er-logo.svg" style="pointer-events: none" /></a>
-            <p class="text-size-xs text-style-bold mrgn-vert-none">Frontend Design System</p>
-            <hr class="mrgn-vert-xs" />
+    <div id="layout" class="columns bg-color-grey-xxl" style="min-height:100vh">
+        <aside id="mainMenu" class="column pad-m bg-color-grey-xl" style="flex: 0 0 150px; padding-bottom:70px">
+            <a href="#About" class="nav-item"><img src="gfx/er-logo.svg" style="pointer-events-none" /></a>
+            <p class="text-size-xs text-font-primary-bold margin-top-none margin-bot-none">Frontend Design System</p>
+            <hr class="margin-top-xs margin-bot-xs" />
             <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">General</h3>
-<a href="#About" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">About</a>
-<a href="#Concepts" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Concepts</a>
-<a href="#Compatibility" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Compatibility</a>
-<a href="#Compliance" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Compliance</a>
-<a href="#Refactoring" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Refactoring</a>
-<a href="#Repo" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Repo</a>
+<a href="#About" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">About</a>
+<a href="#Concepts" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Concepts</a>
+<a href="#Compatibility" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Compatibility</a>
+<a href="#Compliance" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Compliance</a>
+<a href="#Refactoring" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Refactoring</a>
+<a href="#Repo" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Repo</a>
 <h3 class="text-size-xs text-color-grey opac-60">CSS</h3>
-<a href="#Atoms" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Atoms</a>
-<a href="#Buttons" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Buttons</a>
-<a href="#Colors" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Colors</a>
-<a href="#Columns" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Columns</a>
-<a href="#Forms" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Forms</a>
-<a href="#Icons" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Icons</a>
-<a href="#Indicators" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Indicators</a>
-<a href="#Lists" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Lists</a>
-<a href="#Navigations" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Menus</a>
-<a href="#Modals" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Modals</a>
-<a href="#Messaging" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Messaging</a>
-<a href="#Tables" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tables</a>
-<a href="#Tabs" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tabs</a>
-<a href="#Tooltip" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Tooltip</a>
-<a href="#Typography" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Typography</a>
+<a href="#Atoms" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Atoms</a>
+<a href="#Buttons" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Buttons</a>
+<a href="#Colors" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Colors</a>
+<a href="#Columns" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Columns</a>
+<a href="#Forms" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Forms</a>
+<a href="#Icons" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Icons</a>
+<a href="#Indicators" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Indicators</a>
+<a href="#Lists" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Lists</a>
+<a href="#Navigations" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Menus</a>
+<a href="#Modals" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Modals</a>
+<a href="#Messaging" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Messaging</a>
+<a href="#Tables" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tables</a>
+<a href="#Tabs" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tabs</a>
+<a href="#Tooltip" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tooltip</a>
+<a href="#Typography" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Typography</a>
 <h3 class="text-size-xs text-color-grey text-case-upper opac-60">Javascript</h3>
-<a href="#Polyfills" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Polyfills</a>
-<a href="#Reifier" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Reifier</a>
-<a href="#Responsifier" class="nav-item text-size-m text-color-black text-height-l text-indent-2 block">Responsifier</a>
+<a href="#Polyfills" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Polyfills</a>
+<a href="#Reifier" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Reifier</a>
+<a href="#Responsifier" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Responsifier</a>
         </aside>
-        <div id="layout-content" class="column pad-m" style="max-width:900px">
+        <div id="layout-content" class="column pad-m" style="flex: 1;">
 
             <!-- GENERAL -->
 
-            <section class="pad-top-l hide" id="About">
-    <h2 class="mrgn-top-none">About the ER Frontend Design System</h2>
+            <section class="pad-top-l display-hide" id="About">
+    <h2 class="margin-top-none">About the ER Frontend Design System</h2>
     <h3>FEDS (Frontend Design System)</h3>
     <p>
-        FEDS is a Design System developed for Emergency Reporting for the purpose of standardizing it's use
-        of CSS and Javascript.
-        It's goal is to create well a defined toolkit of reusable standards based styles and components
-        that
-        leverage native platform functionality.
+        FEDS is a Design System developed for Emergency Reporting for the purpose of standardizing it's use of CSS and Javascript.
+        It's goal is to create well a defined toolkit of reusable standards based styles and components that leverage native
+        platform functionality.
     </p>
     <h3>Toolkit Includes:</h3>
     <ul>
@@ -351,10 +349,10 @@ pre .regexp {
         <a href="#Concepts" class="nav-item">Concepts</a>. To checkout the source code, head over to:
         <a href="https://github.com/kvnlnt/feds">https://github.com/kvnlnt/feds</a>
     </p>
-    <a href="#Concepts" class="nav-item button mrgn-vert-s">Concepts</a>
+    <a href="#Concepts" class="nav-item button margin-vert-s">Concepts</a>
 </section>
-            <section class="pad-top-l hide" id="Concepts">
-    <h2 class="mrgn-top-none">Concepts</h2>
+            <section class="pad-top-l display-hide" id="Concepts">
+    <h2 class="margin-top-none">Concepts</h2>
     <ul>
         <li>
             <a href="#AtomicDesign">Atomic Design</a>
@@ -404,14 +402,13 @@ pre .regexp {
         <li>
             <a href="http://cardinalcss.com/">Cardinal Css</a> - A great CSS framework</li>
         <li>
-            <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a> - #1
-            requested feature of web devs</li>
+            <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a> - #1 requested feature
+            of web devs</li>
         <li>
             <a href="http://tachyons.io/">Tachyons</a> - An "atomic" CSS Framework</li>
         <li>
-            <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not
-                Need A CSS Framework</a> - How CSS frameworks might not be the best fit for complex
-            projects
+            <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not Need A CSS Framework</a>
+            - How CSS frameworks might not be the best fit for complex projects
         </li>
         <li>
             <a href="http://youmightnotneedjs.com/">You Might Not Need Js</a> - Speaks for itself
@@ -421,8 +418,8 @@ pre .regexp {
         </li>
     </ul>
 </section>
-            <section class="pad-top-l hide" id="Compatibility">
-    <h2 class="mrgn-top-none">Compatibility</h2>
+            <section class="pad-top-l display-hide" id="Compatibility">
+    <h2 class="margin-top-none">Compatibility</h2>
     <h3>Devices/Browsers</h3>
     <h4>Support Matrix</h4>
     <ul>
@@ -467,35 +464,39 @@ pre .regexp {
     <h3>Javascript</h3>
     <h4>Modules</h4>
 </section>
-            <section class="pad-top-l hide" id="Compliance">
-    <h2 class="mrgn-top-none">Compliance</h2>
+            <section class="pad-top-l display-hide" id="Compliance">
+    <h2 class="margin-top-none">Compliance</h2>
     <h3>W3C</h3>
     <h3>Accessibility</h3>
     <h3>Legal</h3>
 </section>
-            <section class="pad-top-l hide " id="Refactoring">
-    <h2 class="mrgn-top-none">Refactoring</h2>
+            <section class="pad-top-l display-hide " id="Refactoring">
+    <h2 class="margin-top-none">Refactoring</h2>
     <p>
         TODO
     </p>
 </section>
-            <section class="pad-top-l hide" id="Repo">
-    <h2 class="mrgn-top-none">Repo</h2>
-   <p>Repo is hosted internally at: <a href="https://reportingsystemsinc.visualstudio.com/Development/_git/feds">FEDS</a></p>
+            <section class="pad-top-l display-hide" id="Repo">
+    <h2 class="margin-top-none">Repo</h2>
+    <p>Repo is hosted internally at: <a href="https://reportingsystemsinc.visualstudio.com/Development/_git/feds">FEDS</a></p>
 </section>
 
             <!-- CSS -->
 
-            <section class="pad-top-l hide" id="Atoms">
-    <h2 class="mrgn-top-none">Atoms</h2>
+            <section class="pad-top-l display-hide" id="Atoms">
+    <h2 class="margin-top-none">Atoms</h2>
     <p>
-        Atoms are simple css classes designed to be aggregated together. A preset pattern of atoms is called a <em>Molecule</em>. Molecules are themselves css classes that serve as the base theme. For example: there exists a <em>.columns</em> class which is a composition of atoms based on flexbox. Applying the <em>.columns</em> class gives you everything you need out the box to work with a flexbox based grid. Atoms can then be further applied to elements to overwrite this default base theme behavior.
+        Atoms are simple css classes designed to be aggregated together. A preset pattern of atoms is called a <em>Molecule</em>.
+        Molecules are themselves css classes that serve as the base theme. For example: there exists a <em>.columns</em>
+        class which is a composition of atoms based on flexbox. Applying the <em>.columns</em> class gives you everything
+        you need out the box to work with a flexbox based grid. Atoms can then be further applied to elements to overwrite
+        this default base theme behavior.
     </p>
     <pre><code data-language="css"><!-- ATOMS --></code>
     </pre>
 </section>
-            <section class="pad-top-l hide" id="Buttons">
-    <h2 class="mrgn-top-none">Buttons</h2>
+            <section class="pad-top-l display-hide" id="Buttons">
+    <h2 class="margin-top-none">Buttons</h2>
     <h3>Types</h3>
     <div class="box">
         <div class="columns spacing-s">
@@ -531,15 +532,15 @@ pre .regexp {
                 <a class="button large">Take Action</a>
                 <p>.large</p>
             </div>
-            <div class="column mrgn-bot-s">
+            <div class="column margin-bot-s">
                 <a class="button">Take Action</a>
                 <p class="text-color-grey-l">default</p>
             </div>
-            <div class="column mrgn-bot-s">
+            <div class="column margin-bot-s">
                 <a class="button medium">Take Action</a>
                 <p>.medium</p>
             </div>
-            <div class="column mrgn-bot-s">
+            <div class="column margin-bot-s">
                 <a class="button small">Take Action</a>
                 <p>.small</p>
             </div>
@@ -554,20 +555,20 @@ pre .regexp {
     </pre>
     <h3>States</h3>
     <div class="box">
-        <div class="columns">
-            <div class="column mrgn-bot-s">
+        <div class="columns spacing-s">
+            <div class="column margin-bot-s">
                 <a class="button">Take Action</a>
                 <p class="text-color-grey-l">default</p>
             </div>
-            <div class="column mrgn-bot-s">
+            <div class="column margin-bot-s">
                 <a class="button disabled">Take Action</a>
                 <p>.disabled</p>
             </div>
-            <div class="column mrgn-bot-s">
+            <div class="column margin-bot-s">
                 <a class="button secondary">Take Action</a>
                 <p>.secondary</p>
             </div>
-            <div class="column mrgn-bot-s">
+            <div class="column margin-bot-s">
                 <a class="button secondary disabled">Take Action</a>
                 <p>.secondary.disabled</p>
             </div>
@@ -581,81 +582,81 @@ pre .regexp {
     <a class="button secondary disabled">Take Action</a></code>
     </pre>
 </section>
-            <section class="pad-top-l hide" id="Colors">
-    <h2 class="mrgn-top-none">Colors</h2>
+            <section class="pad-top-l display-hide" id="Colors">
+    <h2 class="margin-top-none">Colors</h2>
     <h3>Backgrounds</h3>
     <div class="box">
         <div class="columns">
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-primary height-xxl"></div>
-                    <p>.bg-primary</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-primary-m" style="height:5rem"></div>
+                    <p>.bg-color-primary</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-primary-l height-xxl"></div>
-                    <p>.bg-primary-l</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-primary-l" style="height:5rem"></div>
+                    <p>.bg-color-primary-l</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-primary-xl height-xxl"></div>
-                    <p>.bg-primary-xl</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-primary-xl" style="height:5rem"></div>
+                    <p>.bg-color-primary-xl</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="bg-secondary height-xxl"></div>
-                <p>.bg-secondary</p>
+                <div class="bg-color-secondary" style="height:5rem"></div>
+                <p>.bg-color-secondary</p>
             </div>
 
         </div>
         <div class="columns">
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-success height-xxl"></div>
-                    <p>.bg-success</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-success" style="height:5rem"></div>
+                    <p>.bg-color-success</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-danger height-xxl"></div>
-                    <p>.bg-danger</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-danger" style="height:5rem"></div>
+                    <p>.bg-color-danger</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-warn height-xxl"></div>
-                    <p>.bg-warn</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-warn" style="height:5rem"></div>
+                    <p>.bg-color-warn</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="bg-white height-xxl border-size-xs border-color-grey-l"></div>
-                <p>.bg-white</p>
+                <div class="bg-color-white  style=" height:5rem "border-size-xs border-color-grey-l"></div>
+                <p>.bg-color-white</p>
             </div>
         </div>
         <div class="columns">
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-black height-xxl"></div>
-                    <p>.bg-black</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-black" style="height:5rem"></div>
+                    <p>.bg-color-black</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-grey height-xxl"></div>
-                    <p>.bg-grey</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-grey" style="height:5rem"></div>
+                    <p>.bg-color-grey</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="mrgn-rgt-s">
-                    <div class="bg-grey-l height-xxl"></div>
-                    <p>.bg-grey-l</p>
+                <div class="margin-right-s">
+                    <div class="bg-color-grey-l" style="height:5rem"></div>
+                    <p>.bg-color-grey-l</p>
                 </div>
             </div>
             <div class="column fourth">
-                <div class="bg-grey-xl height-xxl"></div>
-                <p>.bg-grey-xl</p>
+                <div class="bg-color-grey-xl" style="height:5rem"></div>
+                <p>.bg-color-grey-xl</p>
             </div>
         </div>
     </div>
@@ -663,34 +664,34 @@ pre .regexp {
     <p>See
         <a href="#Typography" class="nav-item">Typography</a> for text colors</p>
 </section>
-            <section class="pad-top-l hide" id="Columns">
-    <h2 class="mrgn-top-none">Columns</h2>
+            <section class="pad-top-l display-hide" id="Columns">
+    <h2 class="margin-top-none">Columns</h2>
     <p>Columnss are based on flexbox via a molecule called
         <em>columns</em>
     </p>
     <h3>Sizes</h3>
     <div class="box">
-        <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+        <div class="columns margin-bot-s text-align-center text-height-xl text-size-m text-color-white">
             <div class="column half bg-primary">.half</div>
             <div class="column bg-primary-l">Auto</div>
             <div class="column bg-primary-l">Auto</div>
         </div>
-        <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+        <div class="columns margin-bot-s text-align-center text-height-xl text-size-m text-color-white">
             <div class="column third bg-primary">.third</div>
             <div class="column bg-primary-l">Auto</div>
             <div class="column bg-primary-l">Auto</div>
         </div>
-        <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+        <div class="columns margin-bot-s text-align-center text-height-xl text-size-m text-color-white">
             <div class="column fourth bg-primary">.fourth</div>
             <div class="column bg-primary-l">Auto</div>
             <div class="column bg-primary-l">Auto</div>
         </div>
-        <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+        <div class="columns margin-bot-s text-align-center text-height-xl text-size-m text-color-white">
             <div class="column fifth bg-primary">.fifth</div>
             <div class="column bg-primary-l">Auto</div>
             <div class="column bg-primary-l">Auto</div>
         </div>
-        <div class="columns mrgn-bot-s text-align-center text-height-xl text-size-m text-color-white">
+        <div class="columns margin-bot-s text-align-center text-height-xl text-size-m text-color-white">
             <div class="column sixth bg-primary">.sixth</div>
             <div class="column bg-primary-l">Auto</div>
             <div class="column bg-primary-l">Auto</div>
@@ -748,14 +749,14 @@ pre .regexp {
     </code>
     </pre>
 </section>
-            <section class="pad-top-l hide" id="Forms">
-    <h2 class="mrgn-top-none">Forms</h2>
+            <section class="pad-top-l display-hide" id="Forms">
+    <h2 class="margin-top-none">Forms</h2>
     <p>
         TODO
     </p>
 </section>
-            <section class="pad-top-l hide" id="Icons">
-    <h2 class="mrgn-top-none">Icons</h2>
+            <section class="pad-top-l display-hide" id="Icons">
+    <h2 class="margin-top-none">Icons</h2>
     <div class="box">
         <div class="columns text-align-left spacing-s">
             <div class="column flex-fit">
@@ -980,15 +981,15 @@ pre .regexp {
     </code>
     </pre>
 </section>
-            <section class="pad-top-l hide" id="Indicators">
-    <h2 class="mrgn-top-none">Indicators</h2>
+            <section class="pad-top-l display-hide" id="Indicators">
+    <h2 class="margin-top-none">Indicators</h2>
     <h3>Scroll</h3>
     <p>
         TODO
     </p>
 </section>
-            <section class="pad-top-l hide" id="Lists">
-    <h2 class="mrgn-top-none">Lists</h2>
+            <section class="pad-top-l display-hide" id="Lists">
+    <h2 class="margin-top-none">Lists</h2>
     <h3>Bulleted</h3>
     <ul>
         <li>Item
@@ -1041,15 +1042,15 @@ pre .regexp {
         <li>Item</li>
     </ul>
 </section>
-            <section class="pad-top-l hide" id="Navigations">
-    <h2 class="mrgn-top-none">Navigations</h2>
+            <section class="pad-top-l display-hide" id="Navigations">
+    <h2 class="margin-top-none">Navigations</h2>
     <h3>Breadcrumbs</h3>
     <h3>Lists</h3>
     <h3>Pagination</h3>
     <h3>Tabs</h3>
 </section>
-            <section class="pad-top-l hide" id="Modals">
-    <h2 class="mrgn-top-none">Modals</h2>
+            <section class="pad-top-l display-hide" id="Modals">
+    <h2 class="margin-top-none">Modals</h2>
     <p>Modals have a simple structure:</p>
     <ul class="tree">
         <li>.modal = main wrapper
@@ -1061,8 +1062,8 @@ pre .regexp {
                     </ul>
                 </li>
         </li>
-    </ul>
-    </li>
+        </ul>
+        </li>
     </ul>
     <p>The
         <em>.main-view</em> molecule are driven by the
@@ -1121,8 +1122,8 @@ pre .regexp {
         .init()</code>
     </pre>
 </section>
-            <section class="pad-top-l hide" id="Messaging">
-    <h2 class="mrgn-top-none">Messaging</h2>
+            <section class="pad-top-l display-hide" id="Messaging">
+    <h2 class="margin-top-none">Messaging</h2>
     <h3>Toasts</h3>
     <h3>Popups</h3>
     <p>See
@@ -1133,8 +1134,8 @@ pre .regexp {
     <h4>Warning</h4>
     <h4>Alert</h4>
 </section>
-            <section class="pad-top-l hide " id="Tables">
-    <h2 class="mrgn-top-none">Tables</h2>
+            <section class="pad-top-l display-hide " id="Tables">
+    <h2 class="margin-top-none">Tables</h2>
     <p>Tables are for displaying tabular data and therefore it's important to leverage the default syntax.
     </p>
     <h3>Columns</h3>
@@ -1268,14 +1269,14 @@ pre .regexp {
     <table class="wrap"></table></code>
     </pre>
 </section>
-            <section class="pad-top-l hide " id="Tabs">
-    <h2 class="mrgn-top-none">Tabs</h2>
+            <section class="pad-top-l display-hide " id="Tabs">
+    <h2 class="margin-top-none">Tabs</h2>
     <p>
         TODO
     </p>
 </section>
-            <section class="pad-top-l hide " id="Tooltip">
-    <h2 class="mrgn-top-none">Tooltip</h2>
+            <section class="pad-top-l display-hide " id="Tooltip">
+    <h2 class="margin-top-none">Tooltip</h2>
     <div class="box">
         <a href="#" class="tooltip" data-alt="The Tooltip">Hover over top</a><br />
         <a href="#" class="tooltip right" data-alt="The Tooltip">Hover to the right</a><br />
@@ -1290,8 +1291,8 @@ pre .regexp {
     <a href="#" class="tooltip bottom" data-alt="The Tooltip">Hover to the bottom</a></code>
     </pre>
 </section>
-            <section class="pad-top-l hide " id="Typography">
-    <h2 class="mrgn-top-none border-bot-xs border-bot-color-grey-l pad-bot-s">Typography</h2>
+            <section class="pad-top-l display-hide " id="Typography">
+    <h2 class="margin-top-none border-bot-xs border-bot-color-grey-l pad-bot-s">Typography</h2>
     <h3>Fonts</h3>
     <div class="box">
         <div class="columns spacing-s">
@@ -1326,31 +1327,31 @@ pre .regexp {
         <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
             <div class="text-size-xxl text-height-xxl text-indent-2">Giant Text: Good design is excellent</div>
         </div>
-        <p class="mrgn-top-xs">text-size-xxl</p>
+        <p class="margin-top-xs">text-size-xxl</p>
         <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
             <div class="text-size-xl text-height-xl text-indent-2">Extra Large Text: Good design is excellent business</div>
         </div>
-        <p class="mrgn-top-xs">text-size-xl</p>
+        <p class="margin-top-xs">text-size-xl</p>
         <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
             <div class="text-size-l text-height-l text-indent-2">Large Text: Good design is excellent business
             </div>
         </div>
-        <p class="mrgn-top-xs">text-size-l</p>
+        <p class="margin-top-xs">text-size-l</p>
         <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
             <div class="text-size-m text-height-m text-indent-2">Medium Text: Good design is excellent business
             </div>
         </div>
-        <p class="mrgn-top-xs">text-size-m</p>
+        <p class="margin-top-xs">text-size-m</p>
         <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
             <div class="text-size-s text-height-m text-indent-2">Small Text: Good design is excellent business
             </div>
         </div>
-        <p class="mrgn-top-xs">text-size-s</p>
+        <p class="margin-top-xs">text-size-s</p>
         <div class="border-color-grey-l border-size-xs border-radius-m pad-s">
             <div class="text-size-xs text-height-m text-indent-2">Extra Small Text: Good design is excellent business
             </div>
         </div>
-        <p class="mrgn-top-xs">text-size-xs</p>
+        <p class="margin-top-xs">text-size-xs</p>
     </div>
     <pre>
     <code data-language="html">
@@ -1367,23 +1368,23 @@ pre .regexp {
         <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h1>Giant Text: Good design is excellent</h1>
         </div>
-        <p class="mrgn-top-xs">h1</p>
+        <p class="margin-top-xs">h1</p>
         <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h2>Giant Text: Good design is excellent business</h2>
         </div>
-        <p class="mrgn-top-xs">h2</p>
+        <p class="margin-top-xs">h2</p>
         <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h3>Giant Text: Good design is excellent business</h3>
         </div>
-        <p class="mrgn-top-xs">h3</p>
+        <p class="margin-top-xs">h3</p>
         <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h4>Giant Text: Good design is excellent business</h4>
         </div>
-        <p class="mrgn-top-xs">h4</p>
+        <p class="margin-top-xs">h4</p>
         <div class="border-color-grey-l border-size-xs border-radius-m text-indent-m">
             <h5>Giant Text: Good design is excellent business</h5>
         </div>
-        <p class="mrgn-top-xs">h5</p>
+        <p class="margin-top-xs">h5</p>
     </div>
     <pre>
     <code data-language="html">
@@ -1412,8 +1413,8 @@ pre .regexp {
     </code>
     </pre>
     <h3>Colors</h3>
-    <p>When selecting a color for a block of text, it's important to take into account the documented usages below (using
-        green text only for success messaging, for instance).</p>
+    <p>When selecting a color for a display-block of text, it's important to take into account the documented usages below
+        (using green text only for success messaging, for instance).</p>
     <div class="box">
         <div class="border-color-grey-l border-size-xs border-radius-m pad-xs text-size-l">
             Black: This is the default text color
@@ -1500,24 +1501,23 @@ pre .regexp {
 
             <!-- JAVASCRIPT -->
 
-            <section class="pad-top-l hide " id="Polyfills">
-    <h2 class="mrgn-top-none">Polyfills</h2>
+            <section class="pad-top-l display-hide " id="Polyfills">
+    <h2 class="margin-top-none">Polyfills</h2>
     <ul>
         <li>Dialog</li>
     </ul>
 </section>
-            <section class="pad-top-l hide " id="Reifier">
-    <h2 class="mrgn-top-none">Reifier</h2>
+            <section class="pad-top-l display-hide " id="Reifier">
+    <h2 class="margin-top-none">Reifier</h2>
     <h3>components</h3>
     <p>The
         <em>components</em> collection</p>
 </section>
-            <section class="pad-top-l hide " id="Responsifier">
-    <h2 class="mrgn-top-none">Responsifier</h2>
+            <section class="pad-top-l display-hide " id="Responsifier">
+    <h2 class="margin-top-none">Responsifier</h2>
     <p>The
-        <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is
-        to provide
-        a simple mechanism to add, remove and toggle classes in response to events. Combined with
+        <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide a simple
+        mechanism to add, remove and toggle classes in response to events. Combined with
         <strong>Atoms</strong> and
         <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
     <ul>
@@ -1641,6 +1641,7 @@ pre .regexp {
         <li>Responsifier.TOGGLE</li>
     </ul>
 </section>
+
 
         </div>
     </div>

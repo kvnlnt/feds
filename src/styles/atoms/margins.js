@@ -18,7 +18,7 @@ const margin = prop => {
       [prop]: `5${params.unit.base}`
     },
     none: {
-      [prop]: "none"
+      [prop]: 0
     },
     auto: {
       [prop]: "auto"

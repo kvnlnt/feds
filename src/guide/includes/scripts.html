@@ -7,32 +7,32 @@
                 observable: window,
                 event: feds.Responsifier.SCROLL,
                 range: [0, 199],
-                add: ["pos-bottom-hide"],
-                remove: ["pos-bottom-s"]
+                add: ["position-bot-hide"],
+                remove: ["position-bot-s"]
             })
             .add({
                 observer: "#top",
                 observable: window,
                 event: feds.Responsifier.SCROLL,
                 range: [200, "*"],
-                add: ["pos-bottom-s"],
-                remove: ["pos-bottom-hide"]
+                add: ["position-bot-s"],
+                remove: ["position-bot-hide"]
             })
             .add({
                 observer: "#top",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [0, 999],
-                add: ["hide"],
-                lock: ["hide"]
+                add: ["display-hide"],
+                lock: ["display-hide"]
             })
             .add({
                 observer: "#top",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [1000, "*"],
-                remove: ["hide"],
-                unlock: ["hide"]
+                remove: ["display-hide"],
+                unlock: ["display-hide"]
             })
             // LAYOUT
             .add({
@@ -55,40 +55,40 @@
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [0, 999],
-                remove: ["hide"]
+                remove: ["display-hide"]
             })
             .add({
                 observer: "#menuToggle",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [1000, "*"],
-                add: ["hide"]
+                add: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: "#menuToggle",
                 event: feds.Responsifier.CLICK,
-                toggle: ["hide"]
+                toggle: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [0, 999],
-                add: ["hide"]
+                add: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: window,
                 event: feds.Responsifier.RESIZE,
                 range: [1000, "*"],
-                remove: ["hide"]
+                remove: ["display-hide"]
             })
             .add({
                 observer: "#mainMenu",
                 observable: "#mainMenu a",
                 event: feds.Responsifier.CLICK,
-                toggle: ["hide"],
+                toggle: ["display-hide"],
                 condition: function (r, e) {
                     return document
                         .querySelector("#layout")
@@ -135,16 +135,16 @@
                 e.preventDefault();
                 window.location.hash = href;
                 sections.forEach(function (ii) {
-                    ii.classList.add("hide");
+                    ii.classList.add("display-hide");
                 });
-                document.querySelector(href).classList.remove("hide");
+                document.querySelector(href).classList.remove("display-hide");
                 window.scrollTo(0, 0);
             });
         });
         if (window.location.hash) {
-            document.querySelector(window.location.hash).classList.remove("hide");
+            document.querySelector(window.location.hash).classList.remove("display-hide");
         } else {
-            document.querySelector("#About").classList.remove("hide")
+            document.querySelector("#About").classList.remove("display-hide")
         }
     }
 
@@ -171,9 +171,9 @@
     window.addEventListener("hashchange", function () {
         var sections = [].slice.call(document.querySelectorAll("section"));
         sections.forEach(function (ii) {
-            ii.classList.add("hide");
+            ii.classList.add("display-hide");
         });
-        document.querySelector(window.location.hash).classList.remove("hide");
+        document.querySelector(window.location.hash).classList.remove("display-hide");
         scrollToTop();
     }, false);
 </script>

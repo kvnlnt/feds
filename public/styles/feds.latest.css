@@ -1,4 +1,4 @@
-/* Build: feds.1.0.0.344 */
+/* Build: feds.1.0.0.378 */
 :root {
   font-size:62.5%;
 }
@@ -494,13 +494,30 @@ h5 {
 .icon.training {
   background-image:url(../gfx/icons/training.svg);
 }
-link {
+a {
   font-family:OpenSans;
+  color:hsl(212, 64%, 49%);
   font-size:1.4rem;
   text-decoration:none;
   display:inline-block;
   border-width:0;
   border-style:none;
+}
+ul {
+  font-family:OpenSans;
+  line-height:2.4rem;
+  font-size:1.4rem;
+}
+p {
+  font-family:OpenSans;
+  font-size:1.4rem;
+  line-height:2.4rem;
+  letter-spacing:0rem;
+  margin-top:2rem;
+  margin-bottom:2rem;
+}
+code {
+  font-size:1.3rem;
 }
 
 .align-top {
@@ -1062,7 +1079,7 @@ link {
   margin:5rem;
 }
 .margin-none {
-  margin:none;
+  margin:0;
 }
 .margin-auto {
   margin:auto;
@@ -1083,7 +1100,7 @@ link {
   margin-top:5rem;
 }
 .margin-top-none {
-  margin-top:none;
+  margin-top:0;
 }
 .margin-top-auto {
   margin-top:auto;
@@ -1104,7 +1121,7 @@ link {
   margin-bottom:5rem;
 }
 .margin-bot-none {
-  margin-bottom:none;
+  margin-bottom:0;
 }
 .margin-bot-auto {
   margin-bottom:auto;
@@ -1125,7 +1142,7 @@ link {
   margin-left:5rem;
 }
 .margin-left-none {
-  margin-left:none;
+  margin-left:0;
 }
 .margin-left-auto {
   margin-left:auto;
@@ -1146,7 +1163,7 @@ link {
   margin-right:5rem;
 }
 .margin-right-none {
-  margin-right:none;
+  margin-right:0;
 }
 .margin-right-auto {
   margin-right:auto;

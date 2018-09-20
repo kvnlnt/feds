@@ -36,7 +36,7 @@ module.exports = {};
 //   "table.pivot td, table.pivot th": ["display: block", "font-size:1.3rem"],
 //   "table.wrap, table.wrap tbody": [".block"],
 //   "table.wrap thead": [".hide"],
-//   "table.wrap tr": [".flex", ".flex-dir-col", ".mrgn-bot-m"],
+//   "table.wrap tr": [".flex", ".flex-dir-col", ".margin-bot-m"],
 //   "table.wrap td": [""],
 //   "table.wrap td:before": [
 //     "content:attr(title)",

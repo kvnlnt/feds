@@ -1,12 +1,18 @@
 const atoms = require("../atoms/atoms");
 
-module.exports = {};
+module.exports = {
+  ul: {
+    ...atoms.text.font.primary,
+    ...atoms.text.height.m,
+    ...atoms.text.size.m
+  }
+};
 
 // "ul > li, ol > li": [".text-font", ".text-height-m", ".text-size-m"],
-// "ul.tree": [".mrgn-lft-xs", "list-style:none", ".pad-none"],
-// "ul.tree ul": [".mrgn-lft-xs", "list-style:none", ".pad-none"],
+// "ul.tree": [".margin-lft-xs", "list-style:none", ".pad-none"],
+// "ul.tree ul": [".margin-lft-xs", "list-style:none", ".pad-none"],
 // "ul.tree li": [
-//   ".mrgn-none",
+//   ".margin-none",
 //   ".pad-none",
 //   ".text-height-m",
 //   ".bdr-lft-xs",
