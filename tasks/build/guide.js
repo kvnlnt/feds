@@ -6,7 +6,7 @@ const compiler = require("../lib/compiler");
 const atoms = require("../../src/styles/atoms/atoms.js");
 const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
 let tmpl = fs.readFileSync("./src/guide/index.html", "utf-8");
-let reg = /<!--.*include:(.*).*-->/g;
+let reg = /<!--.*partial:(.*).*-->/g;
 
 // setup
 console.time(util.ok("Guide"));
