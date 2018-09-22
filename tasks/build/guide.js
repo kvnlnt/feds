@@ -22,8 +22,11 @@ const renderPage = (partialFile, t, outFile = null) => {
     "utf-8",
     (err, partialContent) => {
       if (err) throw err;
+      partialContent = partialContent.replace(
+        "<!-- partial:atoms -->",
+        compiledAtoms
+      );
       t = t.replace("<!-- partial:menu -->", partialMenu);
-      t = t.replace("<!-- partial:atoms -->", compiledAtoms);
       t = t.replace("<!-- partial:content -->", partialContent);
       fs.writeFile(`./public/guide/${outFile}`, t, err => {
         if (err) throw err;
