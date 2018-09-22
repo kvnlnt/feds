@@ -5,28 +5,62 @@ const build = `${config.version}.${config.build + 1}`;
 const compiler = require("../lib/compiler");
 const atoms = require("../../src/styles/atoms/atoms.js");
 const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
-let tmpl = fs.readFileSync("./src/guide/index.html", "utf-8");
-let reg = /<!--.*partial:(.*).*-->/g;
+const partialMenu = fs.readFileSync("./src/guide/partials/menu.html");
+let tmpl = fs.readFileSync("./src/guide/template.html", "utf-8");
 
 // setup
 console.time(util.ok("Guide"));
 
-// build
-tmpl = tmpl.replace("<!-- VERSION -->", build);
+// version
+tmpl = tmpl.replace("<!-- data:version -->", build);
 
-// includes
-let x;
-while ((x = reg.exec(tmpl)) !== null) {
-  tmpl = tmpl.replace(
-    x[0],
-    fs.readFileSync(`./src/guide/includes/${x[1].trim()}`)
+// pages
+const renderPage = (partialFile, t, outFile = null) => {
+  if (outFile === null) outFile = partialFile;
+  fs.readFile(
+    `./src/guide/partials/${partialFile}`,
+    "utf-8",
+    (err, partialContent) => {
+      if (err) throw err;
+      t = t.replace("<!-- partial:menu -->", partialMenu);
+      t = t.replace("<!-- partial:atoms -->", compiledAtoms);
+      t = t.replace("<!-- partial:content -->", partialContent);
+      fs.writeFile(`./public/guide/${outFile}`, t, err => {
+        if (err) throw err;
+        `./public/guide/${outFile}`;
+      });
+    }
   );
-}
+  return;
+};
 
-// atoms
-tmpl = tmpl.replace("<!-- ATOMS -->", compiledAtoms);
-
-fs.writeFileSync("./public/index.html", tmpl, "utf-8");
+renderPage("about.html", tmpl, "index.html");
+renderPage("about.html", tmpl);
+renderPage("atoms.html", tmpl);
+renderPage("buttons.html", tmpl);
+renderPage("colors.html", tmpl);
+renderPage("columns.html", tmpl);
+renderPage("compatibility.html", tmpl);
+renderPage("compliance.html", tmpl);
+renderPage("concepts.html", tmpl);
+renderPage("forms.html", tmpl);
+renderPage("icons.html", tmpl);
+renderPage("indicators.html", tmpl);
+renderPage("lists.html", tmpl);
+renderPage("menu.html", tmpl);
+renderPage("messaging.html", tmpl);
+renderPage("modals.html", tmpl);
+renderPage("navigations.html", tmpl);
+renderPage("polyfills.html", tmpl);
+renderPage("refactoring.html", tmpl);
+renderPage("reifier.html", tmpl);
+renderPage("repo.html", tmpl);
+renderPage("responsifier.html", tmpl);
+renderPage("tables.html", tmpl);
+renderPage("tabs.html", tmpl);
+renderPage("testing.html", tmpl);
+renderPage("tooltip.html", tmpl);
+renderPage("typography.html", tmpl);
 
 // Running time
 console.timeEnd(util.ok("Guide"));
