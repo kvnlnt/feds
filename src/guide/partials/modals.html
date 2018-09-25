@@ -24,15 +24,22 @@
         <a class="button" id="modalTrigger">Open Dialog</a>
     </div>
     <div class="modal" id="modal">
-        <div class="modal-view width-view-m">
-            <a class="modal-close" id="modalClose">
-                <i class="icon m close"></i>
-            </a>
-            <div class="pad-m">
-                <h2>Title</h2>
-                <p>Content</p>
+        <div class="modal-view">
+            <div class="modal-header">
+                <div class="modal-title">Title</div>
+                <a class="modal-close" id="modalClose">
+                    <i class="icon m close"></i>
+                </a>
             </div>
-            </p>
+            <div class="modal-body">
+                <div class="pad-m">
+                    <h2>Title</h2>
+                    <p style="height:500px">Content</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                footer
+            </div>
         </div>
     </div>
     <h4>HTML</h4>
@@ -47,6 +54,7 @@
                 <div class="pad-m">
                     <h2>Title</h2>
                     <p>Content</p>
+                                <p>Content</p>
                 </div>
                 </p>
             </div>
@@ -71,3 +79,22 @@
         .init()</code>
     </pre>
 </section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new feds.Responsifier()
+            .add({
+                observer: "#modal",
+                observable: "#modalTrigger",
+                event: feds.Responsifier.CLICK,
+                toggle: ["display-flex"]
+            }).add({
+                observer: "#modal",
+                observable: "#modalClose",
+                event: feds.Responsifier.CLICK,
+                toggle: ["display-flex"]
+            })
+            .init();
+    });
+</script>

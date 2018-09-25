@@ -64,6 +64,11 @@ module.exports = {
         color: `${params.color.white}`
       }
     },
+    ellipsis: {
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+      overflow: "hidden"
+    },
     font: {
       mono: {
         fontFamily: "monospace"

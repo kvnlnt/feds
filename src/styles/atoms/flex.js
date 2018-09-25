@@ -42,6 +42,9 @@ module.exports = {
       },
       right: {
         justifyContent: "right"
+      },
+      spaceBetween: {
+        justifyContent: "space-between"
       }
     },
     vert: {

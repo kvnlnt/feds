@@ -41,6 +41,7 @@ renderPage("about.html", tmpl, "index.html");
 renderPage("about.html", tmpl);
 renderPage("atoms.html", tmpl);
 renderPage("buttons.html", tmpl);
+renderPage("cards.html", tmpl);
 renderPage("colors.html", tmpl);
 renderPage("columns.html", tmpl);
 renderPage("compatibility.html", tmpl);

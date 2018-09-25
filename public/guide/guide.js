@@ -95,18 +95,6 @@ function responsify() {
       }
     })
     .add({
-      observer: "#modal",
-      observable: "#modalTrigger",
-      event: feds.Responsifier.CLICK,
-      toggle: ["flex"]
-    })
-    .add({
-      observer: "#modal",
-      observable: "#modalClose",
-      event: feds.Responsifier.CLICK,
-      toggle: ["flex"]
-    })
-    .add({
       observer: "#popupExample",
       observable: "#popupExampleTrigger",
       event: feds.Responsifier.CLICK,

@@ -10,7 +10,6 @@ module.exports = {
         backgroundColor: `${params.color.black}`
       },
       black: { backgroundColor: `${params.color.black}` },
-      blackHalf: { backgroundColor: `${params.color.black - 50}` },
       danger: { backgroundColor: `${params.color.red}` },
       grey: {
         backgroundColor: `${params.color.grey}`,

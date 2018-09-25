@@ -7,5 +7,3 @@ module.exports = {
     ...atoms.bg.color.white
   }
 };
-
-// ".box": [".pad-s", ".shadow-s", ".bg-white"],

@@ -54,40 +54,5 @@ module.exports = {
         display: "table-row"
       }
     }
-  },
-  z: {
-    0: {
-      zIndex: 0
-    },
-    1: {
-      zIndex: 1
-    },
-    2: {
-      zIndex: 2
-    },
-    3: {
-      zIndex: 3
-    },
-    4: {
-      zIndex: 4
-    },
-    5: {
-      zIndex: 5
-    },
-    6: {
-      zIndex: 6
-    },
-    7: {
-      zIndex: 7
-    },
-    8: {
-      zIndex: 8
-    },
-    9: {
-      zIndex: 9
-    },
-    infinite: {
-      zIndex: 100000
-    }
   }
 };
