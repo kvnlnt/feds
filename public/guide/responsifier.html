@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEDS / Front-end Design System</title>
+    <script src="guide.js"></script>
+    <link rel="stylesheet" type="text/css" href="guide.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/feds.latest.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="../scripts/feds.iife.latest.js"></script>
+</head>
+
+<body>
+    <div class="text-size-xs position-abs position-top-s position-right-s text-height-s">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" style="float:left"
+            class="margin-right-xs">
+        <span class="opac-30">
+            1.0.0.496
+        </span>
+    </div>
+    <a id="top" onclick="scrollToTop()" class="button secondary medium position-fix position-bot-hide position-left-s z-infinite anim-speed-med"
+        onclick="document.body.scrollTop=0">TOP</a>
+    <div id="menuToggle" class="position-fix display-hide top-right position-right-none position-left-none z-infinite">
+        <a href="#layout" class="button bg-color-primary text-align-right display-block border-radius-none">&#x2630;</a>
+    </div>
+    <div id="layout" class="columns bg-color-grey-xxl" style="min-height:100vh">
+        <aside id="mainMenu" class="column pad-m bg-color-grey-xl" style="flex: 0 0 150px; padding-bottom:70px">
+            <a href="index.html" class="nav-item"><img src="../gfx/er-logo.svg" style="pointer-events-none" /></a>
+            <p class="text-size-xs text-font-primary-bold margin-top-none margin-bot-none">Frontend Design System</p>
+            <hr class="margin-top-xs margin-bot-xs" />
+            <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">General</h3>
+<a href="about.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">About</a>
+<a href="concepts.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Concepts</a>
+<a href="compatibility.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Compatibility</a>
+<a href="compliance.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Compliance</a>
+<a href="refactoring.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Refactoring</a>
+<a href="repo.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Repo</a>
+<h3 class="text-size-xs text-color-grey opac-60">CSS</h3>
+<a href="atoms.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Atoms</a>
+<a href="buttons.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Buttons</a>
+<a href="cards.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Cards</a>
+<a href="colors.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Colors</a>
+<a href="columns.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Columns</a>
+<a href="forms.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Forms</a>
+<a href="icons.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Icons</a>
+<a href="indicators.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Indicators</a>
+<a href="lists.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Lists</a>
+<a href="navigations.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Menus</a>
+<a href="modals.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Modals</a>
+<a href="messaging.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Messaging</a>
+<a href="tables.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tables</a>
+<a href="tabs.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tabs</a>
+<a href="tooltip.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tooltip</a>
+<a href="typography.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Typography</a>
+<h3 class="text-size-xs text-color-grey text-case-upper opac-60">Javascript</h3>
+<a href="polyfills.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Polyfills</a>
+<a href="reifier.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Reifier</a>
+<a href="responsifier.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Responsifier</a>
+        </aside>
+        <div id="layout-content" class="column pad-m" style="flex:1">
+            <section class="pad-top-l" id="Responsifier">
+    <h2 class="margin-top-none">Responsifier</h2>
+    <p>The
+        <strong>Responsifier</strong> class is an DIY implementation of Container Queries. It's purpose is to provide a simple
+        mechanism to add, remove and toggle classes in response to events. Combined with
+        <strong>Atoms</strong> and
+        <strong>Molecules</strong> the Responsifier class provides powerful abstractions which:</p>
+    <ul>
+        <li>Replaces the need for media queries</li>
+        <li>Eliminates the need for ad-hoc responsive styles and scripts</li>
+        <li>Is framework agnostic</li>
+        <li>Has a small footprint (~5kb)</li>
+    </ul>
+
+    <h3>Usage</h3>
+    <pre>
+    <code data-language="javascript">
+        var r = new feds.Responsifier()
+        .add({
+            observer: "#mobile-menu ",
+            observable: window,
+            event: feds.Responsifier.RESIZE,
+            range: [0, 799],
+            add: ["show "]
+        })
+        .add({
+            observer: "#mobile-menu ",
+            observable: window,
+            event: feds.Responsifier.RESIZE,
+            range: [800, "* "],
+            remove: ["show "]
+        })
+        .init();
+    </code>
+    </pre>
+
+    <h3>Methods</h3>
+
+    <h4>add(options)</h4>
+    <p>Adds a media query to a responsifier instance.</p>
+    <h5>Options</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Example</th>
+                <th>Desc</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>observer</td>
+                <td>String|[Node List]</td>
+                <td>".some-button "</td>
+                <td>element to update</td>
+            </tr>
+            <tr>
+                <td>observable</td>
+                <td>String|[Node List]</td>
+                <td>"body "</td>
+                <td>element to watch</td>
+            </tr>
+            <tr>
+                <td>event</td>
+                <td>Responsifier event constant</td>
+                <td>Responsifier.SCROLL</td>
+                <td>event to watch for (see events for options)</td>
+            </tr>
+            <tr>
+                <td>range</td>
+                <td>[number,number|"* "]</td>
+                <td>[0,100]</td>
+                <td>Start and ending ranges. Ending range can optionally be set to "* ".</td>
+            </tr>
+            <tr>
+                <td>add</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Array of classes to add</td>
+            </tr>
+            <tr>
+                <td>remove</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Array of classes to remove</td>
+            </tr>
+            <tr>
+                <td>toggle</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Array of classes to toggle</td>
+            </tr>
+            <tr>
+                <td>callback</td>
+                <td>function</td>
+                <td>function(observer){return true;}</td>
+                <td>Callback function on completion</td>
+            </tr>
+            <tr>
+                <td>condition</td>
+                <td>function</td>
+                <td>function(observer){return true;}</td>
+                <td>noop if returns false</td>
+            </tr>
+            <tr>
+                <td>lock</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Prevent class from being added, removed, toggled, etc.</td>
+            </tr>
+            <tr>
+                <td>unlock</td>
+                <td>[string]</td>
+                <td>["hide "]</td>
+                <td>Renable class for being added, removed, toggled, etc.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Events</h4>
+    <ul>
+        <li>Responsifier.SCROLL</li>
+        <li>Responsifier.RESIZE</li>
+        <li>Responsifier.CLICK</li>
+        <li>Responsifier.HOVER</li>
+        <li>Responsifier.TOGGLE</li>
+    </ul>
+</section>
+        </div>
+    </div>
+</body>
+
+</html>

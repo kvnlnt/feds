@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEDS / Front-end Design System</title>
+    <script src="guide.js"></script>
+    <link rel="stylesheet" type="text/css" href="guide.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/feds.latest.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="../scripts/feds.iife.latest.js"></script>
+</head>
+
+<body>
+    <div class="text-size-xs position-abs position-top-s position-right-s text-height-s">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" style="float:left"
+            class="margin-right-xs">
+        <span class="opac-30">
+            1.0.0.496
+        </span>
+    </div>
+    <a id="top" onclick="scrollToTop()" class="button secondary medium position-fix position-bot-hide position-left-s z-infinite anim-speed-med"
+        onclick="document.body.scrollTop=0">TOP</a>
+    <div id="menuToggle" class="position-fix display-hide top-right position-right-none position-left-none z-infinite">
+        <a href="#layout" class="button bg-color-primary text-align-right display-block border-radius-none">&#x2630;</a>
+    </div>
+    <div id="layout" class="columns bg-color-grey-xxl" style="min-height:100vh">
+        <aside id="mainMenu" class="column pad-m bg-color-grey-xl" style="flex: 0 0 150px; padding-bottom:70px">
+            <a href="index.html" class="nav-item"><img src="../gfx/er-logo.svg" style="pointer-events-none" /></a>
+            <p class="text-size-xs text-font-primary-bold margin-top-none margin-bot-none">Frontend Design System</p>
+            <hr class="margin-top-xs margin-bot-xs" />
+            <h3 class="text-size-xs text-color-grey opac-60 text-case-upper">General</h3>
+<a href="about.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">About</a>
+<a href="concepts.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Concepts</a>
+<a href="compatibility.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Compatibility</a>
+<a href="compliance.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Compliance</a>
+<a href="refactoring.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Refactoring</a>
+<a href="repo.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Repo</a>
+<h3 class="text-size-xs text-color-grey opac-60">CSS</h3>
+<a href="atoms.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Atoms</a>
+<a href="buttons.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Buttons</a>
+<a href="cards.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Cards</a>
+<a href="colors.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Colors</a>
+<a href="columns.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Columns</a>
+<a href="forms.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Forms</a>
+<a href="icons.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Icons</a>
+<a href="indicators.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Indicators</a>
+<a href="lists.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Lists</a>
+<a href="navigations.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Menus</a>
+<a href="modals.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Modals</a>
+<a href="messaging.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Messaging</a>
+<a href="tables.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tables</a>
+<a href="tabs.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tabs</a>
+<a href="tooltip.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Tooltip</a>
+<a href="typography.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Typography</a>
+<h3 class="text-size-xs text-color-grey text-case-upper opac-60">Javascript</h3>
+<a href="polyfills.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Polyfills</a>
+<a href="reifier.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Reifier</a>
+<a href="responsifier.html" class="nav-item text-size-m text-color-black text-height-l text-indent-2 display-block">Responsifier</a>
+        </aside>
+        <div id="layout-content" class="column pad-m" style="flex:1">
+            <section class="pad-top-l" id="Typography">
+    <h2 class="margin-top-none border-bot-xs border-bot-color-grey-l pad-bot-s">Typography</h2>
+    <h3>Fonts</h3>
+    <div class="box">
+        <div class="columns spacing-s">
+            <div class="column flex-fit">
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xl">Aa</div>
+                <p>Open Sans - Regular</p>
+            </div>
+            <div class="column flex-fit">
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xl text-style-italic">Aa</div>
+                <p>Open Sans - Italic</p>
+            </div>
+            <div class="column flex-fit">
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xl text-style-bold">Aa</div>
+                <p>Open Sans - Bold</p>
+            </div>
+            <div class="column flex-fit">
+                <div class="text-size-xxl border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xl text-style-bold-italic">Aa</div>
+                <p>Open Sans - Bold Italic</p>
+            </div>
+        </div>
+    </div>
+    <pre><code data-language="html">
+    <div class="text-style">Open Sans - Regular</div>
+    <div class="text-style-italic">Open Sans - Italic</div>
+    <div class="text-style-bold">Open Sans - Bold</div>
+    <div class="text-style-bold-italic">Open Sans - Bold Italic</div></code>
+    </pre>
+    <h3>Sizes</h3>
+    <div class="box">
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-s">
+            <div class="text-size-xxl text-height-xxl text-indent-2">Giant Text: Good design is excellent</div>
+        </div>
+        <p class="margin-top-xs">text-size-xxl</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-s">
+            <div class="text-size-xl text-height-xl text-indent-2">Extra Large Text: Good design is excellent business</div>
+        </div>
+        <p class="margin-top-xs">text-size-xl</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-s">
+            <div class="text-size-l text-height-l text-indent-2">Large Text: Good design is excellent business
+            </div>
+        </div>
+        <p class="margin-top-xs">text-size-l</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-s">
+            <div class="text-size-m text-height-m text-indent-2">Medium Text: Good design is excellent business
+            </div>
+        </div>
+        <p class="margin-top-xs">text-size-m</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-s">
+            <div class="text-size-s text-height-m text-indent-2">Small Text: Good design is excellent business
+            </div>
+        </div>
+        <p class="margin-top-xs">text-size-s</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-s">
+            <div class="text-size-xs text-height-m text-indent-2">Extra Small Text: Good design is excellent business
+            </div>
+        </div>
+        <p class="margin-top-xs">text-size-xs</p>
+    </div>
+    <pre>
+    <code data-language="html">
+    <div class="text-size-xxl">...</div>
+    <div class="text-size-xl">...</div>
+    <div class="text-size-l">...</div>
+    <div class="text-size-m">...</div>
+    <div class="text-size-s">...</div>
+    <div class="text-size-xs">...</div>
+    </code>
+    </pre>
+    <h3>Headers</h3>
+    <div class="box">
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid text-indent-m">
+            <h1>Giant Text: Good design is excellent</h1>
+        </div>
+        <p class="margin-top-xs">h1</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid text-indent-m">
+            <h2>Giant Text: Good design is excellent business</h2>
+        </div>
+        <p class="margin-top-xs">h2</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid text-indent-m">
+            <h3>Giant Text: Good design is excellent business</h3>
+        </div>
+        <p class="margin-top-xs">h3</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid text-indent-m">
+            <h4>Giant Text: Good design is excellent business</h4>
+        </div>
+        <p class="margin-top-xs">h4</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid text-indent-m">
+            <h5>Giant Text: Good design is excellent business</h5>
+        </div>
+        <p class="margin-top-xs">h5</p>
+    </div>
+    <pre>
+    <code data-language="html">
+    <h1>Giant Text: Good design is excellent</h1>
+    <h2>Giant Text: Good design is excellent business</h2>
+    <h3>Giant Text: Good design is excellent business</h3>
+    <h4>Giant Text: Good design is excellent business</h4>
+    <h5>Giant Text: Good design is excellent business</h5>
+    </code>
+    </pre>
+    <h3>Paragraph</h3>
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar, massa et efficitur malesuada, risus ipsum
+            sodales est, eu tempus orci lorem quis ante. Nullam ut scelerisque sem. Nulla et ex a felis bibendum aliquet
+            aliquam sit amet nisl. Quisque vel tempus leo.</p>
+        <p> Etiam at venenatis sapien, nec pellentesque lorem. Praesent ultricies ac quam vitae placerat. Integer quis neque
+            mollis diam malesuada vestibulum vitae sed eros. Duis vulputate dolor nec aliquet pellentesque. Ut sodales, massa
+            in finibus bibendum, arcu augue iaculis ante, ac pretium tellus elit eu nunc. Maecenas efficitur volutpat ex,
+            ut accumsan velit tincidunt euismod. Nulla vulputate quis est eget consectetur.
+        </p>
+    </div>
+    <pre>
+    <code data-language="html">
+    <p>Lorem ipsum dolor...</p>
+    <p>Etiam at venenatis sapien...</p>
+    </code>
+    </pre>
+    <h3>Colors</h3>
+    <p>When selecting a color for a display-block of text, it's important to take into account the documented usages below
+        (using green text only for success messaging, for instance).</p>
+    <div class="box">
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Black: This is the default text color
+        </div>
+        <p>.text-color-black</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Grey: This is grey text
+        </div>
+        <p>.text-color-grey</p>
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Primary: This is the primary link color
+        </div>
+        <p>.text-color-primary</p>
+        <div class="bg-color-grey text-color-primary-l border-size-xs border-color-grey-l border-radius-m border-style-solid pad-xs text-size-l">
+            Primary-Light: This text color should ONLY be used on a dark background
+        </div>
+        <p>.text-color-primary-l</p>
+        <div class="text-color-secondary border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Secondary: Primarily used as the hover color for .text-color-primary
+        </div>
+        <p>.text-color-secondary</p>
+        <div class="text-color-success border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Success: This is green text for success messaging
+        </div>
+        <p>.text-color-success</p>
+        <div class="text-color-danger border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Danger: This red text is for error messages
+        </div>
+        <p>.text-color-danger</p>
+        <div class="text-color-warn bg-color-grey border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Yellow: This is for warning messages, it should ONLY be used on a dark background
+        </div>
+        <p>.text-color-warn</p>
+        <div class="text-color-white bg-color-grey border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            White: White text is for dark backgrounds
+        </div>
+        <p>.text-color-white</p>
+    </div>
+    <pre>
+    <code data-language="html">
+    <div>...</div>
+    <div class="text-color-primary">...</div>
+    <div class="text-color-primary-l">...</div>
+    <div class="text-color-secondary">...</div>
+    <div class="text-color-success">...</div>
+    <div class="text-color-danger">...</div>
+    <div class="text-color-black">...</div>
+    <div class="text-color-grey">...</div>
+    <div class="text-color-grey-l">...</div>
+    </code>
+    </pre>
+    <h3>Styles</h3>
+    <div class="box">
+        <div class="border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Regular text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+        </div>
+        <p class="text-font-primary-italic">default</p>
+        <div class="text-font-primary-italic border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Italicized Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+        </div>
+        <p>.text-font-primary-italic</p>
+        <div class="text-font-primary-bold border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Strong Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+        </div>
+        <p>.text-font-primary-bold</p>
+        <div class="text-font-primary-bold-italic border-color-grey-l border-size-xs border-radius-m border-style-solid pad-xs text-size-l">
+            Strong Text: “Simplicity is the ultimate sophistication.” –Leonardo da Vinci
+        </div>
+        <p>.text-font-primary-bold-italic</p>
+    </div>
+    <pre>
+    <code data-language="html">
+    <p>...</p>
+    <p class="text-font-primary-italic">...</p>
+    <p class="text-font-primary-bold">...</p>
+    <p class="text-font-primary-bold-italic">...</p>
+    </code>
+    </pre>
+    <!-- _<h3>Links</h3>
+    <h3>Utility</h3>
+    <h3>Leading</h3>
+    <h3>Alignment</h3> -->
+</section>
+        </div>
+    </div>
+</body>
+
+</html>

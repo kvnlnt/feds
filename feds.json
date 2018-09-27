@@ -1,8 +1,8 @@
 {
   "name": "feds",
   "version": "1.0.0",
-  "build": 332,
-  "test": 332,
+  "build": 496,
+  "test": 495,
   "scripts": {
     "ContainerQuery": "./src/scripts/ContainerQuery.js",
     "DataTable": "./src/scripts/DataTable.js",

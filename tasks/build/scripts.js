@@ -1,10 +1,10 @@
 const fs = require("fs");
 const config = require("../../feds.json");
-const color = require("../lib/color");
-const build = `// Build: ${config.name}.${config.version}.${config.build+1}`;
+const util = require("../lib/util");
+const build = `// Build: ${config.name}.${config.version}.${config.build + 1}`;
 
 // setup
-console.time(color.ok("Scripts"));
+console.time(util.ok("Scripts"));
 
 const code = Object.keys(config.scripts).reduce((acc, curr) => {
   acc[curr] = fs.readFileSync(config.scripts[curr], "utf-8");
@@ -95,4 +95,4 @@ fs.writeFileSync(
 fs.writeFileSync(`./public/scripts/${config.name}.es6.latest.js`, WrapInEs6());
 
 // Running time
-console.timeEnd(color.ok("Scripts"));
+console.timeEnd(util.ok("Scripts"));

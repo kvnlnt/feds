@@ -1,33 +1,43 @@
 const fs = require("fs");
 const config = require("../../feds.json");
-const color = require("../lib/color");
+const util = require("../lib/util");
 const compiler = require("../lib/compiler");
-const build = `/* Build: ${config.name}.${config.version}.${config.build+1} */`;
+const fonts = require("../../src/styles/lib/fonts");
+const normalize = require("../../src/styles/lib/normalize");
+const atoms = require("../../src/styles/atoms/atoms");
+const molecules = require("../../src/styles/molecules/molecules");
+const build = `/* Build: ${config.name}.${config.version}.${config.build +
+  1} */`;
 
 // setup
-console.time(color.ok("Styles"));
-
-// import style (& theme) files
-const params = require(`../../src/styles/params.json`);
-const atoms = require(`../../src/styles/atoms.json`);
-const molecules = require(`../../src/styles/molecules.json`);
-const resets = require(`../../src/styles/resets.json`);
-const fonts = require(`../../src/styles/fonts.json`);
+console.time(util.ok("Styles"));
 
 // compile
-const compiledFonts = compiler.compileFonts(fonts);
-const compiledAtoms = compiler.compileAtoms(atoms, params);
-const compiledMolecules = compiler.compileMolecules(molecules, atoms, params);
-const compiledResets = compiler.compileResets(resets);
+const compiledFonts = fonts;
+const compiledNormalized = compiler.compileJavascriptToCSS(normalize, "");
+const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
+const compiledMolecules = compiler.compileJavascriptToCSS(molecules, "", 1);
 
 // render
-const styles = `${build}\n${compiledFonts}${compiledResets}${compiledMolecules}${compiledAtoms}`;
+const styles = `${build}
+${compiledNormalized}
+${compiledFonts}
+${compiledMolecules}
+${compiledAtoms}`;
+const stylesMin = styles.replace(/\s/g, "");
+
+// files
+const path = "./public/styles";
+const file = `${path}/${config.name}.${config.version}.css`;
+const fileMin = `${path}/${config.name}.${config.version}.min.css`;
+const fileLatest = `${path}/${config.name}.latest.css`;
+const fileLatestMin = `${path}/${config.name}.latest.min.css`;
 
 // output
-const stylesFile = `${config.name}.${config.version}.css`;
-const stylesFileLatest = `${config.name}.latest.css`;
-fs.writeFileSync("./public/styles/" + stylesFile, styles);
-fs.writeFileSync("./public/styles/" + stylesFileLatest, styles);
+fs.writeFileSync(`${file}`, styles);
+fs.writeFileSync(`${fileMin}`, stylesMin);
+fs.writeFileSync(`${fileLatest}`, styles);
+fs.writeFileSync(`${fileLatestMin}`, stylesMin);
 
 // Running time
-console.timeEnd(color.ok("Styles"));
+console.timeEnd(util.ok("Styles"));
