@@ -22,13 +22,13 @@ module.exports = {
   ".bg-color-grey-l": {
     backgroundColor: `${params.color.greyLight}`
   },
-  ".bg-color-grey-primary": {
+  ".bg-color-primary": {
     backgroundColor: `${params.color.blue}`
   },
-  ".bg-color-grey-primary-xl": {
+  ".bg-color-primary-xl": {
     backgroundColor: `${params.color.lightBlue}`
   },
-  ".bg-color-grey-primary-l": {
+  ".bg-color-primary-l": {
     backgroundColor: `${params.color.lightBlueLight}`
   },
   ".bg-color-secondary": {

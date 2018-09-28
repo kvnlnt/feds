@@ -1,11 +1,5 @@
-const params = require("../params.js");
+const params = require("../params.js")
 
-const borderColor = (suffix, prop) => {
-  const blackPropName = `.border-${prop}-color-black`;
-  return {
-    [blackPropName]: `${params.color.black}`
-  };
-};
 
 module.exports = {
   ".border-collapse": {
@@ -82,119 +76,175 @@ module.exports = {
   },
   ".border-color-top-danger": {
     borderTopColor: `${params.color.red}`
+  },
+  ".border-color-left-grey": {
+    borderLeftColor: `${params.color.grey}`
+  },
+  ".border-color-left-grey-l": {
+    borderLeftColor: `${params.color.greyLight}`
+  },
+  ".border-color-left-grey-xl": {
+    borderLeftColor: `${params.color.greyLight30}`
+  },
+  ".border-color-left-grey-xxl": {
+    borderLeftColor: `${params.color.greyLight12}`
+  },
+  ".border-color-left-primary": {
+    borderLeftColor: `${params.color.blue}`
+  },
+  ".border-color-left-white": {
+    borderLeftColor: `${params.color.white}`
+  },
+  ".border-color-left-danger": {
+    borderLeftColor: `${params.color.red}`
+  },
+  ".border-color-right-grey": {
+    borderRightColor: `${params.color.grey}`
+  },
+  ".border-color-right-grey-l": {
+    borderRightColor: `${params.color.greyLight}`
+  },
+  ".border-color-right-grey-xl": {
+    borderRightColor: `${params.color.greyLight30}`
+  },
+  ".border-color-right-grey-xxl": {
+    borderRightColor: `${params.color.greyLight12}`
+  },
+  ".border-color-right-primary": {
+    borderRightColor: `${params.color.blue}`
+  },
+  ".border-color-right-white": {
+    borderRightColor: `${params.color.white}`
+  },
+  ".border-color-right-danger": {
+    borderRightColor: `${params.color.red}`
+  },
+  ".border-radius-xs": {
+    borderRadius: "1px"
+  },
+  ".border-radius-s": {
+    borderRadius: "2px"
+  },
+  ".border-radius-m": {
+    borderRadius: "3px"
+  },
+  ".border-radius-l": {
+    borderRadius: "4px"
+  },
+  ".border-radius-xl": {
+    borderRadius: "5px"
+  },
+  ".border-radius-none": {
+    borderRadius: "0px"
+  },
+  ".border-size-top-xs": {
+    borderTopWidth: "1px"
+  },
+  ".border-size-top-s": {
+    borderTopWidth: "2px"
+  },
+  ".border-size-top-m": {
+    borderTopWidth: "3px"
+  },
+  ".border-size-top-l": {
+    borderTopWidth: "4px"
+  },
+  ".border-size-top-xl": {
+    borderTopWidth: "5px"
+  },
+  ".border-size-top-none": {
+    borderTopWidth: 0,
+    borderStyle: "none"
+  },
+  ".border-size-bot-xs": {
+    borderBottomWidth: "1px"
+  },
+  ".border-size-bot-s": {
+    borderBottomWidth: "2px"
+  },
+  ".border-size-bot-m": {
+    borderBottomWidth: "3px"
+  },
+  ".border-size-bot-l": {
+    borderBottomWidth: "4px"
+  },
+  ".border-size-bot-xl": {
+    borderBottomWidth: "5px"
+  },
+  ".border-size-bot-none": {
+    borderBottomWidth: 0,
+    borderStyle: "none"
+  },
+  ".border-size-left-xs": {
+    borderLeftWidth: "1px"
+  },
+  ".border-size-left-s": {
+    borderLeftWidth: "2px"
+  },
+  ".border-size-left-m": {
+    borderLeftWidth: "3px"
+  },
+  ".border-size-left-l": {
+    borderLeftWidth: "4px"
+  },
+  ".border-size-left-xl": {
+    borderLeftWidth: "5px"
+  },
+  ".border-size-left-none": {
+    borderLeftWidth: 0,
+    borderStyle: "none"
+  },
+  ".border-size-right-xs": {
+    borderRightWidth: "1px"
+  },
+  ".border-size-right-s": {
+    borderRightWidth: "2px"
+  },
+  ".border-size-right-m": {
+    borderRightWidth: "3px"
+  },
+  ".border-size-right-l": {
+    borderRightWidth: "4px"
+  },
+  ".border-size-right-xl": {
+    borderRightWidth: "5px"
+  },
+  ".border-size-right-none": {
+    borderRightWidth: 0,
+    borderStyle: "none"
+  },
+  ".border-size-xs": {
+    borderWidth: "1px"
+  },
+  ".border-size-s": {
+    borderWidth: "2px"
+  },
+  ".border-size-m": {
+    borderWidth: "3px"
+  },
+  ".border-size-l": {
+    borderWidth: "4px"
+  },
+  ".border-size-xl": {
+    borderWidth: "5px"
+  },
+  ".border-size-none": {
+    borderWidth: 0,
+    borderStyle: "none"
+  },
+  ".border-style-solid": {
+    borderStyle: "solid"
+  },
+  ".border-style-solid-bot": {
+    borderBottomStyle: "solid"
+  },
+  ".border-style-solid-top": {
+    borderTopStyle: "solid"
+  },
+  ".border-style-solid-left": {
+    borderLeftStyle: "solid"
+  },
+  ".border-style-solid-right": {
+    borderRightStyle: "solid"
   }
-};
-
-// const borderColor = prop => {
-//   return {
-//     black: {
-//       [prop]: `${params.color.black}`
-//     },
-//     grey: {
-//       [prop]: `${params.color.grey}`,
-//       xxl: {
-//         [prop]: `${params.color.greyLight30}`
-//       },
-//       xl: {
-//         [prop]: `${params.color.greyLight30}`
-//       },
-//       l: {
-//         [prop]: `${params.color.greyLight}`
-//       }
-//     },
-//     primary: {
-//       [prop]: `${params.color.blue}`
-//     },
-//     white: {
-//       [prop]: `${params.color.white}`
-//     },
-//     danger: {
-//       [prop]: `${params.color.red}`
-//     }
-//   };
-// };
-
-// const borderSize = prop => {
-//   return {
-//     xs: {
-//       [prop]: "1px"
-//     },
-//     s: {
-//       [prop]: "2px"
-//     },
-//     m: {
-//       [prop]: "3px"
-//     },
-//     l: {
-//       [prop]: "4px"
-//     },
-//     xl: {
-//       [prop]: "5px"
-//     },
-//     none: {
-//       [prop]: 0,
-//       borderStyle: "none"
-//     }
-//   };
-// };
-
-// const old = {
-//   border: {
-//     collapse: {
-//       borderCollapse: "collapse"
-//     },
-//     color: Object.assign({
-//         bot: borderColor("borderBottomColor"),
-//         top: borderColor("borderTopColor"),
-//         left: borderColor("borderLeftColor"),
-//         right: borderColor("borderRightColor")
-//       },
-//       borderColor("borderColor")
-//     ),
-//     radius: {
-//       xs: {
-//         borderRadius: "1px"
-//       },
-//       s: {
-//         borderRadius: "2px"
-//       },
-//       m: {
-//         borderRadius: "3px"
-//       },
-//       l: {
-//         borderRadius: "4px"
-//       },
-//       xl: {
-//         borderRadius: "5px"
-//       },
-//       none: {
-//         borderRadius: "0px"
-//       }
-//     },
-//     size: Object.assign({
-//         top: borderSize("borderTopWidth"),
-//         bot: borderSize("borderBottomWidth"),
-//         left: borderSize("borderLeftWidth"),
-//         right: borderSize("borderRightWidth")
-//       },
-//       borderSize("borderWidth")
-//     ),
-//     style: {
-//       solid: {
-//         borderStyle: "solid",
-//         bot: {
-//           borderBottomStyle: "solid"
-//         },
-//         top: {
-//           borderTopStyle: "solid"
-//         },
-//         left: {
-//           borderLeftStyle: "solid"
-//         },
-//         right: {
-//           borderRightStyle: "solid"
-//         }
-//       }
-//     }
-//   }
-// };
+}

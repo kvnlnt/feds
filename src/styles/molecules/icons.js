@@ -3,20 +3,36 @@ const params = require("../params");
 
 module.exports = {
   ".icon": {
-    ...atoms.display.block,
-    ...atoms.bg.cover,
-    ...atoms.bg.center,
-    ...atoms.margin.auto,
-    ...atoms.icon.large
+    ...atoms[".display-block"],
+    ...atoms[".bg-cover"],
+    ...atoms[".bg-center"],
+    ...atoms[".margin-auto"],
+    ...atoms[".icon-large"]
   },
-  ".icon.black": { ...atoms.filter.black },
-  ".icon.white": { ...atoms.filter.white },
-  ".icon.xs": { ...atoms.icon.size.xs },
-  ".icon.s": { ...atoms.icon.size.s },
-  ".icon.m": { ...atoms.icon.size.m },
-  ".icon.l": { ...atoms.icon.size.l },
-  ".icon.xl": { ...atoms.icon.size.xl },
-  ".icon.xxl": { ...atoms.icon.size.xxl },
+  ".icon.black": {
+    ...atoms[".filter-black"]
+  },
+  ".icon.white": {
+    ...atoms[".filter-white"]
+  },
+  ".icon.xs": {
+    ...atoms[".icon-size-xs"]
+  },
+  ".icon.s": {
+    ...atoms[".icon-size-s"]
+  },
+  ".icon.m": {
+    ...atoms[".icon-size-m"]
+  },
+  ".icon.l": {
+    ...atoms[".icon-size-l"]
+  },
+  ".icon.xl": {
+    ...atoms[".icon-size-xl"]
+  },
+  ".icon.xxl": {
+    ...atoms[".icon-size-xxl"]
+  },
   ".icon.administration": {
     backgroundImage: `url(${params.img.administration})`
   },

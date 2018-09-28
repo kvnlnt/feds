@@ -1,65 +1,57 @@
-const params = require("../params.js");
+const params = require("../params.js")
 module.exports = {
-  flex: {
-    col: {
-      flex: 1,
-      full: {
-        flexBasis: "100%"
-      },
-      half: {
-        flexBasis: "50%"
-      },
-      third: {
-        flexBasis: "33.3333%"
-      },
-      fourth: {
-        flexBasis: "25%"
-      },
-      fifth: {
-        flexBasis: "20%"
-      },
-      sixth: {
-        flexBasis: "16.6666%"
-      }
-    },
-    dir: {
-      col: {
-        flexDirection: "column"
-      },
-      row: {
-        flexDirection: "row"
-      }
-    },
-    fit: {
-      flexGrow: 0
-    },
-    horz: {
-      center: {
-        justifyContent: "center"
-      },
-      left: {
-        justifyContent: "left"
-      },
-      right: {
-        justifyContent: "right"
-      },
-      spaceBetween: {
-        justifyContent: "space-between"
-      }
-    },
-    vert: {
-      center: {
-        alignItems: "center"
-      },
-      left: {
-        alignItems: "left"
-      },
-      right: {
-        alignItems: "right"
-      }
-    },
-    wrap: {
-      flexWrap: "wrap"
-    }
+  ".flex-col": {
+    flex: 1
+  },
+  ".flex-col-full": {
+    flexBasis: "100%"
+  },
+  ".flex-col-half": {
+    flexBasis: "50%"
+  },
+  ".flex-col-third": {
+    flexBasis: "33.3333%"
+  },
+  ".flex-col-fourth": {
+    flexBasis: "25%"
+  },
+  ".flex-col-fifth": {
+    flexBasis: "20%"
+  },
+  ".flex-col-sixth": {
+    flexBasis: "16.6666%"
+  },
+  ".flex-dir-col": {
+    flexDirection: "column"
+  },
+  ".flex-dir-row": {
+    flexDirection: "row"
+  },
+  ".flex-fit": {
+    flexGrow: 0
+  },
+  ".flex-horz-center": {
+    justifyContent: "center"
+  },
+  ".flex-horz-left": {
+    justifyContent: "left"
+  },
+  ".flex-horz-right": {
+    justifyContent: "right"
+  },
+  ".flex-horz-spaceBetween": {
+    justifyContent: "space-between"
+  },
+  ".flex-vert-center": {
+    alignItems: "center"
+  },
+  ".flex-vert-top": {
+    alignItems: "flex-start"
+  },
+  ".flex-vert-bottom": {
+    alignItems: "flex-end"
+  },
+  ".flex-wrap": {
+    flexWrap: "wrap"
   }
-};
+}

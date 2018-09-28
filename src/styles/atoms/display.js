@@ -1,58 +1,45 @@
 const params = require("../params.js");
 module.exports = {
-  display: {
-    block: {
-      display: "block",
-      inline: {
-        display: "inline-block"
-      }
-    },
-    flex: {
-      display: "flex"
-    },
-    grid: {
-      display: "grid"
-    },
-    hide: {
-      display: "none"
-    },
-    inline: {
-      block: {
-        display: "inline-block"
-      }
-    },
-    overflow: {
-      hide: {
-        overflow: "hidden"
-      },
-      x: {
-        auto: {
-          overflowX: "auto"
-        },
-        hidden: {
-          overflowX: "hidden"
-        }
-      },
-      y: {
-        auto: {
-          overflowY: "auto"
-        },
-        hidden: {
-          overflowY: "hidden"
-        }
-      }
-    },
-    table: {
-      display: "table",
-      cell: {
-        display: "table-cell"
-      },
-      fixed: {
-        tableLayout: "fixed"
-      },
-      row: {
-        display: "table-row"
-      }
-    }
+  ".display-block": {
+    display: "block"
+  },
+  ".display-flex": {
+    display: "flex"
+  },
+  ".display-grid": {
+    display: "grid"
+  },
+  ".display-hide": {
+    display: "none"
+  },
+  ".display-inline-block": {
+    display: "inline-block"
+  },
+  ".display-overflow-hide": {
+    overflow: "hidden"
+  },
+  ".display-overflow-x-auto": {
+    overflowX: "auto"
+  },
+  ".display-overflow-x-hidden": {
+    overflowX: "hidden"
+  },
+  ".display-overflow-auto-y": {
+    overflowY: "auto"
+  },
+  ".display-overflow-y-hidden": {
+    overflowY: "hidden"
+  },
+  ".display-table": {
+    display: "table",
+  },
+  ".display-table-cell": {
+    display: "table-cell"
+  },
+  ".display-talbe-fixed": {
+    tableLayout: "fixed"
+  },
+  ".display-table-row": {
+    display: "table-row"
   }
 };

@@ -9,9 +9,9 @@ const reduceDeclaration = (declaration) => {
   }, "");
 };
 
-const reduceDeclarations = (declarations) => {
+const reduceDeclarations = (declarations, prefix = ".feds") => {
   return Object.keys(declarations).reduce((acc, curr) => {
-    acc += `\n${curr} {${reduceDeclaration(declarations[curr])}\n}`;
+    acc += `\n${prefix} ${curr} {${reduceDeclaration(declarations[curr])}\n}`;
     return acc;
   }, "");
 
