@@ -1,4 +1,4 @@
-// Build: feds.1.0.0.528
+// Build: feds.1.0.0.563
 export function ContainerQuery(opts) {
   var opts = opts || {};
   this.add = opts.add || [];
@@ -207,12 +207,3 @@ Responsifier.prototype = {
     });
   }
 };
-export function Tooltip(opts) {
-    var opts = opts || {};
-    this.tip = opts.tooltip || '';
-    console.log(this);
-    return this;
-}
-
-
-Tooltip.prototype = {};

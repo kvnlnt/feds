@@ -143,8 +143,12 @@ template {
     display: none;
 }
 :root {
-    font-size: 62.5%;
-    font-family: OpenSans, Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  font-family: OpenSans, Arial, Helvetica, sans-serif;
+}
+html,
+body {
+  font-size: 1.4rem;
 }
 @font-face {
     font-family: "OpenSans";
@@ -315,29 +319,29 @@ template {
 .feds .card-header {
   display:flex;
   flex-direction:row;
+  align-items:flex-end;
+  padding-bottom:1.4rem;
+  padding-top:1.4rem;
+  border-bottom-color:rgb(202,206,217);
+  border-bottom-style:solid;
+  border-bottom-width:1px;
 }
 .feds .card-header-title {
-  line-height:4.8rem;
   font-size:1.8rem;
   text-overflow:ellipsis;
   white-space:nowrap;
   overflow:hidden;
   text-indent:1.5rem;
+  flex:1;
 }
 .feds .card-header-buttons {
-  line-height:4.8rem;
   padding-left:2rem;
   padding-right:2rem;
+  flex:1;
+  text-align:right;
 }
 .feds .card-body {
-  padding:2rem;
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
-  background-color:#FFFFFF;
-}
-.feds .card-footer {
-  padding:2rem;
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
-  background-color:#FFFFFF;
+  padding:3rem;
 }
 .feds .column {
   flex:1;
@@ -564,6 +568,76 @@ template {
   cursor:pointer;
   display:block;
 }
+.feds .tooltip {
+  position:relative;
+}
+.feds .tooltip:hover:before {
+  content:attr(data-alt);
+  padding:1.4rem;
+  background-color:rgb(202,206,217);
+  text-decoration:none;
+  color:hsl(219, 22%, 25%);
+  font-size:1.1rem;
+  position:absolute;
+  left:0;
+  width:150px;
+  bottom:calc(100% + 10px);
+}
+.feds .tooltip:hover:after {
+  content:"";
+  width:0;
+  height:0;
+  border-top:8px solid rgb(202,206,217);
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-bottom:8px solid transparent;
+  position:absolute;
+  bottom:calc(100% - 6px);
+  left:10px;
+}
+.feds .tooltip.right:hover:before {
+  left:calc(100% + 20px);
+  top:-10px;
+  bottom:auto;
+}
+.feds .tooltip.right:hover:after {
+  border-top:8px solid transparent;
+  border-left:8px solid transparent;
+  border-right:8px solid rgb(202,206,217);
+  border-bottom:8px solid transparent;
+  bottom:auto;
+  top:0;
+  left:calc(100% + 4px);
+}
+.feds .tooltip.left:hover:before {
+  right:calc(100% + 20px);
+  left:auto;
+  top:-10px;
+  bottom:auto;
+}
+.feds .tooltip.left:hover:after {
+  border-top:8px solid transparent;
+  border-left:8px solid rgb(202,206,217);
+  border-right:8px solid transparent;
+  border-bottom:8px solid transparent;
+  bottom:auto;
+  top:0;
+  right:calc(100% + 4px);
+  left:auto;
+}
+.feds .tooltip.bottom:hover:before {
+  bottom:auto;
+  top:calc(100% + 10px);
+}
+.feds .tooltip.bottom:hover:after {
+  border-top:8px solid transparent;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-bottom:8px solid rgb(202,206,217);
+  top:auto;
+  bottom:-10px;
+  left:10px;
+}
 .feds table {
   width:100%;
   border-collapse:collapse;
@@ -624,6 +698,7 @@ template {
   margin-bottom:3rem;
 }
 .feds table.wrap td:before {
+  content:attr(data-title);
   font-family:OpenSansBold, Arial;
   font-size:1.3rem;
   text-transform:uppercase;
@@ -957,6 +1032,9 @@ template {
   content:"";
 }
 .feds .content-data-alt {
+  content:attr(data-alt);
+}
+.feds .content-data-title {
   content:attr(data-title);
 }
 .feds .cursor-pointer {

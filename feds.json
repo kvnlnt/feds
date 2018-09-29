@@ -1,13 +1,12 @@
 {
   "name": "feds",
   "version": "1.0.0",
-  "build": 528,
+  "build": 563,
   "test": 495,
   "scripts": {
     "ContainerQuery": "./src/scripts/ContainerQuery.js",
     "DataTable": "./src/scripts/DataTable.js",
     "Reifier": "./src/scripts/Reifier.js",
-    "Responsifier": "./src/scripts/Responsifier.js",
-    "Tooltip": "./src/scripts/Tooltip.js"
+    "Responsifier": "./src/scripts/Responsifier.js"
   }
 }

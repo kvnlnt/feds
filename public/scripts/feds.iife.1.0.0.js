@@ -1,4 +1,4 @@
-// Build: feds.1.0.0.528
+// Build: feds.1.0.0.563
 var feds = (function(m){
 
 function ContainerQuery(opts) {
@@ -212,19 +212,8 @@ Responsifier.prototype = {
   }
 };
 
-function Tooltip(opts) {
-    var opts = opts || {};
-    this.tip = opts.tooltip || '';
-    console.log(this);
-    return this;
-}
-
-
-Tooltip.prototype = {};
-
 m.ContainerQuery = ContainerQuery;
 m.Reifier = Reifier;
 m.Responsifier = Responsifier;
-m.Tooltip = Tooltip;
 return m;
 }(feds || {}))

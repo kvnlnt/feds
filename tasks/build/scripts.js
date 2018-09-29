@@ -17,13 +17,11 @@ var feds = (function(m){
 
 ${code.ContainerQuery}\n
 ${code.Reifier}\n
-${code.Responsifier}\n
-${code.Tooltip}
+${code.Responsifier}
 
 m.ContainerQuery = ContainerQuery;
 m.Reifier = Reifier;
 m.Responsifier = Responsifier;
-m.Tooltip = Tooltip;
 return m;
 }(feds || {}))`;
 
@@ -32,13 +30,11 @@ const WrapInCommonJs = () => `${build}
 ${code.ContainerQuery}
 ${code.Reifier}
 ${code.Responsifier}
-${code.Tooltip}
 
 module.exports = {
   ContainerQuery: ContainerQuery,
   Reifier: Reifier,
-  Responsifier: Responsifier,
-  Tooltip: Tooltip
+  Responsifier: Responsifier
 };`;
 
 // AMD: Browser only, with AMD
@@ -49,13 +45,11 @@ function () {
 ${code.ContainerQuery}
 ${code.Reifier}
 ${code.Responsifier}
-${code.Tooltip}
 
 var module = {
     ContainerQuery: ContainerQuery,
     Reifier: Reifier,
-    Responsifier: Responsifier,
-    Tooltip: Tooltip
+    Responsifier: Responsifier
 };
 return module;
 });`;
@@ -64,8 +58,7 @@ return module;
 const WrapInEs6 = () => `${build}
 export ${code.ContainerQuery}
 export ${code.Reifier}
-export ${code.Responsifier}
-export ${code.Tooltip}`;
+export ${code.Responsifier}`;
 
 fs.writeFileSync(
   `./public/scripts/${config.name}.iife.${config.version}.js`,

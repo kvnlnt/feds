@@ -6,7 +6,7 @@ module.exports = {
   ".content-data-alt": {
     content: "attr(data-alt)"
   },
-  ".content-data-alt": {
+  ".content-data-title": {
     content: "attr(data-title)"
   }
 };

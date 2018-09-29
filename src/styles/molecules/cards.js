@@ -7,30 +7,29 @@ module.exports = {
     ...atoms[".width-full"]
   },
   ".card-header": {
-    ...atoms[".height-xxl"],
     ...atoms[".display-flex"],
     ...atoms[".flex-dir-row"],
-    ...atoms[".flex-horz-space-between"]
+    ...atoms[".flex-horz-space-between"],
+    ...atoms[".flex-vert-bottom"],
+    ...atoms[".pad-bot-xs"],
+    ...atoms[".pad-top-xs"],
+    ...atoms[".border-color-bottom-grey-l"],
+    ...atoms[".border-style-solid-bot"],
+    ...atoms[".border-size-bot-xs"]
   },
   ".card-header-title": {
-    ...atoms[".text-height-xxl"],
     ...atoms[".text-size-l"],
     ...atoms[".text-ellipsis"],
-    ...atoms[".text-indent-m"]
+    ...atoms[".text-indent-m"],
+    ...atoms[".flex-col"]
   },
   ".card-header-buttons": {
-    ...atoms[".text-height-xxl"],
     ...atoms[".pad-left-s"],
-    ...atoms[".pad-right-s"]
+    ...atoms[".pad-right-s"],
+    ...atoms[".flex-col"],
+    ...atoms[".text-align-right"]
   },
   ".card-body": {
-    ...atoms[".pad-s"],
-    ...atoms[".shadow-s"],
-    ...atoms[".bg-color-white"]
-  },
-  ".card-footer": {
-    ...atoms[".pad-s"],
-    ...atoms[".shadow-s"],
-    ...atoms[".bg-color-white"]
+    ...atoms[".pad-m"]
   }
 };

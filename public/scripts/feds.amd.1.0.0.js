@@ -1,4 +1,4 @@
-// Build: feds.1.0.0.528
+// Build: feds.1.0.0.563
 define('feds', [], 
 function () {
   
@@ -210,21 +210,11 @@ Responsifier.prototype = {
     });
   }
 };
-function Tooltip(opts) {
-    var opts = opts || {};
-    this.tip = opts.tooltip || '';
-    console.log(this);
-    return this;
-}
-
-
-Tooltip.prototype = {};
 
 var module = {
     ContainerQuery: ContainerQuery,
     Reifier: Reifier,
-    Responsifier: Responsifier,
-    Tooltip: Tooltip
+    Responsifier: Responsifier
 };
 return module;
 });

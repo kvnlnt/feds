@@ -1,4 +1,5 @@
-module.exports = Object.assign({},
+module.exports = Object.assign(
+  {},
   require("./boxes"),
   require("./buttons"),
   require("./cards"),
@@ -12,7 +13,7 @@ module.exports = Object.assign({},
   require("./messaging"),
   require("./modals"),
   require("./navigations"),
-  require("./popups"),
+  require("./tooltips"),
   require("./tables"),
   require("./tabs"),
   require("./typography")
