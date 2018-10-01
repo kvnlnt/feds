@@ -6,6 +6,7 @@ module.exports = {
     ...atoms[".text-size-m"],
     ...atoms[".text-underline-none"],
     ...atoms[".display-inline-block"],
-    ...atoms[".border-size-none"]
+    ...atoms[".border-size-none"],
+    ...atoms[".cursor-pointer"]
   }
 };
