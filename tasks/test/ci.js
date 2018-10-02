@@ -1,9 +1,9 @@
-const color = require("../lib/color");
+const util = require("../lib/util");
 const config = require("../../feds.json");
 if (config.build !== config.test) {
-  console.log(color.error("Tests Invalid"));
+  console.log(util.error("Tests Invalid"));
   process.exit(1);
 } else {
-  console.log(color.ok("Tests OK"));
+  console.log(util.ok("Tests OK"));
   process.exit(0);
 }
