@@ -149,6 +149,7 @@ template {
 html,
 body {
   font-size: 1.4rem;
+  font-family: OpenSans, Arial, Helvetica, sans-serif;
 }
 @font-face {
     font-family: "OpenSans";
