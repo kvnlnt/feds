@@ -88,7 +88,7 @@ function responsify() {
       observable: "#mainMenu a",
       event: feds.Responsifier.CLICK,
       toggle: ["display-hide"],
-      condition: function(r, e) {
+      condition: function (r, e) {
         return document
           .querySelector("#layout")
           .classList.contains("is-mobile");
@@ -113,21 +113,11 @@ function reify() {
   feds.components = new feds.Reifier();
 }
 
-function cleanUpExamples() {
-  var code = document.querySelectorAll("*");
-  for (var i = 0; i < code.length; i++) {
-    code[i].innerHTML = code[i].innerHTML
-      .replace(/                 /g, "")
-      .trim();
-  }
-}
-
 function scrollToTop() {
   window.scrollTo(0, 0);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  cleanUpExamples();
+document.addEventListener("DOMContentLoaded", function () {
   responsify();
   reify();
 });

@@ -35,40 +35,59 @@
     </div>
     <h4>HTML</h4>
     <pre>
-    <code data-language="html">
-        <a class="button" id="modalTrigger">Open Dialog</a>
-        <div class="modal" id="modal">
-            <div class="modal-view width-view-m">
+<code data-language="html">
+<a class="button" id="modalTrigger">Open Dialog</a>
+<div class="modal" id="example-modal">
+    <div class="modal-view">
+        <div class="modal-header">
+            <div class="modal-header-title">Title</div>
+            <div class="modal-header-buttons">
                 <a class="modal-close" id="modalClose">
-                    <i class="icon m close"></i>
+                    <i class="icon xs close"></i>
                 </a>
-                <div class="pad-m">
-                    <h2>Title</h2>
-                    <p>Content</p>
-                                <p>Content</p>
-                </div>
-                </p>
             </div>
-        </div></code>
-    </pre>
+        </div>
+        <div class="modal-body">
+            <div class="pad-m">
+                ...content...
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer-buttons">
+                <a class="modal-close" id="modalClose">
+                    <i class="icon xs close"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div></code></pre>
     <h4>Javascript</h4>
     <pre>
-    <code data-language="javascript">
-        new feds.Responsifier 
-        .add({
-            observer: "#modal",
-            observable: "#modalTrigger",
-            event: feds.Responsifier.CLICK,
-            toggle: ["hide"]
-        })
-        .add({
-            observer: "#modal",
-            observable: "#modalClose",
-            event: feds.Responsifier.CLICK,
-            toggle: ["hide"]
-        })
-        .init()</code>
-    </pre>
+<code data-language="javascript">
+    new feds.Responsifier()
+    .add({
+        observer: "#example-modal",
+        observable: "#modalTrigger",
+        event: feds.Responsifier.CLICK,
+        toggle: ["display-flex"]
+    }).add({
+        observer: "#example-modal",
+        observable: "#modalClose",
+        event: feds.Responsifier.CLICK,
+        toggle: ["display-flex"]
+    }).add({
+        observer: "body",
+        observable: "#modalClose",
+        event: feds.Responsifier.CLICK,
+        toggle: ["scroll-none"]
+    }).add({
+        observer: "body",
+        observable: "#modalTrigger",
+        event: feds.Responsifier.CLICK,
+        toggle: ["scroll-none"]
+    })
+    .init();</code>
+</pre>
 </section>
 
 
