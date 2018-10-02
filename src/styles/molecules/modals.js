@@ -17,25 +17,26 @@ module.exports = {
     ...atoms[".position-rel"],
     ...atoms[".bg-color-white"],
     ...atoms[".shadow-s"],
-    maxHeight: "80vh",
-    maxWidth: "80vw",
-    minWidth: "360px"
+    ...atoms[".display-flex"],
+    ...atoms[".flex-dir-col"],
+    width: "80vw",
+    maxWidth: "600px",
+    maxHeight: "80vh"
   },
-  ".modal.fullscreen.modal-view": {
-    height: "100%",
-    width: "100%"
+  ".modal-view.fullscreen": {
+    height: "100vh",
+    width: "100vw"
   },
   ".modal-header": {
     ...atoms[".display-flex"],
     ...atoms[".flex-dir-row"],
     ...atoms[".flex-horz-space-between"],
-    ...atoms[".flex-vert-bottom"],
-    ...atoms[".pad-bot-xs"],
-    ...atoms[".pad-top-xs"],
+    ...atoms[".flex-vert-center"],
     ...atoms[".border-color-bottom-grey-l"],
     ...atoms[".border-style-solid-bot"],
     ...atoms[".border-size-bot-xs"],
-    ...atoms[".width-full"]
+    ...atoms[".width-full"],
+    flex: "0 0 5rem"
   },
   ".modal-header-title": {
     ...atoms[".text-size-l"],
@@ -51,5 +52,22 @@ module.exports = {
   },
   ".modal-body": {
     ...atoms[".scroll-overflow-y"]
-  }
+  },
+  ".modal-footer": {
+    ...atoms[".display-flex"],
+    ...atoms[".flex-dir-row"],
+    ...atoms[".flex-horz-space-between"],
+    ...atoms[".flex-vert-center"],
+    ...atoms[".border-color-bottom-grey-l"],
+    ...atoms[".border-style-solid-bot"],
+    ...atoms[".border-size-bot-xs"],
+    ...atoms[".width-full"],
+    flex: "0 0 5rem"
+  },
+  ".modal-footer-buttons": {
+    ...atoms[".pad-left-s"],
+    ...atoms[".pad-right-s"],
+    ...atoms[".flex-col"],
+    ...atoms[".text-align-right"]
+  },
 };

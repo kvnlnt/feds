@@ -544,24 +544,25 @@ body {
   position:relative;
   background-color:#FFFFFF;
   box-shadow:0 1px 5px rgba(14,18,37,.25);
+  display:flex;
+  flex-direction:column;
+  width:80vw;
+  max-width:600px;
   max-height:80vh;
-  max-width:80vw;
-  min-width:360px;
 }
-.feds .modal.fullscreen.modal-view {
-  height:100%;
-  width:100%;
+.feds .modal-view.fullscreen {
+  height:100vh;
+  width:100vw;
 }
 .feds .modal-header {
   display:flex;
   flex-direction:row;
-  align-items:flex-end;
-  padding-bottom:1.4rem;
-  padding-top:1.4rem;
+  align-items:center;
   border-bottom-color:rgb(202,206,217);
   border-bottom-style:solid;
   border-bottom-width:1px;
   width:100%;
+  flex:0 0 5rem;
 }
 .feds .modal-header-title {
   font-size:1.8rem;
@@ -579,6 +580,22 @@ body {
 }
 .feds .modal-body {
   overflow-y:auto;
+}
+.feds .modal-footer {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  border-bottom-color:rgb(202,206,217);
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  width:100%;
+  flex:0 0 5rem;
+}
+.feds .modal-footer-buttons {
+  padding-left:2rem;
+  padding-right:2rem;
+  flex:1;
+  text-align:right;
 }
 .feds .tooltip {
   position:relative;
