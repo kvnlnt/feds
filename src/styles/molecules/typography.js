@@ -23,8 +23,5 @@ module.exports = {
   },
   em: {
     ...atoms[".text-font-primary-italic"]
-  },
-  "strong em, em strong": {
-    ...atoms[".text-font-primary-bold-italic"]
   }
 };

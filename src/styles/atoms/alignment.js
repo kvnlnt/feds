@@ -5,5 +5,8 @@ module.exports = {
     },
     ".align-bottom": {
         verticalAlign: "bottom"
+    },
+    ".align-middle": {
+        verticalAlign: "middle"
     }
 };

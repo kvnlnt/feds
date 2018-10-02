@@ -142,6 +142,9 @@ module.exports = {
   ".text-space-s": {
     letterSpacing: "0.1rem"
   },
+  ".text-underline": {
+    textDecoration: "underline"
+  },
   ".text-underline-none": {
     textDecoration: "none"
   },

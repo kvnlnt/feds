@@ -39,7 +39,7 @@ module.exports = {
   ".flex-horz-right": {
     justifyContent: "right"
   },
-  ".flex-horz-spaceBetween": {
+  ".flex-horz-space-between": {
     justifyContent: "space-between"
   },
   ".flex-vert-center": {
