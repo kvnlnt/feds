@@ -375,10 +375,7 @@ body {
 }
 .feds h3 {
   font-size:1.8rem;
-  font-family:OpenSansBold, Arial;
   letter-spacing:0.1rem;
-  margin-top:3.2rem;
-  margin-bottom:2.4rem;
 }
 .feds h3+p {
   margin-top:-1.4rem;
@@ -728,8 +725,8 @@ body {
   font-size:1.4rem;
   line-height:2.4rem;
   letter-spacing:0rem;
-  margin-top:2.4rem;
-  margin-bottom:2.4rem;
+  margin-top:1.6rem;
+  margin-bottom:1.6rem;
 }
 .feds code {
   font-size:1.3rem;
@@ -1740,16 +1737,16 @@ body {
 .feds .text-font-mono {
   font-family:monospace;
 }
-.feds .text-font-primary {
+.feds .text-primary {
   font-family:OpenSans;
 }
-.feds .text-font-primary-bold {
+.feds .text-bold {
   font-family:OpenSansBold, Arial;
 }
-.feds .text-font-primary-bold-italic {
+.feds .text-bold-italic {
   font-family:OpenSansBoldItalic;
 }
-.feds .text-font-primary-italic {
+.feds .text-italic {
   font-family:OpenSansItalic;
   font-style:italic;
 }

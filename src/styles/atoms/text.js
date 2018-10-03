@@ -66,16 +66,16 @@ module.exports = {
   ".text-font-mono": {
     fontFamily: "monospace"
   },
-  ".text-font-primary": {
+  ".text-primary": {
     fontFamily: "OpenSans"
   },
-  ".text-font-primary-bold": {
+  ".text-bold": {
     fontFamily: "OpenSansBold, Arial"
   },
-  ".text-font-primary-bold-italic": {
+  ".text-bold-italic": {
     fontFamily: "OpenSansBoldItalic"
   },
-  ".text-font-primary-italic": {
+  ".text-italic": {
     fontFamily: "OpenSansItalic",
     fontStyle: "italic"
   },

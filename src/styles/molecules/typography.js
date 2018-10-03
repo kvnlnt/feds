@@ -5,8 +5,8 @@ module.exports = {
     ...atoms[".text-size-m"],
     ...atoms[".text-height-m"],
     ...atoms[".text-space-xs"],
-    ...atoms[".margin-top-s"],
-    ...atoms[".margin-bot-s"]
+    ...atoms[".margin-top-xs"],
+    ...atoms[".margin-bot-xs"]
   },
   code: {
     ...atoms[".text-font-monospace"],
@@ -19,9 +19,9 @@ module.exports = {
     ...atoms[".text-size-s"]
   },
   strong: {
-    ...atoms[".text-font-primary-bold"],
+    ...atoms[".text-bold"],
   },
   em: {
-    ...atoms[".text-font-primary-italic"]
+    ...atoms[".text-italic"]
   }
 };

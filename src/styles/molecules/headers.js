@@ -13,10 +13,8 @@ module.exports = {
   },
   h3: {
     ...atoms[".text-size-l"],
-    ...atoms[".text-font-primary-bold"],
-    ...atoms[".text-space-s"],
-    ...atoms[".margin-top-m"],
-    ...atoms[".margin-bot-s"]
+    ...atoms[".text--bold"],
+    ...atoms[".text-space-s"]
   },
   "h3+p": {
     marginTop: "-1.4rem"
