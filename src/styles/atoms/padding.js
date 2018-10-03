@@ -2,31 +2,31 @@ const params = require("../params");
 
 module.exports = {
   ".pad-xs": {
-    padding: "1.4rem"
+    padding: "1.6rem"
   },
   ".pad-s": {
-    padding: "2rem"
+    padding: "2.4rem"
   },
   ".pad-m": {
-    padding: "3rem"
+    padding: "3.2rem"
   },
   ".pad-l": {
     padding: "4rem"
   },
   ".pad-xl": {
-    padding: "5rem"
+    padding: "6rem"
   },
   ".pad-none": {
     padding: 0
   },
   ".pad-top-xs": {
-    paddingTop: "1.4rem"
+    paddingTop: "1.6rem"
   },
   ".pad-top-s": {
-    paddingTop: "2rem"
+    paddingTop: "2.4rem"
   },
   ".pad-top-m": {
-    paddingTop: "3rem"
+    paddingTop: "3.2rem"
   },
   ".pad-top-l": {
     paddingTop: "4rem"
@@ -38,13 +38,13 @@ module.exports = {
     paddingTop: 0
   },
   ".pad-bot-xs": {
-    paddingBottom: "1.4rem"
+    paddingBottom: "1.6rem"
   },
   ".pad-bot-s": {
-    paddingBottom: "2rem"
+    paddingBottom: "2.4rem"
   },
   ".pad-bot-m": {
-    paddingBottom: "3rem"
+    paddingBottom: "3.2rem"
   },
   ".pad-bot-l": {
     paddingBottom: "4rem"
@@ -56,13 +56,13 @@ module.exports = {
     paddingBottom: 0
   },
   ".pad-left-xs": {
-    paddingLeft: "1.4rem"
+    paddingLeft: "1.6rem"
   },
   ".pad-left-s": {
-    paddingLeft: "2rem"
+    paddingLeft: "2.4rem"
   },
   ".pad-left-m": {
-    paddingLeft: "3rem"
+    paddingLeft: "3.2rem"
   },
   ".pad-left-l": {
     paddingLeft: "4rem"
@@ -74,13 +74,13 @@ module.exports = {
     paddingLeft: 0
   },
   ".pad-right-xs": {
-    paddingRight: "1.4rem"
+    paddingRight: "1.6rem"
   },
   ".pad-right-s": {
-    paddingRight: "2rem"
+    paddingRight: "2.4rem"
   },
   ".pad-right-m": {
-    paddingRight: "3rem"
+    paddingRight: "3.2rem"
   },
   ".pad-right-l": {
     paddingRight: "4rem"

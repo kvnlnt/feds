@@ -83,19 +83,19 @@ module.exports = {
     lineHeight: "1.6rem"
   },
   ".text-height-s": {
-    lineHeight: "2.0rem"
+    lineHeight: "2.4rem"
   },
   ".text-height-m": {
     lineHeight: "2.4rem"
   },
   ".text-height-l": {
-    lineHeight: "3.2rem"
+    lineHeight: "2.8rem"
   },
   ".text-height-xl": {
-    lineHeight: "4rem"
+    lineHeight: "3.6rem"
   },
   ".text-height-xxl": {
-    lineHeight: "4.8rem"
+    lineHeight: "5.6rem"
   },
   ".text-indent-xs": {
     textIndent: "0.5rem"
