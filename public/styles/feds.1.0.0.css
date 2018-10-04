@@ -457,7 +457,7 @@ body {
 }
 .feds .icon {
   display:block;
-  background-size:cover;
+  background-size:contain;
   background-position:center;
 }
 .feds .icon--black {
@@ -865,12 +865,18 @@ body {
 .feds .bg-color-white {
   background-color:#FFFFFF;
 }
+.feds .bg-contain {
+  background-size:contain;
+}
 .feds .bg-cover {
   background-size:cover;
 }
 .feds .bg-none {
   background-image:none;
   background:transparent;
+}
+.feds .bg-no-repat {
+  background-repeat:no-repeat;
 }
 .feds .border-collapse {
   border-collapse:collapse;

@@ -46,12 +46,17 @@ module.exports = {
   ".bg-color-white": {
     backgroundColor: `${params.color.white}`
   },
+  ".bg-contain": {
+    backgroundSize: `contain`
+  },
   ".bg-cover": {
     backgroundSize: `cover`
   },
-  ".bg-none":{
-    backgroundImage:"none",
+  ".bg-none": {
+    backgroundImage: "none",
     background: "transparent",
-  }
-
+  },
+  ".bg-no-repat": {
+    backgroundRepeat: `no-repeat`
+  },
 };

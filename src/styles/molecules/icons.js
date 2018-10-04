@@ -4,10 +4,11 @@ const params = require("../params");
 module.exports = {
   ".icon": {
     ...atoms[".display-block"],
-    ...atoms[".bg-cover"],
+    ...atoms[".bg-contain"],
     ...atoms[".bg-center"],
     ...atoms[".margin-auto"],
-    ...atoms[".icon-large"]
+    ...atoms[".icon-large"],
+    ...atoms[".bg-no-repeat"]
   },
   ".icon--black": {
     ...atoms[".filter-black"]
