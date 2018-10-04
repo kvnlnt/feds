@@ -23,44 +23,44 @@ module.exports = {
     ...atoms[".text-align-left"],
     ...atoms[".pad-xs"]
   },
-  "table.pivot": {
+  ".table--pivot": {
     ...atoms[".display-flex"],
     ...atoms[".display-overflow-hide"]
   },
-  "table.pivot thead": {
+  ".table--pivot thead": {
     ...atoms[".display-flex"],
     flexShrink: 0,
     minWidth: "min-content"
   },
-  "table.pivot tbody": {
+  ".table--pivot tbody": {
     ...atoms[".display-flex"],
     ...atoms[".position-rel"],
     ...atoms[".display-overflow-x-auto"],
     ...atoms[".display-overflow-y-hidden"],
     flex: 1
   },
-  "table.pivot tr": {
+  ".table--pivot tr": {
     ...atoms[".display-flex"],
     ...atoms[".flex-dir-col"],
     minWidth: "min-content",
     flex: 1
   },
-  "table.pivot td, table.pivot th": {
+  ".table--pivot td, .table--pivot th": {
     ...atoms[".display-block"],
     ...atoms[".text-size-s"]
   },
-  "table.wrap, table.wrap tbody": {
+  ".table--wrap, .table--wrap tbody": {
     ...atoms[".display-block"]
   },
-  "table.wrap thead": {
+  ".table--wrap thead": {
     ...atoms[".display-hide"]
   },
-  "table.wrap tr": {
+  ".table--wrap tr": {
     ...atoms[".display-flex"],
     ...atoms[".flex-dir-col"],
     ...atoms[".margin-bot-m"]
   },
-  "table.wrap td:before": {
+  ".table--wrap td:before": {
     ...atoms[".content-data-title"],
     ...atoms[".display.block"],
     ...atoms[".width.half"],

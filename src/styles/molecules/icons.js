@@ -9,100 +9,100 @@ module.exports = {
     ...atoms[".margin-auto"],
     ...atoms[".icon-large"]
   },
-  ".icon.black": {
+  ".icon--black": {
     ...atoms[".filter-black"]
   },
-  ".icon.white": {
+  ".icon--white": {
     ...atoms[".filter-white"]
   },
-  ".icon.xs": {
+  ".icon--xs": {
     ...atoms[".icon-size-xs"]
   },
-  ".icon.s": {
+  ".icon--s": {
     ...atoms[".icon-size-s"]
   },
-  ".icon.m": {
+  ".icon--m": {
     ...atoms[".icon-size-m"]
   },
-  ".icon.l": {
+  ".icon--l": {
     ...atoms[".icon-size-l"]
   },
-  ".icon.xl": {
+  ".icon--xl": {
     ...atoms[".icon-size-xl"]
   },
-  ".icon.xxl": {
+  ".icon--xxl": {
     ...atoms[".icon-size-xxl"]
   },
-  ".icon.administration": {
+  ".icon--administration": {
     backgroundImage: `url(${params.img.administration})`
   },
-  ".icon.analytics": {
+  ".icon--analytics": {
     backgroundImage: `url(${params.img.analytics})`
   },
-  ".icon.calendar": {
+  ".icon--calendar": {
     backgroundImage: `url(${params.img.calendar})`
   },
-  ".icon.close": {
+  ".icon--close": {
     backgroundImage: `url(${params.img.close})`
   },
-  ".icon.collapse-expand": {
+  ".icon--collapse-expand": {
     backgroundImage: `url(${params.img.collapseExpand})`
   },
-  ".icon.daily-roster": {
+  ".icon--daily-roster": {
     backgroundImage: `url(${params.img.dailyRoster})`
   },
-  ".icon.data-intelligence": {
+  ".icon--data-intelligence": {
     backgroundImage: `url(${params.img.dataIntelligence})`
   },
-  ".icon.demographics": {
+  ".icon--demographics": {
     backgroundImage: `url(${params.img.demographics})`
   },
-  ".icon.events": {
+  ".icon--events": {
     backgroundImage: `url(${params.img.events})`
   },
-  ".icon.home": {
+  ".icon--home": {
     backgroundImage: `url(${params.img.home})`
   },
-  ".icon.hydrants": {
+  ".icon--hydrants": {
     backgroundImage: `url(${params.img.hydrants})`
   },
-  ".icon.incidents": {
+  ".icon--incidents": {
     backgroundImage: `url(${params.img.incidents})`
   },
-  ".icon.inventory": {
+  ".icon--inventory": {
     backgroundImage: `url(${params.img.inventory})`
   },
-  ".icon.invoicing": {
+  ".icon--invoicing": {
     backgroundImage: `url(${params.img.invoicing})`
   },
-  ".icon.library": {
+  ".icon--library": {
     backgroundImage: `url(${params.img.library})`
   },
-  ".icon.maintenance": {
+  ".icon--maintenance": {
     backgroundImage: `url(${params.img.maintenance})`
   },
-  ".icon.message-center": {
+  ".icon--message-center": {
     backgroundImage: `url(${params.img.messageCenter})`
   },
-  ".icon.my-profile": {
+  ".icon--my-profile": {
     backgroundImage: `url(${params.img.myProfile})`
   },
-  ".icon.occupancies": {
+  ".icon--occupancies": {
     backgroundImage: `url(${params.img.occupancies})`
   },
-  ".icon.payroll": {
+  ".icon--payroll": {
     backgroundImage: `url(${params.img.payroll})`
   },
-  ".icon.reports": {
+  ".icon--reports": {
     backgroundImage: `url(${params.img.reports})`
   },
-  ".icon.roster": {
+  ".icon--roster": {
     backgroundImage: `url(${params.img.roster})`
   },
-  ".icon.shifts": {
+  ".icon--shifts": {
     backgroundImage: `url(${params.img.shifts})`
   },
-  ".icon.training": {
+  ".icon--training": {
     backgroundImage: `url(${params.img.training})`
   }
 };

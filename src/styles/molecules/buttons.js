@@ -33,64 +33,64 @@ module.exports = {
     ...atoms[".anim-speed-fast"],
     ...atoms[".shadow.s"]
   },
-  ".button.disabled": {
+  ".button--disabled": {
     ...atoms[".bg-color-grey"],
     ...atoms[".opac-50"],
     ...atoms[".border-color-grey"]
   },
-  ".button.disabled:hover": {
+  ".button--disabled:hover": {
     ...atoms[".bg-color-grey"],
     ...atoms[".opac-50"]
   },
-  ".button.disabled:active": {
+  ".button--disabled:active": {
     ...atoms[".bg-color-grey"],
     ...atoms[".opac-50"]
   },
-  ".button.large": {
+  ".button--large": {
     ...atoms[".text-size-l"],
     ...atoms[".text-height-xxl"]
   },
-  ".button.medium": {
+  ".button--medium": {
     ...atoms[".text-size-m"],
     ...atoms[".text-height-l"]
   },
-  ".button.small": {
+  ".button--small": {
     ...atoms[".text-size-s"],
     ...atoms[".text-height-m"]
   },
-  ".button.danger": {
+  ".button--danger": {
     ...atoms[".text-color-white"],
     ...atoms[".bg-color-danger"],
     ...atoms[".border-color-danger"]
   },
-  ".button.danger:hover": {
+  ".button--danger:hover": {
     ...atoms[".bg-color-white"],
     ...atoms[".text-color-danger"]
   },
-  ".button-danger:active": {
+  ".button--danger:active": {
     ...atoms[".opac-50"]
   },
-  ".button.secondary": {
+  ".button--secondary": {
     ...atoms[".text-color-secondary"],
     ...atoms[".bg-color-white"],
     ...atoms[".border-color-primary"]
   },
-  ".button.link": {
+  ".button--link": {
     ...atoms[".text-color-primary"],
     ...atoms[".bg-color-white"],
     ...atoms[".border-size-none"]
   },
-  ".button.secondary:hover": {
+  ".button--secondary:hover": {
     ...atoms[".bg-color-secondary"],
     ...atoms[".anim-speed-fast"],
     ...atoms[".text-color-white"]
   },
-  ".button.secondary:active": {
+  ".button--secondary:active": {
     ...atoms[".text-color-primary"],
     ...atoms[".bg-color-white"],
     ...atoms[".shadow-s"]
   },
-  ".button.secondary.disabled, .button.secondary.disabled:hover, .button.secondary.disabled:active": {
+  ".button--secondary-disabled, .button--secondary-disabled:hover, .button--secondary-disabled:active": {
     ...atoms[".text-color-grey"],
     ...atoms[".border-size-xs"],
     ...atoms[".border-color-light-grey"],
