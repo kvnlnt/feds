@@ -20,43 +20,46 @@ module.exports = {
     textTransform: "uppercase"
   },
   ".text-color-black": {
-    color: "rgb(14,18,37)"
+    color: `${params.color.black}`
   },
   ".text-color-danger": {
-    color: "hsl(358,80%,46%)"
+    color: `${params.color.danger}`
   },
   ".text-color-grey": {
-    color: "hsl(219, 22%, 25%)"
+    color: `${params.color.grey}`
   },
   ".text-color-grey-l": {
-    color: "rgb(202,206,217)"
+    color: `${params.color.greyLight}`
   },
-  ".text-color-grey-xl": {
-    color: "rgba(202,206,217,.3)"
+  ".text-color-light-grey": {
+    color: `${params.color.lightGrey}`
   },
-  ".text-color-grey-xxl": {
-    color: "rgba(202,206,217,.12)"
+  ".text-color-light-grey-l": {
+    color: `${params.color.lightGreyLight}`
+  },
+  ".text-color-light-grey-xl": {
+    color: `${params.color.lightGreyExtraLight}`
   },
   ".text-color-info": {
-    color: "hsl(212, 64%, 49%)"
+    color: `${params.color.blue}`
   },
   ".text-color-primary": {
-    color: "hsl(212, 64%, 49%)"
+    color: `${params.color.blue}`
   },
   ".text-color-primary-l": {
-    color: "hsl(212, 100%, 60%)"
+    color: `${params.color.blueLight}`
   },
   ".text-color-secondary": {
-    color: "hsl(212, 70%, 40%)"
+    color: `${params.color.blueDark}`
   },
   ".text-color-success": {
-    color: "hsl(158, 100%, 26%)"
+    color: `${params.color.green}`
   },
   ".text-color-warn": {
-    color: "#F7D31E"
+    color: `${params.color.yellow}`
   },
   ".text-color-white": {
-    color: "#FFFFFF"
+    color: `${params.color.white}`
   },
   ".text-ellipsis": {
     textOverflow: "ellipsis",

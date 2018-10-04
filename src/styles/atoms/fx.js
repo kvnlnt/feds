@@ -68,5 +68,8 @@ module.exports = {
   },
   ".shadow-s": {
     boxShadow: "0 1px 5px rgba(14,18,37,.25)"
+  },
+  ".shadow-none": {
+    boxShadow: "none"
   }
 };

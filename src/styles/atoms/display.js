@@ -36,10 +36,16 @@ module.exports = {
   ".display-table-cell": {
     display: "table-cell"
   },
-  ".display-talbe-fixed": {
+  ".display-table-fixed": {
     tableLayout: "fixed"
   },
   ".display-table-row": {
     display: "table-row"
+  },
+  ".display-appearance-none":{
+    "-webkitAppearance": "none",
+    "-mozAppearance": "none",
+    "-msAppearance": "none",
+    appearance: "none"
   }
 };

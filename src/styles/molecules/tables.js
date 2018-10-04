@@ -7,7 +7,7 @@ module.exports = {
   },
   "table td": {
     ...atoms[".border-size-bot-xs"],
-    ...atoms[".border-color-grey-xl"],
+    ...atoms[".border-color-light-grey"],
     ...atoms[".border-style-solid-bot"],
     ...atoms[".pad-xs"],
     ...atoms[".text-size-m"]

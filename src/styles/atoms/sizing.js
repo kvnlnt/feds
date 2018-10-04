@@ -90,5 +90,41 @@ module.exports = {
   },
   ".view-width-sixth": {
     width: "16.666vw"
-  }
+  },
+  ".unit-width-xs": {
+    width: "1.6rem"
+  },
+  ".unit-width-s": {
+    width: "2.4rem"
+  },
+  ".unit-width-m": {
+    width: "2.4rem"
+  },
+  ".unit-width-l": {
+    width: "2.8rem"
+  },
+  ".unit-width-xl": {
+    width: "3.6rem"
+  },
+  ".unit-width-xxl": {
+    width: "5.6rem"
+  },
+  ".unit-height-xs": {
+    height: "1.6rem"
+  },
+  ".unit-height-s": {
+    height: "2.4rem"
+  },
+  ".unit-height-m": {
+    height: "2.4rem"
+  },
+  ".unit-height-l": {
+    height: "2.8rem"
+  },
+  ".unit-height-xl": {
+    height: "3.6rem"
+  },
+  ".unit-height-xxl": {
+    height: "5.6rem"
+  },
 };

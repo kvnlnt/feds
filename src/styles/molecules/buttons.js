@@ -93,7 +93,7 @@ module.exports = {
   ".button.secondary.disabled, .button.secondary.disabled:hover, .button.secondary.disabled:active": {
     ...atoms[".text-color-grey"],
     ...atoms[".border-size-xs"],
-    ...atoms[".border-color-grey-l"],
+    ...atoms[".border-color-light-grey"],
     ...atoms[".bg-color-white"],
     ...atoms[".opac-100"],
     pointerEvents: "none"

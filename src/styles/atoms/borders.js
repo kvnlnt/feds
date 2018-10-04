@@ -14,11 +14,11 @@ module.exports = {
   ".border-color-grey-l": {
     borderColor: `${params.color.greyLight}`
   },
-  ".border-color-grey-xl": {
-    borderColor: `${params.color.greyLight30}`
+  ".border-color-light-grey": {
+    borderColor: `${params.color.lightGreyLight}`
   },
-  ".border-color-grey-xxl": {
-    borderColor: `${params.color.greyLight12}`
+  ".border-color-light-extra-grey": {
+    borderColor: `${params.color.lightGreyExtraLight}`
   },
   ".border-color-primary": {
     borderColor: `${params.color.blue}`
@@ -38,11 +38,14 @@ module.exports = {
   ".border-color-bottom-grey-l": {
     borderBottomColor: `${params.color.greyLight}`
   },
-  ".border-color-bottom-grey-xl": {
-    borderBottomColor: `${params.color.greyLight30}`
+  ".border-color-bottom-light-grey": {
+    borderBottomColor: `${params.color.lightGrey}`
   },
-  ".border-color-bottom-grey-xxl": {
-    borderBottomColor: `${params.color.greyLight12}`
+  ".border-color-bottom-light-grey-l": {
+    borderBottomColor: `${params.color.lightGreyLight}`
+  },
+  ".border-color-bottom-light-light-grey": {
+    borderBottomColor: `${params.color.lightGreyExtraLight}`
   },
   ".border-color-bottom-primary": {
     borderBottomColor: `${params.color.blue}`
@@ -62,11 +65,14 @@ module.exports = {
   ".border-color-top-grey-l": {
     borderTopColor: `${params.color.greyLight}`
   },
-  ".border-color-top-grey-xl": {
-    borderTopColor: `${params.color.greyLight30}`
+  ".border-color-top-light-grey": {
+    borderTopColor: `${params.color.lightGrey}`
   },
-  ".border-color-top-grey-xxl": {
-    borderTopColor: `${params.color.greyLight12}`
+  ".border-color-top-light-grey-l": {
+    borderTopColor: `${params.color.lightGreyLight}`
+  },
+  ".border-color-top-light-grey-xl": {
+    borderTopColor: `${params.color.lightGreyExtraLight}`
   },
   ".border-color-top-primary": {
     borderTopColor: `${params.color.blue}`
@@ -83,11 +89,14 @@ module.exports = {
   ".border-color-left-grey-l": {
     borderLeftColor: `${params.color.greyLight}`
   },
-  ".border-color-left-grey-xl": {
-    borderLeftColor: `${params.color.greyLight30}`
+  ".border-color-left-light-grey": {
+    borderLeftColor: `${params.color.lightGrey}`
   },
-  ".border-color-left-grey-xxl": {
-    borderLeftColor: `${params.color.greyLight12}`
+  ".border-color-left-light-grey-l": {
+    borderLeftColor: `${params.color.lightGreyLight}`
+  },
+  ".border-color-left-light-grey-xl": {
+    borderLeftColor: `${params.color.lightGreyExtraLight}`
   },
   ".border-color-left-primary": {
     borderLeftColor: `${params.color.blue}`
@@ -104,11 +113,14 @@ module.exports = {
   ".border-color-right-grey-l": {
     borderRightColor: `${params.color.greyLight}`
   },
-  ".border-color-right-grey-xl": {
-    borderRightColor: `${params.color.greyLight30}`
+  ".border-color-right-light-grey": {
+    borderRightColor: `${params.color.lightGrey}`
   },
-  ".border-color-right-grey-xxl": {
-    borderRightColor: `${params.color.greyLight12}`
+  ".border-color-right-light-grey-l": {
+    borderRightColor: `${params.color.lightGreyLight}`
+  },
+  ".border-color-right-light-grey-xl": {
+    borderRightColor: `${params.color.lightGreyExtraLight}`
   },
   ".border-color-right-primary": {
     borderRightColor: `${params.color.blue}`
@@ -230,7 +242,8 @@ module.exports = {
   },
   ".border-size-none": {
     borderWidth: 0,
-    borderStyle: "none"
+    borderStyle: "none",
+    outline:0
   },
   ".border-style-solid": {
     borderStyle: "solid"
