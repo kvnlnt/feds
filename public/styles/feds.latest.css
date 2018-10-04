@@ -213,7 +213,7 @@ body {
 }
 .feds .box {
   padding:2.4rem;
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
+  box-shadow:0 1px 2px rgba(14,18,37,.25);
   background-color:#FFFFFF;
 }
 .feds .button {
@@ -303,7 +303,7 @@ body {
 .feds .button.secondary:active {
   color:#2D77CC;
   background-color:#FFFFFF;
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
+  box-shadow:0 1px 2px rgba(14,18,37,.25);
 }
 .feds .button.secondary.disabled, .button.secondary.disabled:hover, .button.secondary.disabled:active {
   color:#333D4F;
@@ -314,7 +314,7 @@ body {
   pointer-events:none;
 }
 .feds .card {
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
+  box-shadow:0 1px 2px rgba(14,18,37,.25);
   background-color:#FFFFFF;
   width:100%;
 }
@@ -323,13 +323,13 @@ body {
   flex-direction:row;
   justify-content:space-between;
   align-items:flex-end;
-  padding:2.4rem;
-  border-bottom-color:#707783;
+  padding:1.6rem;
+  border-bottom-color:#DCDFE6;
   border-bottom-style:solid;
   border-bottom-width:1px;
 }
 .feds .card-body {
-  padding:2.4rem;
+  padding:1.6rem;
 }
 .feds .column {
   flex:1;
@@ -594,7 +594,7 @@ body {
 .feds .modal-view {
   position:relative;
   background-color:#FFFFFF;
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
+  box-shadow:0 1px 2px rgba(14,18,37,.25);
   display:flex;
   flex-direction:column;
   width:80vw;
@@ -914,7 +914,7 @@ body {
 .feds .border-color-bottom-light-grey-l {
   border-bottom-color:#DCDFE6;
 }
-.feds .border-color-bottom-light-light-grey {
+.feds .border-color-bottom-light-grey-xl {
   border-bottom-color:#F1F3F5;
 }
 .feds .border-color-bottom-primary {
@@ -1311,7 +1311,7 @@ body {
   opacity:1;
 }
 .feds .shadow-s {
-  box-shadow:0 1px 5px rgba(14,18,37,.25);
+  box-shadow:0 1px 2px rgba(14,18,37,.25);
 }
 .feds .shadow-none {
   box-shadow:none;

@@ -44,7 +44,7 @@ module.exports = {
   ".border-color-bottom-light-grey-l": {
     borderBottomColor: `${params.color.lightGreyLight}`
   },
-  ".border-color-bottom-light-light-grey": {
+  ".border-color-bottom-light-grey-xl": {
     borderBottomColor: `${params.color.lightGreyExtraLight}`
   },
   ".border-color-bottom-primary": {
@@ -243,7 +243,7 @@ module.exports = {
   ".border-size-none": {
     borderWidth: 0,
     borderStyle: "none",
-    outline:0
+    outline: 0
   },
   ".border-style-solid": {
     borderStyle: "solid"

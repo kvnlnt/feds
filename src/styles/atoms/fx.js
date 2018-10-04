@@ -67,7 +67,7 @@ module.exports = {
     opacity: "1"
   },
   ".shadow-s": {
-    boxShadow: "0 1px 5px rgba(14,18,37,.25)"
+    boxShadow: "0 1px 2px rgba(14,18,37,.25)"
   },
   ".shadow-none": {
     boxShadow: "none"
