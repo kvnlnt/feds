@@ -8,13 +8,17 @@
     "build:guide": "node ./tasks/build/guide.js",
     "build:styles": "node ./tasks/build/styles.js",
     "build:scripts": "node ./tasks/build/scripts.js",
+    "build:fonts": "node ./tasks/build/fonts.js",
+    "clean": "node ./tasks/build/clean.js",
     "test": "node ./tasks/test/all.js",
     "test:ci": "node ./tasks/test/ci.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs-extra": "^7.0.0",
     "testcafe": "^0.21.1",
-    "testcafe-reporter-json": "^2.1.0"
+    "testcafe-reporter-json": "^2.1.0",
+    "webfonts-generator": "^0.4.0"
   }
 }

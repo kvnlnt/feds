@@ -1,6 +1,7 @@
-require("./guide");
+require("./fonts");
 require("./styles");
 require("./scripts");
+require("./guide");
 
 // increment build
 const util = require("../lib/util");

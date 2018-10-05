@@ -1,0 +1,21 @@
+<section class="pad-top-l" id="Icons">
+    <h2 class="guide margin-top-none">Icons</h2>
+    <div class="box">
+        <div class="columns text-align-left spacing-s">
+            {{#each names}}
+            <div class="column flex-fit">
+                <div class="border-color-grey-l border-style-solid border-size-xs border-radius-m pad-m">
+                    <i class="text-size-xxl icon icon-{{this}}"></i>
+                </div>
+                <p class="text-size-s">{{this}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <h3>Example</h3>
+    <pre>
+    <code data-language="html">
+    <i class="icon icon-administration"></i></code>
+    </pre>
+    <p>Since icons are served as a font see <a href="typography.html">Typography</a> for colors and sizing.</p>
+</section>

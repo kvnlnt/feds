@@ -152,6 +152,206 @@ body {
   font-family: OpenSans, Arial, Helvetica, sans-serif;
 }
 @font-face {
+	font-family: "iconfont";
+	src: url("../fonts/icons/iconfont.eot?6f743840aacffac2ab4a423382ada0f1?#iefix") format("embedded-opentype"),
+url("../fonts/icons/iconfont.woff2?6f743840aacffac2ab4a423382ada0f1") format("woff2"),
+url("../fonts/icons/iconfont.woff?6f743840aacffac2ab4a423382ada0f1") format("woff"),
+url("../fonts/icons/iconfont.ttf?6f743840aacffac2ab4a423382ada0f1") format("truetype"),
+url("../fonts/icons/iconfont.svg?6f743840aacffac2ab4a423382ada0f1#iconfont") format("svg");
+}
+.icon {
+	line-height: 1;
+}
+.icon:before {
+	font-family: iconfont !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+.icon-administration:before {
+	content: "\f101";
+}
+.icon-analytics:before {
+	content: "\f102";
+}
+.icon-calendar:before {
+	content: "\f103";
+}
+.icon-close:before {
+	content: "\f104";
+}
+.icon-collapse-expand:before {
+	content: "\f105";
+}
+.icon-daily-roster:before {
+	content: "\f106";
+}
+.icon-data-intelligence:before {
+	content: "\f107";
+}
+.icon-demographics:before {
+	content: "\f108";
+}
+.icon-events:before {
+	content: "\f109";
+}
+.icon-home:before {
+	content: "\f10a";
+}
+.icon-hydrants:before {
+	content: "\f10b";
+}
+.icon-incidents:before {
+	content: "\f10c";
+}
+.icon-inventory:before {
+	content: "\f10d";
+}
+.icon-invoicing:before {
+	content: "\f10e";
+}
+.icon-library:before {
+	content: "\f10f";
+}
+.icon-maintenance:before {
+	content: "\f110";
+}
+.icon-message-center:before {
+	content: "\f111";
+}
+.icon-my-profile:before {
+	content: "\f112";
+}
+.icon-occupancies:before {
+	content: "\f113";
+}
+.icon-payroll:before {
+	content: "\f114";
+}
+.icon-reports:before {
+	content: "\f115";
+}
+.icon-roster:before {
+	content: "\f116";
+}
+.icon-shifts:before {
+	content: "\f117";
+}
+.icon-training:before {
+	content: "\f118";
+}
+.icon-alert:before {
+	content: "\f119";
+}
+.icon-archive-solid:before {
+	content: "\f11a";
+}
+.icon-archive:before {
+	content: "\f11b";
+}
+.icon-calendar-date:before {
+	content: "\f11c";
+}
+.icon-caret-arrow:before {
+	content: "\f11d";
+}
+.icon-caret:before {
+	content: "\f11e";
+}
+.icon-checkmark-circle:before {
+	content: "\f11f";
+}
+.icon-checkmark:before {
+	content: "\f120";
+}
+.icon-clear-solid:before {
+	content: "\f121";
+}
+.icon-clear:before {
+	content: "\f122";
+}
+.icon-close-x-line:before {
+	content: "\f123";
+}
+.icon-delete-solid:before {
+	content: "\f124";
+}
+.icon-delete:before {
+	content: "\f125";
+}
+.icon-download:before {
+	content: "\f126";
+}
+.icon-drag-2-wide:before {
+	content: "\f127";
+}
+.icon-drag-3-wide:before {
+	content: "\f128";
+}
+.icon-edit-solid:before {
+	content: "\f129";
+}
+.icon-edit:before {
+	content: "\f12a";
+}
+.icon-fav-solid:before {
+	content: "\f12b";
+}
+.icon-fav:before {
+	content: "\f12c";
+}
+.icon-filter:before {
+	content: "\f12d";
+}
+.icon-help:before {
+	content: "\f12e";
+}
+.icon-info-solid:before {
+	content: "\f12f";
+}
+.icon-info:before {
+	content: "\f130";
+}
+.icon-lock-closed:before {
+	content: "\f131";
+}
+.icon-lock-open:before {
+	content: "\f132";
+}
+.icon-map-pin:before {
+	content: "\f133";
+}
+.icon-menu:before {
+	content: "\f134";
+}
+.icon-paragraph:before {
+	content: "\f135";
+}
+.icon-printer:before {
+	content: "\f136";
+}
+.icon-search:before {
+	content: "\f137";
+}
+.icon-settings:before {
+	content: "\f138";
+}
+.icon-show-no:before {
+	content: "\f139";
+}
+.icon-show-yes:before {
+	content: "\f13a";
+}
+.icon-sort-arrows:before {
+	content: "\f13b";
+}
+.icon-sort:before {
+	content: "\f13c";
+}
+.icon-warning:before {
+	content: "\f13d";
+}
+@font-face {
     font-family: "OpenSans";
     src: url("../fonts/open-sans/OpenSans-Regular-webfont.eot");
     src: url("../fonts/open-sans/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"),
@@ -454,113 +654,6 @@ body {
   font-size:1.3rem;
   letter-spacing:0.1rem;
   margin:0;
-}
-.feds .icon {
-  display:block;
-  background-size:contain;
-  background-position:center;
-}
-.feds .icon--black {
-  filter:brightness(0);
-}
-.feds .icon--white {
-  filter:brightness(1);
-}
-.feds .icon--xs {
-  width:1.6rem;
-  height:1.6rem;
-}
-.feds .icon--s {
-  width:2.0rem;
-  height:2.0rem;
-}
-.feds .icon--m {
-  width:2.4rem;
-  height:2.4rem;
-}
-.feds .icon--l {
-  width:3.2rem;
-  height:3.2rem;
-}
-.feds .icon--xl {
-  width:4rem;
-  height:4rem;
-}
-.feds .icon--xxl {
-  width:4.8rem;
-  height:4.8rem;
-}
-.feds .icon--administration {
-  background-image:url(../gfx/icons/administration.svg);
-}
-.feds .icon--analytics {
-  background-image:url(../gfx/icons/analytics.svg);
-}
-.feds .icon--calendar {
-  background-image:url(../gfx/icons/calendar.svg);
-}
-.feds .icon--close {
-  background-image:url(../gfx/icons/close.svg);
-}
-.feds .icon--collapse-expand {
-  background-image:url(../gfx/icons/collapse-expand.svg);
-}
-.feds .icon--daily-roster {
-  background-image:url(../gfx/icons/daily-roster.svg);
-}
-.feds .icon--data-intelligence {
-  background-image:url(../gfx/icons/data-intelligence.svg);
-}
-.feds .icon--demographics {
-  background-image:url(../gfx/icons/demographics.svg);
-}
-.feds .icon--events {
-  background-image:url(../gfx/icons/events.svg);
-}
-.feds .icon--home {
-  background-image:url(../gfx/icons/home.svg);
-}
-.feds .icon--hydrants {
-  background-image:url(../gfx/icons/hydrants.svg);
-}
-.feds .icon--incidents {
-  background-image:url(../gfx/icons/incidents.svg);
-}
-.feds .icon--inventory {
-  background-image:url(../gfx/icons/inventory.svg);
-}
-.feds .icon--invoicing {
-  background-image:url(../gfx/icons/invoicing.svg);
-}
-.feds .icon--library {
-  background-image:url(../gfx/icons/library.svg);
-}
-.feds .icon--maintenance {
-  background-image:url(../gfx/icons/maintenance.svg);
-}
-.feds .icon--message-center {
-  background-image:url(../gfx/icons/message-center.svg);
-}
-.feds .icon--my-profile {
-  background-image:url(../gfx/icons/my-profile.svg);
-}
-.feds .icon--occupancies {
-  background-image:url(../gfx/icons/occupancies.svg);
-}
-.feds .icon--payroll {
-  background-image:url(../gfx/icons/payroll.svg);
-}
-.feds .icon--reports {
-  background-image:url(../gfx/icons/reports.svg);
-}
-.feds .icon--roster {
-  background-image:url(../gfx/icons/roster.svg);
-}
-.feds .icon--shifts {
-  background-image:url(../gfx/icons/shifts.svg);
-}
-.feds .icon--training {
-  background-image:url(../gfx/icons/training.svg);
 }
 .feds a {
   color:#2D77CC;
@@ -1321,30 +1414,6 @@ body {
 }
 .feds .shadow-none {
   box-shadow:none;
-}
-.feds .icon-size-xs {
-  width:1.6rem;
-  height:1.6rem;
-}
-.feds .icon-size-s {
-  width:2.0rem;
-  height:2.0rem;
-}
-.feds .icon-size-m {
-  width:2.4rem;
-  height:2.4rem;
-}
-.feds .icon-size-l {
-  width:3.2rem;
-  height:3.2rem;
-}
-.feds .icon-size-xl {
-  width:4rem;
-  height:4rem;
-}
-.feds .icon-size-xxl {
-  width:4.8rem;
-  height:4.8rem;
 }
 .feds .margin-xs {
   margin:1.6rem;

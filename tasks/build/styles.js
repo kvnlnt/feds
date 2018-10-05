@@ -3,7 +3,8 @@ const config = require("../../feds.json");
 const util = require("../lib/util");
 const compiler = require("../lib/compiler");
 const baseCss = fs.readFileSync("./src/styles/lib/base.css", "utf-8");
-const fontCss = fs.readFileSync("./src/styles/lib/fonts.css", "utf-8");
+const openSansFont = fs.readFileSync("./src/styles/lib/open-sans.css", "utf-8");
+const iconsFont = fs.readFileSync("./src/styles/lib/icons.css", "utf-8");
 const normalizeCss = fs.readFileSync("./src/styles/lib/normalize.css", "utf-8");
 const atoms = require("../../src/styles/atoms/atoms");
 const molecules = require("../../src/styles/molecules/molecules");
@@ -23,7 +24,8 @@ const compiledMolecules = compiler.compileJavascriptToCSS(molecules);
 const styles = `${build}
 ${normalizeCss}
 ${baseCss}
-${fontCss}
+${iconsFont}
+${openSansFont}
 ${compiledMolecules}
 ${compiledAtoms}`.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '').replace(/\n\s*\n/g, '\n');
 const stylesMin = styles.replace(/\s/g, "");
