@@ -1,4 +1,4 @@
-// Build: feds.1.0.0.759
+// Build: feds.1.0.0.761
 var feds = (function(m){
 
 function ContainerQuery(opts) {
@@ -168,25 +168,6 @@ ContainerQuery.prototype = {
   }
 };
 
-
-function Reifier() {
-    this.components = this.collect();
-    return this.components;
-}
-
-Reifier.prototype = {
-    collect: function () {
-        var that = this;
-        return [].slice.call(document.querySelectorAll('[data-reify]')).map(function (i) {
-            if (!feds[i.dataset.reify]) return null;
-            return that.reify(i);
-        });
-    },
-    reify: function (el) {
-        return new feds[el.dataset.reify](el.dataset);
-    }
-};
-
 function Responsifier(opts) {
   var opts = opts || {};
   this.queries = [];
@@ -211,9 +192,30 @@ Responsifier.prototype = {
     });
   }
 };
+function Reifier() {
+  this.components = this.collect();
+  return this.components;
+}
+
+Reifier.prototype = {
+  collect: function() {
+    var that = this;
+    return [].slice
+      .call(document.querySelectorAll("[data-component]"))
+      .map(function(i) {
+        if (!feds[i.dataset.component]) return null;
+        return that.reify(i);
+      });
+  },
+  reify: function(el) {
+    return new feds[el.dataset.component](el.dataset);
+  }
+};
+
 
 m.ContainerQuery = ContainerQuery;
-m.Reifier = Reifier;
 m.Responsifier = Responsifier;
+m.Reifier = Reifier;
+
 return m;
 }(feds || {}))

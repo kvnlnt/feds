@@ -1,4 +1,4 @@
-const atoms = require("../atoms/atoms");
+const atoms = require("../atoms/_atoms");
 
 module.exports = {
   ".button": {

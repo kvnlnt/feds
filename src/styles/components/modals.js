@@ -1,4 +1,4 @@
-const atoms = require("../atoms/atoms");
+const atoms = require("../atoms/_atoms");
 
 module.exports = {
   ".modal": {
@@ -69,5 +69,5 @@ module.exports = {
     ...atoms[".pad-right-s"],
     ...atoms[".flex-col"],
     ...atoms[".text-align-right"]
-  },
+  }
 };

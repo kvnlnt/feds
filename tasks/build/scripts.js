@@ -7,58 +7,49 @@ const build = `// Build: ${config.name}.${config.version}.${config.build + 1}`;
 console.time(util.ok("Scripts"));
 
 const code = Object.keys(config.scripts).reduce((acc, curr) => {
-  acc[curr] = fs.readFileSync(config.scripts[curr], "utf-8");
+  acc.push({
+    name: config.scripts[curr].name,
+    code: fs.readFileSync(config.scripts[curr].source, "utf-8")
+  });
   return acc;
-}, {});
+}, []);
 
 // IIFE: Browser only
 const WrapInIIFE = () => `${build}
 var feds = (function(m){
 
-${code.ContainerQuery}\n
-${code.Reifier}\n
-${code.Responsifier}
+${code.map(i => `${i.code}`).join("\n")}
 
-m.ContainerQuery = ContainerQuery;
-m.Reifier = Reifier;
-m.Responsifier = Responsifier;
+${code.map(i => `m.${i.name} = ${i.name};`).join("\n")}
+
 return m;
 }(feds || {}))`;
 
 // CommonJS: Node only
 const WrapInCommonJs = () => `${build}
-${code.ContainerQuery}
-${code.Reifier}
-${code.Responsifier}
+
+${code.map(i => `${i.code}`).join("\n")}
 
 module.exports = {
-  ContainerQuery: ContainerQuery,
-  Reifier: Reifier,
-  Responsifier: Responsifier
+${code.map(i => `${i.name}:${i.name}`).join(",\n")}
 };`;
 
 // AMD: Browser only, with AMD
 const WrapInAMD = () => `${build}
-define('feds', [], 
+define('feds', [],
 function () {
-  
-${code.ContainerQuery}
-${code.Reifier}
-${code.Responsifier}
+
+${code.map(i => `${i.code}`).join("\n")}
 
 var module = {
-    ContainerQuery: ContainerQuery,
-    Reifier: Reifier,
-    Responsifier: Responsifier
+${code.map(i => `${i.name}:${i.name}`).join(",\n")}
 };
 return module;
 });`;
 
 // ESM: Browsers only (via Bundler)
 const WrapInEs6 = () => `${build}
-export ${code.ContainerQuery}
-export ${code.Reifier}
-export ${code.Responsifier}`;
+${code.map(i => `export ${i.code}`).join("\n")}`;
 
 fs.writeFileSync(
   `./public/scripts/${config.name}.iife.${config.version}.js`,

@@ -1,30 +1,37 @@
-const webfontsGenerator = require('webfonts-generator');
+const webfontsGenerator = require("webfonts-generator");
 const util = require("../lib/util");
-const fs = require('fs');
+const fs = require("fs");
 
-const navIcons = fs.readdirSync("./src/fonts/icons/nav").map(i => `./src/fonts/icons/nav/${i}`);
-const commonIcons = fs.readdirSync("./src/fonts/icons/common").map(i => `./src/fonts/icons/common/${i}`);
+const navIcons = fs
+  .readdirSync("./src/fonts/icons/nav")
+  .map(i => `./src/fonts/icons/nav/${i}`);
+const commonIcons = fs
+  .readdirSync("./src/fonts/icons/common")
+  .map(i => `./src/fonts/icons/common/${i}`);
 const icons = [...navIcons, ...commonIcons];
 
 // setup
 console.time(util.ok("Fonts"));
 
-webfontsGenerator({
+webfontsGenerator(
+  {
     files: icons,
-    dest: './public/fonts/icons',
+    dest: "./public/fonts/icons",
     cssFontsUrl: "../fonts/icons",
     cssDest: "./src/styles/lib/icons.css",
     html: true,
     htmlDest: "./src/guide/partials/icons.html",
     htmlTemplate: "./src/fonts/icons/template.hbs",
     types: ["svg", "ttf", "woff", "woff2", "eot"]
-}, function (error) {
+  },
+  function(error) {
     if (error) {
-        console.log('Fail!', error);
+      console.log("Fail!", error);
     } else {
-        console.log('Done!');
+      console.log("Done!");
     }
-})
+  }
+);
 
 // Running time
 console.timeEnd(util.ok("Fonts"));

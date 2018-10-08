@@ -1,12 +1,20 @@
 {
   "name": "feds",
   "version": "1.0.0",
-  "build": 759,
-  "test": 759,
-  "scripts": {
-    "ContainerQuery": "./src/scripts/components/ContainerQuery.js",
-    "DataTable": "./src/scripts/components/DataTable.js",
-    "Reifier": "./src/scripts/components/Reifier.js",
-    "Responsifier": "./src/scripts/components/Responsifier.js"
-  }
+  "build": 761,
+  "test": 761,
+  "scripts": [
+    {
+      "name": "ContainerQuery",
+      "source": "./src/scripts/lib/ContainerQuery.js"
+    },
+    {
+      "name": "Responsifier",
+      "source": "./src/scripts/lib/Responsifier.js"
+    },
+    {
+      "name": "Reifier",
+      "source": "./src/scripts/lib/Reifier.js"
+    }
+  ]
 }

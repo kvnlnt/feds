@@ -6,19 +6,20 @@ const baseCss = fs.readFileSync("./src/styles/lib/base.css", "utf-8");
 const openSansFont = fs.readFileSync("./src/styles/lib/open-sans.css", "utf-8");
 const iconsFont = fs.readFileSync("./src/styles/lib/icons.css", "utf-8");
 const normalizeCss = fs.readFileSync("./src/styles/lib/normalize.css", "utf-8");
-const atoms = require("../../src/styles/atoms/atoms");
-const molecules = require("../../src/styles/molecules/molecules");
+const atoms = require("../../src/styles/atoms/_atoms");
+const elements = require("../../src/styles/elements/_elements");
+const components = require("../../src/styles/components/_components");
 // const cssComments = new RegExp("\\/\\*.+?\\*\\", 'g');
 const build = `/* Build: ${config.name}.${config.version}.${config.build +
   1} */`;
-
 
 // setup
 console.time(util.ok("Styles"));
 
 // compile
 const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
-const compiledMolecules = compiler.compileJavascriptToCSS(molecules);
+const compiledElements = compiler.compileJavascriptToCSS(elements);
+const compiledComponents = compiler.compileJavascriptToCSS(components);
 
 // render
 const styles = `${build}
@@ -26,8 +27,11 @@ ${normalizeCss}
 ${baseCss}
 ${iconsFont}
 ${openSansFont}
-${compiledMolecules}
-${compiledAtoms}`.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '').replace(/\n\s*\n/g, '\n');
+${compiledElements}
+${compiledComponents}
+${compiledAtoms}`
+  .replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, "")
+  .replace(/\n\s*\n/g, "\n");
 const stylesMin = styles.replace(/\s/g, "");
 
 // files

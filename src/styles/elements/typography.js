@@ -1,4 +1,4 @@
-const atoms = require("../atoms/atoms");
+const atoms = require("../atoms/_atoms");
 
 module.exports = {
   p: {
@@ -19,7 +19,7 @@ module.exports = {
     ...atoms[".text-size-s"]
   },
   strong: {
-    ...atoms[".text-bold"],
+    ...atoms[".text-bold"]
   },
   em: {
     ...atoms[".text-italic"]

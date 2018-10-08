@@ -1,4 +1,4 @@
-const atoms = require("../atoms/atoms");
+const atoms = require("../atoms/_atoms");
 
 module.exports = {
   h1: {
@@ -51,5 +51,5 @@ module.exports = {
     ...atoms[".text-size-s"],
     ...atoms[".text-space-s"],
     ...atoms[".margin-none"]
-  },
+  }
 };
