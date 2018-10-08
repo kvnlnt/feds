@@ -4,7 +4,7 @@
   "description": "Front End Design System",
   "main": "./tasks/build.js",
   "scripts": {
-    "build": "node ./tasks/build/all.js",
+    "build": "node ./tasks/build/fonts.js && node ./tasks/build/all.js",
     "build:guide": "node ./tasks/build/guide.js",
     "build:styles": "node ./tasks/build/styles.js",
     "build:scripts": "node ./tasks/build/scripts.js",

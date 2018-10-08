@@ -1,18 +1,28 @@
 const fs = require("fs");
-const config = require("../../feds.json");
+const config = require("../../feds");
 const util = require("../lib/util");
 const build = `// Build: ${config.name}.${config.version}.${config.build + 1}`;
+
+let sourceCode = [
+  // vendor scripts
+  // library scripts
+  ["Responsifier", './src/common/js/Responsifier.js'],
+  ["Reifier", './src/common/js/Reifier.js'],
+  ["EventBus", './src/common/js/EventBus.js'],
+  // components
+  ["Modal", './src/components/modals/component.js'],
+
+];
 
 // setup
 console.time(util.ok("Scripts"));
 
-const code = Object.keys(config.scripts).reduce((acc, curr) => {
-  acc.push({
-    name: config.scripts[curr].name,
-    code: fs.readFileSync(config.scripts[curr].source, "utf-8")
-  });
-  return acc;
-}, []);
+const code = sourceCode.map(i => {
+  return {
+    name: i[0],
+    code: fs.readFileSync(i[1], "utf-8")
+  }
+});
 
 // IIFE: Browser only
 const WrapInIIFE = () => `${build}

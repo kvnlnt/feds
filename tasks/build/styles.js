@@ -1,15 +1,14 @@
 const fs = require("fs");
-const config = require("../../feds.json");
+const config = require("../../feds");
 const util = require("../lib/util");
 const compiler = require("../lib/compiler");
-const baseCss = fs.readFileSync("./src/styles/lib/base.css", "utf-8");
-const openSansFont = fs.readFileSync("./src/styles/lib/open-sans.css", "utf-8");
-const iconsFont = fs.readFileSync("./src/styles/lib/icons.css", "utf-8");
-const normalizeCss = fs.readFileSync("./src/styles/lib/normalize.css", "utf-8");
-const atoms = require("../../src/styles/atoms/_atoms");
-const elements = require("../../src/styles/elements/_elements");
-const components = require("../../src/styles/components/_components");
-// const cssComments = new RegExp("\\/\\*.+?\\*\\", 'g');
+const baseCss = fs.readFileSync("./src/common/css/base.css", "utf-8");
+const openSansFont = fs.readFileSync("./src/common/css/open-sans.css", "utf-8");
+const iconsFont = fs.readFileSync("./src/common/css/icons.css", "utf-8");
+const normalizeCss = fs.readFileSync("./src/vendor/css/normalize.css", "utf-8");
+const atoms = require("../../src/atoms/_atoms");
+const elements = require("../../src/elements/_elements");
+const components = require("../../src/components/_components");
 const build = `/* Build: ${config.name}.${config.version}.${config.build +
   1} */`;
 

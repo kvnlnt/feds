@@ -153,11 +153,11 @@ body {
 }
 @font-face {
 	font-family: "iconfont";
-	src: url("../fonts/icons/iconfont.eot?468ce59cfe182cffffaf4b429ec605fe?#iefix") format("embedded-opentype"),
-url("../fonts/icons/iconfont.woff2?468ce59cfe182cffffaf4b429ec605fe") format("woff2"),
-url("../fonts/icons/iconfont.woff?468ce59cfe182cffffaf4b429ec605fe") format("woff"),
-url("../fonts/icons/iconfont.ttf?468ce59cfe182cffffaf4b429ec605fe") format("truetype"),
-url("../fonts/icons/iconfont.svg?468ce59cfe182cffffaf4b429ec605fe#iconfont") format("svg");
+	src: url("../fonts/icons/iconfont.eot?608d6f3f11eac90ebfb39aaab35f5cc8?#iefix") format("embedded-opentype"),
+url("../fonts/icons/iconfont.woff2?608d6f3f11eac90ebfb39aaab35f5cc8") format("woff2"),
+url("../fonts/icons/iconfont.woff?608d6f3f11eac90ebfb39aaab35f5cc8") format("woff"),
+url("../fonts/icons/iconfont.ttf?608d6f3f11eac90ebfb39aaab35f5cc8") format("truetype"),
+url("../fonts/icons/iconfont.svg?608d6f3f11eac90ebfb39aaab35f5cc8#iconfont") format("svg");
 }
 .icon {
 	line-height: 1;

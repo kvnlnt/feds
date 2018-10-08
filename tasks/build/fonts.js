@@ -13,22 +13,19 @@ const icons = [...navIcons, ...commonIcons];
 // setup
 console.time(util.ok("Fonts"));
 
-webfontsGenerator(
-  {
+webfontsGenerator({
     files: icons,
     dest: "./public/fonts/icons",
     cssFontsUrl: "../fonts/icons",
-    cssDest: "./src/styles/lib/icons.css",
+    cssDest: "./src/common/css/icons.css",
     html: true,
     htmlDest: "./src/guide/partials/icons.html",
     htmlTemplate: "./src/fonts/icons/template.hbs",
     types: ["svg", "ttf", "woff", "woff2", "eot"]
   },
-  function(error) {
+  function (error) {
     if (error) {
       console.log("Fail!", error);
-    } else {
-      console.log("Done!");
     }
   }
 );

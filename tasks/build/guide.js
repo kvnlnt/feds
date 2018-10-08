@@ -1,9 +1,9 @@
 const fs = require("fs");
-const config = require("../../feds.json");
+const config = require("../../feds");
 const util = require("../lib/util");
 const build = `${config.version}.${config.build + 1}`;
 const compiler = require("../lib/compiler");
-const atoms = require("../../src/styles/atoms/_atoms.js");
+const atoms = require("../../src/atoms/_atoms.js");
 const compiledAtoms = compiler.compileJavascriptToCSS(atoms);
 const partialMenu = fs.readFileSync("./src/guide/partials/menu.html");
 let tmpl = fs.readFileSync("./src/guide/template.html", "utf-8");
