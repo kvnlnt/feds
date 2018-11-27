@@ -1,0 +1,121 @@
+$table_pivot =
+    display: flex;
+    overflow: hidden;
+
+    thead {
+        display: flex;
+        flex-shrink: 0;
+        min-width: min-content;
+    }
+
+    tbody {
+        display: flex;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex: 1;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        min-width: min-content;
+        flex: 1;
+    }
+
+    td, th {
+        display: block;
+        font-size: 1.3rem;
+        white-space: nowrap;
+    }
+$table_wrap =
+    display: block;
+
+    tbody {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3.2rem;
+    }
+
+    td:before {
+        content: attr(data-title);
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        text-align: left;
+        padding-right: 2.4rem;
+        display: block;
+        opacity: 0.35;
+    }
+$table_unwrap =
+    display: table;
+
+    tbody {
+        display: table-row-group;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr {
+        display: table-row;
+    }
+
+    td:before {
+        content: '';
+    }
+$table =
+    width: 100%;
+    border-collapse: collapse;
+    display: table;
+
+    td {
+        display: table-cell;
+        border-bottom-width: 1px;
+        border-color: $color-light-grey;
+        border-bottom-style: solid;
+        padding: 1.6rem;
+        font-size: 1.4rem;
+    }
+
+    th {
+        display: table-cell;
+        border-bottom-width: 1px;
+        border-color: $color-grey-l;
+        border-bottom-style: solid;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        text-align: left;
+        padding: 1.6rem;
+    }
+
+table {
+    {$table};
+}
+
+.table--pivot {
+    {$table_pivot};
+}
+
+.table--wrap {
+    {$table_wrap};
+}
+
+.table--unwrap {
+    {$table_wrap};
+}
+
+mq('table--pivot', $table_pivot);
+mq('table--wrap', $table_wrap);
+mq('table--unwrap', $table_unwrap);
+mq('table', $table);

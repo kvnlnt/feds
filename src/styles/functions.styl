@@ -1,0 +1,31 @@
+
+// Wrap in all media queries
+mq(selector, block, prefix = '') {
+    mq-mobile(selector, block, prefix);
+    mq-tablet(selector, block, prefix);
+    mq-desktop(selector, block, prefix);
+}
+
+mq-mobile(selector, block, prefix = '') {
+    @media (min-width: $bp-mobile) {
+        {prefix}.mobile\\:{selector} {
+            {block};
+        }
+    }
+}
+
+mq-tablet(selector, block, prefix = '') {
+    @media (min-width: $bp-tablet) {
+        {prefix}.tablet\\:{selector} {
+            {block};
+        }
+    }
+}
+
+mq-desktop(selector, block, prefix = '') {
+    @media (min-width: $bp-desktop) {
+        {prefix}.desktop\\:{selector} {
+            {block};
+        }
+    }
+}

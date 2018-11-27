@@ -1,0 +1,25 @@
+a {
+    color: $color-blue;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        color: $color-blue;
+    }
+
+    &:active, &:focus:active {
+        opacity: 0.8;
+        color: $color-blue;
+        border-color: rgba(0, 0, 0, 0);
+    }
+
+    &--disabled {
+        color: $color-grey;
+    }
+
+    &--subtle {
+        color: $color-black;
+    }
+}

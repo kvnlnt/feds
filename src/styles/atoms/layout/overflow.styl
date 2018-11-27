@@ -1,0 +1,54 @@
+$layout-overflow =
+  &-auto {
+    overflow: auto;
+  }
+
+  &-hidden {
+    overflow: hidden;
+  }
+
+  &-visible {
+    overflow: visible;
+  }
+
+  &-scroll {
+    overflow: scroll;
+  }
+
+  &-x-auto {
+    overflow-x: auto;
+  }
+
+  &-y-auto {
+    overflow-y: auto;
+  }
+
+  &-x-hidden {
+    overflow-x: hidden;
+  }
+
+  &-y-hidden {
+    overflow-y: hidden;
+  }
+
+  &-x-visible {
+    overflow-x: visible;
+  }
+
+  &-y-visible {
+    overflow-y: visible;
+  }
+
+  &-x-scroll {
+    overflow-x: scroll;
+  }
+
+  &-y-scroll {
+    overflow-y: scroll;
+  }
+
+  .overflow {
+    {$layout-overflow};
+  }
+
+  mq('overflow', $layout-overflow);

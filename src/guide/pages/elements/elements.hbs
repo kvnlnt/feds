@@ -1,0 +1,9 @@
+{{#page title="Elements" }}
+{{#each guide.pages.elements}}
+<a href="{{link}}" class="margin-top-xs text-weight-normal leading-base block text-color-black font-size-base text-style-no-underline">{{title}}</a>
+{{#each sections}}
+<a href="{{../link}}#{{this}}" class="inline-block font-size-xs margin-right-xs">{{this}}</a>
+{{/each}}
+{{/each}}
+</section>
+{{/page}}

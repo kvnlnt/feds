@@ -1,0 +1,109 @@
+.button, button {
+  border-width: 1px;
+  border-color: $color-blue;
+  border-radius: 4px;
+  border-style: solid;
+  background-color: $color-blue;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  color: $color-white;
+  line-height: 3.6rem;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-blue-l;
+    transition: all 0.3s;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &:active {
+    opacity: 0.7;
+    transition: all 0.3s;
+  }
+
+  &--disabled {
+    background-color: $color-grey-l;
+    opacity: 0.5;
+    border-color: $color-grey-l;
+  }
+
+  &--disabled:hover {
+    background-color: $color-grey-l;
+    opacity: 0.5;
+  }
+
+  &--disabled:active {
+    background-color: $color-grey-l;
+    opacity: 0.5;
+  }
+
+  &--large {
+    font-size: 1.8rem;
+    line-height: 5.6rem;
+  }
+
+  &--medium {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+  }
+
+  &--small {
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+  }
+
+  &--danger {
+    color: $color-white;
+    background-color: hsl(358, 80%, 46%);
+    border-color: hsl(358, 80%, 46%);
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-red;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &--secondary {
+    color: $color-blue-l;
+    background-color: $color-white;
+    border-color: $color-blue;
+  }
+
+  &--link {
+    color: $color-blue;
+    background-color: $color-white;
+    border-width: 0;
+    border-style: none;
+    outline: 0;
+  }
+
+  &--secondary:hover {
+    background-color: $color-blue-l;
+    transition: all 0.3s;
+    color: $color-white;
+  }
+
+  &--secondary:active {
+    color: $color-blue;
+    background-color: $color-white;
+    box-shadow: 0 1px 2px rgba(14, 18, 37, 0.25);
+  }
+
+  &--secondary-disabled, &--secondary-disabled:hover, &--secondary-disabled:active {
+    color: $color-grey-l;
+    border-width: 1px;
+    border-color: #DCDFE6;
+    background-color: $color-white;
+    opacity: 1;
+    pointer-events: none;
+  }
+}

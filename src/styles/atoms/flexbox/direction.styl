@@ -1,0 +1,22 @@
+$flexbox-direction =
+  &-row {
+    flex-direction: row;
+  }
+
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-col {
+    flex-direction: column;
+  }
+
+  &-col-reverse {
+    flex-direction: column-reverse;
+  }
+
+.flex-direction {
+  {$flexbox-direction};
+}
+
+mq('flex-dir', $flexbox-direction);

@@ -1,0 +1,46 @@
+$flexbox-alignment = @block {
+  &-items-stretch {
+    align-items: stretch;
+  }
+
+  &-items-start {
+    align-items: flex-start;
+  }
+
+  &-items-center {
+    align-items: center;
+  }
+
+  &-items-end {
+    align-items: flex-end;
+  }
+
+  &-items-baseline {
+    align-items: baseline;
+  }
+
+  &-self-auto {
+    align-self: auto;
+  }
+
+  &-self-start {
+    align-self: flex-start;
+  }
+
+  &-self-center {
+    align-self: center;
+  }
+
+  &-self-end {
+    align-self: flex-end;
+  }
+
+  &-self-stretch {
+    align-self: stretch;
+  }
+}
+
+.flex-align { 
+  {$flexbox-alignment} 
+}
+mq('flex-align', $flexbox-alignment);

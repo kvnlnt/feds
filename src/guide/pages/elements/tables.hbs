@@ -1,0 +1,150 @@
+{{#page section="Elements" title="Tables" source="/src/styles/elements/tables.styl" }}
+
+{{>
+header
+title="Tables"
+descr="Tables are for displaying tabular data and therefore it's important to leverage the default syntax."
+}}
+
+{{#example flex=false }}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Abby</td>
+            <td>123-123-1234</td>
+            <td>10/12/76</td>
+        </tr>
+        <tr>
+            <td>Bruce</td>
+            <td>08/26/85</td>
+            <td>345-678-9101</td>
+        </tr>
+        <tr>
+            <td>Catherine</td>
+            <td>234-567-8910</td>
+            <td>03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+{{/example}}
+
+{{>
+header
+title="Pivot"
+descr="A table can be pivoted by adding the <em>pivot</em> class. This creates a row based layout of the same
+table."
+}}
+
+{{#example flex=false }}
+<table class="table--pivot">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Abby</td>
+            <td>123-123-1234</td>
+            <td>10/12/76</td>
+        </tr>
+        <tr>
+            <td>Bruce</td>
+            <td>08/26/85</td>
+            <td>345-678-9101</td>
+        </tr>
+        <tr>
+            <td>Catherine</td>
+            <td>234-567-8910</td>
+            <td>03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+{{/example}}
+
+{{>
+header
+title="Wrap"
+descr="An optional <em>wrap</em> class is available to wrap the table data for smaller screens."
+}}
+
+<p class="">In order for wrapping to work, the <code>data-title</code> attribute must be applied to all <code>td</code>'s</p>
+
+{{#example flex=false }}
+<table class="table--wrap">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-title="Name">Abby</td>
+            <td data-title="Phone">123-123-1234</td>
+            <td data-title="DOB">10/12/76</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Bruce</td>
+            <td data-title="Phone">08/26/85</td>
+            <td data-title="DOB">345-678-9101</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Catherine</td>
+            <td data-title="Phone">234-567-8910</td>
+            <td data-title="DOB">03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+{{/example}}
+
+{{>
+header
+title="Responsive"
+descr="Both the pivot and wrap modifiers include media query prefixes."
+}}
+
+
+{{#example code=true title="Auto-wrap" descr="Add the <em>table--wrap</em> class to default to a table that wraps. Add
+the media
+query prefixed class <em>tablet:table--unwrap</em> to unwrap the table on devices gte to the tablet width." flex=false
+}}
+<table class="table--wrap tablet:table--unwrap">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-title="Name">Abby</td>
+            <td data-title="Phone">123-123-1234</td>
+            <td data-title="DOB">10/12/76</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Bruce</td>
+            <td data-title="Phone">08/26/85</td>
+            <td data-title="DOB">345-678-9101</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Catherine</td>
+            <td data-title="Phone">234-567-8910</td>
+            <td data-title="DOB">03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+{{/example}}
+
+{{/page}}

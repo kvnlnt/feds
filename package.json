@@ -1,0 +1,37 @@
+{
+  "name": "feds",
+  "author": "",
+  "license": "ISC",
+  "version": "1.0.0",
+  "build": 494,
+  "test": 0,
+  "description": "Front End Design System",
+  "main": "./tasks/build.js",
+  "scripts": {
+    "build": "node ./tasks/clean/all.js && node ./tasks/build/all.js",
+    "build:guide": "node ./tasks/build/guide.js",
+    "build:scripts": "node ./tasks/build/scripts.js",
+    "build:icons": "node ./tasks/build/icons.js",
+    "build:styles": "node ./tasks/build/styles.js",
+    "clean": "node ./tasks/clean/all.js",
+    "docs": "node ./tasks/docs/all.js",
+    "serve": "npx http-server -o",
+    "test": "node ./tasks/test/all.js",
+    "test:ci": "node ./tasks/test/ci.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "cheerio": "^1.0.0-rc.2",
+    "css": "^2.2.4",
+    "fs-extra": "^7.0.0",
+    "handlebars": "^4.0.12",
+    "http-server": "^0.11.1",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "stylus": "^0.54.5",
+    "testcafe": "^0.21.1",
+    "testcafe-reporter-json": "^2.1.0",
+    "webfonts-generator": "^0.4.0"
+  }
+}

@@ -1,0 +1,16 @@
+$flexbox-wrapping =
+  flex-wrap: wrap;
+
+  &-off {
+    flex-wrap: nowrap;
+  }
+
+  &-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+.flex-wrap {
+  {$flexbox-wrapping};
+}
+
+mq('flex-wrap', $flexbox-wrapping);

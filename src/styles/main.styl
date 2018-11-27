@@ -1,0 +1,13 @@
+// css imports
+@import url('../fonts/icons/iconfont.css');
+@import url('../fonts/open-sans/OpenSans.css');
+// includes
+@import './src/styles/functions.styl';
+@import './src/styles/variables.styl';
+@import './src/styles/base.styl';
+
+// atoms
+.feds {
+    @require './src/styles/elements/**/*.styl';
+    @require './src/styles/atoms/**/*.styl';
+}

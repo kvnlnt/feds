@@ -1,0 +1,14 @@
+$layout-visibility =
+  &-visible {
+    visibility: visible;
+  }
+
+  &-invisible {
+    visibility: hidden;
+  }
+
+.visibility {
+  {$layout-visibility};
+}
+
+mq('visibility', $layout-visibility);

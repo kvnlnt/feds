@@ -1,0 +1,54 @@
+$layout-z-index =
+  &-0 {
+    z-index: 0;
+  }
+
+  &-1 {
+    z-index: 10;
+  }
+
+  &-2 {
+    z-index: 20;
+  }
+
+  &-3 {
+    z-index: 30;
+  }
+
+  &-4 {
+    z-index: 40;
+  }
+
+  &-5 {
+    z-index: 50;
+  }
+
+  &-6 {
+    z-index: 60;
+  }
+
+  &-7 {
+    z-index: 70;
+  }
+
+  &-8 {
+    z-index: 80;
+  }
+
+  &-9 {
+    z-index: 90;
+  }
+
+  &-auto {
+    z-index: auto;
+  }
+
+  &-inf {
+    z-index: 1000;
+  }
+
+.z {
+  {$layout-z-index};
+}
+
+mq('z', $layout-z-index);

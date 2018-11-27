@@ -1,0 +1,23 @@
+<section id="Icons">
+    <a href="/guide/atoms" class="button text-size-s text-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">Atoms</a>
+    <h2 class="guide margin-top-2xl">Icons</h2>
+    <h3 id="Set">Set</h3>
+    <div class="shadow pad-2xl bg-color-white">
+        <div class="flex flex-wrap flex-justify-center">
+            {{#each names}}
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="text-size-2xl icon icon-{{this}}"></i>
+                </div>
+                <p class="text-size-s">{{this}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <h3>Example</h3>
+    <pre>
+    <code data-language="html">
+    <i class="icon icon-administration"></i></code>
+    </pre>
+    <p>Since icons are served as a font see <a href="typography.html">Typography</a> for colors and sizing.</p>
+</section>

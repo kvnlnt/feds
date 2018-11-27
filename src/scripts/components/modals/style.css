@@ -1,0 +1,77 @@
+.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    --atom: .position-fix;
+    --atom: .size-width-full;
+    --atom: .size-height-full;
+    --atom: .position-top-none;
+    --atom: .position-left-none;
+    --atom: .position-zinf;
+    --atom: .display-hide;
+    --atom: .flex-horz-center;
+    --atom: .flex-vert-center;
+}
+
+.modal-view {
+    --atom: .position-rel;
+    --atom: .background-color-white;
+    --atom: .fx-shadow-s;
+    --atom: .display-flex;
+    --atom: .flex-dir-col;
+    width: 80vw;
+    max-width: 600px;
+    max-height: 80vh;
+}
+
+.modal-view.fullscreen {
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal-header {
+    --atom: .display-flex;
+    --atom: .flex-dir-row;
+    --atom: .flex-horz-space-between;
+    --atom: .flex-vert-center;
+    --atom: .border-color-bottom-grey-l;
+    --atom: .border-style-solid-bot;
+    --atom: .border-size-bot-xs;
+    --atom: .size-width-full;
+    flex: 0 0 5rem;
+}
+
+.modal-header-title {
+    --atom: .text-size-l;
+    --atom: .text-ellipsis;
+    --atom: .text-indent-m;
+    --atom: .flex-col;
+}
+
+.modal-header-buttons {
+    --atom: .padding-left-s;
+    --atom: .padding-right-s;
+    --atom: .flex-col;
+    --atom: .text-align-right;
+}
+
+.modal-body {
+    --atom: .scroll-overflow-y;
+}
+
+.modal-footer {
+    --atom: .display-flex;
+    --atom: .flex-dir-row;
+    --atom: .flex-horz-space-between;
+    --atom: .flex-vert-center;
+    --atom: .border-color-bottom-grey-l;
+    --atom: .border-style-solid-bot;
+    --atom: .border-size-bot-xs;
+    --atom: .size-width-full;
+    flex: 0 0 5rem;
+}
+
+.modal-footer-buttons {
+    --atom: .padding-left-s;
+    --atom: .padding-right-s;
+    --atom: .flex-col;
+    --atom: .text-align-right;
+}

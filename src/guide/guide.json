@@ -1,0 +1,173 @@
+{
+  "repo": "https://github.com/kvnlnt/feds/blob/master",
+  "pages": {
+    "general": [
+      {
+        "src": "src/guide/pages/general/home.html",
+        "link": "/guide/index.html"
+      },
+      {
+        "src": "src/guide/pages/general/usage.html",
+        "link": "/guide/general/usage.html"
+      },
+      {
+        "src": "src/guide/pages/general/concepts.html",
+        "link": "/guide/general/concepts.html"
+      },
+      {
+        "src": "src/guide/pages/general/compatibility.html",
+        "link": "/guide/general/compatibility.html"
+      },
+      {
+        "src": "src/guide/pages/general/compliance.html",
+        "link": "/guide/general/compliance.html"
+      },
+      {
+        "title": "Atoms",
+        "src": "src/guide/pages/atoms/atoms.hbs",
+        "link": "/guide/atoms/index.html"
+      },
+      {
+        "src": "src/guide/pages/elements/elements.hbs",
+        "link": "/guide/elements/index.html"
+      },
+      {
+        "src": "src/guide/pages/components/components.hbs",
+        "link": "/guide/components/index.html"
+      },
+      {
+        "src": "src/guide/pages/modules/modules.hbs",
+        "link": "/guide/modules/index.html"
+      }
+    ],
+    "atoms": [
+      {
+        "title": "Backgrounds",
+        "src": "src/guide/pages/atoms/backgrounds.hbs",
+        "link": "/guide/atoms/backgrounds.html",
+        "sections": ["Attachment", "Colors", "Position", "Repeat", "Size"]
+      },
+      {
+        "title": "Borders",
+        "src": "src/guide/pages/atoms/borders.hbs",
+        "link": "/guide/atoms/borders.html",
+        "sections": ["Color", "Outline", "Radius", "Size", "Style"]
+      },
+      {
+        "title": "Flexbox",
+        "src": "src/guide/pages/atoms/flexbox.hbs",
+        "link": "/guide/atoms/flexbox.html",
+        "sections": [
+          "Alignment",
+          "Direction",
+          "Display",
+          "Grow-Shrink",
+          "Justify",
+          "Wrapping"
+        ]
+      },
+      {
+        "title": "FX",
+        "src": "src/guide/pages/atoms/fx.hbs",
+        "link": "/guide/atoms/fx.html",
+        "sections": ["Appearance", "Opacity", "Shadows", "Transitions"]
+      },
+      {
+        "title": "Icons",
+        "src": "src/guide/pages/atoms/icons.hbs",
+        "link": "/guide/atoms/icons.html",
+        "sections": ["Set"]
+      },
+      {
+        "title": "Interaction",
+        "src": "src/guide/pages/atoms/interaction.hbs",
+        "link": "/guide/atoms/interaction.html",
+        "sections": ["Cursor", "Pointer Events", "Select"]
+      },
+      {
+        "title": "Layout",
+        "src": "src/guide/pages/atoms/layout.hbs",
+        "link": "/guide/atoms/layout.html",
+        "sections": [
+          "Container",
+          "Display",
+          "Floats",
+          "Overflow",
+          "Position",
+          "Visibility",
+          "Z-Index"
+        ]
+      },
+      {
+        "title": "Misc",
+        "src": "src/guide/pages/atoms/misc.hbs",
+        "link": "/guide/atoms/misc.html",
+        "sections": ["Content", "SVG"]
+      },
+      {
+        "title": "Sizing",
+        "src": "src/guide/pages/atoms/sizing.hbs",
+        "link": "/guide/atoms/sizing.html",
+        "sections": ["Height", "Width"]
+      },
+      {
+        "title": "Spacing",
+        "src": "src/guide/pages/atoms/spacing.hbs",
+        "link": "/guide/atoms/spacing.html",
+        "sections": ["Margin", "Padding"]
+      },
+      {
+        "title": "Tables",
+        "src": "src/guide/pages/atoms/tables.hbs",
+        "link": "/guide/atoms/tables.html",
+        "sections": ["Border", "Layout"]
+      },
+      {
+        "title": "Typography",
+        "src": "src/guide/pages/atoms/typography.hbs",
+        "link": "/guide/atoms/typography.html",
+        "sections": [
+          "Align",
+          "Color",
+          "Font",
+          "Indent",
+          "Kerning",
+          "Leading",
+          "Size",
+          "Style",
+          "Weight",
+          "Whitespace",
+          "Wrapping"
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "title": "Buttons",
+        "src": "src/guide/pages/elements/buttons.hbs",
+        "link": "/guide/elements/buttons.html",
+        "sections": ["Types", "Sizes", "States"]
+      },
+      {
+        "title": "Grids",
+        "src": "src/guide/pages/elements/grids.hbs",
+        "link": "/guide/elements/grids.html",
+        "sections": ["Columns", "Responsive"]
+      },
+      {
+        "title": "Tables",
+        "src": "src/guide/pages/elements/tables.hbs",
+        "link": "/guide/elements/tables.html",
+        "sections": ["Basic", "Pivot", "Wrap", "Responsive"]
+      },
+      {
+        "title": "Typography",
+        "src": "src/guide/pages/elements/typography.hbs",
+        "link": "/guide/elements/typography.html",
+        "sections": ["Headers", "Paragraphs"]
+      }
+    ],
+    "components": [],
+    "modules": []
+  }
+}

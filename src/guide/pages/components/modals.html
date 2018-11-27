@@ -1,0 +1,120 @@
+<section class="" id="Modals">
+    <h2 class="guide margin-top-none">Modals</h2>
+    <p>The
+        <em>.main-view</em> molecule are driven by the
+        <a href="responsifier.html" class="nav-item">Responsifier</a>. The
+        <em>hide</em>
+        class is added/removed from the
+        <em>modal-view</em> element.</p>
+    <div class="box">
+        <a class="button" id="modalTrigger">Open Dialog</a>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-view">
+            <div class="modal-header">
+                <div class="modal-header-title">Title</div>
+                <div class="modal-header-buttons">
+                    <a class="modal-close" id="modalClose">
+                        <i class="icon xs close"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="pad-m">
+                    ...content...
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-footer-buttons">
+                    <a class="modal-close" id="modalClose">
+                        <i class="icon xs close"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4>HTML</h4>
+    <pre>
+<code data-language="html">
+<a class="button" id="modalTrigger">Open Dialog</a>
+<div class="modal" id="example-modal">
+    <div class="modal-view">
+        <div class="modal-header">
+            <div class="modal-header-title">Title</div>
+            <div class="modal-header-buttons">
+                <a class="modal-close" id="modalClose">
+                    <i class="icon xs close"></i>
+                </a>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="pad-m">
+                ...content...
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer-buttons">
+                <a class="modal-close" id="modalClose">
+                    <i class="icon xs close"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div></code></pre>
+    <h4>Javascript</h4>
+    <pre>
+<code data-language="javascript">
+    new feds.Responsifier()
+    .add({
+        observer: "#example-modal",
+        observable: "#modalTrigger",
+        event: feds.Responsifier.CLICK,
+        toggle: ["display-flex"]
+    }).add({
+        observer: "#example-modal",
+        observable: "#modalClose",
+        event: feds.Responsifier.CLICK,
+        toggle: ["display-flex"]
+    }).add({
+        observer: "body",
+        observable: "#modalClose",
+        event: feds.Responsifier.CLICK,
+        toggle: ["scroll-none"]
+    }).add({
+        observer: "body",
+        observable: "#modalTrigger",
+        event: feds.Responsifier.CLICK,
+        toggle: ["scroll-none"]
+    })
+    .init();</code>
+</pre>
+</section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new feds.Responsifier()
+            .add({
+                observer: "#modal",
+                observable: "#modalTrigger",
+                event: feds.Responsifier.CLICK,
+                toggle: ["display-flex"]
+            }).add({
+                observer: "#modal",
+                observable: "#modalClose",
+                event: feds.Responsifier.CLICK,
+                toggle: ["display-flex"]
+            }).add({
+                observer: "body",
+                observable: "#modalClose",
+                event: feds.Responsifier.CLICK,
+                toggle: ["scroll-none"]
+            }).add({
+                observer: "body",
+                observable: "#modalTrigger",
+                event: feds.Responsifier.CLICK,
+                toggle: ["scroll-none"]
+            })
+            .init();
+    });
+</script>
