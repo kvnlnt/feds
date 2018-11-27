@@ -1,7 +1,7 @@
 const fs = require("fs");
 const createTestCafe = require("testcafe");
 const report = fs.createWriteStream("tests/report.json");
-const config = require("../../feds.json");
+const config = require("../../package.json");
 let testcafe = null;
 
 createTestCafe("localhost", 1337, 1338)
@@ -20,6 +20,10 @@ createTestCafe("localhost", 1337, 1338)
     } else {
       config.test = config.build;
     }
-    fs.writeFileSync("./feds.json", JSON.stringify(config, null, 2), "utf-8");
+    fs.writeFileSync(
+      "./package.json",
+      JSON.stringify(config, null, 2),
+      "utf-8"
+    );
     testcafe.close();
   });
