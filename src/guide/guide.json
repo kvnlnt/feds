@@ -57,14 +57,7 @@
         "title": "Flexbox",
         "src": "src/guide/pages/atoms/flexbox.hbs",
         "link": "/guide/atoms/flexbox.html",
-        "sections": [
-          "Alignment",
-          "Direction",
-          "Display",
-          "Grow-Shrink",
-          "Justify",
-          "Wrapping"
-        ]
+        "sections": ["Alignment", "Direction", "Display", "Grow-Shrink", "Justify", "Wrapping"]
       },
       {
         "title": "FX",
@@ -88,15 +81,7 @@
         "title": "Layout",
         "src": "src/guide/pages/atoms/layout.hbs",
         "link": "/guide/atoms/layout.html",
-        "sections": [
-          "Container",
-          "Display",
-          "Floats",
-          "Overflow",
-          "Position",
-          "Visibility",
-          "Z-Index"
-        ]
+        "sections": ["Container", "Display", "Floats", "Overflow", "Position", "Visibility", "Z-Index"]
       },
       {
         "title": "Misc",
@@ -153,6 +138,12 @@
         "src": "src/guide/pages/elements/grids.hbs",
         "link": "/guide/elements/grids.html",
         "sections": ["Columns", "Responsive"]
+      },
+      {
+        "title": "Lists",
+        "src": "src/guide/pages/elements/lists.hbs",
+        "link": "/guide/elements/lists.html",
+        "sections": ["Bulleted", "Numbered"]
       },
       {
         "title": "Tables",

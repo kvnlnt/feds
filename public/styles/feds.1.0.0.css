@@ -175,6 +175,17 @@ body {
 .feds a--subtle {
   color: #0e1225;
 }
+.feds ul,
+.feds ol {
+  line-height: 2.8rem;
+  margin-left: 0;
+  padding-left: 0;
+}
+.feds ul li,
+.feds ol li {
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
 .feds p {
   font-size: 1.4rem;
   line-height: 2.4rem;
