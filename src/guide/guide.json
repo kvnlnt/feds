@@ -143,7 +143,13 @@
         "title": "Lists",
         "src": "src/guide/pages/elements/lists.hbs",
         "link": "/guide/elements/lists.html",
-        "sections": ["Bulleted", "Numbered"]
+        "sections": ["Bulleted", "Numbered", "Responsive"]
+      },
+      {
+        "title": "Navigations",
+        "src": "src/guide/pages/elements/navigations.hbs",
+        "link": "/guide/elements/navigations.html",
+        "sections": ["Breadcrumbs", "Breadcrumbs With Title", "Back Button & Page Title"]
       },
       {
         "title": "Tables",
