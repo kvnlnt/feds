@@ -175,6 +175,61 @@ body {
 .feds a--subtle {
   color: #0e1225;
 }
+.feds ul,
+.feds ol {
+  line-height: 2.8rem;
+  margin-left: 0;
+  padding-left: 0;
+}
+.feds ul.list-reset,
+.feds ol.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.feds ul.list-reset li,
+.feds ol.list-reset li {
+  margin: 0;
+  padding: 0;
+}
+.feds ul li,
+.feds ol li {
+  margin-left: 1.4rem;
+  padding-left: 0;
+}
+@media (min-width: 0) {
+  .feds .mobile\:list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .feds .mobile\:list-reset li {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (min-width: 880px) {
+  .feds .tablet\:list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .feds .tablet\:list-reset li {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .feds .desktop\:list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .feds .desktop\:list-reset li {
+    margin: 0;
+    padding: 0;
+  }
+}
 .feds p {
   font-size: 1.4rem;
   line-height: 2.4rem;
@@ -921,20 +976,8 @@ body {
 .feds .border-outline-none {
   outline: 0;
 }
-.feds .border-radius-xs {
-  border-radius: 1px;
-}
-.feds .border-radius-s {
-  border-radius: 2px;
-}
-.feds .border-radius-m {
-  border-radius: 3px;
-}
-.feds .border-radius-l {
+.feds .border-radius-base {
   border-radius: 4px;
-}
-.feds .border-radius-xl {
-  border-radius: 5px;
 }
 .feds .border-radius-none {
   border-radius: 0px;

@@ -1,0 +1,69 @@
+{{#page section="Elements" title="Grids" }}
+{{>
+header
+title="Bulleted"
+source="/src/styles/elements/lists.styl"
+}}
+
+{{#example code=true}}
+<ul>
+    <li>Item
+        <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+    </li>
+    <li>Item
+        <ul>
+            <li>Item</li>
+            <li>Item</li>
+        </ul>
+    </li>
+    <li>Item</li>
+</ul>
+{{/example}}
+
+{{>
+header
+title="Numbered"
+source="/src/styles/elements/lists.styl"
+}}
+
+{{#example code=true}}
+<ol>
+    <li>Item
+        <ol>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+        </ol>
+    </li>
+    <li>Item
+        <ol>
+            <li>Item</li>
+            <li>Item</li>
+        </ol>
+    </li>
+    <li>Item</li>
+</ol>
+{{/example}}
+
+{{>
+header
+title="Responsive"
+descr="It's important to keep hierarchical data in proper hierarchical markup syntax. However in some scenarios it may
+be useful to display this data differently. Lists can be reset with the <em>.list-reset</em> class. They include media
+query prefixes."
+}}
+
+{{#example code=true}}
+<ul class="list-reset">
+    <li class="mobile:block tablet:inline-block">Item</li>
+    <li class="mobile:block tablet:inline-block">Item</li>
+    <li class="mobile:block tablet:inline-block">Item</li>
+</ul>
+{{/example}}
+
+
+{{/page}}

@@ -155,6 +155,22 @@
         "sections": ["Columns", "Responsive"]
       },
       {
+        "title": "Lists",
+        "src": "src/guide/pages/elements/lists.hbs",
+        "link": "/guide/elements/lists.html",
+        "sections": ["Bulleted", "Numbered", "Responsive"]
+      },
+      {
+        "title": "Navigations",
+        "src": "src/guide/pages/elements/navigations.hbs",
+        "link": "/guide/elements/navigations.html",
+        "sections": [
+          "Breadcrumbs",
+          "Breadcrumbs With Title",
+          "Back Button & Page Title"
+        ]
+      },
+      {
         "title": "Tables",
         "src": "src/guide/pages/elements/tables.hbs",
         "link": "/guide/elements/tables.html",
