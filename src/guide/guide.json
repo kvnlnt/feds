@@ -61,7 +61,7 @@
           "Alignment",
           "Direction",
           "Display",
-          "Grow-Shrink",
+          "Sizing",
           "Justify",
           "Wrapping"
         ]
@@ -77,12 +77,6 @@
         "src": "src/guide/pages/atoms/icons.hbs",
         "link": "/guide/atoms/icons.html",
         "sections": ["Set"]
-      },
-      {
-        "title": "Interaction",
-        "src": "src/guide/pages/atoms/interaction.hbs",
-        "link": "/guide/atoms/interaction.html",
-        "sections": ["Cursor", "Pointer Events", "Select"]
       },
       {
         "title": "Layout",
@@ -131,14 +125,20 @@
           "Color",
           "Font",
           "Indent",
-          "Kerning",
           "Leading",
           "Size",
+          "Spacing",
           "Style",
           "Weight",
           "Whitespace",
           "Wrapping"
         ]
+      },
+      {
+        "title": "UX",
+        "src": "src/guide/pages/atoms/ux.hbs",
+        "link": "/guide/atoms/ux.html",
+        "sections": ["Cursor", "Pointer Events", "Select"]
       }
     ],
     "elements": [

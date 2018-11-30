@@ -1,19 +1,18 @@
 {{#page section="Atoms" title="Backgrounds" }}
-  {{>
-    header
+
+  {{{atom-header
     title="Attachment"
     source="/src/styles/atoms/backgrounds/attachment.styl"
     descr="Controls how a background is attached (fixed, scroll with element, scroll with page"
-  }}
+  }}}
 
-  {{>
-    header
+  {{{atom-header
     title="Colors"
     source="/src/styles/atoms/backgrounds/colors.styl"
     descr="Control background colors."
-  }}
+  }}}
 
-{{#example }}
+{{#example}}
   {{#col-4}}
     <div class="bg-color-primary" style="height:5rem"></div>
       <p>.bg-color-primary</p>
@@ -75,25 +74,22 @@
       <p>.bg-color-light-grey-xl</p>
     {{/col-4}}
 {{/example}}
-{{>
-  header
+{{{atom-header
   title="Position"
   source="/src/styles/atoms/backgrounds/position.styl"
   descr="Control background position."
-}}
+}}}
 
-{{>
-  header
+{{{atom-header
   title="Repeat"
   source="/src/styles/atoms/backgrounds/repeat.styl"
   descr="Control background repeat."
-}}
+}}}
 
-{{>
-  header
+{{{atom-header
   title="Size"
   source="/src/styles/atoms/backgrounds/size.styl"
   descr="Control background size."
-}}
+}}}
 {{/page}}
 

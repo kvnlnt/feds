@@ -3,8 +3,8 @@
   "author": "",
   "license": "ISC",
   "version": "1.0.0",
-  "build": 494,
-  "test": 494,
+  "build": 498,
+  "test": false,
   "description": "Front End Design System",
   "main": "./tasks/build.js",
   "scripts": {
