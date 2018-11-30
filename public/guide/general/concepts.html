@@ -1,0 +1,113 @@
+<!DOCTYPE html><html class="feds"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEDS / Front-end Design System</title>
+    <script src="/guide/guide.js"></script>
+    <link rel="stylesheet" type="text/css" href="/guide/guide.css">
+    <link rel="stylesheet" type="text/css" href="/styles/feds.latest.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="/scripts/feds.latest.js"></script>
+  </head>
+
+  <body class="bg-color-light-grey-xl">
+    <div class="container pos-relative height-min-screen margin-horz-auto">
+      <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" class="mobile:hidden tablet:block">
+        <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
+          1.0.0.538
+        </span>
+
+        <i id="toggleMenu" class="mobile:flex tablet:hidden font-size-xl icon icon-menu float-right flex-align-items-center cursor-pointer"></i>
+      </div>
+      <div class="tablet:flex width-full height-min-screen">
+        <aside class="flex-basis-auto tablet:width-1/4 pad-l bg-color-light-grey-l whitespace-no-wrap">
+          <a href="/guide"> <img src="/gfx/common/er-logo.svg"></a>
+          <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
+            Frontend Design System
+            <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
+              1.0.0.538
+            </span>
+          </p>
+          <div id="menu" class="mobile:hidden tablet:block">
+            <hr>
+
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Getting Started</h3>
+            <div>
+              <a href="/guide/index.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">About</a>
+              <a href="/guide/general/concepts.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Concepts</a>
+              <a href="/guide/general/usage.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Usage</a>
+              <a href="/guide/general/compatibility.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compatibility</a>
+              <a href="/guide/general/compliance.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compliance</a>
+            </div>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Design System</h3>
+            <div>
+              <a href="/guide/atoms" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Atoms</a>
+              <a href="/guide/elements" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Elements</a>
+              <a href="/guide/components" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Components</a>
+              <a href="/guide/modules" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Modules</a>
+            </div>
+          </div>
+        </aside>
+        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4"><div id="content"><section id="Concepts">
+  <h2 class="guide">Concepts</h2>
+  <p>
+    FEDS was designed with a simple hierarchy of concepts meant that will serve
+    as a heuristic in developing enterprise grade software.
+  </p>
+  <ul>
+    <li><a href="#AtomicDesign">Atomic Design</a></li>
+    <li><a href="#Convention">Conventions</a></li>
+    <li><a href="#ContainerQueries">Container Queries</a></li>
+    <li><a href="#Component">Components</a></li>
+    <li><a href="#Testing">Testing</a></li>
+    <li><a href="#Flexbox">Flexbox</a></li>
+    <li><a href="#Units">Units</a></li>
+    <li><a href="#Workflow">Workflow</a></li>
+    <li><a href="#References">References</a></li>
+  </ul>
+  <h3 id="AtomicDesign">Atomic Design</h3>
+  <h3 id="Conventions">Conventions</h3>
+  <h3 id="ContainerQueries">Container Queries</h3>
+  <h3 id="Components">Components</h3>
+  <h3 id="Testing">Testing</h3>
+  <h3 id="Flexbox">Flexbox</h3>
+  <h3 id="Units">Units</h3>
+  <p>vh, vw, rems</p>
+  <h3 id="Workflow">Workflow</h3>
+  <h3 id="References">References</h3>
+  <ul>
+    <li>
+      <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a>- Brad Frost
+    </li>
+    <li><a href="http://getbem.com/">BEM</a> - CSS naming convention</li>
+    <li><a href="https://bulma.io/">Bulma</a> - A great CSS framework</li>
+    <li>
+      <a href="http://cardinalcss.com/">Cardinal Css</a> - A great CSS framework
+    </li>
+    <li>
+      <a href="https://ethanmarcotte.com/wrote/on-container-queries/">Container Queries</a>
+      - #1 requested feature of web devs
+    </li>
+    <li>
+      <a href="http://tachyons.io/">Tachyons</a> - An "atomic" CSS Framework
+    </li>
+    <li>
+      <a href="https://hacks.mozilla.org/2016/04/you-might-not-need-a-css-framework/">You Might Not Need A CSS Framework</a>
+      - How CSS frameworks might not be the best fit for complex projects
+    </li>
+    <li>
+      <a href="http://youmightnotneedjs.com/">You Might Not Need Js</a> - Speaks
+      for itself
+    </li>
+    <li><a href="https://github.com/tc39">TC39</a> - Javascript Standards</li>
+  </ul>
+</section>
+</div></div>
+      </div>
+    </div>
+  
+
+</body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html><html class="feds"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEDS / Front-end Design System</title>
+    <script src="/guide/guide.js"></script>
+    <link rel="stylesheet" type="text/css" href="/guide/guide.css">
+    <link rel="stylesheet" type="text/css" href="/styles/feds.latest.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="/scripts/feds.latest.js"></script>
+  </head>
+
+  <body class="bg-color-light-grey-xl">
+    <div class="container pos-relative height-min-screen margin-horz-auto">
+      <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" class="mobile:hidden tablet:block">
+        <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
+          1.0.0.538
+        </span>
+
+        <i id="toggleMenu" class="mobile:flex tablet:hidden font-size-xl icon icon-menu float-right flex-align-items-center cursor-pointer"></i>
+      </div>
+      <div class="tablet:flex width-full height-min-screen">
+        <aside class="flex-basis-auto tablet:width-1/4 pad-l bg-color-light-grey-l whitespace-no-wrap">
+          <a href="/guide"> <img src="/gfx/common/er-logo.svg"></a>
+          <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
+            Frontend Design System
+            <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
+              1.0.0.538
+            </span>
+          </p>
+          <div id="menu" class="mobile:hidden tablet:block">
+            <hr>
+
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Getting Started</h3>
+            <div>
+              <a href="/guide/index.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">About</a>
+              <a href="/guide/general/concepts.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Concepts</a>
+              <a href="/guide/general/usage.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Usage</a>
+              <a href="/guide/general/compatibility.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compatibility</a>
+              <a href="/guide/general/compliance.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compliance</a>
+            </div>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Design System</h3>
+            <div>
+              <a href="/guide/atoms" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Atoms</a>
+              <a href="/guide/elements" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Elements</a>
+              <a href="/guide/components" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Components</a>
+              <a href="/guide/modules" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Modules</a>
+            </div>
+          </div>
+        </aside>
+        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4"><div id="content"><section id="Tables"><a 
+    href="/guide/elements" 
+    class="button text-size-s font-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">
+    Elements</a><h2 class="guide margin-top-2xl">Tables</h2><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/elements/tables.styl" target="blank">/src/styles/elements/tables.styl</a>
+
+<h3 class="margin-top-xl margin-bot-none" id="Tables">Tables</h3>
+  
+  <p class="margin-top-xs margin-bot-l">Tables are for displaying tabular data and therefore it's important to leverage the default syntax.</p>
+<div class="shadow pad-2xl bg-color-white pos-relative">
+  <div class=""><table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Abby</td>
+            <td>123-123-1234</td>
+            <td>10/12/76</td>
+        </tr>
+        <tr>
+            <td>Bruce</td>
+            <td>08/26/85</td>
+            <td>345-678-9101</td>
+        </tr>
+        <tr>
+            <td>Catherine</td>
+            <td>234-567-8910</td>
+            <td>03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+</div></div>
+<h3 class="margin-top-xl margin-bot-none" id="Pivot">Pivot</h3>
+  
+  <p class="margin-top-xs margin-bot-l">A table can be pivoted by adding the <em>pivot</em> class. This creates a row based layout of the same
+table.</p>
+<div class="shadow pad-2xl bg-color-white pos-relative">
+  <div class=""><table class="table--pivot">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Abby</td>
+            <td>123-123-1234</td>
+            <td>10/12/76</td>
+        </tr>
+        <tr>
+            <td>Bruce</td>
+            <td>08/26/85</td>
+            <td>345-678-9101</td>
+        </tr>
+        <tr>
+            <td>Catherine</td>
+            <td>234-567-8910</td>
+            <td>03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+</div></div>
+<h3 class="margin-top-xl margin-bot-none" id="Wrap">Wrap</h3>
+  
+  <p class="margin-top-xs margin-bot-l">An optional <em>wrap</em> class is available to wrap the table data for smaller screens.</p>
+<p class="">In order for wrapping to work, the <code>data-title</code> attribute must be applied to all <code>td</code>'s</p>
+
+<div class="shadow pad-2xl bg-color-white pos-relative">
+  <div class=""><table class="table--wrap">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-title="Name">Abby</td>
+            <td data-title="Phone">123-123-1234</td>
+            <td data-title="DOB">10/12/76</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Bruce</td>
+            <td data-title="Phone">08/26/85</td>
+            <td data-title="DOB">345-678-9101</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Catherine</td>
+            <td data-title="Phone">234-567-8910</td>
+            <td data-title="DOB">03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+</div></div>
+<h3 class="margin-top-xl margin-bot-none" id="Responsive">Responsive</h3>
+  
+  <p class="margin-top-xs margin-bot-l">Both the pivot and wrap modifiers include media query prefixes.</p>
+
+<h4 class="margin-bot-none">Auto-wrap</h4><p class="margin-top-xs">Add the <em>table--wrap</em> class to default to a table that wraps. Add
+the media
+query prefixed class <em>tablet:table--unwrap</em> to unwrap the table on devices gte to the tablet width.</p><div class="shadow pad-2xl bg-color-white pos-relative">
+  <div class=""><table class="table--wrap tablet:table--unwrap">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-title="Name">Abby</td>
+            <td data-title="Phone">123-123-1234</td>
+            <td data-title="DOB">10/12/76</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Bruce</td>
+            <td data-title="Phone">08/26/85</td>
+            <td data-title="DOB">345-678-9101</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Catherine</td>
+            <td data-title="Phone">234-567-8910</td>
+            <td data-title="DOB">03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+</div></div><pre><code data-language="html"><table class="table--wrap tablet:table--unwrap">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-title="Name">Abby</td>
+            <td data-title="Phone">123-123-1234</td>
+            <td data-title="DOB">10/12/76</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Bruce</td>
+            <td data-title="Phone">08/26/85</td>
+            <td data-title="DOB">345-678-9101</td>
+        </tr>
+        <tr>
+            <td data-title="Name">Catherine</td>
+            <td data-title="Phone">234-567-8910</td>
+            <td data-title="DOB">03/21/95</td>
+        </tr>
+    </tbody>
+</table>
+</code></pre>
+</section></div></div>
+      </div>
+    </div>
+  
+
+</body></html>

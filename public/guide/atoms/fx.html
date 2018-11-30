@@ -1,0 +1,68 @@
+<!DOCTYPE html><html class="feds"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEDS / Front-end Design System</title>
+    <script src="/guide/guide.js"></script>
+    <link rel="stylesheet" type="text/css" href="/guide/guide.css">
+    <link rel="stylesheet" type="text/css" href="/styles/feds.latest.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="/scripts/feds.latest.js"></script>
+  </head>
+
+  <body class="bg-color-light-grey-xl">
+    <div class="container pos-relative height-min-screen margin-horz-auto">
+      <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" class="mobile:hidden tablet:block">
+        <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
+          1.0.0.538
+        </span>
+
+        <i id="toggleMenu" class="mobile:flex tablet:hidden font-size-xl icon icon-menu float-right flex-align-items-center cursor-pointer"></i>
+      </div>
+      <div class="tablet:flex width-full height-min-screen">
+        <aside class="flex-basis-auto tablet:width-1/4 pad-l bg-color-light-grey-l whitespace-no-wrap">
+          <a href="/guide"> <img src="/gfx/common/er-logo.svg"></a>
+          <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
+            Frontend Design System
+            <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
+              1.0.0.538
+            </span>
+          </p>
+          <div id="menu" class="mobile:hidden tablet:block">
+            <hr>
+
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Getting Started</h3>
+            <div>
+              <a href="/guide/index.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">About</a>
+              <a href="/guide/general/concepts.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Concepts</a>
+              <a href="/guide/general/usage.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Usage</a>
+              <a href="/guide/general/compatibility.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compatibility</a>
+              <a href="/guide/general/compliance.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compliance</a>
+            </div>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Design System</h3>
+            <div>
+              <a href="/guide/atoms" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Atoms</a>
+              <a href="/guide/elements" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Elements</a>
+              <a href="/guide/components" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Components</a>
+              <a href="/guide/modules" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Modules</a>
+            </div>
+          </div>
+        </aside>
+        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4"><div id="content"><section id="FX"><a 
+    href="/guide/atoms" 
+    class="button text-size-s font-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">
+    Atoms</a><h2 class="guide margin-top-2xl">FX</h2>
+  <h3 class="margin-top-xl margin-bot-none" id="Appearance">Appearance</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/fx/appearance.styl" target="blank">/src/styles/atoms/fx/appearance.styl</a></p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.appear-none</span></p>
+  <h3 class="margin-top-xl margin-bot-none" id="Opacity">Opacity</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/fx/opacity.styl" target="blank">/src/styles/atoms/fx/opacity.styl</a></p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-0</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-10</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-20</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-30</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-40</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-50</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-60</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-70</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-80</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-90</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.opac-100</span></p>
+  <h3 class="margin-top-xl margin-bot-none" id="Shadows">Shadows</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/fx/shadows.styl" target="blank">/src/styles/atoms/fx/shadows.styl</a></p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.shadow</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.shadow-md</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.shadow-lg</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.shadow-inner</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.shadow-outline</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.shadow-none</span></p>
+  <h3 class="margin-top-xl margin-bot-none" id="Transitions">Transitions</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/fx/animation.styl" target="blank">/src/styles/atoms/fx/animation.styl</a></p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-speed-xs</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-speed-s</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-speed-base</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-speed-f</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-speed-xf</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-property-all</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-property-none</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-property-bg</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-property-opacity</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-property-color</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-timing-linear</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-timing-ease</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-timing-ease-in</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-timing-ease-out</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-timing-ease-in-out</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-delay-xf</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-delay-f</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-delay-base</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-delay-s</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-delay-xs</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.anim-delay-none</span></p>
+</section>
+</div></div>
+      </div>
+    </div>
+  
+
+</body></html>

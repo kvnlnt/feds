@@ -1,0 +1,120 @@
+<!DOCTYPE html><html class="feds"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEDS / Front-end Design System</title>
+    <script src="/guide/guide.js"></script>
+    <link rel="stylesheet" type="text/css" href="/guide/guide.css">
+    <link rel="stylesheet" type="text/css" href="/styles/feds.latest.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="/scripts/feds.latest.js"></script>
+  </head>
+
+  <body class="bg-color-light-grey-xl">
+    <div class="container pos-relative height-min-screen margin-horz-auto">
+      <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" class="mobile:hidden tablet:block">
+        <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
+          1.0.0.538
+        </span>
+
+        <i id="toggleMenu" class="mobile:flex tablet:hidden font-size-xl icon icon-menu float-right flex-align-items-center cursor-pointer"></i>
+      </div>
+      <div class="tablet:flex width-full height-min-screen">
+        <aside class="flex-basis-auto tablet:width-1/4 pad-l bg-color-light-grey-l whitespace-no-wrap">
+          <a href="/guide"> <img src="/gfx/common/er-logo.svg"></a>
+          <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
+            Frontend Design System
+            <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
+              1.0.0.538
+            </span>
+          </p>
+          <div id="menu" class="mobile:hidden tablet:block">
+            <hr>
+
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Getting Started</h3>
+            <div>
+              <a href="/guide/index.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">About</a>
+              <a href="/guide/general/concepts.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Concepts</a>
+              <a href="/guide/general/usage.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Usage</a>
+              <a href="/guide/general/compatibility.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compatibility</a>
+              <a href="/guide/general/compliance.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compliance</a>
+            </div>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Design System</h3>
+            <div>
+              <a href="/guide/atoms" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Atoms</a>
+              <a href="/guide/elements" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Elements</a>
+              <a href="/guide/components" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Components</a>
+              <a href="/guide/modules" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Modules</a>
+            </div>
+          </div>
+        </aside>
+        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4"><div id="content"><section id="Backgrounds"><a 
+    href="/guide/atoms" 
+    class="button text-size-s font-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">
+    Atoms</a><h2 class="guide margin-top-2xl">Backgrounds</h2>
+
+  <h3 class="margin-top-xl margin-bot-none" id="Attachment">Attachment</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/backgrounds/attachment.styl" target="blank">/src/styles/atoms/backgrounds/attachment.styl</a></p><p class="margin-top-xs margin-bot-l">Controls how a background is attached (fixed, scroll with element, scroll with page</p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-attach-fixed</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-attach-local</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-attach-scroll</span></p>
+
+  <h3 class="margin-top-xl margin-bot-none" id="Colors">Colors</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/backgrounds/colors.styl" target="blank">/src/styles/atoms/backgrounds/colors.styl</a></p><p class="margin-top-xs margin-bot-l">Control background colors.</p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-black</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-danger</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-grey</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-grey-l</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-light-grey</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-light-grey-l</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-light-grey-xl</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-primary</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-primary-l</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-primary-xl</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-secondary</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-success</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-warn</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-color-white</span></p>
+
+<div class="shadow pad-2xl bg-color-white pos-relative">
+  <div class="flex flex-wrap"><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">    <div class="bg-color-primary" style="height:5rem"></div>
+      <p>.bg-color-primary</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-primary" style="height:5rem"></div>
+      <p>.bg-color-primary</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-primary-l" style="height:5rem"></div>
+      <p>.bg-color-primary-l</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-primary-xl" style="height:5rem"></div>
+      <p>.bg-color-primary-xl</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-secondary" style="height:5rem"></div>
+      <p>.bg-color-secondary</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-success" style="height:5rem"></div>
+      <p>.bg-color-success</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-danger" style="height:5rem"></div>
+      <p>.bg-color-danger</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-warn" style="height:5rem"></div>
+      <p>.bg-color-warn</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-white border-color-light-grey border-size-xs border-style-solid" style="height:5rem"></div>
+      <p>.bg-color-white</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-black" style="height:5rem"></div>
+      <p>.bg-color-black</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-grey" style="height:5rem"></div>
+      <p>.bg-color-grey</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-grey-l" style="height:5rem"></div>
+      <p>.bg-color-grey-l</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-light-grey" style="height:5rem"></div>
+      <p>.bg-color-light-grey</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-light-grey-l" style="height:5rem"></div>
+      <p>.bg-color-light-grey-l</p>
+</div></div><div class="width-full tablet:width-1/2 desktop:width-1/4">
+  <div class="margin-s">      <div class="bg-color-light-grey-xl" style="height:5rem"></div>
+      <p>.bg-color-light-grey-xl</p>
+</div></div></div></div><h3 class="margin-top-xl margin-bot-none" id="Position">Position</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/backgrounds/position.styl" target="blank">/src/styles/atoms/backgrounds/position.styl</a></p><p class="margin-top-xs margin-bot-l">Control background position.</p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-bottom</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-center</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-left</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-left-bottom</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-left-top</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-right</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-right-bottom</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-right-top</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-position-top</span></p>
+
+<h3 class="margin-top-xl margin-bot-none" id="Repeat">Repeat</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/backgrounds/repeat.styl" target="blank">/src/styles/atoms/backgrounds/repeat.styl</a></p><p class="margin-top-xs margin-bot-l">Control background repeat.</p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-repeat-on</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-repeat-off</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-repeat-x</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-repeat-y</span></p>
+
+<h3 class="margin-top-xl margin-bot-none" id="Size">Size</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/backgrounds/size.styl" target="blank">/src/styles/atoms/backgrounds/size.styl</a></p><p class="margin-top-xs margin-bot-l">Control background size.</p><p><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-size-auto</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-size-cover</span><span class="inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.bg-size-contain</span></p>
+</section>
+</div></div>
+      </div>
+    </div>
+  
+
+</body></html>

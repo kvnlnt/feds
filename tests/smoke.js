@@ -1,14 +1,10 @@
-import { Selector } from "testcafe"; // first import testcafe selectors
+import { Selector } from "testcafe";
 
-fixture`Getting Started`.page`https://devexpress.github.io/testcafe/example`; // declare the fixture // specify the start page
+fixture`Homepage`.page`http://127.0.0.1:8080/guide/`;
 
 //then create a test and place your code there
-test("My first test", async t => {
+test("Smoke Test", async t => {
   await t
-    .typeText("#developer-name", "John Smith")
-    .click("#submit-button")
-
-    // Use the assertion to check if the actual header text is equal to the expected one
-    .expect(Selector("#article-header").innerText)
-    .eql("Thank you, Committee");
+    .expect(Selector("h2").innerText)
+    .eql("About the ER Frontend Design System");
 });

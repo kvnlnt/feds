@@ -1,0 +1,432 @@
+<!DOCTYPE html><html class="feds"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEDS / Front-end Design System</title>
+    <script src="/guide/guide.js"></script>
+    <link rel="stylesheet" type="text/css" href="/guide/guide.css">
+    <link rel="stylesheet" type="text/css" href="/styles/feds.latest.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+    <script src="/scripts/feds.latest.js"></script>
+  </head>
+
+  <body class="bg-color-light-grey-xl">
+    <div class="container pos-relative height-min-screen margin-horz-auto">
+      <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
+        <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" class="mobile:hidden tablet:block">
+        <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
+          1.0.0.538
+        </span>
+
+        <i id="toggleMenu" class="mobile:flex tablet:hidden font-size-xl icon icon-menu float-right flex-align-items-center cursor-pointer"></i>
+      </div>
+      <div class="tablet:flex width-full height-min-screen">
+        <aside class="flex-basis-auto tablet:width-1/4 pad-l bg-color-light-grey-l whitespace-no-wrap">
+          <a href="/guide"> <img src="/gfx/common/er-logo.svg"></a>
+          <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
+            Frontend Design System
+            <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
+              1.0.0.538
+            </span>
+          </p>
+          <div id="menu" class="mobile:hidden tablet:block">
+            <hr>
+
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Getting Started</h3>
+            <div>
+              <a href="/guide/index.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">About</a>
+              <a href="/guide/general/concepts.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Concepts</a>
+              <a href="/guide/general/usage.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Usage</a>
+              <a href="/guide/general/compatibility.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compatibility</a>
+              <a href="/guide/general/compliance.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compliance</a>
+            </div>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Design System</h3>
+            <div>
+              <a href="/guide/atoms" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Atoms</a>
+              <a href="/guide/elements" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Elements</a>
+              <a href="/guide/components" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Components</a>
+              <a href="/guide/modules" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Modules</a>
+            </div>
+          </div>
+        </aside>
+        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4"><div id="content"><section id="Icons">
+    <a href="/guide/atoms" class="button font-size-s text-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">Atoms</a>
+    <h2 class="guide margin-top-2xl">Icons</h2>
+    <h3 id="Set">Set</h3>
+    <div class="shadow pad-2xl bg-color-white">
+        <div class="flex flex-wrap flex-justify-center">
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-administration"></i>
+                </div>
+                <p class="font-size-s">administration</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-analytics"></i>
+                </div>
+                <p class="font-size-s">analytics</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-calendar"></i>
+                </div>
+                <p class="font-size-s">calendar</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-collapse-expand"></i>
+                </div>
+                <p class="font-size-s">collapse-expand</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-daily-roster"></i>
+                </div>
+                <p class="font-size-s">daily-roster</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-data-intelligence"></i>
+                </div>
+                <p class="font-size-s">data-intelligence</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-demographics"></i>
+                </div>
+                <p class="font-size-s">demographics</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-events"></i>
+                </div>
+                <p class="font-size-s">events</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-home"></i>
+                </div>
+                <p class="font-size-s">home</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-hydrants"></i>
+                </div>
+                <p class="font-size-s">hydrants</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-incidents"></i>
+                </div>
+                <p class="font-size-s">incidents</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-inventory"></i>
+                </div>
+                <p class="font-size-s">inventory</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-invoicing"></i>
+                </div>
+                <p class="font-size-s">invoicing</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-library"></i>
+                </div>
+                <p class="font-size-s">library</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-maintenance"></i>
+                </div>
+                <p class="font-size-s">maintenance</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-message-center"></i>
+                </div>
+                <p class="font-size-s">message-center</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-my-profile"></i>
+                </div>
+                <p class="font-size-s">my-profile</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-occupancies"></i>
+                </div>
+                <p class="font-size-s">occupancies</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-payroll"></i>
+                </div>
+                <p class="font-size-s">payroll</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-reports"></i>
+                </div>
+                <p class="font-size-s">reports</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-roster"></i>
+                </div>
+                <p class="font-size-s">roster</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-shifts"></i>
+                </div>
+                <p class="font-size-s">shifts</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-training"></i>
+                </div>
+                <p class="font-size-s">training</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-alert"></i>
+                </div>
+                <p class="font-size-s">alert</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-archive-solid"></i>
+                </div>
+                <p class="font-size-s">archive-solid</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-archive"></i>
+                </div>
+                <p class="font-size-s">archive</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-calendar-date"></i>
+                </div>
+                <p class="font-size-s">calendar-date</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-caret-arrow"></i>
+                </div>
+                <p class="font-size-s">caret-arrow</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-caret"></i>
+                </div>
+                <p class="font-size-s">caret</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-checkmark-circle"></i>
+                </div>
+                <p class="font-size-s">checkmark-circle</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-checkmark"></i>
+                </div>
+                <p class="font-size-s">checkmark</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-clear-solid"></i>
+                </div>
+                <p class="font-size-s">clear-solid</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-clear"></i>
+                </div>
+                <p class="font-size-s">clear</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-close"></i>
+                </div>
+                <p class="font-size-s">close</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-delete-solid"></i>
+                </div>
+                <p class="font-size-s">delete-solid</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-delete"></i>
+                </div>
+                <p class="font-size-s">delete</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-download"></i>
+                </div>
+                <p class="font-size-s">download</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-drag-2-wide"></i>
+                </div>
+                <p class="font-size-s">drag-2-wide</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-drag-3-wide"></i>
+                </div>
+                <p class="font-size-s">drag-3-wide</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-edit-solid"></i>
+                </div>
+                <p class="font-size-s">edit-solid</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-edit"></i>
+                </div>
+                <p class="font-size-s">edit</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-fav-solid"></i>
+                </div>
+                <p class="font-size-s">fav-solid</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-fav"></i>
+                </div>
+                <p class="font-size-s">fav</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-filter"></i>
+                </div>
+                <p class="font-size-s">filter</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-help"></i>
+                </div>
+                <p class="font-size-s">help</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-info-solid"></i>
+                </div>
+                <p class="font-size-s">info-solid</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-info"></i>
+                </div>
+                <p class="font-size-s">info</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-lock-closed"></i>
+                </div>
+                <p class="font-size-s">lock-closed</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-lock-open"></i>
+                </div>
+                <p class="font-size-s">lock-open</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-map-pin"></i>
+                </div>
+                <p class="font-size-s">map-pin</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-menu"></i>
+                </div>
+                <p class="font-size-s">menu</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-paragraph"></i>
+                </div>
+                <p class="font-size-s">paragraph</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-printer"></i>
+                </div>
+                <p class="font-size-s">printer</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-search"></i>
+                </div>
+                <p class="font-size-s">search</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-settings"></i>
+                </div>
+                <p class="font-size-s">settings</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-show-no"></i>
+                </div>
+                <p class="font-size-s">show-no</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-show-yes"></i>
+                </div>
+                <p class="font-size-s">show-yes</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-sort-arrows"></i>
+                </div>
+                <p class="font-size-s">sort-arrows</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-sort"></i>
+                </div>
+                <p class="font-size-s">sort</p>
+            </div>
+            <div class="flex-1 flex-no-grow margin-right-s margin-top-s">
+                <div class="border-color-light-grey border-style-solid border-size-xs border-radius-m pad-xl">
+                    <i class="font-size-2xl icon icon-warning"></i>
+                </div>
+                <p class="font-size-s">warning</p>
+            </div>
+        </div>
+    </div>
+    <h3>Example</h3>
+    <pre>    <code data-language="html">
+    <i class="icon icon-administration"></i></code>
+    </pre>
+    <p>Since icons are served as a font see <a href="typography.html">Typography</a> for colors and sizing.</p>
+</section></div></div>
+      </div>
+    </div>
+  
+
+</body></html>
