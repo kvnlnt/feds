@@ -1365,89 +1365,89 @@ body {
   flex-shrink: 0;
 }
 @media (min-width: 0) {
-  .feds .mobile\:flex-initial {
+  .feds .mobile\:flex-size-initial {
     flex: initial;
   }
-  .feds .mobile\:flex-1 {
+  .feds .mobile\:flex-size-1 {
     flex: 1;
   }
-  .feds .mobile\:flex-basis-auto {
+  .feds .mobile\:flex-size-basis-auto {
     flex-basis: auto;
   }
-  .feds .mobile\:flex-auto {
+  .feds .mobile\:flex-size-auto {
     flex: auto;
   }
-  .feds .mobile\:flex-none {
+  .feds .mobile\:flex-size-none {
     flex: none;
   }
-  .feds .mobile\:flex-grow {
+  .feds .mobile\:flex-size-grow {
     flex-grow: 1;
   }
-  .feds .mobile\:flex-shrink {
+  .feds .mobile\:flex-size-shrink {
     flex-shrink: 1;
   }
-  .feds .mobile\:flex-no-grow {
+  .feds .mobile\:flex-size-no-grow {
     flex-grow: 0;
   }
-  .feds .mobile\:flex-no-shrink {
+  .feds .mobile\:flex-size-no-shrink {
     flex-shrink: 0;
   }
 }
 @media (min-width: 880px) {
-  .feds .tablet\:flex-initial {
+  .feds .tablet\:flex-size-initial {
     flex: initial;
   }
-  .feds .tablet\:flex-1 {
+  .feds .tablet\:flex-size-1 {
     flex: 1;
   }
-  .feds .tablet\:flex-basis-auto {
+  .feds .tablet\:flex-size-basis-auto {
     flex-basis: auto;
   }
-  .feds .tablet\:flex-auto {
+  .feds .tablet\:flex-size-auto {
     flex: auto;
   }
-  .feds .tablet\:flex-none {
+  .feds .tablet\:flex-size-none {
     flex: none;
   }
-  .feds .tablet\:flex-grow {
+  .feds .tablet\:flex-size-grow {
     flex-grow: 1;
   }
-  .feds .tablet\:flex-shrink {
+  .feds .tablet\:flex-size-shrink {
     flex-shrink: 1;
   }
-  .feds .tablet\:flex-no-grow {
+  .feds .tablet\:flex-size-no-grow {
     flex-grow: 0;
   }
-  .feds .tablet\:flex-no-shrink {
+  .feds .tablet\:flex-size-no-shrink {
     flex-shrink: 0;
   }
 }
 @media (min-width: 1200px) {
-  .feds .desktop\:flex-initial {
+  .feds .desktop\:flex-size-initial {
     flex: initial;
   }
-  .feds .desktop\:flex-1 {
+  .feds .desktop\:flex-size-1 {
     flex: 1;
   }
-  .feds .desktop\:flex-basis-auto {
+  .feds .desktop\:flex-size-basis-auto {
     flex-basis: auto;
   }
-  .feds .desktop\:flex-auto {
+  .feds .desktop\:flex-size-auto {
     flex: auto;
   }
-  .feds .desktop\:flex-none {
+  .feds .desktop\:flex-size-none {
     flex: none;
   }
-  .feds .desktop\:flex-grow {
+  .feds .desktop\:flex-size-grow {
     flex-grow: 1;
   }
-  .feds .desktop\:flex-shrink {
+  .feds .desktop\:flex-size-shrink {
     flex-shrink: 1;
   }
-  .feds .desktop\:flex-no-grow {
+  .feds .desktop\:flex-size-no-grow {
     flex-grow: 0;
   }
-  .feds .desktop\:flex-no-shrink {
+  .feds .desktop\:flex-size-no-shrink {
     flex-shrink: 0;
   }
 }

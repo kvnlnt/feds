@@ -1,4 +1,4 @@
-// feds.1.0.0.538
+// feds.1.0.0.564
 (function () {
   'use strict';
 
@@ -71,7 +71,7 @@
     return _assertThisInitialized(self);
   }
 
-  var version = "1.0.0.538";
+  var version = "1.0.0.564";
 
   var Component = function Component() {
     var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
