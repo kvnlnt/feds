@@ -1,12 +1,14 @@
-{{#page section="Elements" title="Tables" source="/src/styles/elements/tables.styl" }}
+{{#page section="Elements" title="Tables" }}
 
-{{>
-header
-title="Tables"
-descr="Tables are for displaying tabular data and therefore it's important to leverage the default syntax."
-}}
+{{{
+atom-header
+title="Basic"
+source="/src/styles/elements/tables.styl"
+descr="Due to their unique status, tables are styled directly."
+atoms=true
+}}}
 
-{{#example flex=false }}
+{{#example flex=false code=true }}
 <table>
     <thead>
         <tr>
@@ -42,7 +44,7 @@ descr="A table can be pivoted by adding the <em>pivot</em> class. This creates a
 table."
 }}
 
-{{#example flex=false }}
+{{#example flex=false code=true }}
 <table class="table--pivot">
     <thead>
         <tr>
@@ -74,12 +76,11 @@ table."
 {{>
 header
 title="Wrap"
-descr="An optional <em>wrap</em> class is available to wrap the table data for smaller screens."
+descr="An optional <em>wrap</em> class is available to wrap the table data for smaller screens. In order for wrapping
+to work, the <code>data-header</code> attribute must be applied to all <code>td</code>'s"
 }}
 
-<p class="">In order for wrapping to work, the <code>data-title</code> attribute must be applied to all <code>td</code>'s</p>
-
-{{#example flex=false }}
+{{#example flex=false code=true}}
 <table class="table--wrap">
     <thead>
         <tr>
@@ -90,19 +91,19 @@ descr="An optional <em>wrap</em> class is available to wrap the table data for s
     </thead>
     <tbody>
         <tr>
-            <td data-title="Name">Abby</td>
-            <td data-title="Phone">123-123-1234</td>
-            <td data-title="DOB">10/12/76</td>
+            <td data-header="Name">Abby</td>
+            <td data-header="Phone">123-123-1234</td>
+            <td data-header="DOB">10/12/76</td>
         </tr>
         <tr>
-            <td data-title="Name">Bruce</td>
-            <td data-title="Phone">08/26/85</td>
-            <td data-title="DOB">345-678-9101</td>
+            <td data-header="Name">Bruce</td>
+            <td data-header="Phone">08/26/85</td>
+            <td data-header="DOB">345-678-9101</td>
         </tr>
         <tr>
-            <td data-title="Name">Catherine</td>
-            <td data-title="Phone">234-567-8910</td>
-            <td data-title="DOB">03/21/95</td>
+            <td data-header="Name">Catherine</td>
+            <td data-header="Phone">234-567-8910</td>
+            <td data-header="DOB">03/21/95</td>
         </tr>
     </tbody>
 </table>
@@ -129,19 +130,19 @@ query prefixed class <em>tablet:table--unwrap</em> to unwrap the table on device
     </thead>
     <tbody>
         <tr>
-            <td data-title="Name">Abby</td>
-            <td data-title="Phone">123-123-1234</td>
-            <td data-title="DOB">10/12/76</td>
+            <td data-header="Name">Abby</td>
+            <td data-header="Phone">123-123-1234</td>
+            <td data-header="DOB">10/12/76</td>
         </tr>
         <tr>
-            <td data-title="Name">Bruce</td>
-            <td data-title="Phone">08/26/85</td>
-            <td data-title="DOB">345-678-9101</td>
+            <td data-header="Name">Bruce</td>
+            <td data-header="Phone">08/26/85</td>
+            <td data-header="DOB">345-678-9101</td>
         </tr>
         <tr>
-            <td data-title="Name">Catherine</td>
-            <td data-title="Phone">234-567-8910</td>
-            <td data-title="DOB">03/21/95</td>
+            <td data-header="Name">Catherine</td>
+            <td data-header="Phone">234-567-8910</td>
+            <td data-header="DOB">03/21/95</td>
         </tr>
     </tbody>
 </table>

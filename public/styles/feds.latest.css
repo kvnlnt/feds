@@ -304,7 +304,7 @@ body {
   margin-bottom: 3.2rem;
 }
 .feds .table--wrap td:before {
-  content: attr(data-title);
+  content: attr(data-header);
   font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -328,7 +328,7 @@ body {
   margin-bottom: 3.2rem;
 }
 .feds .table--unwrap td:before {
-  content: attr(data-title);
+  content: attr(data-header);
   font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -443,7 +443,7 @@ body {
     margin-bottom: 3.2rem;
   }
   .feds .mobile\:table--wrap td:before {
-    content: attr(data-title);
+    content: attr(data-header);
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -469,7 +469,7 @@ body {
     margin-bottom: 3.2rem;
   }
   .feds .tablet\:table--wrap td:before {
-    content: attr(data-title);
+    content: attr(data-header);
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -495,7 +495,7 @@ body {
     margin-bottom: 3.2rem;
   }
   .feds .desktop\:table--wrap td:before {
-    content: attr(data-title);
+    content: attr(data-header);
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
