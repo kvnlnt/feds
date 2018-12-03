@@ -34,7 +34,24 @@ hb.registerPartial(
   {{#if descr}}<p class="margin-top-xs margin-bot-l">{{{descr}}}</p>{{/if}}`
 );
 
-function renderAtoms(source, cb) {
+function renderAtom(classes, atom) {
+  return `<span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs ${classes} border-radius-m">${atom}</span>`;
+}
+
+function renderHeaderTitle(title) {
+  return `<h3 class="margin-top-xl margin-bot-none" id="${title}">${title}</h3>`;
+}
+
+function renderHeaderSourceLink(source) {
+  return `<p class="text-size-xs opacity-70 margin-top-none margin-bot-xs">
+  <a href="${guide.repo}${source}" target="blank">${source}</a></p>`;
+}
+
+function renderHeaderDescr(descr) {
+  return `<p class="margin-top-xs margin-bot-l">${descr}</p>`;
+}
+
+function renderHeaderAtomsFromSource(source) {
   const dir = __dirname + "/../../";
   let src = "";
   src += rfs(dir + "src/styles/functions.styl", "utf-8");
@@ -63,9 +80,7 @@ function renderAtoms(source, cb) {
       if (isStatePrefix) bgColor = "bg-color-light-grey";
       const cleanSelector = selector.replace(/\\/g, "");
       const isValid = !isMediaQry;
-      if (isValid) {
-        atoms += `<span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs ${bgColor} border-radius-m">${cleanSelector}</span>`;
-      }
+      if (isValid) atoms += renderAtom(bgColor, cleanSelector);
     }
   });
   atoms += "</p>";
@@ -73,16 +88,10 @@ function renderAtoms(source, cb) {
 }
 
 hb.registerHelper("atom-header", function(options) {
-  const title = options.hash.title
-    ? `<h3 class="margin-top-xl margin-bot-none" id="${options.hash.title}">${options.hash.title}</h3>`
-    : "";
-  const source = options.hash.source
-    ? `<p class="text-size-xs opacity-70 margin-top-none margin-bot-xs"><a href="${guide.repo}${
-        options.hash.source
-      }" target="blank">${options.hash.source}</a></p>`
-    : "";
-  const descr = options.hash.descr ? `<p class="margin-top-xs margin-bot-l">${options.hash.descr}</p>` : "";
-  const atoms = options.hash.atoms === false ? "" : renderAtoms(options.hash.source);
+  const title = options.hash.title ? renderHeaderTitle(option.hash.title) : "";
+  const source = options.hash.source ? renderHeaderSourceLink(options.hash.source) : "";
+  const descr = options.hash.descr ? renderHeaderDescr(options.hash.descr) : "";
+  const atoms = options.hash.atoms === false ? "" : renderHeaderAtomsFromSource(options.hash.source);
   return `${title}${source}${descr}${atoms}`;
 });
 

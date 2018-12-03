@@ -1,12 +1,10 @@
-{{#page section="Elements" title="Tables" }}
+{{#page section="Elements" title="Tables" source="/src/styles/elements/tables.styl" }}
 
-{{{
-atom-header
-title="Basic"
-source="/src/styles/elements/tables.styl"
-descr="Due to their unique status, tables are styled directly."
-atoms=true
-}}}
+{{>
+header
+title="Tables"
+descr="Due to their unique status, tables are styled by default"
+}}
 
 {{#example flex=false code=true }}
 <table>
@@ -42,6 +40,7 @@ header
 title="Pivot"
 descr="A table can be pivoted by adding the <em>pivot</em> class. This creates a row based layout of the same
 table."
+atoms="table--pivot, mobile:table--pivot, tablet:table--pivot, desktop:table--pivot"
 }}
 
 {{#example flex=false code=true }}
@@ -78,6 +77,7 @@ header
 title="Wrap"
 descr="An optional <em>wrap</em> class is available to wrap the table data for smaller screens. In order for wrapping
 to work, the <code>data-header</code> attribute must be applied to all <code>td</code>'s"
+atoms="table--wrap, mobile:table--wrap, tablet:table--wrap, desktop:table--wrap"
 }}
 
 {{#example flex=false code=true}}
