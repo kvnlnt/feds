@@ -1,9 +1,9 @@
-{{#page section="Elements" title="Grids" }}
-{{>
-header
+{{#page section="Elements" title="Lists" }}
+{{{SectionHeader
 title="Bulleted"
 source="/src/styles/elements/lists.styl"
-}}
+autoRenderAtoms= false
+}}}
 
 {{#example code=true}}
 <ul>
@@ -24,11 +24,11 @@ source="/src/styles/elements/lists.styl"
 </ul>
 {{/example}}
 
-{{>
-header
+{{{SectionHeader
 title="Numbered"
 source="/src/styles/elements/lists.styl"
-}}
+    autoRenderAtoms= false
+}}}
 
 {{#example code=true}}
 <ol>
@@ -49,13 +49,13 @@ source="/src/styles/elements/lists.styl"
 </ol>
 {{/example}}
 
-{{>
-header
+{{{SectionHeader
 title="Responsive"
 descr="It's important to keep hierarchical data in proper hierarchical markup syntax. However in some scenarios it may
 be useful to display this data differently. Lists can be reset with the <em>.list-reset</em> class. They include media
 query prefixes."
-}}
+autoRenderAtoms= false
+}}}
 
 {{#example code=true}}
 <ul class="list-reset">

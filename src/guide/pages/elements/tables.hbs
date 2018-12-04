@@ -1,10 +1,9 @@
 {{#page section="Elements" title="Tables" source="/src/styles/elements/tables.styl" }}
 
-{{>
-header
+{{{SectionHeader
 title="Tables"
 descr="Due to their unique status, tables are styled by default"
-}}
+}}}
 
 {{#example flex=false code=true }}
 <table>
@@ -35,13 +34,11 @@ descr="Due to their unique status, tables are styled by default"
 </table>
 {{/example}}
 
-{{>
-header
+{{{SectionHeader
 title="Pivot"
-descr="A table can be pivoted by adding the <em>pivot</em> class. This creates a row based layout of the same
-table."
-atoms="table--pivot, mobile:table--pivot, tablet:table--pivot, desktop:table--pivot"
-}}
+descr="A table can be pivoted by adding the <em>pivot</em> class. This creates a row based layout of the same table."
+atoms=".table--pivot, .mobile:table--pivot, .tablet:table--pivot, .desktop:table--pivot"
+}}}
 
 {{#example flex=false code=true }}
 <table class="table--pivot">
@@ -72,13 +69,12 @@ atoms="table--pivot, mobile:table--pivot, tablet:table--pivot, desktop:table--pi
 </table>
 {{/example}}
 
-{{>
-header
+{{{SectionHeader
 title="Wrap"
 descr="An optional <em>wrap</em> class is available to wrap the table data for smaller screens. In order for wrapping
 to work, the <code>data-header</code> attribute must be applied to all <code>td</code>'s"
-atoms="table--wrap, mobile:table--wrap, tablet:table--wrap, desktop:table--wrap"
-}}
+atoms=".table--wrap, .table--unwrap, .mobile:table--wrap, .tablet:table--wrap, .desktop:table--wrap, .mobile:table--unwrap, .tablet:table--unwrap, .desktop:table--unwrap"
+}}}
 
 {{#example flex=false code=true}}
 <table class="table--wrap">
@@ -109,11 +105,10 @@ atoms="table--wrap, mobile:table--wrap, tablet:table--wrap, desktop:table--wrap"
 </table>
 {{/example}}
 
-{{>
-header
+{{{SectionHeader
 title="Responsive"
 descr="Both the pivot and wrap modifiers include media query prefixes."
-}}
+}}}
 
 
 {{#example code=true title="Auto-wrap" descr="Add the <em>table--wrap</em> class to default to a table that wraps. Add

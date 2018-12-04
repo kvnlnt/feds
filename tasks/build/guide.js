@@ -34,24 +34,46 @@ hb.registerPartial(
   {{#if descr}}<p class="margin-top-xs margin-bot-l">{{{descr}}}</p>{{/if}}`
 );
 
-function renderAtom(classes, atom) {
-  return `<span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs ${classes} border-radius-m">${atom}</span>`;
+function renderAtom(atom) {
+  const selector = atom.trim().replace(/\\/g, "");
+  const isMediaQry = selector.indexOf("@media") === 0;
+  const isMobilePrefix = selector.indexOf(".mobile") === 0;
+  const isTabletPrefix = selector.indexOf(".tablet") === 0;
+  const isDesktopPrefix = selector.indexOf(".desktop") === 0;
+  const isMediaPrefix = isMobilePrefix || isTabletPrefix || isDesktopPrefix;
+  const isHoverPrefix = selector.indexOf(".hover") === 0;
+  const isActivePrefix = selector.indexOf(".active") === 0;
+  const isFocusPrefix = selector.indexOf(".focus") === 0;
+  const isTargetPrefix = selector.indexOf(".target") === 0;
+  const isCheckedPrefix = selector.indexOf(".checked") === 0;
+  const isStatePrefix = isHoverPrefix || isFocusPrefix || isTargetPrefix || isCheckedPrefix;
+  const cleanSelector = selector.replace(/\\/g, "");
+  let bgColor = "bg-color-primary-xl";
+  if (isMediaPrefix) bgColor = "bg-color-light-grey-l";
+  if (isStatePrefix) bgColor = "bg-color-light-grey";
+  return `<span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs ${bgColor} border-radius-m">${selector}</span>`;
 }
 
-function renderHeaderTitle(title) {
-  return `<h3 class="margin-top-xl margin-bot-none" id="${title}">${title}</h3>`;
+function renderAtoms(atoms){
+  var atoms = atoms.split(',').map(i=>i.trim());
+  return `<p>${atoms.map(i => renderAtom(i)).join('')}</p>`;
 }
 
-function renderHeaderSourceLink(source) {
+function renderSectionHeaderTitle(title, classes) {
+  var classes = classes || "margin-top-xl margin-bot-none";
+  return `<h3 class="${classes}" id="${title}">${title}</h3>`;
+}
+
+function renderSectionHeaderSourceLink(source) {
   return `<p class="text-size-xs opacity-70 margin-top-none margin-bot-xs">
   <a href="${guide.repo}${source}" target="blank">${source}</a></p>`;
 }
 
-function renderHeaderDescr(descr) {
+function renderSectionHeaderDescr(descr) {
   return `<p class="margin-top-xs margin-bot-l">${descr}</p>`;
 }
 
-function renderHeaderAtomsFromSource(source) {
+function renderSectionHeaderAtomsFromSource(source) {
   const dir = __dirname + "/../../";
   let src = "";
   src += rfs(dir + "src/styles/functions.styl", "utf-8");
@@ -65,34 +87,22 @@ function renderHeaderAtomsFromSource(source) {
     while ((i = cssSelectorReg.exec(css)) !== null) {
       const selector = i[1].trim();
       const isMediaQry = selector.indexOf("@media") === 0;
-      const isMobilePrefix = selector.indexOf(".mobile") === 0;
-      const isTabletPrefix = selector.indexOf(".tablet") === 0;
-      const isDesktopPrefix = selector.indexOf(".desktop") === 0;
-      const isMediaPrefix = isMobilePrefix || isTabletPrefix || isDesktopPrefix;
-      const isHoverPrefix = selector.indexOf(".hover") === 0;
-      const isActivePrefix = selector.indexOf(".active") === 0;
-      const isFocusPrefix = selector.indexOf(".focus") === 0;
-      const isTargetPrefix = selector.indexOf(".target") === 0;
-      const isCheckedPrefix = selector.indexOf(".checked") === 0;
-      const isStatePrefix = isHoverPrefix || isFocusPrefix || isTargetPrefix || isCheckedPrefix;
-      let bgColor = "bg-color-primary-xl";
-      if (isMediaPrefix) bgColor = "bg-color-light-grey-l";
-      if (isStatePrefix) bgColor = "bg-color-light-grey";
-      const cleanSelector = selector.replace(/\\/g, "");
       const isValid = !isMediaQry;
-      if (isValid) atoms += renderAtom(bgColor, cleanSelector);
+      if (isValid) atoms += renderAtom(selector);
     }
   });
   atoms += "</p>";
   return atoms;
 }
 
-hb.registerHelper("atom-header", function(options) {
-  const title = options.hash.title ? renderHeaderTitle(option.hash.title) : "";
-  const source = options.hash.source ? renderHeaderSourceLink(options.hash.source) : "";
-  const descr = options.hash.descr ? renderHeaderDescr(options.hash.descr) : "";
-  const atoms = options.hash.atoms === false ? "" : renderHeaderAtomsFromSource(options.hash.source);
-  return `${title}${source}${descr}${atoms}`;
+hb.registerHelper("SectionHeader", function(options) {
+  const source = options.hash.source ? renderSectionHeaderSourceLink(options.hash.source) : "";
+  const sourceAtoms = options.hash.autoRenderAtoms === false || !options.hash.source ? "" : renderSectionHeaderAtomsFromSource(options.hash.source);
+  const descr = options.hash.descr ? renderSectionHeaderDescr(options.hash.descr) : "";
+  const atoms = options.hash.atoms ? renderAtoms(options.hash.atoms) : "";
+  const padding = (descr === "" && sourceAtoms === "" && atoms === "") ? "margin-top-xl margin-bot-s" : "";
+  const title = options.hash.title ? renderSectionHeaderTitle(options.hash.title, padding) : "";
+  return `${title}${source}${descr}${sourceAtoms}${atoms}`;
 });
 
 hb.registerHelper("example", function(options) {

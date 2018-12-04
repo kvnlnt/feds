@@ -17,7 +17,7 @@
       <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
         <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" class="mobile:hidden tablet:block">
         <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
-          1.0.0.577
+          1.0.0.609
         </span>
 
         <i id="toggleMenu" class="mobile:flex tablet:hidden font-size-xl icon icon-menu float-right flex-align-items-center cursor-pointer"></i>
@@ -28,7 +28,7 @@
           <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
             Frontend Design System
             <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
-              1.0.0.577
+              1.0.0.609
             </span>
           </p>
           <div id="menu" class="mobile:hidden tablet:block">
@@ -47,7 +47,8 @@
               <a href="/guide/atoms" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Atoms</a>
               <a href="/guide/elements" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Elements</a>
               <a href="/guide/components" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Components</a>
-              <a href="/guide/modules" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Modules</a>
+              <a href="/guide/layouts" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Layouts</a>
+              <a href="/guide/library" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Library</a>
             </div>
           </div>
         </aside>
@@ -56,9 +57,8 @@
     class="button text-size-s font-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">
     Elements</a><h2 class="guide margin-top-2xl">Tables</h2><a href="https://github.com/kvnlnt/feds/blob/master/src/styles/elements/tables.styl" target="blank">/src/styles/elements/tables.styl</a>
 
-<h3 class="margin-top-xl margin-bot-none" id="Tables">Tables</h3>
-  
-  <p class="margin-top-xs margin-bot-l">Due to their unique status, tables are styled by default</p>
+<h3 class="margin-top-xl margin-bot-none" id="Tables">Tables</h3><p class="margin-top-xs margin-bot-l">Due to their unique status, tables are styled by default</p>
+
 <div class="shadow pad-2xl bg-color-white pos-relative">
   <div class=""><table>
     <thead>
@@ -113,10 +113,8 @@
     </tbody>
 </table>
 </code></pre>
-<h3 class="margin-top-xl margin-bot-none" id="Pivot">Pivot</h3>
-  
-  <p class="margin-top-xs margin-bot-l">A table can be pivoted by adding the <em>pivot</em> class. This creates a row based layout of the same
-table.</p>
+<h3 class="margin-top-xl margin-bot-none" id="Pivot">Pivot</h3><p class="margin-top-xs margin-bot-l">A table can be pivoted by adding the <em>pivot</em> class. This creates a row based layout of the same table.</p><p><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.table--pivot</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.mobile:table--pivot</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.tablet:table--pivot</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.desktop:table--pivot</span></p>
+
 <div class="shadow pad-2xl bg-color-white pos-relative">
   <div class=""><table class="table--pivot">
     <thead>
@@ -171,10 +169,9 @@ table.</p>
     </tbody>
 </table>
 </code></pre>
-<h3 class="margin-top-xl margin-bot-none" id="Wrap">Wrap</h3>
-  
-  <p class="margin-top-xs margin-bot-l">An optional <em>wrap</em> class is available to wrap the table data for smaller screens. In order for wrapping
-to work, the <code>data-header</code> attribute must be applied to all <code>td</code>'s</p>
+<h3 class="margin-top-xl margin-bot-none" id="Wrap">Wrap</h3><p class="margin-top-xs margin-bot-l">An optional <em>wrap</em> class is available to wrap the table data for smaller screens. In order for wrapping
+to work, the <code>data-header</code> attribute must be applied to all <code>td</code>'s</p><p><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.table--wrap</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.table--unwrap</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.mobile:table--wrap</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.tablet:table--wrap</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.desktop:table--wrap</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.mobile:table--unwrap</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.tablet:table--unwrap</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-light-grey-l border-radius-m">.desktop:table--unwrap</span></p>
+
 <div class="shadow pad-2xl bg-color-white pos-relative">
   <div class=""><table class="table--wrap">
     <thead>
@@ -229,9 +226,8 @@ to work, the <code>data-header</code> attribute must be applied to all <code>td<
     </tbody>
 </table>
 </code></pre>
-<h3 class="margin-top-xl margin-bot-none" id="Responsive">Responsive</h3>
-  
-  <p class="margin-top-xs margin-bot-l">Both the pivot and wrap modifiers include media query prefixes.</p>
+<h3 class="margin-top-xl margin-bot-none" id="Responsive">Responsive</h3><p class="margin-top-xs margin-bot-l">Both the pivot and wrap modifiers include media query prefixes.</p>
+
 
 <h4 class="margin-bot-none">Auto-wrap</h4><p class="margin-top-xs">Add the <em>table--wrap</em> class to default to a table that wraps. Add
 the media
