@@ -1,4 +1,4 @@
-// feds.1.0.0.594
+// feds.1.0.0.605
 (function () {
   'use strict';
 
@@ -71,16 +71,37 @@
     return _assertThisInitialized(self);
   }
 
-  var version = "1.0.0.594";
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+      return arr2;
+    }
+  }
+
+  function _iterableToArray(iter) {
+    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance");
+  }
+
+  var version = "1.0.0.605";
 
   var Component = function Component() {
-    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-    var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
     _classCallCheck(this, Component);
 
-    this.name = name;
     this.id = id;
+    this.name = name;
+    this.el = document.querySelector("#".concat(id));
   };
 
   var Modal =
@@ -115,6 +136,34 @@
     return Modal;
   }(Component);
 
+  var Tab =
+  /*#__PURE__*/
+  function () {
+    function Tab() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var expanded = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      _classCallCheck(this, Tab);
+
+      this.id = id;
+      this.label = document.querySelector("label[for=\"".concat(id, "\"]"));
+      this.content = document.querySelector("#".concat(id));
+      this.expanded = expanded; // events
+
+      this.label.addEventListener("click", this.toggle.bind(this));
+    }
+
+    _createClass(Tab, [{
+      key: "toggle",
+      value: function toggle() {
+        this.expanded = !this.expanded;
+        this.content.classList.toggle("hidden");
+      }
+    }]);
+
+    return Tab;
+  }();
+
   var Accordion =
   /*#__PURE__*/
   function (_base) {
@@ -129,8 +178,20 @@
       _classCallCheck(this, Accordion);
 
       _this = _possibleConstructorReturn(this, _getPrototypeOf(Accordion).call(this, id, name));
+      _this.tabs = _this.initTabs();
       return _possibleConstructorReturn(_this, _assertThisInitialized(_assertThisInitialized(_this)));
     }
+
+    _createClass(Accordion, [{
+      key: "initTabs",
+      value: function initTabs() {
+        return _toConsumableArray(this.el.children).filter(function (i) {
+          return i.nodeName === "LABEL";
+        }).map(function (i) {
+          return new Tab(i.getAttribute("for"));
+        });
+      }
+    }]);
 
     return Accordion;
   }(Component);
@@ -173,8 +234,7 @@
         var component = this.lib.components[c.dataset.component];
         if (!component) return this;
         var instance = new component(c.id);
-        this.components[instance.id] = instance;
-        console.log(instance);
+        this.components[c.id] = instance;
         return this;
       }
     }, {

@@ -1,7 +1,7 @@
 {{#page
 section="Components"
 title="Accordion"
-source="/src/scripts/components/accordion" }}
+source="/src/scripts/components/accordion/accordion.js" }}
 
 {{>
 header
@@ -9,9 +9,15 @@ title="Basic"
 }}
 
 {{#example code=true }}
-<div data-component="Accordion">
-  <label for="tab-one">Label One</label>
-  <div id="tab-one">
+<div id="AccordionExample" data-component="Accordion">
+  <label for="tab-one" class="block cursor-pointer">Label One</label>
+  <div id="tab-one" class="hidden">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
+      maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
+      Saepe, itaque.</p>
+  </div>
+  <label for="tab-two" class="block cursor-pointer">Label Two</label>
+  <div id="tab-two" class="hidden">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
       maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
       Saepe, itaque.</p>

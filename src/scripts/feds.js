@@ -32,7 +32,7 @@ export default class Feds {
     const component = this.lib.components[c.dataset.component];
     if (!component) return this;
     const instance = new component(c.id);
-    this.components[instance.id] = instance;
+    this.components[c.id] = instance;
     return this;
   }
   get(componentId) {
