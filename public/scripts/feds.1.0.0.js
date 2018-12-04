@@ -1,4 +1,4 @@
-// feds.1.0.0.660
+// feds.1.0.0.667
 (function () {
   'use strict';
 
@@ -91,7 +91,75 @@
     throw new TypeError("Invalid attempt to spread non-iterable instance");
   }
 
-  var version = "1.0.0.660";
+  var Version = "1.0.0.667";
+
+  var Bus =
+  /*#__PURE__*/
+  function () {
+    function Bus() {
+      _classCallCheck(this, Bus);
+    }
+
+    _createClass(Bus, [{
+      key: "on",
+      value: function on(event, listener) {
+        this._eventCollection = this._eventCollection || {};
+        this._eventCollection[event] = this._eventCollection[event] || [];
+
+        this._eventCollection[event].push(listener);
+
+        return this;
+      }
+    }, {
+      key: "once",
+      value: function once(event, listener) {
+        var self = this;
+
+        function fn() {
+          self.off(event, fn);
+          listener.apply(this, arguments);
+        }
+
+        fn.listener = listener;
+        this.on(event, fn);
+        return this;
+      }
+    }, {
+      key: "off",
+      value: function off(event, listener) {
+        var listeners;
+        if (!this._eventCollection || !(listeners = this._eventCollection[event])) return this;
+        listeners.forEach(function (fn, i) {
+          if (fn === listener || fn.listener === listener) listeners.splice(i, 1);
+        });
+        if (listeners.length === 0) delete this._eventCollection[event];
+        return this;
+      }
+    }, {
+      key: "trigger",
+      value: function trigger(event) {
+        var _this = this;
+
+        for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
+        }
+
+        var listeners;
+
+        if (!this._eventCollection || !(listeners = this._eventCollection[event])) {
+          return this;
+        }
+
+        listeners = listeners.slice(0);
+        listeners.forEach(function (fn) {
+          return fn.apply(_this, args);
+        });
+        return this;
+      }
+    }]);
+
+    return Bus;
+  }();
 
   var Component = function Component() {
     var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
@@ -103,38 +171,6 @@
     this.name = name;
     this.el = document.querySelector("#".concat(id));
   };
-
-  var Modal =
-  /*#__PURE__*/
-  function (_base) {
-    _inherits(Modal, _base);
-
-    function Modal() {
-      var _this;
-
-      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-      var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "modal";
-
-      _classCallCheck(this, Modal);
-
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(Modal).call(this, id, name));
-      return _possibleConstructorReturn(_this, _assertThisInitialized(_assertThisInitialized(_this)));
-    }
-
-    _createClass(Modal, [{
-      key: "open",
-      value: function open() {
-        alert("open");
-      }
-    }, {
-      key: "close",
-      value: function close() {
-        alert("close");
-      }
-    }]);
-
-    return Modal;
-  }(Component);
 
   var Tab =
   /*#__PURE__*/
@@ -202,6 +238,10 @@
     return Accordion;
   }(Component);
 
+  var modules = {};
+  var components = {};
+  components.Accordion = Accordion;
+
   var Feds =
   /*#__PURE__*/
   function () {
@@ -210,17 +250,14 @@
 
       this.debug = window.location.hash === "#debug";
       if (this.debug) console.time("feds");
-      this.version = version;
+      this.version = Version;
       this.components = {};
-      this.lib = {
-        components: {
-          Modal: Modal,
-          Accordion: Accordion
-        },
-        modules: {}
-      };
+      this.lib = {};
+      this.lib.modules = modules;
+      this.lib.components = components;
       this.events = {};
       this.params = new URL(window.location.href).searchParams;
+      this.bus = new Bus();
     }
 
     _createClass(Feds, [{
