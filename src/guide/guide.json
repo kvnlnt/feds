@@ -57,14 +57,7 @@
         "title": "Flexbox",
         "src": "src/guide/pages/atoms/flexbox.hbs",
         "link": "/guide/atoms/flexbox.html",
-        "sections": [
-          "Alignment",
-          "Direction",
-          "Display",
-          "Sizing",
-          "Justify",
-          "Wrapping"
-        ]
+        "sections": ["Alignment", "Direction", "Display", "Sizing", "Justify", "Wrapping"]
       },
       {
         "title": "FX",
@@ -82,15 +75,7 @@
         "title": "Layout",
         "src": "src/guide/pages/atoms/layout.hbs",
         "link": "/guide/atoms/layout.html",
-        "sections": [
-          "Container",
-          "Display",
-          "Floats",
-          "Overflow",
-          "Position",
-          "Visibility",
-          "Z-Index"
-        ]
+        "sections": ["Container", "Display", "Floats", "Overflow", "Position", "Visibility", "Z-Index"]
       },
       {
         "title": "Misc",
@@ -164,11 +149,7 @@
         "title": "Navigations",
         "src": "src/guide/pages/elements/navigations.hbs",
         "link": "/guide/elements/navigations.html",
-        "sections": [
-          "Breadcrumbs",
-          "Breadcrumbs With Title",
-          "Back Button & Page Title"
-        ]
+        "sections": ["Breadcrumbs", "Breadcrumbs With Title", "Back Button & Page Title"]
       },
       {
         "title": "Tables",
@@ -183,7 +164,14 @@
         "sections": ["Headers", "Paragraphs"]
       }
     ],
-    "components": [],
+    "components": [
+      {
+        "title": "Accordion",
+        "src": "src/guide/pages/components/accordion.hbs",
+        "link": "/guide/components/accordion.html",
+        "sections": ["Basic"]
+      }
+    ],
     "modules": []
   }
 }

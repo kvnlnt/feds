@@ -1,4 +1,4 @@
-$flexbox-alignment = @block {
+$flexbox-alignment =
   &-items-stretch {
     align-items: stretch;
   }
@@ -38,9 +38,9 @@ $flexbox-alignment = @block {
   &-self-stretch {
     align-self: stretch;
   }
+
+.flex-align {
+  {$flexbox-alignment};
 }
 
-.flex-align { 
-  {$flexbox-alignment} 
-}
 mq('flex-align', $flexbox-alignment);

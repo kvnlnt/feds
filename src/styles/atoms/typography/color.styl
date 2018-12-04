@@ -1,4 +1,4 @@
-.text-color {
+$text-color =
   &-black {
     color: $color-black;
   }
@@ -53,5 +53,20 @@
 
   &-white {
     color: $color-white;
+  }
+
+.text-color {
+  $text-color;
+}
+
+.hover\\:text-color {
+  &:hover {
+    $text-color;
+  }
+}
+
+.focus\\:text-color {
+  &:focus {
+    $text-color;
   }
 }

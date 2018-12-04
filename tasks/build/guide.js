@@ -139,6 +139,7 @@ const render = i => {
 guide.pages.general.forEach(render);
 guide.pages.atoms.forEach(render);
 guide.pages.elements.forEach(render);
+guide.pages.components.forEach(render);
 
 // home page
 cfs("./src/guide/guide.css", "./public/guide/guide.css");

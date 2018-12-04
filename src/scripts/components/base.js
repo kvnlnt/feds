@@ -1,6 +1,7 @@
 export default class Component {
-  constructor(name = "", id = "", styles = null) {
-    this.name = name;
+  constructor(id = "", name = "", styles = null) {
     this.id = id;
+    this.name = name;
+    this.el = document.querySelector(`#${id}`);
   }
 }

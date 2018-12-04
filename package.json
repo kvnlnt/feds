@@ -3,7 +3,7 @@
   "author": "",
   "license": "ISC",
   "version": "1.0.0",
-  "build": 609,
+  "build": 623,
   "test": 538,
   "description": "Front End Design System",
   "main": "./tasks/build.js",

@@ -1,4 +1,4 @@
-// feds.1.0.0.609
+// feds.1.0.0.623
 (function () {
   'use strict';
 
@@ -71,16 +71,37 @@
     return _assertThisInitialized(self);
   }
 
-  var version = "1.0.0.609";
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+      return arr2;
+    }
+  }
+
+  function _iterableToArray(iter) {
+    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance");
+  }
+
+  var version = "1.0.0.623";
 
   var Component = function Component() {
-    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-    var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+    var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
     _classCallCheck(this, Component);
 
-    this.name = name;
     this.id = id;
+    this.name = name;
+    this.el = document.querySelector("#".concat(id));
   };
 
   var Modal =
@@ -115,6 +136,101 @@
     return Modal;
   }(Component);
 
+  var Tab =
+  /*#__PURE__*/
+  function () {
+    function Tab() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var expanded = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      _classCallCheck(this, Tab);
+
+      this.id = id;
+      this.label = document.querySelector("label[for=\"".concat(id, "\"]"));
+      this.content = document.querySelector("#".concat(id));
+      this.caret = document.createElement("i");
+      this.expanded = expanded; // styling
+
+      this.styleLabel().styleContent().styleCaret(); // events
+
+      this.label.addEventListener("click", this.toggle.bind(this));
+    }
+
+    _createClass(Tab, [{
+      key: "styleCaret",
+      value: function styleCaret() {
+        var _this = this;
+
+        ["icon", "icon-caret", "leading-2xl", "font-size-xl", "margin-right-base", "rotate-30"].forEach(function (i) {
+          return _this.caret.classList.add(i);
+        });
+        this.label.prepend(this.caret);
+        return this;
+      }
+    }, {
+      key: "styleContent",
+      value: function styleContent() {
+        var _this2 = this;
+
+        ["hidden", "pad-left-2xl"].forEach(function (i) {
+          return _this2.content.classList.add(i);
+        });
+        return this;
+      }
+    }, {
+      key: "styleLabel",
+      value: function styleLabel() {
+        var _this3 = this;
+
+        ["block", "cursor-pointer", "leading-2xl", "pad-left-s", "pad-right-xl", "border-style-solid-top", "border-size-top-xs", "border-color-light-grey", "hover:text-color-primary"].forEach(function (i) {
+          return _this3.label.classList.add(i);
+        });
+        return this;
+      }
+    }, {
+      key: "toggle",
+      value: function toggle() {
+        this.expanded = !this.expanded;
+        this.content.classList.toggle("hidden");
+        this.caret.classList.toggle("rotate-30");
+      }
+    }]);
+
+    return Tab;
+  }();
+
+  var Accordion =
+  /*#__PURE__*/
+  function (_base) {
+    _inherits(Accordion, _base);
+
+    function Accordion() {
+      var _this4;
+
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "accordion";
+
+      _classCallCheck(this, Accordion);
+
+      _this4 = _possibleConstructorReturn(this, _getPrototypeOf(Accordion).call(this, id, name));
+      _this4.tabs = _this4.initTabs();
+      return _possibleConstructorReturn(_this4, _assertThisInitialized(_assertThisInitialized(_this4)));
+    }
+
+    _createClass(Accordion, [{
+      key: "initTabs",
+      value: function initTabs() {
+        return _toConsumableArray(this.el.children).filter(function (i) {
+          return i.nodeName === "LABEL";
+        }).map(function (i) {
+          return new Tab(i.getAttribute("for"));
+        });
+      }
+    }]);
+
+    return Accordion;
+  }(Component);
+
   var Feds =
   /*#__PURE__*/
   function () {
@@ -127,7 +243,8 @@
       this.components = {};
       this.lib = {
         components: {
-          Modal: Modal
+          Modal: Modal,
+          Accordion: Accordion
         },
         modules: {}
       };
@@ -152,8 +269,7 @@
         var component = this.lib.components[c.dataset.component];
         if (!component) return this;
         var instance = new component(c.id);
-        this.components[instance.id] = instance;
-        console.log(instance);
+        this.components[c.id] = instance;
         return this;
       }
     }, {

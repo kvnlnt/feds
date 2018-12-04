@@ -19,6 +19,9 @@ body {
   border: 1px solid #2d77cc;
   margin: -1px;
 }
+i {
+  display: inline-block;
+}
 .feds .button,
 .feds button {
   border-width: 1px;
@@ -1594,6 +1597,21 @@ body {
 }
 .feds .opac-100 {
   opacity: 1;
+}
+.feds .rotate-30 {
+  transform: rotate(30deg);
+}
+.feds .rotate-45 {
+  transform: rotate(45deg);
+}
+.feds .rotate-90 {
+  transform: rotate(90deg);
+}
+.feds .rotate-135 {
+  transform: rotate(135deg);
+}
+.feds .rotate-180 {
+  transform: rotate(180deg);
 }
 .feds .shadow {
   box-shadow: 0 2px 4px 2px rgba(0,0,0,0.1);
@@ -3915,48 +3933,6 @@ body {
 }
 .feds .text-align-text-bottom {
   vertical-align: text-bottom;
-}
-.feds .text-color-black {
-  color: #0e1225;
-}
-.feds .text-color-danger {
-  color: #d3171e;
-}
-.feds .text-color-grey {
-  color: #333d4f;
-}
-.feds .text-color-grey-l {
-  color: #707783;
-}
-.feds .text-color-light-grey {
-  color: #caced9;
-}
-.feds .text-color-light-grey-l {
-  color: #eff0f4;
-}
-.feds .text-color-light-grey-xl {
-  color: #f9f9fa;
-}
-.feds .text-color-info {
-  color: #2d77cc;
-}
-.feds .text-color-primary {
-  color: #2d77cc;
-}
-.feds .text-color-primary-l {
-  color: #3392ff;
-}
-.feds .text-color-secondary {
-  color: #1f62ad;
-}
-.feds .text-color-success {
-  color: #008756;
-}
-.feds .text-color-warn {
-  color: #f7d31e;
-}
-.feds .text-color-white {
-  color: #fff;
 }
 .feds .font-primary {
   font-family: OpenSans;
