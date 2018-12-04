@@ -1,4 +1,4 @@
-// feds.1.0.0.577
+// feds.1.0.0.594
 (function () {
   'use strict';
 
@@ -71,7 +71,7 @@
     return _assertThisInitialized(self);
   }
 
-  var version = "1.0.0.577";
+  var version = "1.0.0.594";
 
   var Component = function Component() {
     var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
@@ -115,6 +115,26 @@
     return Modal;
   }(Component);
 
+  var Accordion =
+  /*#__PURE__*/
+  function (_base) {
+    _inherits(Accordion, _base);
+
+    function Accordion() {
+      var _this;
+
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "accordion";
+
+      _classCallCheck(this, Accordion);
+
+      _this = _possibleConstructorReturn(this, _getPrototypeOf(Accordion).call(this, id, name));
+      return _possibleConstructorReturn(_this, _assertThisInitialized(_assertThisInitialized(_this)));
+    }
+
+    return Accordion;
+  }(Component);
+
   var Feds =
   /*#__PURE__*/
   function () {
@@ -127,7 +147,8 @@
       this.components = {};
       this.lib = {
         components: {
-          Modal: Modal
+          Modal: Modal,
+          Accordion: Accordion
         },
         modules: {}
       };

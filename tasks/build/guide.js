@@ -88,7 +88,7 @@ function renderHeaderAtomsFromSource(source) {
 }
 
 hb.registerHelper("atom-header", function(options) {
-  const title = options.hash.title ? renderHeaderTitle(option.hash.title) : "";
+  const title = options.hash.title ? renderHeaderTitle(options.hash.title) : "";
   const source = options.hash.source ? renderHeaderSourceLink(options.hash.source) : "";
   const descr = options.hash.descr ? renderHeaderDescr(options.hash.descr) : "";
   const atoms = options.hash.atoms === false ? "" : renderHeaderAtomsFromSource(options.hash.source);
@@ -129,6 +129,7 @@ const render = i => {
 guide.pages.general.forEach(render);
 guide.pages.atoms.forEach(render);
 guide.pages.elements.forEach(render);
+guide.pages.components.forEach(render);
 
 // home page
 cfs("./src/guide/guide.css", "./public/guide/guide.css");
