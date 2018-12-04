@@ -1,4 +1,4 @@
-$text-color =
+.text-color {
   &-black {
     color: $color-black;
   }
@@ -54,19 +54,62 @@ $text-color =
   &-white {
     color: $color-white;
   }
-
-.text-color {
-  $text-color;
 }
 
 .hover\\:text-color {
-  &:hover {
-    $text-color;
+  &-black:hover {
+    color: $color-black;
   }
-}
 
-.focus\\:text-color {
-  &:focus {
-    $text-color;
+  &-danger:hover {
+    color: $color-red;
+  }
+
+  &-grey:hover {
+    color: $color-grey;
+  }
+
+  &-grey-l:hover {
+    color: $color-grey-l;
+  }
+
+  &-light-grey:hover {
+    color: $color-light-grey;
+  }
+
+  &-light-grey-l:hover {
+    color: $color-light-grey-l;
+  }
+
+  &-light-grey-xl:hover {
+    color: $color-light-grey-xl;
+  }
+
+  &-info:hover {
+    color: $color-blue;
+  }
+
+  &-primary:hover {
+    color: $color-blue;
+  }
+
+  &-primary-l:hover {
+    color: $color-blue-l;
+  }
+
+  &-secondary:hover {
+    color: $color-blue-d;
+  }
+
+  &-success:hover {
+    color: $color-green;
+  }
+
+  &-warn:hover {
+    color: $color-yellow;
+  }
+
+  &-white:hover {
+    color: $color-white;
   }
 }

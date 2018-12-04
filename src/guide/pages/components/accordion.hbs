@@ -9,17 +9,19 @@ title="Basic"
 
 {{#example code=true }}
 <div id="AccordionExample" data-component="Accordion" class="width-full">
-  <label for="tab-one">Label One</label>
-  <div id="tab-one">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
-      maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
-      Saepe, itaque.</p>
+  <div data-tab="tab-one">
+    <label class="block cursor-pointer leading-2xl pad-left-s pad-right-xl border-style-solid-top border-size-top-xs border-color-light-grey hover:text-color-primary"><i class="icon icon-caret leading-2xl font-size-xl margin-right-base rotate-30"></i>Label One</label>
+    <div class="pad-left-2xl pad-bot-xl hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
+        maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
+        Saepe, itaque.
+    </div>
   </div>
- <label for="tab-two">Label One</label>
-  <div id="tab-two">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
-      maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
-      Saepe, itaque.</p>
+  <div data-tab="tab-two">
+    <label class="block cursor-pointer leading-2xl pad-left-s pad-right-xl border-style-solid-top border-size-top-xs border-color-light-grey hover:text-color-primary"><i class="icon icon-caret leading-2xl font-size-xl margin-right-base rotate-30"></i>Label Two</label>
+    <div class="pad-left-2xl pad-bot-xl hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
+        maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
+        Saepe, itaque.
+    </div>
   </div>
 </div>
 {{/example}}

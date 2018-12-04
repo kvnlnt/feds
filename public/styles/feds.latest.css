@@ -3934,6 +3934,90 @@ i {
 .feds .text-align-text-bottom {
   vertical-align: text-bottom;
 }
+.feds .text-color-black {
+  color: #0e1225;
+}
+.feds .text-color-danger {
+  color: #d3171e;
+}
+.feds .text-color-grey {
+  color: #333d4f;
+}
+.feds .text-color-grey-l {
+  color: #707783;
+}
+.feds .text-color-light-grey {
+  color: #caced9;
+}
+.feds .text-color-light-grey-l {
+  color: #eff0f4;
+}
+.feds .text-color-light-grey-xl {
+  color: #f9f9fa;
+}
+.feds .text-color-info {
+  color: #2d77cc;
+}
+.feds .text-color-primary {
+  color: #2d77cc;
+}
+.feds .text-color-primary-l {
+  color: #3392ff;
+}
+.feds .text-color-secondary {
+  color: #1f62ad;
+}
+.feds .text-color-success {
+  color: #008756;
+}
+.feds .text-color-warn {
+  color: #f7d31e;
+}
+.feds .text-color-white {
+  color: #fff;
+}
+.feds .hover\:text-color-black:hover {
+  color: #0e1225;
+}
+.feds .hover\:text-color-danger:hover {
+  color: #d3171e;
+}
+.feds .hover\:text-color-grey:hover {
+  color: #333d4f;
+}
+.feds .hover\:text-color-grey-l:hover {
+  color: #707783;
+}
+.feds .hover\:text-color-light-grey:hover {
+  color: #caced9;
+}
+.feds .hover\:text-color-light-grey-l:hover {
+  color: #eff0f4;
+}
+.feds .hover\:text-color-light-grey-xl:hover {
+  color: #f9f9fa;
+}
+.feds .hover\:text-color-info:hover {
+  color: #2d77cc;
+}
+.feds .hover\:text-color-primary:hover {
+  color: #2d77cc;
+}
+.feds .hover\:text-color-primary-l:hover {
+  color: #3392ff;
+}
+.feds .hover\:text-color-secondary:hover {
+  color: #1f62ad;
+}
+.feds .hover\:text-color-success:hover {
+  color: #008756;
+}
+.feds .hover\:text-color-warn:hover {
+  color: #f7d31e;
+}
+.feds .hover\:text-color-white:hover {
+  color: #fff;
+}
 .feds .font-primary {
   font-family: OpenSans;
 }

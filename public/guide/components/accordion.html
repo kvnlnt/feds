@@ -17,7 +17,7 @@
       <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
         <img src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline" class="mobile:hidden tablet:block">
         <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
-          1.0.0.623
+          1.0.0.660
         </span>
 
         <i id="toggleMenu" class="mobile:flex tablet:hidden font-size-xl icon icon-menu float-right flex-align-items-center cursor-pointer"></i>
@@ -28,13 +28,15 @@
           <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
             Frontend Design System
             <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
-              1.0.0.623
+              1.0.0.660
             </span>
           </p>
           <div id="menu" class="mobile:hidden tablet:block">
             <hr>
 
-            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Getting Started</h3>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">
+              Getting Started
+            </h3>
             <div>
               <a href="/guide/index.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">About</a>
               <a href="/guide/general/concepts.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Concepts</a>
@@ -42,17 +44,20 @@
               <a href="/guide/general/compatibility.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compatibility</a>
               <a href="/guide/general/compliance.html" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Compliance</a>
             </div>
-            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Design System</h3>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">
+              Design System
+            </h3>
             <div>
               <a href="/guide/atoms" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Atoms</a>
               <a href="/guide/elements" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Elements</a>
               <a href="/guide/components" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Components</a>
-              <a href="/guide/layouts" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Layouts</a>
-              <a href="/guide/library" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Library</a>
+              <a href="/guide/interface" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Interface</a>
+              <a href="/guide/modules" class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline">Modules</a>
             </div>
           </div>
         </aside>
-        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4"><div id="content"><section id="Accordion"><a 
+        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4">
+          <div id="content"><section id="Accordion"><a 
     href="/guide/components" 
     class="button text-size-s font-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">
     Components</a><h2 class="guide margin-top-2xl">Accordion</h2><a href="https://github.com/kvnlnt/feds/blob/master/src/scripts/components/accordion/accordion.js" target="blank">/src/scripts/components/accordion/accordion.js</a>
@@ -61,35 +66,40 @@
 
 <div class="shadow pad-2xl bg-color-white pos-relative">
   <div class="flex flex-wrap"><div id="AccordionExample" data-component="Accordion" class="width-full">
-  <label for="tab-one">Label One</label>
-  <div id="tab-one">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
-      maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
-      Saepe, itaque.</p>
+  <div data-tab="tab-one">
+    <label class="block cursor-pointer leading-2xl pad-left-s pad-right-xl border-style-solid-top border-size-top-xs border-color-light-grey hover:text-color-primary"><i class="icon icon-caret leading-2xl font-size-xl margin-right-base rotate-30"></i>Label One</label>
+    <div class="pad-left-2xl pad-bot-xl hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
+        maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
+        Saepe, itaque.
+    </div>
   </div>
- <label for="tab-two">Label One</label>
-  <div id="tab-two">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
-      maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
-      Saepe, itaque.</p>
+  <div data-tab="tab-two">
+    <label class="block cursor-pointer leading-2xl pad-left-s pad-right-xl border-style-solid-top border-size-top-xs border-color-light-grey hover:text-color-primary"><i class="icon icon-caret leading-2xl font-size-xl margin-right-base rotate-30"></i>Label Two</label>
+    <div class="pad-left-2xl pad-bot-xl hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
+        maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
+        Saepe, itaque.
+    </div>
   </div>
 </div>
 </div></div><pre><code data-language="html"><div id="AccordionExample" data-component="Accordion" class="width-full">
-  <label for="tab-one">Label One</label>
-  <div id="tab-one">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
-      maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
-      Saepe, itaque.</p>
+  <div data-tab="tab-one">
+    <label class="block cursor-pointer leading-2xl pad-left-s pad-right-xl border-style-solid-top border-size-top-xs border-color-light-grey hover:text-color-primary"><i class="icon icon-caret leading-2xl font-size-xl margin-right-base rotate-30"></i>Label One</label>
+    <div class="pad-left-2xl pad-bot-xl hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
+        maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
+        Saepe, itaque.
+    </div>
   </div>
- <label for="tab-two">Label One</label>
-  <div id="tab-two">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
-      maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
-      Saepe, itaque.</p>
+  <div data-tab="tab-two">
+    <label class="block cursor-pointer leading-2xl pad-left-s pad-right-xl border-style-solid-top border-size-top-xs border-color-light-grey hover:text-color-primary"><i class="icon icon-caret leading-2xl font-size-xl margin-right-base rotate-30"></i>Label Two</label>
+    <div class="pad-left-2xl pad-bot-xl hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum,
+        maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum?
+        Saepe, itaque.
+    </div>
   </div>
 </div>
 </code></pre>
-</section></div></div>
+</section></div>
+        </div>
       </div>
     </div>
   

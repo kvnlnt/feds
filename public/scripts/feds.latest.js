@@ -1,4 +1,4 @@
-// feds.1.0.0.623
+// feds.1.0.0.660
 (function () {
   'use strict';
 
@@ -91,7 +91,7 @@
     throw new TypeError("Invalid attempt to spread non-iterable instance");
   }
 
-  var version = "1.0.0.623";
+  var version = "1.0.0.660";
 
   var Component = function Component() {
     var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
@@ -139,55 +139,24 @@
   var Tab =
   /*#__PURE__*/
   function () {
-    function Tab() {
-      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-      var expanded = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    function Tab(el, parent) {
+      var expanded = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
       _classCallCheck(this, Tab);
 
-      this.id = id;
-      this.label = document.querySelector("label[for=\"".concat(id, "\"]"));
-      this.content = document.querySelector("#".concat(id));
-      this.caret = document.createElement("i");
-      this.expanded = expanded; // styling
-
-      this.styleLabel().styleContent().styleCaret(); // events
+      this.id = el.dataset.tab;
+      this.el = el;
+      this.parent = parent;
+      this.label = this.el.querySelector("label");
+      this.content = this.el.querySelector("div");
+      this.caret = this.el.querySelector("i");
+      this.expanded = expanded; // events
 
       this.label.addEventListener("click", this.toggle.bind(this));
+      if (this.expanded) this.toggle();
     }
 
     _createClass(Tab, [{
-      key: "styleCaret",
-      value: function styleCaret() {
-        var _this = this;
-
-        ["icon", "icon-caret", "leading-2xl", "font-size-xl", "margin-right-base", "rotate-30"].forEach(function (i) {
-          return _this.caret.classList.add(i);
-        });
-        this.label.prepend(this.caret);
-        return this;
-      }
-    }, {
-      key: "styleContent",
-      value: function styleContent() {
-        var _this2 = this;
-
-        ["hidden", "pad-left-2xl"].forEach(function (i) {
-          return _this2.content.classList.add(i);
-        });
-        return this;
-      }
-    }, {
-      key: "styleLabel",
-      value: function styleLabel() {
-        var _this3 = this;
-
-        ["block", "cursor-pointer", "leading-2xl", "pad-left-s", "pad-right-xl", "border-style-solid-top", "border-size-top-xs", "border-color-light-grey", "hover:text-color-primary"].forEach(function (i) {
-          return _this3.label.classList.add(i);
-        });
-        return this;
-      }
-    }, {
       key: "toggle",
       value: function toggle() {
         this.expanded = !this.expanded;
@@ -198,32 +167,34 @@
 
     return Tab;
   }();
-
   var Accordion =
   /*#__PURE__*/
-  function (_base) {
-    _inherits(Accordion, _base);
+  function (_Base) {
+    _inherits(Accordion, _Base);
 
     function Accordion() {
-      var _this4;
+      var _this;
 
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
       var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "accordion";
 
       _classCallCheck(this, Accordion);
 
-      _this4 = _possibleConstructorReturn(this, _getPrototypeOf(Accordion).call(this, id, name));
-      _this4.tabs = _this4.initTabs();
-      return _possibleConstructorReturn(_this4, _assertThisInitialized(_assertThisInitialized(_this4)));
+      _this = _possibleConstructorReturn(this, _getPrototypeOf(Accordion).call(this, id, name));
+      _this.tabs = _this.initTabs();
+      return _possibleConstructorReturn(_this, _assertThisInitialized(_assertThisInitialized(_this)));
     }
 
     _createClass(Accordion, [{
       key: "initTabs",
       value: function initTabs() {
-        return _toConsumableArray(this.el.children).filter(function (i) {
-          return i.nodeName === "LABEL";
-        }).map(function (i) {
-          return new Tab(i.getAttribute("for"));
+        var _this2 = this;
+
+        var preExpandedTabs = feds.params.get("tabs") ? feds.params.get("tabs").split(",").map(function (i) {
+          return i.trim();
+        }) : [];
+        return _toConsumableArray(this.el.children).map(function (i) {
+          return new Tab(i, _this2, preExpandedTabs.indexOf(i.dataset.tab) > -1);
         });
       }
     }]);
@@ -249,6 +220,7 @@
         modules: {}
       };
       this.events = {};
+      this.params = new URL(window.location.href).searchParams;
     }
 
     _createClass(Feds, [{
@@ -283,9 +255,9 @@
   }();
 
   // meta
-  var feds = new Feds();
-  window.feds = feds;
-  document.addEventListener("DOMContentLoaded", feds.init.bind(feds));
+  var feds$1 = new Feds();
+  window.feds = feds$1;
+  document.addEventListener("DOMContentLoaded", feds$1.init.bind(feds$1));
 
 }());
 //# sourceMappingURL=feds.latest.js.map

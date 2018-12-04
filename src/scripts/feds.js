@@ -3,7 +3,7 @@ import version from "./version";
 
 // components
 import Modal from "./components/modals/component";
-import Accordion from "./components/accordion/accordion";
+import { Accordion } from "./components/accordion/accordion";
 
 export default class Feds {
   constructor() {
@@ -19,13 +19,16 @@ export default class Feds {
       modules: {}
     };
     this.events = {};
+    this.params = new URL(window.location.href).searchParams;
   }
   init() {
     this.initComponents();
     if (this.debug) console.timeEnd("feds");
   }
   initComponents() {
-    [].slice.call(document.querySelectorAll("[data-component]")).forEach(this.initComponent.bind(this));
+    [].slice
+      .call(document.querySelectorAll("[data-component]"))
+      .forEach(this.initComponent.bind(this));
     return this;
   }
   initComponent(c) {

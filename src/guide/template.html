@@ -16,12 +16,16 @@
 
   <body class="bg-color-light-grey-xl">
     <div class="container pos-relative height-min-screen margin-horz-auto">
-      <div class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s">
+      <div
+        class="flex pos-absolute pos-right-0 pos-top-0 margin-top-s margin-right-s"
+      >
         <img
           src="https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline"
           class="mobile:hidden tablet:block"
         />
-        <span class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs">
+        <span
+          class="mobile:hidden tablet:block opac-50 flex-align-items-center margin-left-xs"
+        >
           {{ config.version }}.{{ config.build }}
         </span>
 
@@ -31,18 +35,26 @@
         ></i>
       </div>
       <div class="tablet:flex width-full height-min-screen">
-        <aside class="flex-basis-auto tablet:width-1/4 pad-l bg-color-light-grey-l whitespace-no-wrap">
+        <aside
+          class="flex-basis-auto tablet:width-1/4 pad-l bg-color-light-grey-l whitespace-no-wrap"
+        >
           <a href="/guide"> <img src="/gfx/common/er-logo.svg"/></a>
-          <p class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold">
+          <p
+            class="mobile:margin-none tablet:margin-top-s tablet:margin-bot-s font-size-xs font-primary-bold"
+          >
             Frontend Design System
-            <span class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30">
+            <span
+              class="margin-left-xs font-size-xs mobile:inline-block tablet:hidden opac-30"
+            >
               {{ config.version }}.{{ config.build }}
             </span>
           </p>
           <div id="menu" class="mobile:hidden tablet:block">
             <hr />
 
-            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Getting Started</h3>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">
+              Getting Started
+            </h3>
             <div>
               <a
                 href="/guide/index.html"
@@ -70,7 +82,9 @@
                 >Compliance</a
               >
             </div>
-            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">Design System</h3>
+            <h3 class="font-size-xs text-color-grey-l text-style-uppercase">
+              Design System
+            </h3>
             <div>
               <a
                 href="/guide/atoms"
@@ -88,19 +102,21 @@
                 >Components</a
               >
               <a
-              href="/guide/layouts"
-              class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline"
-              >Layouts</a
-            >
-              <a
-                href="/guide/library"
+                href="/guide/interface"
                 class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline"
-                >Library</a
+                >Interface</a
+              >
+              <a
+                href="/guide/modules"
+                class="text-weight-normal leading-l block text-color-black font-size-base text-style-no-underline"
+                >Modules</a
               >
             </div>
           </div>
         </aside>
-        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4"><div id="content"></div></div>
+        <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4">
+          <div id="content"></div>
+        </div>
       </div>
     </div>
   </body>
