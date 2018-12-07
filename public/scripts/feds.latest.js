@@ -1,4 +1,4 @@
-// feds.1.0.0.667
+// feds.1.0.0.668
 (function () {
   'use strict';
 
@@ -91,7 +91,7 @@
     throw new TypeError("Invalid attempt to spread non-iterable instance");
   }
 
-  var Version = "1.0.0.667";
+  var Version = "1.0.0.668";
 
   var Bus =
   /*#__PURE__*/
@@ -255,9 +255,8 @@
       this.lib = {};
       this.lib.modules = modules;
       this.lib.components = components;
-      this.events = {};
-      this.params = new URL(window.location.href).searchParams;
       this.bus = new Bus();
+      this.params = new URL(window.location.href).searchParams;
     }
 
     _createClass(Feds, [{

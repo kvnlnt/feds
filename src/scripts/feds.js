@@ -18,9 +18,8 @@ export default class Feds {
     this.lib = {};
     this.lib.modules = modules;
     this.lib.components = components;
-    this.events = {};
-    this.params = new URL(window.location.href).searchParams;
     this.bus = new Bus();
+    this.params = new URL(window.location.href).searchParams;
   }
   init() {
     this.initComponents();
