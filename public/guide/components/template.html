@@ -57,18 +57,64 @@
           </div>
         </aside>
         <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4">
-          <div id="content"><section id="UX"><a 
-    href="/guide/atoms" 
+          <div id="content"><section id="Template"><a 
+    href="/guide/components" 
     class="button text-size-s font-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">
-    Atoms</a><h2 class="guide margin-top-2xl">UX</h2>
-  <h3 class="margin-top-xl margin-bot-none" id="Cursor">Cursor</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs">
-  <a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/ux/cursor.styl" target="blank">/src/styles/atoms/ux/cursor.styl</a></p><p class='atoms-list'><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.cursor-auto</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.cursor-default</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.cursor-pointer</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.cursor-wait</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.cursor-move</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.cursor-not-allowed</span></p>
-  <h3 class="margin-top-xl margin-bot-none" id="Pointer Events">Pointer Events</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs">
-  <a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/ux/pointer-events.styl" target="blank">/src/styles/atoms/ux/pointer-events.styl</a></p><p class='atoms-list'><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.pointer-events-none</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.pointer-events-auto</span></p>
-  <h3 class="margin-top-xl margin-bot-none" id="Select">Select</h3><p class="text-size-xs opacity-70 margin-top-none margin-bot-xs">
-  <a href="https://github.com/kvnlnt/feds/blob/master/src/styles/atoms/ux/select.styl" target="blank">/src/styles/atoms/ux/select.styl</a></p><p class='atoms-list'><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.select-none</span><span class="anim-speed-base anim-property-opacity cursor-pointer atom inline-block pad-left-s pad-right-s leading-l margin-right-xs margin-bot-xs font-size-xs bg-color-primary-xl border-radius-m">.select-text</span></p>
-</section>
+    Components</a><h2 class="guide margin-top-2xl">Template</h2><a href="https://github.com/kvnlnt/feds/blob/master/src/scripts/components/template/template.js" target="blank">/src/scripts/components/template/template.js</a>
+
+<h3 class="margin-top-xl margin-bot-s" id="Template">Template</h3>
+
+<div class="shadow pad-2xl bg-color-white pos-relative">
+  <div class="flex flex-wrap">
+<div id="TemplateExampleRendered"></div>
+
+<div id="TemplateExample" data-component="Template" class="hidden">
+  <% if(showRecords) { %>
+  <% for(var i in records) { %>
+  <a href="#">
+    <% records[i] %></a>
+  <% } %>
+  <% } else { %>
+  <p>no records</p>
+  <% } %>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var content = feds.components.TemplateExample({
+      records: ["js", "html", "css"],
+      showRecords: true
+    });
+    document.body.querySelector("#TemplateExampleRendered").innerHTML = content;
+  });
+</script>
+
+</div></div><pre><code data-language="html">
+<div id="TemplateExampleRendered"></div>
+
+<div id="TemplateExample" data-component="Template" class="hidden">
+  <% if(showRecords) { %>
+  <% for(var i in records) { %>
+  <a href="#">
+    <% records[i] %></a>
+  <% } %>
+  <% } else { %>
+  <p>no records</p>
+  <% } %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var content = feds.components.TemplateExample({
+      records: ["js", "html", "css"],
+      showRecords: true
+    });
+    document.body.querySelector("#TemplateExampleRendered").innerHTML = content;
+  });
+</script>
+
+</code></pre>
+</section></div>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-// feds.1.0.0.667
+// feds.1.0.0.711
 (function () {
   'use strict';
 
@@ -91,7 +91,7 @@
     throw new TypeError("Invalid attempt to spread non-iterable instance");
   }
 
-  var Version = "1.0.0.667";
+  var Version = "1.0.0.711";
 
   var Bus =
   /*#__PURE__*/
@@ -163,12 +163,10 @@
 
   var Component = function Component() {
     var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-    var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
 
     _classCallCheck(this, Component);
 
     this.id = id;
-    this.name = name;
     this.el = document.querySelector("#".concat(id));
   };
 
@@ -212,7 +210,6 @@
       var _this;
 
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-      var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "accordion";
 
       _classCallCheck(this, Accordion);
 
@@ -226,11 +223,8 @@
       value: function initTabs() {
         var _this2 = this;
 
-        var preExpandedTabs = feds.params.get("tabs") ? feds.params.get("tabs").split(",").map(function (i) {
-          return i.trim();
-        }) : [];
         return _toConsumableArray(this.el.children).map(function (i) {
-          return new Tab(i, _this2, preExpandedTabs.indexOf(i.dataset.tab) > -1);
+          return new Tab(i, _this2);
         });
       }
     }]);
@@ -238,9 +232,61 @@
     return Accordion;
   }(Component);
 
+  // <%if(showRecords) {%>
+  // <%for(var i in records) {%>
+  // <a href="#">
+  //   <%records[i]%></a>
+  // <%}%>
+  // <%} else {%>
+  // <p>no records</p>
+  // <%}%>
+
+  var TemplateEngine = function TemplateEngine(html) {
+    _classCallCheck(this, TemplateEngine);
+
+    var re = /<%(.+?)%>/g;
+    var reExp = /(^( )?(var|if|for|else|switch|case|break|{|}|;))(.*)?/g;
+    var code = "with(params) { var r=[];\n";
+    var cursor = 0;
+    var match;
+
+    var add = function add(line, js) {
+      js ? code += line.match(reExp) ? line + "\n" : "r.push(" + line + ");\n" : code += line != "" ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : "";
+      return add;
+    };
+
+    while (match = re.exec(html)) {
+      add(html.slice(cursor, match.index))(match[1], true);
+      cursor = match.index + match[0].length;
+    }
+
+    add(html.substr(cursor, html.length - cursor));
+    code = (code + 'return r.join(""); }').replace(/[\r\t\n]/g, " ");
+    return new Function("params", code);
+  };
+  var Template =
+  /*#__PURE__*/
+  function (_Base) {
+    _inherits(Template, _Base);
+
+    function Template() {
+      var _this;
+
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+
+      _classCallCheck(this, Template);
+
+      _this = _possibleConstructorReturn(this, _getPrototypeOf(Template).call(this, id, name));
+      return _possibleConstructorReturn(_this, new TemplateEngine(_this.el.textContent.trim()));
+    }
+
+    return Template;
+  }(Component);
+
   var modules = {};
   var components = {};
   components.Accordion = Accordion;
+  components.Template = Template;
 
   var Feds =
   /*#__PURE__*/
@@ -292,9 +338,9 @@
   }();
 
   // meta
-  var feds$1 = new Feds();
-  window.feds = feds$1;
-  document.addEventListener("DOMContentLoaded", feds$1.init.bind(feds$1));
+  var feds = new Feds();
+  window.feds = feds;
+  document.addEventListener("DOMContentLoaded", feds.init.bind(feds));
 
 }());
 //# sourceMappingURL=feds.latest.js.map

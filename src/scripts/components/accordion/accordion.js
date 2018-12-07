@@ -21,20 +21,12 @@ export class Tab {
 }
 
 export class Accordion extends Base {
-  constructor(id = "", name = "accordion") {
+  constructor(id = "") {
     super(id, name);
     this.tabs = this.initTabs();
     return this;
   }
   initTabs() {
-    const preExpandedTabs = feds.params.get("tabs")
-      ? feds.params
-          .get("tabs")
-          .split(",")
-          .map(i => i.trim())
-      : [];
-    return [...this.el.children].map(
-      i => new Tab(i, this, preExpandedTabs.indexOf(i.dataset.tab) > -1)
-    );
+    return [...this.el.children].map(i => new Tab(i, this));
   }
 }

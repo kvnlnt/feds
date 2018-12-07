@@ -1,0 +1,37 @@
+{{#page
+section="Components"
+title="Template"
+source="/src/scripts/components/template/template.js" }}
+
+{{{SectionHeader
+title="Template"
+}}}
+
+{{#example code=true }}
+
+<div id="TemplateExampleRendered"></div>
+
+<div id="TemplateExample" data-component="Template" class="hidden">
+  <% if(showRecords) { %>
+  <% for(var i in records) { %>
+  <a href="#">
+    <% records[i] %></a>
+  <% } %>
+  <% } else { %>
+  <p>no records</p>
+  <% } %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var content = feds.components.TemplateExample({
+      records: ["js", "html", "css"],
+      showRecords: true
+    });
+    document.body.querySelector("#TemplateExampleRendered").innerHTML = content;
+  });
+</script>
+
+{{/example}}
+
+{{/page}}
