@@ -4,10 +4,12 @@ import Bus from "./modules/bus.js";
 
 // components
 import { Accordion } from "./components/accordion/accordion";
+import { Template } from "./components/template/template";
 
 const modules = {};
 const components = {};
 components.Accordion = Accordion;
+components.Template = Template;
 
 export default class Feds {
   constructor() {

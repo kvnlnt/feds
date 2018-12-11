@@ -57,41 +57,64 @@
           </div>
         </aside>
         <div class="mobile:pad-xl tablet:pad-3xl tablet:width-3/4">
-          <div id="content"><section id="About">
-  <h2 class="guide">About the ER Frontend Design System</h2>
-  <h3>FEDS (Frontend Design System)</h3>
-  <p>
-    FEDS is a Design System developed for Emergency Reporting for the purpose of
-    standardizing it's use of CSS and Javascript. It's goal is to create well a
-    defined toolkit of reusable standards based styles and components that
-    leverage native platform functionality.
-  </p>
-  <h3>Toolkit Includes:</h3>
-  <ul>
-    <li>Living Style Guide</li>
-    <li>Implementation Patterns</li>
-    <li>Javascript Components</li>
-    <li>Prescriptive Workflows</li>
-    <li>Best Practices & Learning Resources</li>
-  </ul>
-  <h3>Key Features:</h3>
-  <ul>
-    <li>Atomic Design</li>
-    <li>Responsive Design</li>
-    <li>Framework agnostic</li>
-    <li>Intuitive conventions (BEM, OOCSS)</li>
-    <li>Deployment friendly (autoprefixed, optimized, CI friendly)</li>
-    <li>W3C Compliant</li>
-  </ul>
-  <h3>Get Started</h3>
-  <p>
-    To get started click <a href="Concepts.html" class="nav-item">Concepts</a>.
-    To checkout the source code, head over to:
-    <a href="https://github.com/kvnlnt/feds">https://github.com/kvnlnt/feds</a>
-  </p>
-  <a href="Concepts.html" class="nav-item button margin-vert-s">Concepts</a>
-</section>
+          <div id="content"><section id="Template"><a 
+    href="/guide/components" 
+    class="button text-size-s font-style-uppercase bg-color-grey-l border-radius-none border-size-none leading-s">
+    Components</a><h2 class="guide margin-top-2xl">Template</h2><a href="https://github.com/kvnlnt/feds/blob/master/src/scripts/components/template/template.js" target="blank">/src/scripts/components/template/template.js</a>
+
+<h3 class="margin-top-xl margin-bot-s" id="Template">Template</h3>
+
+<div class="shadow pad-2xl bg-color-white pos-relative">
+  <div class="flex flex-wrap">
+<div id="TemplateExampleRendered"></div>
+
+<div id="TemplateExample" data-component="Template" class="hidden">
+  <% if(showRecords) { %>
+  <% for(var i in records) { %>
+  <a href="#">
+    <% records[i] %></a>
+  <% } %>
+  <% } else { %>
+  <p>no records</p>
+  <% } %>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var content = feds.components.TemplateExample({
+      records: ["js", "html", "css"],
+      showRecords: true
+    });
+    document.body.querySelector("#TemplateExampleRendered").innerHTML = content;
+  });
+</script>
+
+</div></div><pre><code data-language="html">
+<div id="TemplateExampleRendered"></div>
+
+<div id="TemplateExample" data-component="Template" class="hidden">
+  <% if(showRecords) { %>
+  <% for(var i in records) { %>
+  <a href="#">
+    <% records[i] %></a>
+  <% } %>
+  <% } else { %>
+  <p>no records</p>
+  <% } %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var content = feds.components.TemplateExample({
+      records: ["js", "html", "css"],
+      showRecords: true
+    });
+    document.body.querySelector("#TemplateExampleRendered").innerHTML = content;
+  });
+</script>
+
+</code></pre>
+</section></div>
         </div>
       </div>
     </div>
