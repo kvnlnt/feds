@@ -1,22 +1,32 @@
 import Base from "../base";
 
 export class Tab {
-  constructor(el, parent, expanded = false) {
+  constructor(el, expanded = false) {
     this.id = el.dataset.tab;
     this.el = el;
-    this.parent = parent;
     this.label = this.el.querySelector("label");
-    this.content = this.el.querySelector("div");
     this.caret = this.el.querySelector("i");
+    this.content = this.el.querySelector("div");
     this.expanded = expanded;
     // events
     this.label.addEventListener("click", this.toggle.bind(this));
-    if (this.expanded) this.toggle();
+    if (this.expanded) this.expand();
+  }
+  contract() {
+    this.content.classList.add("hidden");
+    this.caret.classList.add("rotate-30");
+    this.expanded = false;
+    return this;
+  }
+  expand() {
+    this.content.classList.remove("hidden");
+    this.caret.classList.remove("rotate-30");
+    this.expanded = true;
+    return this;
   }
   toggle() {
-    this.expanded = !this.expanded;
-    this.content.classList.toggle("hidden");
-    this.caret.classList.toggle("rotate-30");
+    this.expanded ? this.contract() : this.expand();
+    return this;
   }
 }
 
@@ -27,6 +37,6 @@ export class Accordion extends Base {
     return this;
   }
   initTabs() {
-    return [...this.el.children].map(i => new Tab(i, this));
+    return [...this.el.children].map(i => new Tab(i));
   }
 }

@@ -1,4 +1,4 @@
-// feds.1.0.0.712
+// feds.1.0.0.716
 (function () {
   'use strict';
 
@@ -91,7 +91,7 @@
     throw new TypeError("Invalid attempt to spread non-iterable instance");
   }
 
-  var Version = "1.0.0.712";
+  var Version = "1.0.0.716";
 
   var Bus =
   /*#__PURE__*/
@@ -173,29 +173,43 @@
   var Tab =
   /*#__PURE__*/
   function () {
-    function Tab(el, parent) {
-      var expanded = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    function Tab(el) {
+      var expanded = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
       _classCallCheck(this, Tab);
 
       this.id = el.dataset.tab;
       this.el = el;
-      this.parent = parent;
       this.label = this.el.querySelector("label");
-      this.content = this.el.querySelector("div");
       this.caret = this.el.querySelector("i");
+      this.content = this.el.querySelector("div");
       this.expanded = expanded; // events
 
       this.label.addEventListener("click", this.toggle.bind(this));
-      if (this.expanded) this.toggle();
+      if (this.expanded) this.expand();
     }
 
     _createClass(Tab, [{
+      key: "contract",
+      value: function contract() {
+        this.content.classList.add("hidden");
+        this.caret.classList.add("rotate-30");
+        this.expanded = false;
+        return this;
+      }
+    }, {
+      key: "expand",
+      value: function expand() {
+        this.content.classList.remove("hidden");
+        this.caret.classList.remove("rotate-30");
+        this.expanded = true;
+        return this;
+      }
+    }, {
       key: "toggle",
       value: function toggle() {
-        this.expanded = !this.expanded;
-        this.content.classList.toggle("hidden");
-        this.caret.classList.toggle("rotate-30");
+        this.expanded ? this.contract() : this.expand();
+        return this;
       }
     }]);
 
@@ -221,10 +235,8 @@
     _createClass(Accordion, [{
       key: "initTabs",
       value: function initTabs() {
-        var _this2 = this;
-
         return _toConsumableArray(this.el.children).map(function (i) {
-          return new Tab(i, _this2);
+          return new Tab(i);
         });
       }
     }]);
