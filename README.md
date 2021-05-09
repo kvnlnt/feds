@@ -1,3 +1,13 @@
+# Notice
+Change is coming to FEDS. It's being split in two:
+
+1. :boom: FEDS (Front-end Design System): Will become a full blown component and application FedRAMP compliant framework for those who are concerned about security, standards and building software that lasts. It will be a 100% native, 100% testable, 100% dependency free, type safe (typescript) and have everything you need including: Design System, State Management, Templating, Routing, Testing, etc.
+2. 💅 [FENO](https://github.com/kvnlnt/feno) (Front-end Nomenclature): "Feno" as in Phenotype (the set of observable characteristics or traits of an organism) will be an utility first css framework tailor made for FEDS. Following an established set of Nomenclature of: types -> atoms -> elements where types are primatives such as "moods" and "colors", atoms are the composable atomic class definitions based on the types and elements are collections of atoms that provide various degrees of control, namespacing and optimizations.
+
+---
+
+💀 All this below is dead, starting over.
+
 # FEDS
 
 Front-end Design System
