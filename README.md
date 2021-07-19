@@ -4,6 +4,9 @@ Front-end Development System
 
 ![Build Status](https://reportingsystemsinc.visualstudio.com/Development/_apis/build/status/FEDS-build-pipeline)
 
+## :bulb: Guiding light
+Code needs to be: created, read, updated, deleted and tested. If your code base reliably allows a developer to add new features with ease, modify old code without breaking everything, identify and remove dead code and produce meaningful and reliable tests then you've actually built "soft" ware.
+
 ## Purpose
 
 I want to build front-end applications that live long healthy lives from their childhood on into adulthood. In order to keep them healthy and alive I need to protect them, show them love and make sure I don't feed them anything that will make them sick. If at some point in time my apps happen to come down with something, I want to be able to give them whatever they need to get them back on their feet. Most frontend-apps today start their lives out on a solid diet of candy and steroids. They are neglected as they grow up and as they age they develop behavioral problems. 
