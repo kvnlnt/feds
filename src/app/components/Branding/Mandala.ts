@@ -1,13 +1,15 @@
+import { usePalette } from 'src/app/lib/Palette';
 import { useCss } from '../../lib/Css';
-import { Palette } from '../../lib/Palette';
 import { useSvg } from '../../lib/Svg';
 
+const [palette] = usePalette();
+
 const [css] = useCss({
-  whiteFill: [['fill', Palette.white]],
-  whiteStroke: [['stroke', Palette.white]],
+  whiteFill: [['fill', palette('white')]],
+  whiteStroke: [['stroke', palette('white')]],
   text: [
     ['fontSize', '10px'],
-    ['color', Palette.white],
+    ['color', palette('white')],
   ],
 });
 
@@ -285,7 +287,9 @@ export class Mandala {
     const texts = this.petalCalcs.map((p) =>
       Renderer.text([p.p1[0] - 20, p.p1[1] - 10], `${(p.angle % 360).toFixed(0)}`),
     );
-    const circles = this.petalCalcs.map((p) => Renderer.circle(p.p1, isPlaying(p.angle) ? Palette.white : this.stroke));
+    const circles = this.petalCalcs.map((p) =>
+      Renderer.circle(p.p1, isPlaying(p.angle) ? palette('white') : this.stroke),
+    );
     const polyline = Renderer.polyline(
       this.petalCalcs
         .map(

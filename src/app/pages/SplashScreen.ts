@@ -40,6 +40,11 @@ const [css] = useCss({
     ['fontSize', '14px'],
     ['cursor', 'pointer'],
   ],
+  wrapper: [
+    ['display', 'flex'],
+    ['width', '100vw'],
+    ['justifyContent', 'center'],
+  ],
   container: [
     ['display', 'flex'],
     ['flexDirection', 'column'],
@@ -114,9 +119,27 @@ const [css] = useCss({
     ['animationDuration', '1s'],
     ['animationDelay', '1s'],
   ],
-  bgWhite: [
+  bg_white: [
     ['backgroundColor', palette('white', 0, 0.1)],
     ['transition', 'all 1s'],
+  ],
+  white_text: [
+    ['color', palette('white', 0, 0.75)],
+    ['transition', 'all 1s'],
+  ],
+  github_link: [
+    ['color', palette('white', 0, 0.2)],
+    ['fontSize', '10px'],
+    ['position', 'fixed'],
+    ['top', '20px'],
+    ['right', '20px'],
+    ['textDecoration', 'none'],
+    ['textTransform', 'uppercase'],
+    ['fontFamily', font('arial')],
+    ['letterSpacing', '2px'],
+    ['borderBottom', `1px dotted ${palette('white', 0, 0.1)}`],
+    ['display', 'block'],
+    ['padding', '5px'],
   ],
 });
 
@@ -199,6 +222,7 @@ const createMandala = () => {
 
 export const useSplashScreen = () => {
   let interval: number;
+  const [wrapper] = useHtml('div', ['class', css('wrapper')]);
   const [container] = useHtml('div', ['class', css('container')]);
   const stopAnimation = () => clearInterval(interval);
   const startAnimation = () => {
@@ -207,24 +231,33 @@ export const useSplashScreen = () => {
   };
   const [animationContainer, setAnimationContainer] = useHtml('div', ['class', css('animationContainer')]);
   const [title] = useHtml('div', ['class', css('title')]);
+  const [github] = useHtml(
+    'a',
+    ['class', css('github_link', 'white_text_on_hover')],
+    ['href', 'http://github.com/kvnlnt/feds'],
+    ['target', '_blank'],
+  );
   const [subTitle] = useHtml('div', ['class', css('subTitle')]);
   const [tagline] = useHtml('div', ['class', css('tagline')]);
   const [button] = useHtml(
     'button',
-    ['class', css('button', 'bgWhite_on_hover')],
+    ['class', css('button', 'bg_white_on_hover')],
     ['onclick', () => alert('COMING SOON!!! ')],
     ['onmouseover', () => startAnimation()],
     ['onmouseout', () => stopAnimation()],
   );
   const [dashboard] = useIsoShell(
-    container(
-      title('feds'),
-      subTitle('Own Your Framework'),
-      animationContainer(createMandala()),
-      tagline(
-        'A hard to break, easy to fix starter kit that allows you to own your framework. You know – instead of the other way around',
+    wrapper(
+      github('github'),
+      container(
+        title('feds'),
+        subTitle('Own Your Framework'),
+        animationContainer(createMandala()),
+        tagline(
+          'A hard to break, easy to fix starter kit that allows you to own your framework. You know – instead of the other way around',
+        ),
+        button('Prove It'),
       ),
-      button('Prove It'),
     ),
   );
   startAnimation();

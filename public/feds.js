@@ -14,6 +14,29 @@
     return [setter];
   }
 
+  // src/app/lib/Palette.ts
+  var Colors = {
+    black: [0, 0, 5],
+    red: [0, 100, 50],
+    blue: [240, 100, 50],
+    yellow: [55, 100, 50],
+    green: [118, 100, 50],
+    purple: [270, 100, 50],
+    orange: [30, 100, 50],
+    transparent: "transparent",
+    white: [0, 0, 100]
+  };
+  var usePalette = () => {
+    const getter = (color, adjustLightness = 0, opacity = 1) => {
+      if (color === "transparent")
+        return color;
+      const [h, s, l] = Colors[color];
+      const hsla = `hsla(${h}deg,${s}%,${l + adjustLightness}%,${opacity})`;
+      return hsla;
+    };
+    return [getter];
+  };
+
   // src/app/lib/Css.ts
   var Breakpoints;
   (function(Breakpoints2) {
@@ -79,57 +102,6 @@
     return [getter, setter];
   };
 
-  // src/app/lib/Palette.ts
-  var Palette;
-  (function(Palette2) {
-    Palette2["black"] = `hsl(0deg, 0%, 10%)`;
-    Palette2["black_90"] = `hsl(0deg, 3%, 11%)`;
-    Palette2["black_80"] = `hsl(0deg, 0%, 20%)`;
-    Palette2["black_70"] = `hsl(0deg, 0%, 30%)`;
-    Palette2["black_60"] = `hsl(0deg, 0%, 40%)`;
-    Palette2["black_50"] = `hsl(0deg, 0%, 50%)`;
-    Palette2["black_40"] = `hsl(0deg, 0%, 60%)`;
-    Palette2["black_30"] = `hsl(0deg, 0%, 70%)`;
-    Palette2["black_20"] = `hsl(0deg, 0%, 80%)`;
-    Palette2["white"] = `hsl(0deg, 0%, 100%)`;
-    Palette2["white_90"] = `hsl(0deg, 0%, 95%)`;
-    Palette2["white_80"] = `hsl(0deg, 0%, 90%)`;
-    Palette2["white_70"] = `hsl(0deg, 0%, 85%)`;
-    Palette2["white_60"] = `hsl(0deg, 0%, 80%)`;
-    Palette2["white_50"] = `hsl(0deg, 0%, 75%)`;
-    Palette2["white_40"] = `hsl(0deg, 0%, 70%)`;
-    Palette2["earth"] = `hsl(30deg,30%,20%)`;
-    Palette2["bright_orange"] = `hsl(19deg, 100%, 50%)`;
-    Palette2["violet_noir"] = `hsl(227deg, 77%, 15%)`;
-    Palette2["green"] = `hsl(174deg, 64%, 36%)`;
-    Palette2["deep_blue"] = `hsl(196deg, 97%, 26%)`;
-    Palette2["ash"] = `hsl(19deg, 11%, 58%)`;
-    Palette2["none"] = "none";
-    Palette2["transparent"] = "transparent";
-    Palette2["charcoal_turquoise"] = `hsl(196,31%,17%)`;
-  })(Palette || (Palette = {}));
-  var Colors = {
-    black: [0, 0, 10],
-    red: [0, 100, 50],
-    blue: [240, 100, 50],
-    yellow: [55, 100, 50],
-    green: [118, 100, 50],
-    purple: [270, 100, 50],
-    orange: [30, 100, 50],
-    transparent: "transparent",
-    white: [0, 0, 100]
-  };
-  var usePalette = () => {
-    const getter = (color, adjustLightness = 0, opacity = 1) => {
-      if (color === "transparent")
-        return color;
-      const [h, s, l] = Colors[color];
-      const hsla = `hsla(${h}deg,${s}%,${l + adjustLightness}%,${opacity})`;
-      return hsla;
-    };
-    return [getter];
-  };
-
   // src/app/lib/Svg.ts
   function SVG({tag, attrs = [], children = []}) {
     const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
@@ -172,12 +144,13 @@
   }
 
   // src/app/components/Branding/Mandala.ts
+  var [palette] = usePalette();
   var [css] = useCss({
-    whiteFill: [["fill", Palette.white]],
-    whiteStroke: [["stroke", Palette.white]],
+    whiteFill: [["fill", palette("white")]],
+    whiteStroke: [["stroke", palette("white")]],
     text: [
       ["fontSize", "10px"],
-      ["color", Palette.white]
+      ["color", palette("white")]
     ]
   });
   var Transformer = {
@@ -355,7 +328,7 @@
       }
       const isPlaying = (angle) => angle % 360 >= 0 && angle % 360 <= 360 / (360 / this.rotationSpeed);
       const texts = this.petalCalcs.map((p) => Renderer.text([p.p1[0] - 20, p.p1[1] - 10], `${(p.angle % 360).toFixed(0)}`));
-      const circles = this.petalCalcs.map((p) => Renderer.circle(p.p1, isPlaying(p.angle) ? Palette.white : this.stroke));
+      const circles = this.petalCalcs.map((p) => Renderer.circle(p.p1, isPlaying(p.angle) ? palette("white") : this.stroke));
       const polyline = Renderer.polyline(this.petalCalcs.map(({p1, p2, p3, p4, pointFrequency, angle}) => new Bezier({p1, p2, p3, p4, pointFrequency, stroke: this.stroke}).points).flat(1), this.stroke, this.strokeWidth, this.fill, true);
       if (this.debug)
         circles.forEach((circle) => this.el.appendChild(circle));
@@ -423,26 +396,27 @@
   }
 
   // src/app/components/Grids/IsoShell.ts
+  var [palette2] = usePalette();
   var [css2] = useCss({
     grid: [
-      ["display", "grid"],
-      ["height", "100vh"],
-      ["gridTemplateAreas", '"content"'],
-      ["gridTemplateRows", "auto"],
-      ["backgroundColor", Palette.black_90]
-    ],
-    contentArea: [
-      ["gridArea", "content"],
-      ["maxWidth", "100vw"],
       ["display", "flex"],
-      ["justifyContent", "center"],
-      ["alignItems", "center"]
+      ["height", "100vh"],
+      ["width", "100vh"],
+      ["backgroundColor", palette2("black")],
+      ["backgroundSize", "10px 10px"],
+      [
+        "backgroundImage",
+        `repeating-linear-gradient(230deg, 
+        ${palette2("black", 5)} 0, 
+        ${palette2("black")} 1px, 
+        ${palette2("black", 0)} 0, 
+        ${palette2("black", 0)} 90%)`
+      ]
     ]
   });
   var useIsoShell = (content) => {
     const [Grid] = useHtml("div", ["class", css2("grid")]);
-    const [ContentArea] = useHtml("div", ["class", css2("contentArea")]);
-    return [Grid(ContentArea(content))];
+    return [Grid(content)];
   };
 
   // src/app/lib/Fonts.ts
@@ -539,7 +513,7 @@
 
   // src/app/pages/SplashScreen.ts
   var [l10n] = useLocalization();
-  var [palette] = usePalette();
+  var [palette3] = usePalette();
   var [font] = useFont();
   var [kf] = useKeyFrames({
     fadeIn: [
@@ -561,11 +535,16 @@
   });
   var [css3] = useCss({
     animationContainer: [
-      ["color", palette("white")],
+      ["color", palette3("white")],
       ["fontFamily", font("arial")],
       ["padding", "0px"],
       ["fontSize", "14px"],
       ["cursor", "pointer"]
+    ],
+    wrapper: [
+      ["display", "flex"],
+      ["width", "100vw"],
+      ["justifyContent", "center"]
     ],
     container: [
       ["display", "flex"],
@@ -579,7 +558,7 @@
       ["animationDelay", "0s"]
     ],
     title: [
-      ["color", palette("white")],
+      ["color", palette3("white")],
       ["fontFamily", font("arial")],
       ["fontWeight", "bold"],
       ["fontSize", "30px"],
@@ -595,7 +574,7 @@
       ["opacity", 0]
     ],
     subTitle: [
-      ["color", palette("white", 0, 0.2)],
+      ["color", palette3("white", 0, 0.2)],
       ["fontFamily", font("arial")],
       ["fontSize", "10px"],
       ["textTransform", "uppercase"],
@@ -609,7 +588,7 @@
       ["opacity", 0]
     ],
     tagline: [
-      ["color", palette("white")],
+      ["color", palette3("white")],
       ["fontFamily", font("arial")],
       ["fontSize", "15px"],
       ["textTransform", "uppercase"],
@@ -624,12 +603,12 @@
       ["animationDelay", ".75s"]
     ],
     button: [
-      ["backgroundColor", palette("transparent")],
-      ["color", palette("white")],
+      ["backgroundColor", palette3("transparent")],
+      ["color", palette3("white")],
       ["borderTop", "0px"],
       ["borderLeft", "0px"],
       ["borderRight", "0px"],
-      ["borderBottom", `5px solid ${palette("white", 0, 0.08)}`],
+      ["borderBottom", `5px solid ${palette3("white", 0, 0.08)}`],
       ["padding", "15px 20px"],
       ["textTransform", "uppercase"],
       ["fontSize", "10px"],
@@ -641,20 +620,38 @@
       ["animationDuration", "1s"],
       ["animationDelay", "1s"]
     ],
-    bgWhite: [
-      ["backgroundColor", palette("white", 0, 0.1)],
+    bg_white: [
+      ["backgroundColor", palette3("white", 0, 0.1)],
       ["transition", "all 1s"]
+    ],
+    white_text: [
+      ["color", palette3("white", 0, 0.75)],
+      ["transition", "all 1s"]
+    ],
+    github_link: [
+      ["color", palette3("white", 0, 0.2)],
+      ["fontSize", "10px"],
+      ["position", "fixed"],
+      ["top", "20px"],
+      ["right", "20px"],
+      ["textDecoration", "none"],
+      ["textTransform", "uppercase"],
+      ["fontFamily", font("arial")],
+      ["letterSpacing", "2px"],
+      ["borderBottom", `1px dotted ${palette3("white", 0, 0.1)}`],
+      ["display", "block"],
+      ["padding", "5px"]
     ]
   });
   var {randomNumberInRange: randomNumberInRange2} = useMath();
   var getRandomColor = () => {
     const colors = [
-      palette("blue", 30, 0.7),
-      palette("red", 30, 0.7),
-      palette("yellow", 0, 0.7),
-      palette("green", 30, 0.7),
-      palette("purple", 30, 0.7),
-      palette("orange")
+      palette3("blue", 30, 0.7),
+      palette3("red", 30, 0.7),
+      palette3("yellow", 0, 0.7),
+      palette3("green", 30, 0.7),
+      palette3("purple", 30, 0.7),
+      palette3("orange")
     ];
     return colors[randomNumberInRange2(0, colors.length - 1)];
   };
@@ -666,7 +663,7 @@
       cy: CanvasSize / 2,
       debug: false,
       diameter: CanvasSize * 0.75,
-      fill: palette("transparent"),
+      fill: palette3("transparent"),
       stroke: getRandomColor(),
       petals: [
         ...Array(randomNumberInRange2(20, 50)).fill({
@@ -684,7 +681,7 @@
       cy: CanvasSize / 2,
       debug: false,
       diameter: CanvasSize * 0.3,
-      fill: palette("transparent"),
+      fill: palette3("transparent"),
       stroke: getRandomColor(),
       petals: Array(randomNumberInRange2(20, 50)).fill({
         height: randomNumberInRange2(0, 100),
@@ -700,7 +697,7 @@
       cy: CanvasSize / 2,
       debug: false,
       diameter: CanvasSize * 0.3,
-      fill: palette("transparent"),
+      fill: palette3("transparent"),
       stroke: getRandomColor(),
       petals: [
         ...Array(randomNumberInRange2(20, 50)).fill({
@@ -717,6 +714,7 @@
   };
   var useSplashScreen = () => {
     let interval;
+    const [wrapper] = useHtml("div", ["class", css3("wrapper")]);
     const [container] = useHtml("div", ["class", css3("container")]);
     const stopAnimation = () => clearInterval(interval);
     const startAnimation = () => {
@@ -725,10 +723,11 @@
     };
     const [animationContainer, setAnimationContainer] = useHtml("div", ["class", css3("animationContainer")]);
     const [title] = useHtml("div", ["class", css3("title")]);
+    const [github] = useHtml("a", ["class", css3("github_link", "white_text_on_hover")], ["href", "http://github.com/kvnlnt/feds"], ["target", "_blank"]);
     const [subTitle] = useHtml("div", ["class", css3("subTitle")]);
     const [tagline] = useHtml("div", ["class", css3("tagline")]);
-    const [button] = useHtml("button", ["class", css3("button", "bgWhite_on_hover")], ["onclick", () => alert("COMING SOON!!! ")], ["onmouseover", () => startAnimation()], ["onmouseout", () => stopAnimation()]);
-    const [dashboard] = useIsoShell(container(title("feds"), subTitle("Own Your Framework"), animationContainer(createMandala()), tagline("A hard to break, easy to fix starter kit that allows you to own your framework. You know \u2013 instead of the other way around"), button("Prove It")));
+    const [button] = useHtml("button", ["class", css3("button", "bg_white_on_hover")], ["onclick", () => alert("COMING SOON!!! ")], ["onmouseover", () => startAnimation()], ["onmouseout", () => stopAnimation()]);
+    const [dashboard] = useIsoShell(wrapper(github("github"), container(title("feds"), subTitle("Own Your Framework"), animationContainer(createMandala()), tagline("A hard to break, easy to fix starter kit that allows you to own your framework. You know \u2013 instead of the other way around"), button("Prove It"))));
     startAnimation();
     setTimeout(() => stopAnimation(), 2e3);
     return [dashboard];

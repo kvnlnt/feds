@@ -1,26 +1,28 @@
+import { usePalette } from 'src/app/lib/Palette';
 import { useCss } from '../../lib/Css';
 import { useHtml } from '../../lib/Html';
-import { Palette } from '../../lib/Palette';
+
+const [palette] = usePalette();
 
 const [css] = useCss({
   grid: [
-    ['display', 'grid'],
-    ['height', '100vh'],
-    ['gridTemplateAreas', '"content"'],
-    ['gridTemplateRows', 'auto'],
-    ['backgroundColor', Palette.black_90],
-  ],
-  contentArea: [
-    ['gridArea', 'content'],
-    ['maxWidth', '100vw'],
     ['display', 'flex'],
-    ['justifyContent', 'center'],
-    ['alignItems', 'center'],
+    ['height', '100vh'],
+    ['width', '100vh'],
+    ['backgroundColor', palette('black')],
+    ['backgroundSize', '10px 10px'],
+    [
+      'backgroundImage',
+      `repeating-linear-gradient(230deg, 
+        ${palette('black', 5)} 0, 
+        ${palette('black')} 1px, 
+        ${palette('black', 0)} 0, 
+        ${palette('black', 0)} 90%)`,
+    ],
   ],
 });
 
 export const useIsoShell = (content: HTMLElement) => {
   const [Grid] = useHtml('div', ['class', css('grid')]);
-  const [ContentArea] = useHtml('div', ['class', css('contentArea')]);
-  return [Grid(ContentArea(content))];
+  return [Grid(content)];
 };
