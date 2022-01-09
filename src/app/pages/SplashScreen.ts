@@ -141,6 +141,14 @@ const [css] = useCss({
     ['display', 'block'],
     ['padding', '5px'],
   ],
+  fs_12: [
+    ['fontSize', '12px'],
+    ['lineHeight', '16px'],
+  ],
+  fs_15: [
+    ['fontSize', '15px'],
+    ['lineHeight', '26px'],
+  ],
 });
 
 const { randomNumberInRange } = useMath();
@@ -238,7 +246,7 @@ export const useSplashScreen = () => {
     ['target', '_blank'],
   );
   const [subTitle] = useHtml('div', ['class', css('subTitle')]);
-  const [tagline] = useHtml('div', ['class', css('tagline')]);
+  const [tagline] = useHtml('div', ['class', css('tagline', 'fs_12', 'fs_15_on_tablet')]);
   const [button] = useHtml(
     'button',
     ['class', css('button', 'bg_white_on_hover')],
@@ -254,7 +262,7 @@ export const useSplashScreen = () => {
         subTitle('Own Your Framework'),
         animationContainer(createMandala()),
         tagline(
-          'A hard to break, easy to fix starter kit that allows you to own your framework. You know – instead of the other way around',
+          'A hard to break, easy to fix frontend development system designed for adoption. Own your framework or it will own you.',
         ),
         button('Prove It'),
       ),

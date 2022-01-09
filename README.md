@@ -4,14 +4,14 @@
 
 🚧 &nbsp; UNDER CONSTRUCTION &nbsp; 🚧
 
-## Who's It For?
-For any dev who has ever inherited a frontend project more than 5 minutes old or who cried themselves to sleep after using `npx patch-package`. For the manager who can't take another story about what mountains need to be moved to add a button to the home page. For the product owner who needs to track user behavior so they know what's going on in the app. For the designer who needs a proper design system. For whoever's footing the bill for the time it takes to do all this work and for your competitors – making them look silly.
-
-## What Is It
-FEDS stands for "Front End Development System". It's basically a glorified starter kit to roll-your-own framework so you can get to writing code today without having problems tomorrow.
+## What Is It?
+FEDS stands for "Front End Development System". It's a frontend framework starter kit meant to be adopted by you. You install it once and then maintain it from then on. This allows you to start writing code for your app today without having problems tomorrow.
 
 ## Why Do I Want My Own Framework
-If you want to keep things running smoothly, you need to maintain control the evolution of your app over time. To maintain control of a codebase you need a "framework". However installing ready-made frameworks and flavor-of-the-month libraries results in an anti-pattern called "Continuous obsolescence". However, writing your own framework and/or libraries from scratch is no better, leading to another anti-pattern called "Stupid". So what's the solution? Adopt one. Adopt FEDS. The code is so simple that you'll quickly feel like you wrote it in the first place. If you still need dependencies, no problem, just install it following one of the many the maintainable usage patterns already put in place and you're good to go.
+If you want to keep things running smoothly, you need to maintain control the evolution of your app over time. To maintain control of a codebase you need a "framework". However installing ready-made frameworks and flavor-of-the-month libraries results in an anti-pattern called "Continuous obsolescence". But, writing your own framework and/or libraries from scratch is no better as this is a large undertaking. So what's the solution? Adopt one. 
+
+## How Does Adopting A Framework Solve Anything?
+Adopting any ol' framework isn't going to solve much as most frameworks are fairly complicated and involve tightly coupled abstractions and dependencies on things that have nothing to do with your project. FEDS on the other hand has been written with adoption in mind from the start. The structure is simple, the code is simple, the tests, the workflow, everything. We want you to be able to adopt the framework, read through the code and quickly feel like you wrote it in the first place. All this without losing the flexibility you find in other frameworks and without some blatant compromise in functionality.
 
 ## Features
 - [x] A full featured design system with responsive components

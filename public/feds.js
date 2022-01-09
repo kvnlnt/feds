@@ -401,17 +401,9 @@
     grid: [
       ["display", "flex"],
       ["height", "100vh"],
-      ["width", "100vh"],
+      ["width", "100vw"],
       ["backgroundColor", palette2("black")],
-      ["backgroundSize", "10px 10px"],
-      [
-        "backgroundImage",
-        `repeating-linear-gradient(230deg, 
-        ${palette2("black", 5)} 0, 
-        ${palette2("black")} 1px, 
-        ${palette2("black", 0)} 0, 
-        ${palette2("black", 0)} 90%)`
-      ]
+      ["backgroundSize", "10px 10px"]
     ]
   });
   var useIsoShell = (content) => {
@@ -641,6 +633,14 @@
       ["borderBottom", `1px dotted ${palette3("white", 0, 0.1)}`],
       ["display", "block"],
       ["padding", "5px"]
+    ],
+    fs_12: [
+      ["fontSize", "12px"],
+      ["lineHeight", "16px"]
+    ],
+    fs_15: [
+      ["fontSize", "15px"],
+      ["lineHeight", "26px"]
     ]
   });
   var {randomNumberInRange: randomNumberInRange2} = useMath();
@@ -725,9 +725,9 @@
     const [title] = useHtml("div", ["class", css3("title")]);
     const [github] = useHtml("a", ["class", css3("github_link", "white_text_on_hover")], ["href", "http://github.com/kvnlnt/feds"], ["target", "_blank"]);
     const [subTitle] = useHtml("div", ["class", css3("subTitle")]);
-    const [tagline] = useHtml("div", ["class", css3("tagline")]);
+    const [tagline] = useHtml("div", ["class", css3("tagline", "fs_12", "fs_15_on_tablet")]);
     const [button] = useHtml("button", ["class", css3("button", "bg_white_on_hover")], ["onclick", () => alert("COMING SOON!!! ")], ["onmouseover", () => startAnimation()], ["onmouseout", () => stopAnimation()]);
-    const [dashboard] = useIsoShell(wrapper(github("github"), container(title("feds"), subTitle("Own Your Framework"), animationContainer(createMandala()), tagline("A hard to break, easy to fix starter kit that allows you to own your framework. You know \u2013 instead of the other way around"), button("Prove It"))));
+    const [dashboard] = useIsoShell(wrapper(github("github"), container(title("feds"), subTitle("Own Your Framework"), animationContainer(createMandala()), tagline("A hard to break, easy to fix frontend development system designed for adoption. Own your framework or it will own you."), button("Prove It"))));
     startAnimation();
     setTimeout(() => stopAnimation(), 2e3);
     return [dashboard];
