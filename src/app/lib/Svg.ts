@@ -32,6 +32,13 @@ function SVG<T extends keyof SVGElementTagNameMap>({ tag, attrs = [], children =
   return el;
 }
 
+export function svg<T extends keyof SVGElementTagNameMap>(
+  tag: T,
+  ...attrs: SvgAttr<T>[]
+): (...children: SvgNode[]) => SVGElement {
+  return (...children: SvgNode[]) => SVG<T>({ tag, attrs, children });
+}
+
 export function useSvg<T extends keyof SVGElementTagNameMap>(
   tag: T,
   ...attrs: SvgAttr<T>[]
@@ -41,15 +48,20 @@ export function useSvg<T extends keyof SVGElementTagNameMap>(
     container = SVG<T>({ tag, attrs, children });
     return container;
   };
+
   const replace = (...children: SvgNode[]) => {
+    const attrs: SvgAttr<T>[] = [];
+    Array.from(container.attributes).forEach((attr) => attrs.push([attr.name as any, attr.value]));
     const newContainer = SVG<T>({ tag, attrs, children });
     container.replaceWith(newContainer);
     container = newContainer;
+    return container;
   };
+
   const updateAttrs = (...attrs: SvgAttr<T>[]) => {
     attrs.forEach((attr) => {
       const [key, val] = attr;
-      container.setAttribute(key, val as string);
+      if (container) container.setAttribute(key, val as string);
     });
   };
   return [element, replace, updateAttrs];

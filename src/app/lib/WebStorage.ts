@@ -5,7 +5,7 @@ type Menu = boolean;
 export const useLocalStorage = <T extends Tokens>(
   key: T,
   val: T extends 'MENU' ? Menu : never,
-  cb: (prop: T) => void,
+  cb?: (prop: T) => void,
 ): [() => T extends 'MENU' ? boolean : never, (val: T extends 'MENU' ? Menu : never) => void] => {
   switch (key) {
     case 'MENU':
@@ -21,7 +21,7 @@ export const useLocalStorage = <T extends Tokens>(
 export const useSessionStorage = <T extends Tokens>(
   key: T,
   val: T extends 'MENU' ? Menu : never,
-  cb: (prop: T) => void,
+  cb?: (prop: T) => void,
 ): [() => T extends 'MENU' ? boolean : never, (val: T extends 'MENU' ? Menu : never) => void] => {
   switch (key) {
     case 'MENU':

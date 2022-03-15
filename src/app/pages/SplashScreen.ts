@@ -18,9 +18,13 @@ const [kf] = useKeyFrames({
     [0, 'opacity', 0],
     [100, 'opacity', 1],
   ],
+  fadeOut: [
+    [0, 'opacity', 1],
+    [100, 'opacity', 0],
+  ],
   slideDown: [
-    [0, 'transform', 'translateY(-15px)'],
-    [100, 'transform', 'translateY(0px)'],
+    [0, 'transform', 'translateY(0px)'],
+    [100, 'transform', 'translateY(15px)'],
   ],
   slideUp: [
     [0, 'transform', 'translateY(15px)'],
@@ -66,13 +70,20 @@ const [css] = useCss({
     ['textAlign', 'center'],
     ['marginBottom', '10px'],
     ['marginLeft', '30px'],
+  ],
+  title_animate_in: [
     ['animation', kf('slideUp', 'fadeIn')],
     ['animationFillMode', 'forwards'],
     ['animationDuration', '1s'],
     ['animationDelay', '0.25s'],
-    ['opacity', 0],
   ],
-  subTitle: [
+  title_animate_out: [
+    ['animation', kf('slideDown', 'fadeOut')],
+    ['animationFillMode', 'forwards'],
+    ['animationDuration', '1s'],
+    ['animationDelay', '0.25s'],
+  ],
+  sub_title: [
     ['color', palette('white', 0, 0.2)],
     ['fontFamily', font('arial')],
     ['fontSize', '10px'],
@@ -238,19 +249,24 @@ export const useSplashScreen = () => {
     interval = setInterval(() => setAnimationContainer(createMandala()));
   };
   const [animationContainer, setAnimationContainer] = useHtml('div', ['class', css('animationContainer')]);
-  const [title] = useHtml('div', ['class', css('title')]);
+  const [title] = useHtml('div', ['class', css('title', 'title_animate_in')]);
   const [github] = useHtml(
     'a',
     ['class', css('github_link', 'white_text_on_hover')],
     ['href', 'http://github.com/kvnlnt/feds'],
     ['target', '_blank'],
   );
-  const [subTitle] = useHtml('div', ['class', css('subTitle')]);
+  const [sub_title] = useHtml('div', ['class', css('sub_title')]);
   const [tagline] = useHtml('div', ['class', css('tagline', 'fs_12', 'fs_15_on_tablet')]);
   const [button] = useHtml(
     'button',
     ['class', css('button', 'bg_white_on_hover')],
-    ['onclick', () => alert('COMING SOON!!! ')],
+    [
+      'onclick',
+      () => {
+        alert('COMING SOON!!! ');
+      },
+    ],
     ['onmouseover', () => startAnimation()],
     ['onmouseout', () => stopAnimation()],
   );
@@ -259,7 +275,7 @@ export const useSplashScreen = () => {
       github('github'),
       container(
         title('feds'),
-        subTitle('Own Your Framework'),
+        sub_title('Own Your Framework'),
         animationContainer(createMandala()),
         tagline(
           'A hard to break, easy to fix frontend development system designed for adoption. Own your framework or it will own you.',

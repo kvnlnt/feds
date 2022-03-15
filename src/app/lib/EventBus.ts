@@ -52,3 +52,7 @@ export const useEventBus = () => {
   const eventBus = new EventBus();
   return [eventBus.pub, eventBus.sub];
 };
+
+const [pub, sub] = useEventBus();
+
+pub<number>('test', 1);

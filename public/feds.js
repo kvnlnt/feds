@@ -93,7 +93,7 @@
     };
     render();
     const getter = (...list) => {
-      return list.map((item) => `${item}_${id}`).join(" ");
+      return list.filter((i) => i !== null).map((item) => `${item}_${id}`).join(" ");
     };
     const setter = (update) => {
       declarations = {...declarations, ...update};
@@ -130,14 +130,18 @@
       return container;
     };
     const replace = (...children) => {
-      const newContainer = SVG({tag, attrs, children});
+      const attrs2 = [];
+      Array.from(container.attributes).forEach((attr) => attrs2.push([attr.name, attr.value]));
+      const newContainer = SVG({tag, attrs: attrs2, children});
       container.replaceWith(newContainer);
       container = newContainer;
+      return container;
     };
     const updateAttrs = (...attrs2) => {
       attrs2.forEach((attr) => {
         const [key, val] = attr;
-        container.setAttribute(key, val);
+        if (container)
+          container.setAttribute(key, val);
       });
     };
     return [element, replace, updateAttrs];
@@ -370,29 +374,37 @@
     children.forEach((child) => {
       if (child instanceof Node)
         el.appendChild(child);
-      if (typeof child === "string")
+      if (typeof child === "string" || typeof child === "number")
         el.innerHTML += child;
     });
     return el;
   }
   function useHtml(tag, ...attrs) {
     let container;
-    const element = (...children) => {
-      container = HTML({tag, attrs, children});
-      return container;
-    };
+    let hasRendered = false;
     const replace = (...children) => {
-      const newContainer = HTML({tag, attrs, children});
+      const attrs2 = [];
+      Array.from(container.attributes).forEach((attr) => attrs2.push([attr.name, attr.value]));
+      const newContainer = HTML({tag, attrs: attrs2, children});
       container.replaceWith(newContainer);
       container = newContainer;
+      return container;
+    };
+    const element = (...children) => {
+      if (hasRendered)
+        return replace(...children);
+      container = HTML({tag, attrs, children});
+      hasRendered = true;
+      return container;
     };
     const updateAttrs = (...attrs2) => {
       attrs2.forEach((attr) => {
         const [key, val] = attr;
-        container.setAttribute(key, val);
+        if (container)
+          container.setAttribute(key, val);
       });
     };
-    return [element, replace, updateAttrs];
+    return [element, updateAttrs];
   }
 
   // src/app/components/Grids/IsoShell.ts
@@ -447,7 +459,7 @@
       declarationList.forEach(([selector, declaration]) => {
         styles.push(`@keyframes ${selector}_${id} {
 `);
-        declaration.forEach(([percent, prop, val]) => styles.push(`${percent}% { ${prop}: ${val}; }
+        declaration.forEach(([percent, prop, val]) => styles.push(`${percent}% { ${prop.replace(/([A-Z])/g, "-$1").toLowerCase()}: ${val}; }
 `));
         styles.push(`}
 `);
@@ -512,9 +524,13 @@
       [0, "opacity", 0],
       [100, "opacity", 1]
     ],
+    fadeOut: [
+      [0, "opacity", 1],
+      [100, "opacity", 0]
+    ],
     slideDown: [
-      [0, "transform", "translateY(-15px)"],
-      [100, "transform", "translateY(0px)"]
+      [0, "transform", "translateY(0px)"],
+      [100, "transform", "translateY(15px)"]
     ],
     slideUp: [
       [0, "transform", "translateY(15px)"],
@@ -558,14 +574,21 @@
       ["letterSpacing", "30px"],
       ["textAlign", "center"],
       ["marginBottom", "10px"],
-      ["marginLeft", "30px"],
+      ["marginLeft", "30px"]
+    ],
+    title_animate_in: [
       ["animation", kf("slideUp", "fadeIn")],
       ["animationFillMode", "forwards"],
       ["animationDuration", "1s"],
-      ["animationDelay", "0.25s"],
-      ["opacity", 0]
+      ["animationDelay", "0.25s"]
     ],
-    subTitle: [
+    title_animate_out: [
+      ["animation", kf("slideDown", "fadeOut")],
+      ["animationFillMode", "forwards"],
+      ["animationDuration", "1s"],
+      ["animationDelay", "0.25s"]
+    ],
+    sub_title: [
       ["color", palette3("white", 0, 0.2)],
       ["fontFamily", font("arial")],
       ["fontSize", "10px"],
@@ -722,12 +745,17 @@
       interval = setInterval(() => setAnimationContainer(createMandala()));
     };
     const [animationContainer, setAnimationContainer] = useHtml("div", ["class", css3("animationContainer")]);
-    const [title] = useHtml("div", ["class", css3("title")]);
+    const [title] = useHtml("div", ["class", css3("title", "title_animate_in")]);
     const [github] = useHtml("a", ["class", css3("github_link", "white_text_on_hover")], ["href", "http://github.com/kvnlnt/feds"], ["target", "_blank"]);
-    const [subTitle] = useHtml("div", ["class", css3("subTitle")]);
+    const [sub_title] = useHtml("div", ["class", css3("sub_title")]);
     const [tagline] = useHtml("div", ["class", css3("tagline", "fs_12", "fs_15_on_tablet")]);
-    const [button] = useHtml("button", ["class", css3("button", "bg_white_on_hover")], ["onclick", () => alert("COMING SOON!!! ")], ["onmouseover", () => startAnimation()], ["onmouseout", () => stopAnimation()]);
-    const [dashboard] = useIsoShell(wrapper(github("github"), container(title("feds"), subTitle("Own Your Framework"), animationContainer(createMandala()), tagline("A hard to break, easy to fix frontend development system designed for adoption. Own your framework or it will own you."), button("Prove It"))));
+    const [button] = useHtml("button", ["class", css3("button", "bg_white_on_hover")], [
+      "onclick",
+      () => {
+        alert("COMING SOON!!! ");
+      }
+    ], ["onmouseover", () => startAnimation()], ["onmouseout", () => stopAnimation()]);
+    const [dashboard] = useIsoShell(wrapper(github("github"), container(title("feds"), sub_title("Own Your Framework"), animationContainer(createMandala()), tagline("A hard to break, easy to fix frontend development system designed for adoption. Own your framework or it will own you."), button("Prove It"))));
     startAnimation();
     setTimeout(() => stopAnimation(), 2e3);
     return [dashboard];
